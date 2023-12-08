@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="회원 탈퇴 step1 : 마이페이지" menucss="/dev/ui/css/mypage.css"></include>
+<body class="mypage">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<!-- contents -->
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel w665">
+					<div class="inner">
+						<div class="mypage-head">
+							<h1 class="my-out-title">탈퇴하기</h1>
+						</div>
+							<form action="" name="" id="" class="form-wrap">
+								<div class="out-step-form">
+									<div class="out-step-title">곰랩 회원 탈퇴 사유를 선택해 주세요.</div>
+									<div class="out-step-agree-form">
+										<ul class="agree-form">
+											<!-- [D] 231208_수정 : radio로 변경 -->
+											<li><label for="out-agree1"><input type="radio" id="out-agree1" name="out-aree">서비스에 만족하지 않아 더 이상 사용하지 않습니다.</label></li>
+											<li><label for="out-agree2"><input type="radio" id="out-agree2" name="out-aree">상품의 다양성/가격 품질 불만</label></li>
+											<li><label for="out-agree3"><input type="radio" id="out-agree3" name="out-aree">기타사유(직접입력)</label></li>
+											<!-- //[D] 231208_수정 : radio로 변경 -->
+										</ul>
+										<div class="form-item">
+											<div class="form-cont">
+												<textarea name="" id="" cols="30" rows="10" placeholder="기타 사유를 입력해주세요."></textarea>
+											</div>
+										</div>
+									</div>
+
+									<div class="out-step-title">회원님, 현재 곰랩에서 이용 중인<br class="only-mo">제품 및 서비스가 있습니다.</div>
+									<ul class="board-common out-step-check-list">
+										<li>
+											<div class="board-common-top">
+												<span class="board-common-name">AI Voice</span>
+											</div>
+											<div class="board-common-mid">
+												<span class="badge-b-nomal">구독종료</span>
+												<span class="board-common-info">30일 자동결제</span>
+											</div>
+											<p class="board-common-date">YYYY-MM-DD ~ YYYY-MM-DD</p>
+										</li>
+										<li>
+											<div class="board-common-top">
+												<span class="board-common-name">곰랩 멤버쉽</span>
+											</div>
+											<div class="board-common-mid">
+												<span class="badge-b-nomal">구독종료</span>
+												<span class="board-common-info">월 자동결제</span>
+											</div>
+											<p class="board-common-date">YYYY-MM-DD ~ YYYY-MM-DD</p>
+										</li>
+										<li>
+											<div class="board-common-top">
+												<span class="board-common-name">곰믹스 맥스</span>
+											</div>
+											<div class="board-common-mid">
+												<span class="board-common-info">영구 이용권</span>
+											</div>
+											<p class="board-common-date">YYYY-MM-DD ~</p>
+										</li>
+									</ul>
+									<div class="agree-form">
+										<span>탈퇴하시면 위 서비스를 이용 할 수 없습니다. 동의하십니까?</span>
+										<label for="out-agree4"><input type="checkbox" id="out-agree4">네, 동의합니다.</label>
+									</div>
+
+									<div class="out-step-title">곰랩 계정과 연동되는 다음과 같은<br class="only-mo">서비스 이용에 제한이 있을 수 있습니다.​</div>
+									<ul class="board-common out-step-check-list">
+										<li>
+											<div class="board-common-top">
+												<span class="board-common-name">곰랩</span>
+											</div>
+											<div class="board-common-mid">
+												<span class="">
+													곰랩 계정 로그인 및 서비스 이용 불가<br>
+													결제내역, 제품 및 라이선스, 1:1문의, 자료실 이용 내역 등 곰랩에서 이용한 모든 내역의 삭제<br>
+													​(단, 관계법령에서 정한 일정한 기간동안 사용자 정보를<br>보관합니다.)​
+												</span>
+											</div>
+										</li>
+										<li>
+											<div class="board-common-top">
+												<span class="board-common-name">곰 소프트웨어</span>
+											</div>
+											<div class="board-common-mid">
+												<span class="">
+													곰랩 계정으로 제품 로그인 또는 정품 등록 불가​<br>
+													곰플레이어, 곰오디오 등 곰 소프트웨어에서 로그인하여<br>
+													이용가능한 서비스 이용 불가<br>
+													​탈퇴 시, 곰플레이어와 곰플레이어플러스를 제외한 모든 제품의 이용이 불가합니다.​
+												</span>
+											</div>
+										</li>
+										<li>
+											<div class="board-common-top">
+												<span class="board-common-name">곰믹스 마켓</span>
+											</div>
+											<div class="board-common-mid">
+												<span class="">
+													곰랩 계정으로 로그인 및 서비스 이용불가​
+												</span>
+											</div>
+										</li>
+									</ul>
+									<div class="agree-form">
+										<span>탈퇴하시면 위 서비스를 이용 할 수 없습니다. 동의하십니까?</span>
+										<label for="out-agree5"><input type="checkbox" id="out-agree5">네, 동의합니다.</label>
+									</div>
+
+									<div class="btn-wrap wrap-right">
+										<button type="submit" class="btn-md btn-default disabled">탈퇴하기</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+			</section>
+		</div>
+		<!-- //contents -->
+
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script src="/dev/ui/js/libs/swiper.min.js"></script>
+	<script>
+
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+</body>
+</html>

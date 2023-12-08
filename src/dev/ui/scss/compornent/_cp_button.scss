@@ -1,0 +1,282 @@
+.btn-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px;
+	&.wrap-right {
+		justify-content: flex-end;
+	}
+}
+.btn-arrow-wrap {
+	gap: 4px;
+	margin-top: 48px;
+	button {
+		&::after {
+			content: '';
+			width: 20px;
+			height: 20px;
+			background-image: icon(down, ffffff);
+		}
+	}
+}
+.btn-base {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	font-weight: 700;
+	transition: background-color .3s ease;
+	white-space: nowrap;
+	cursor: pointer
+}
+.btn-icon-base {
+	display: inline-block;
+	vertical-align: center;
+	padding-left: 24px;
+	background: left center no-repeat;
+	background-size: 16px auto;
+	@include txt(14);
+	color: $color-gray-01;
+	& + [class^=btn-] {
+		margin-left: 24px;
+	}
+}
+.btn-share-base {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	text-indent: -9999px;
+	overflow: hidden;
+	& + & {
+		margin-left: 16px;
+	}
+}
+.btn-lg {
+	@extend .btn-base;
+	height: $button-size-lg;
+	border-radius: 51px;
+	padding: 0 60px;
+	@include txt(16);
+}
+.btn-md {
+	@extend .btn-base;
+	height: $button-size-md;
+	border-radius: 51px;
+	padding: 0 40px;
+	@include txt(14);
+}
+.btn-sm {
+	@extend .btn-base;
+	height: $button-size-sm;
+	border-radius: 51px;
+	padding: 0 24px;
+	@include txt(12);
+}
+
+/*btn-color type*/
+.btn-default {
+	background-color: $color-black;
+	color: $color-white;
+	&:hover {
+		background-color: $color-gray-01;
+	}
+	&.disabled {
+		background-color: $color-gray-04;
+		color: $color-gray-11;
+	}
+}
+.btn-ghost {
+	border: 1px solid $color-black-1;
+	&:hover {
+		border-color: $color-gray-01;
+		background-color: rgba($color-gray-11,0.2);
+	}
+	&:disabled ,
+	&.disabled {
+		background-color: transparent;
+		border-color: $color-gray-04;
+		color: $color-gray-04;
+	}
+}
+.btn-default-w {
+	background-color: $color-white;
+	color: $color-black;
+	&:hover {
+		background-color: $color-gray-20;
+	}
+	&:disabled ,
+	&.disabled {
+		background-color: $color-gray-04;
+		color: $color-gray-11;
+	}
+}
+.btn-ghost-w {
+	border: 1px solid $color-white;
+	color: $color-white;
+	&:hover {
+		background-color: rgba($color-white,0.2);
+	}
+	&:disabled ,
+	&.disabled {
+		background-color: transparent;
+		border-color: $color-gray-04;
+		color: $color-gray-04;
+	}
+}
+.btn-gradient {
+	background: linear-gradient(90deg, $color-blue-9 0%, $color-purple-5 100%);
+	color: $color-white;
+}
+
+/*btn icon*/
+.btn-search {
+	display: block;
+	width: 22px;
+	height: 22px;
+	background: no-repeat center icon(search);
+	background-size: 16px auto;
+	cursor: pointer;
+}
+.btn-password-view {
+	display: block;
+	width: 12px;
+	height: 12px;
+	background: no-repeat center url(#{$img-url}/layout/icon_invisible.png);
+	background-size: contain;
+	cursor: pointer;
+}
+input[type=password] {
+	+ .btn-password-view {
+		background-image: url(#{$img-url}/layout/icon_invisible.png);
+	}
+}
+input[type=text] {
+	+ .btn-password-view {
+		background-image: url(#{$img-url}/layout/icon_common_notice_gry.svg);
+	}
+}
+.btn-sideform {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15px;
+	background-color: $color-gray-12;
+	@include txt(10);
+	font-weight: 700;
+	width: 83px;
+	height: 30px;
+	margin-left: 13px;
+	cursor: pointer;
+	&.cart {
+		padding: 0;
+		margin: 0;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url(#{$img-url}/component/icon_cart.png);
+		background-size: contain;
+		width: 58px;
+		height: 30px;
+	}
+}
+.btn-fileupload {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 0;
+	bottom: 6px;
+	height: 27px;
+	padding: 0 23px;
+	@include txt(12);
+	background-color: $color-gray-14;
+	border-radius: 7px 5px 5px 5px;
+	cursor: pointer;
+}
+.btn-modify-icon{
+	@extend .btn-icon-base;
+	background-image: icon(post-write);
+} 
+.btn-delete-icon {
+	@extend .btn-icon-base;
+	background-image: icon(delete);
+} 
+.btn-search-icon{
+	@extend .btn-icon-base;
+	background-image: icon(search);
+} 
+.btn-reset-icon {
+	@extend .btn-icon-base;
+	background-image: icon(reset);
+} 
+/* item-util (추가, 삭제 버튼) */
+.btn-item-util {
+	width: 30px;
+	height: 30px;
+	border-radius: 5px;
+	background: center center no-repeat;
+	background-color: $color-black;
+	background-size: contain;
+	font-size: 0;
+	text-indent: -9999px;
+	cursor: pointer;
+	&.btn-add {
+		background-image: url(#{$img-url}/component/icon_add.svg);
+	}
+	&.btn-delete {
+		background-image: url(#{$img-url}/component/icon_remove.svg);
+	}
+	&.disabled {
+		background-color: $color-gray-11;
+		cursor: none;
+	}
+}
+/* 공유버튼 */
+.ico-share-kakao {
+	@extend .btn-share-base;
+	background-image: url(#{$img-url}/layout/ico_blog_kakao.svg);
+}
+.ico-share-facebook {
+	@extend .btn-share-base;
+	background-image: url(#{$img-url}/layout/ico_blog_facebook.svg);
+}
+.ico-share-twitter {
+	@extend .btn-share-base;
+	background-image: url(#{$img-url}/layout/ico_blog_twitter.svg);
+}
+.ico-share-insta {
+	@extend .btn-share-base;
+	background-image: url(#{$img-url}/layout/ico_blog_instagram.svg);
+}
+.ico-share-link {
+	@extend .btn-share-base;
+	background-image: url(#{$img-url}/layout/ico_blog_copylinks.svg);
+}
+.swiper-button-next, .swiper-button-prev {
+	z-index: 4;
+}
+@include mobile {
+	.btn-lg {
+		@include txt(14);
+	}
+	.btn-md {
+		@include txt(12);
+	}
+	.btn-icon-base {
+		font-size: 0;
+		text-indent: -9999px;
+		& + [class^=btn-] {
+			margin-left: 0;
+		}
+	}
+	.btn-search-icon{
+		@include txt(14);
+		text-indent: unset;
+	} 
+	.btn-reset-icon {
+		@include txt(14);
+		text-indent: unset;
+	} 
+}

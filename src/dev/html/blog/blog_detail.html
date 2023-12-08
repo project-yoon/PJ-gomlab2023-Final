@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="블로그 상세" menucss="/dev/ui/css/blog.css"></include>
+<body class="blog">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel">
+					<div class="inner">
+						<div class="det-head">
+							<!-- 231129_수정_01 : h 교체 -->
+							<h1 class="hidden_cont">블로그</h1>
+							<h2 class="tbl-board-title">곰믹스 맥스로 영상 내보내기! (쇼츠, 릴스 영상 저장까지)</h2>
+							<!-- // 231129_수정_01 -->
+							<p class="date">2023-10-31</p>
+							<!-- [D] 231208_수정 : onclick 추가 -->
+							<div class="det-share-wrap">
+								<a href="#!" class="ico-share-kakao" onclick="sendSNS('kakao'); return false;" title="카카오 공유하기">카카오 공유하기</a>
+								<a href="#!" class="ico-share-facebook" onclick="sendSNS('facebook'); return false;" title="페이스북 공유하기">페이스북 공유하기</a>
+								<a href="#!" class="ico-share-twitter" onclick="sendSNS('twitter'); return false;" title="트위터 공유하기">트위터 공유하기</a>
+								<a href="#!" class="ico-share-insta" onclick="sendSNS('instagram'); return false;" title="인스타그램 공유하기">인스타그램 공유하기</a>
+								<a href="#href-copy-link" class="ico-share-link" onclick="sendSNS('copy', this); return false;">링크 공유하기</a>
+							</div>
+							<!-- // [D] 231208_수정 : onclick 추가 -->
+						</div>
+						<div class="det-content">
+							동영상을 직접 편집해 유튜버, 인플루언서가 되고 싶다면? 영상편집 전문가가 되기 위한 영상편집 프로그램 TOP10을 소개합니다.<br> 
+							위드코로나 시대에 따라 재택근무와 함께 온라인 화상 회의가 일상화되어가고 있습니다. <br>
+							온라인 회의를 잘 활용하기 위해 회의 녹화 소프트웨어를 추천해 드립니다.<br>
+							&nbsp;<br>
+							<!-- 231130_수정_01 : 더미 이미지 주소로 변경 -->
+							<img src="http://placehold.it/876x320" alt="썸네일2:1예시"><br>
+							<!-- // 231130_수정_01 -->
+							&nbsp;<br>
+							[체험하기] 클릭 시 유상 폰트를 적용할 수 있으나, 내보내기 시 유상 폰트는 제외하고 내보내기 됩니다. <br> 
+							유상 폰트를 포함해 영상을 내보내고 싶다면 정품 구매 페이지에서 구매를 진행해주세요.<br>  
+							&nbsp;<br>
+							구독 취소자의 경우 유상 폰트가 적용된 기존 프로젝트에서 내보내기 시 비회원과 동일하게 유상 폰트를 제외하고 내보내기 됩니다.
+
+							<!-- [D] 231208_수정 -->
+							<div class="hash-tags">
+								<a href="#!" class="hash-tag">
+									<span>해시태그</span>
+								</a>
+								<a href="#!" class="hash-tag">
+									<span>해시태그</span>
+								</a>
+								<a href="#!" class="hash-tag">
+									<span>해시태그</span>
+								</a>
+								<a href="#!" class="hash-tag">
+									<span>해시태그</span>
+								</a>
+								<a href="#!" class="hash-tag">
+									<span>해시태그</span>
+								</a>
+							</div>
+							<!-- // [D] 231208_수정 -->
+						</div>
+						<div class="det-move">
+							<ul class="move-wrap">
+								<li class="prev disabled"><a href="#">이전</a></li>
+								<li class="next"><a href="#">다음</a></li>
+							</ul>
+							<div class="list-return">
+								<a href="#" class="btn-md btn-ghost">목록</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<script>
+		/* sns 공유 팝업 */ /* 231208_수정 : 스크립트 추가 */
+		function sendSNS(sns, el) {
+			let thisUrl = document.URL;
+			let snsTitle = document.querySelector('.tbl-board-title').textContent;
+
+			if (sns === 'kakao') {
+				alert("준비중 입니다.");
+			} else if (sns === 'facebook') {
+				let url = "//www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(thisUrl) + "&text=" + encodeURIComponent(snsTitle);
+				window.open(url, '', 'width=500, height=500, scrollbars=yes', '_blank');
+			} else if (sns === 'twitter') {
+				let url = "//twitter.com/share?url=" + encodeURIComponent(thisUrl) + "&text=" + encodeURIComponent(snsTitle);
+				window.open(url, '', 'width=500, height=500, scrollbars=yes');
+			} else if (sns === 'instagram') {
+				alert("준비중 입니다.");
+			} else if (sns === 'copy') {
+				let href = el.getAttribute('href')
+				copyTextToClipboard(href)
+			}
+		}
+
+		function copyTextToClipboard(code) {
+            let textArea = document.createElement("textarea");
+            textArea.value = code;
+            document.body.appendChild(textArea);
+            textArea.select();
+
+            try {
+                var successful = document.execCommand("copy");
+                var message = successful ? "링크가 복사되었습니다." : "Copy failed";
+				alert(message)
+            } catch (err) {
+				alert(err)
+            }
+            document.body.removeChild(textArea);
+        }
+	</script>
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

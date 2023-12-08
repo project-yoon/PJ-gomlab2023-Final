@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="결제 내역 : 마이페이지" menucss="/dev/ui/css/mypage.css"></include>
+<body class="mypage">
+	<!-- 헤더 -->
+	<include src="../include/header_tit.html" titlename="마이페이지"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<!-- contents -->
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel">
+					<!-- snb -->
+					<div class="snb-wrap snb-fix">
+						<div class="snb-inner">
+							<h1 class="snb-title only-pc">마이페이지</h1>
+							<div class="my-info only-pc">
+								<span class="name">고연정</span>
+								<span class="email">yeonjung@gomcorp.com</span>
+							</div>
+							<nav class="snb-menu" data-menu="scroll">
+								<ul>
+									<li><a href="#">내 계정</a></li>
+									<li><a href="#">제품 및 라이선스</a></li>
+									<li><a href="#" class="active">결제 내역</a></li>
+									<li><a href="#">내 쿠폰함</a></li>
+									<li><a href="#">내 문의 내역</a></li>
+									<li><a href="#">내 자막 업로드 내역</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- //snb -->
+					<div class="inner mypage-detail">
+						<div class="cmn-content-head">
+							<h2>결제 내역</h2>
+						</div>
+						<ul class="doard-acco-list payment-list" data-accordion="container">
+							<li>
+								<a href="#" class="acco-head" data-accordion="tab">
+									<div class="list-info">
+										<p class="title"><span class="badge-b-nomal">결제완료</span>구매 항목명1</p>
+										<dl class="label-det">
+											<dt>결제일</dt>
+											<dd>YYYY-MM-DD</dd>
+										</dl>
+										<dl class="label-det">
+											<dt>결제번호</dt>
+											<dd>000000</dd>
+										</dl>
+										<dl class="label-det">
+											<dt>결제금액</dt>
+											<dd>00,000원</dd>
+										</dl>
+									</div>
+								</a>
+								<div class="acco-content" data-accordion="panel">
+									<div class="pay-summary-wrap">
+										<div class="pay-summary">
+											<span class="label">상품명</span>
+											<div class="pay-info">
+												<p><strong>곰믹스 맥스 1년 이용권</strong></p>
+												<p>00,000원</p>
+												<p>다음 결제일 2023-10-23</p>
+											</div>
+										</div>
+										<div class="pay-summary">
+											<span class="label">추가 상품</span>
+											<div class="pay-info">
+												<p><strong>곰 멤버쉽 (3회차)</strong></p>
+												<p>00,000원</p>
+											</div>
+										</div>
+										<div class="pay-summary">
+											<span class="label">할인 금액</span>
+											<div class="pay-info">
+												<p><strong>상시 할인</strong></p>
+												<p>- 00,000원</p>
+											</div>
+										</div>
+										<div class="pay-summary">
+											<span class="label">할인 쿠폰</span>
+											<div class="pay-info">
+												<p><strong>쿠폰적용없음</strong></p>
+												<p>- 00,000원</p>
+											</div>
+										</div>
+									</div>
+									<div class="pay-summary-wrap">
+										<div class="pay-summary">
+											<span class="label">최종 결제 금액</span>
+											<div class="pay-info">
+												<p><strong>00,000원</strong></p>
+											</div>
+										</div>
+										<div class="pay-summary">
+											<span class="label">결제 수단</span>
+											<div class="pay-info">
+												<p><strong>신용카드</strong></p>
+											</div>
+										</div>
+										<div class="pay-summary">
+											<span class="label">결제 취소 금액</span>
+											<div class="pay-info">
+												<p><a href="#" class="cancel">무료취소</a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="#" class="acco-head" data-accordion="tab">
+									<div class="list-info">
+										<p class="title"><span class="badge-b-nomal disabled">결제취소</span>구매 항목명2</p>
+										<dl class="label-det">
+											<dt>결제일</dt>
+											<dd>YYYY-MM-DD</dd>
+										</dl>
+										<dl class="label-det">
+											<dt>결제번호</dt>
+											<dd>000000</dd>
+										</dl>
+										<dl class="label-det">
+											<dt>결제취소금액</dt>
+											<dd>00,000원</dd>
+										</dl>
+									</div>
+								</a>
+								<div class="acco-content" data-accordion="panel">
+									<div class="pay-summary-wrap">
+										<div class="pay-summary">
+											<span class="label">상품명</span>
+											<div class="pay-info">
+												<p><strong>곰믹스 맥스 1년 이용권</strong></p>
+												<p>00,000원</p>
+												<p>다음 결제일 2023-10-23</p>
+											</div>
+										</div>
+										<div class="pay-summary">
+											<span class="label">추가 상품</span>
+											<div class="pay-info">
+												<p><strong>곰 멤버쉽 (3회차)</strong></p>
+												<p>00,000원</p>
+											</div>
+										</div>
+										<div class="pay-summary">
+											<span class="label">할인 금액</span>
+											<div class="pay-info">
+												<p><strong>상시 할인</strong></p>
+												<p>- 00,000원</p>
+											</div>
+										</div>
+										<div class="pay-summary">
+											<span class="label">할인 쿠폰</span>
+											<div class="pay-info">
+												<p><strong>쿠폰적용없음</strong></p>
+												<p>- 00,000원</p>
+											</div>
+										</div>
+									</div>
+									<div class="pay-summary-wrap">
+										<div class="pay-summary">
+											<span class="label">최종 결제 금액</span>
+											<div class="pay-info">
+												<p><strong>00,000원</strong></p>
+											</div>
+										</div>
+										<div class="pay-summary">
+											<span class="label">결제 수단</span>
+											<div class="pay-info">
+												<p><strong>신용카드</strong></p>
+											</div>
+										</div>
+										<div class="pay-summary">
+											<span class="label">결제 취소 금액</span>
+											<div class="pay-info">
+												<p><a href="#" class="cancel">무료취소</a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="#" class="acco-head" data-accordion="tab">
+									<div class="list-info">
+										<p class="title"><span class="badge-b-tertiary">결제대기</span>구매 항목명3</p>
+										<dl class="label-det">
+											<dt>결제일</dt>
+											<dd>YYYY-MM-DD</dd>
+										</dl>
+										<dl class="label-det">
+											<dt>결제번호</dt>
+											<dd>000000</dd>
+										</dl>
+										<dl class="label-det">
+											<dt>결제취소금액</dt>
+											<dd>00,000원</dd>
+										</dl>
+									</div>
+								</a>
+								<div class="acco-content" data-accordion="panel">
+									<div class="pay-summary-wrap">
+										<div class="pay-summary">
+											<span class="label">상품명</span>
+											<div class="pay-info">
+												<p><strong>곰믹스 맥스 1년 이용권</strong></p>
+												<p>00,000원</p>
+											</div>
+										</div>
+										<div class="pay-summary">
+											<span class="label">추가 상품</span>
+											<div class="pay-info">
+												<p><strong>곰 멤버쉽 (3회차)</strong></p>
+												<p>00,000원</p>
+											</div>
+										</div>
+										<div class="pay-summary">
+											<span class="label">할인 금액</span>
+											<div class="pay-info">
+												<p><strong>상시 할인</strong></p>
+												<p>- 00,000원</p>
+											</div>
+										</div>
+										<div class="pay-summary">
+											<span class="label">할인 쿠폰</span>
+											<div class="pay-info">
+												<p><strong>쿠폰적용없음</strong></p>
+												<p>- 00,000원</p>
+											</div>
+										</div>
+									</div>
+									<div class="pay-summary-wrap">
+										<div class="pay-summary">
+											<span class="label">최종 결제 금액</span>
+											<div class="pay-info">
+												<p><strong>00,000원</strong></p>
+											</div>
+										</div>
+									</div>
+									<div class="btn-wrap wrap-right">
+										<a href="#" class="btn-sm btn-ghost">견적서 보기</a>
+										<a href="#" class="btn-sm btn-default">결제하기</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<!-- [D] 모바일에서 리스트 페이징 최대 5개까지 노출 -->
+						<div class="board-page-navi">
+							<a href="#" class="btn prev">prev</a>
+							<a href="#" class="num active">1</a>
+							<a href="#" class="num">2</a>
+							<a href="#" class="num">3</a>
+							<a href="#" class="num">4</a>
+							<a href="#" class="num">5</a>
+							<a href="#" class="num">6</a>
+							<a href="#" class="num">7</a>
+							<a href="#" class="num">8</a>
+							<a href="#" class="num">9</a>
+							<a href="#" class="num">10</a>
+							<a href="#" class="btn next">next</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- //contents -->
+
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script src="/dev/ui/js/libs/swiper.min.js"></script>
+	<script>
+
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+</body>
+</html>

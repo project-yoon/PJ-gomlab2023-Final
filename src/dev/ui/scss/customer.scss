@@ -1,0 +1,1162 @@
+@charset "utf-8";
+@import "./utilities/variables";
+@import "./utilities/mixins";
+
+.customer {
+	#container {
+		.panel {
+			position: relative;
+			& + .panel {
+				margin-top: 64px;
+			}
+		}
+	}
+	.ad_banner, .ad_banner02 {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	/*임시 헤드라인 (추후 공통화시 재반영 예정)*/
+	#contents-head {
+		height: 200px;
+		box-sizing: border-box;
+		padding-top: 80px;
+		// margin-bottom: 40px;
+		h1 {
+			margin-top: 0;
+			@include txt(24);
+		}
+		.sub-tit {
+			margin-top: 10px;
+		}
+		&.page-head {
+			margin-bottom: 40px;
+			height: unset;
+			h1 {
+				@include txt(20);
+			}
+		}
+	}
+	/*임시 헤드라인 (추후 공통화시 재반영 예정)*/
+	/*tab-index*/
+	.tab-button {
+		padding: 16px 0;
+		margin-top: 40px;
+		& + .tbl-board-wrap {
+			margin-top: 40px;
+		}
+	}
+	.tab-bar {
+		margin-top: 18px;
+		li {
+			a {
+				height: 41px;
+			}
+		}
+		& + .search-head {
+			margin-top: 16px;
+		}
+	}
+	.cmn-content-head {
+		&.search-head {
+			margin-top: 40px;
+			position: relative;
+			.search-result {
+				font-weight: 700;
+			}
+			.noti-check {
+				padding-left: 5px;
+				margin-top: 25px;
+				position: relative;
+				@include txt(14);
+				a {
+					font-weight: 700;
+					text-decoration: underline;
+				}
+				&::before {
+					content: '';
+					width: 1px;
+					height: 1px;
+					background-color: $color-black;
+					@include posLeft;
+				}
+			}
+			.sort-list-right {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				align-items: center;
+
+				.form-cont {
+					.form-drop-box {
+						width: 104px;
+					}
+				}
+				.btn-drop-line {
+					height: 32px;
+				}
+				.btn-sm {
+					margin-left: 16px;
+				}
+			}
+		}
+		&.select-head {
+			display: flex;
+			align-items: center;
+			.select-wrap {
+				margin-left: auto;
+				display: flex;
+
+				.form-cont {
+					.form-drop-box {
+						width: 138px;
+					}
+					& + .form-cont {
+						margin-left: 16px;
+					}
+				}
+			}
+		}
+		.required-guide {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			@include txt(11)
+		}
+	}
+	.cmn-content-detail {
+		.form-cont + .multi-lst {
+			margin-top: 16px;
+		}
+		&.multi {
+			.cmn-col {
+				position: relative;
+				.btn-ghost {
+					@include posRight;
+				}
+			}
+		}
+		.license-form {
+			margin-top: 24px;
+			.form-item {
+				padding-left: 132px;
+			}
+		}
+		.license-guide {
+			padding-left: 132px;
+			margin-top: 10px;
+			@include txt(10)
+		}
+		.license-info {
+			dl {
+				padding-left: 132px;
+				dt {
+					width: 120px;
+				}
+			}
+		}
+	}
+	.move-to-qna {
+		margin-top: 80px;
+		padding: 20px;
+		background-color: #F8F8F8;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 40px;
+		p {
+			@include txt(14);
+		}
+	}
+	/*제품 사용 가이드*/
+	.product-guide-index {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		margin-top: 60px;
+		li {
+			width: 200px;
+			a {
+				display: block;
+				padding: 26px 20px;
+				height: 178px;
+				box-sizing: border-box;
+				border-radius: 10px;
+				text-align: center;
+				@include txt(14);
+				font-weight: 700;
+				.img-wrap {
+					display: block;
+					margin: 0 auto;
+					overflow: hidden;
+					width: 80px;
+					height: 90px;
+					margin-bottom: 16px;
+					img {
+						@include image-fit($fit: contain);
+					}
+				}
+				&:hover {
+					background-color: #F8F8F8;
+				}
+			}
+		}
+	}
+	/*사용가이드 상세*/
+	&.pd-guide-detail {
+		.cmn-content-detail {
+			padding:40px 0;
+		}
+		#container {
+			.panel {
+				&:has(.snb-wrap) {
+					grid-template-columns: 240px 1fr;
+					.inner {
+						padding-left:76px;
+					}
+				}
+				&[class*='w1280'] {
+					padding:0;
+				}
+			}
+		}
+	}
+	.post-wrap {
+		h2, h3, h4, h5, h6 {
+			margin-top: 80px;
+			&:first-child {
+				margin-top: 0;
+			}
+			+ p {
+				margin-top:30px;
+			}
+		}
+		h2 {
+			@include txt(40);
+			/* gomlab측 */
+			+ h3 {
+				margin-top:40px;
+			}
+			/* // gomlab측 */
+		}
+		h3 {
+			@include txt(36);
+			&.first {
+				margin-top:0;
+			}
+			/* gomlab측 */
+			+ h4 {
+				margin-top:20px;
+			}
+			/* // gomlab측 */
+		}
+		h4 {
+			@include txt(26);
+		}
+		h5, h6 {
+			@include txt(20);
+		}
+		p {
+			margin-top: 16px;
+			@include txt(16);
+			// color: $color-gray-14;
+			color: $color-gray-01;
+		}
+		ul.dot {
+			margin-top: 16px;
+			// li {
+			// 	list-style-type: disc;
+			// 	list-style-position: inside;
+			// }
+			li {
+				position: relative;
+				padding-left: 16px;
+				&::before {
+					content: '';
+					display: inline-block;
+					position: absolute;
+					left: 0; top: 10px;
+					width: 4px;
+					height: 4px;
+					border-radius: 50%;
+					// background: $color-gray-14;
+					background: $color-gray-01;
+				}
+				& + li {
+					margin-top: 12px;
+				}
+				.img-area, /* gomlab측 */
+				.edit-table-wrap {
+					margin-left:-16px;
+				}
+			}
+		}
+		.bullet_list {
+			margin-top:16px;
+			/* gomlab측 */
+			> li {
+				+ li {
+					margin-top:16px;
+				}
+				.edit-table-wrap {
+					// margin-left:-16px;
+					margin-left:-10px;
+				}
+				> dl {
+					margin-top:12px
+				}
+				.img-area {
+					margin-top:8px;
+					margin-left:-10px;
+				}
+			}
+			&.num_type01 {
+				.edit-table-wrap,
+				.img-area {
+					margin-left:-24px;
+				}
+			}
+			/* // gomlab측 */
+		}
+		.img-area {
+			margin-top: 24px;
+			img {
+				max-width: 100%;
+			}
+			video {
+				max-width:100%;
+			}
+			& + h2,
+			& + h3,
+			& + h4,
+			& + h5,
+			& + h6 {
+				margin-top:80px
+			}
+
+			& + * {
+				margin-top: 24px;
+			}
+		}
+		.edit-table-wrap {
+			overflow-x: scroll;
+			&::-webkit-scrollbar {
+				height: 8px;
+			}
+			&::-webkit-scrollbar-thumb {
+				background-color: rgba(161, 161, 161, 0.4);
+				border-radius: 3px;
+			}
+			+ p {
+				margin-top:0;
+			}
+		}
+		table {
+			min-width: 876px;
+			border-top: 1px solid #E5E5E5;
+			margin: 16px 0;
+			@include txt(16);
+			line-height: 28px;
+			thead {
+				&.thead-hidden {
+					position: absolute;
+					width:0;
+					height: 0;
+					overflow: hidden;
+				}
+				/* lab측 */
+				th {
+					padding: 30px 24px;
+					background: $color-gray-21;
+					color: $color-black-2;
+					border-bottom: 1px solid #E5E5E5;
+					&:last-child {
+						border-right:0;
+					}
+				}
+				+ tbody {
+					th {
+						background:transparent;
+					}
+				}
+				/* // lab측 */
+			}
+			tbody {
+				th, td {
+					padding: 30px 24px;
+					text-align: left;
+					vertical-align: top;
+					border-bottom: 1px solid #E5E5E5;
+					/* gomlab측 */
+					&.al-mid {
+						vertical-align: middle;
+					}
+					/* // gomlab측 */
+				}
+				th {
+					// background: $color-gray-15;
+					background: $color-gray-21;
+					color: $color-black-2;
+					font-weight: 400;
+					letter-spacing: -0.48px;
+				}
+				td {
+					// color: $color-gray-14;
+					color: $color-black-2;
+					/* gomlab 측 */
+					.dot,
+					.bullet_list {
+						margin-top:0;
+					}
+					p {
+						margin-top:0;
+						& + p {
+							margin-top:16px;
+						}
+						& + .dot,
+						.bullet_list {
+							margin-top:16px;
+						}
+					}
+				}
+			}
+		}
+		.img-txt-area {
+			display:flex;
+			margin-top:24px;
+			justify-content:space-between;
+			align-items:center;
+			&.align-top {
+				align-items:flex-start;
+			}
+			.img-area {
+				display:flex;
+				margin:0;
+				img {
+					+ img {
+						margin-left:30px;
+					}
+				}
+			}
+			.txt-area {
+				flex:1;
+				margin:0 0 0 30px;
+				p {
+					margin-top:0;
+					+ p {
+						margin-top:16px;
+					}
+				}
+			}
+		}
+		.dl-group {
+			display:flex;
+			margin-top:24px;
+			dl {
+				width:100%;
+				dt {
+					padding:10px 0;
+					background:$color-gray-21;
+					font-weight:700;
+					text-align:center;
+				}
+				dd {
+					img {
+						display:block;
+						width:212px;
+						margin:16px auto 0 auto;
+					}
+				}
+				+ dl {
+					margin-left:2%;
+				}
+			}
+		}
+		.img-txt-groups {
+			display:flex;
+			margin-top:24px;
+			> .cell {
+				width:100%;
+				padding:0;
+				& + .cell {
+					margin-left:2%
+				}
+				.img-area {
+					margin-top:0;
+				}
+				.txt-area {
+
+				}
+			}
+			/* // gomlab 측 */
+		}
+	}
+	/* 1:1 문의 */
+	.inquiry-guide {
+		@include txt(14);
+		margin: 40px 0 62px;
+	}
+	.form-privacy {
+		margin-top: 40px;
+		.privacy-tit {
+			font-weight: 700;
+			@include txt(14);
+		}
+		.dot-list {
+			@include txt(12);
+			margin-top: 12px;
+		}
+		& > .form-cont {
+			margin-top: 12px;
+		}
+	}
+	/*자막 자료실 */
+	.regist-tit {
+		@include txt(20);
+		margin-top: 40px;
+		font-weight: 700;
+	}
+	.regist-guide {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		@include txt(12);
+	}
+	/* 자막등록 */
+	.form-agree {
+		margin-top: 24px;
+		.dot-list {
+			@include txt(12);
+			line-height: 18px;
+		}
+		.form-cont {
+			margin-top: 24px;
+			strong {
+				text-decoration: underline;
+				color: $color-blue-1;
+			}
+		}
+	}
+	/* 코덱 자료실 */
+	.notice-wrap {
+		margin-top: 40px;
+	}
+	.notice-tit {
+		font-weight: 700;
+		@include txt(12);
+	}
+	.search-qna-txt {
+		font-weight: 700;
+		@include txt(16);
+		text-align: center;
+		& + .form-cont {
+			margin-top: 40px;
+		}
+	}
+	/* 비회원 메뉴 */
+	.no-customer-tit {
+		position: relative;
+		margin: 40px 0;
+		h2 {
+			@include txt(16);
+			font-weight: 700;
+		}
+		.exp {
+			@include txt(14);
+			margin-top: 10px;
+		}
+		.exp-lg {
+			margin-top: 16px;
+			@include txt(14);
+		}
+		.btn-ghost {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+	.link-mypage {
+		text-decoration: underline;
+		color: $color-blue-1;
+	}
+	.btn-wrap {
+		margin-top: 40px;
+
+		&.w-integration {
+			.btn-md {
+				min-width: 218px;
+			}
+		}
+
+		&.regist-wrap {
+			margin: 40px 0;
+			.btn-md {
+				width: auto;
+			}
+		}
+	}
+	/*라이선스 정보 리스트*/
+	.license-check {
+		margin-top: 40px;
+	}
+	.board-noti {
+		margin-top: 20px;
+		@include txt(11);
+	}
+	.no-customer-content {
+		margin-top: 64px;
+		h3 {
+			margin-bottom: 40px;
+			text-align: center;
+			@include txt(20);
+		}
+		.benefit-list {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 32px;
+			li {
+				width: 327px;
+				text-align: center;
+				.img-wrap {
+					display: block;
+					width: 100px;
+					height: 100px;
+					overflow: hidden;
+					margin: 0 auto 24px;
+					img {
+						@include image-fit($fit: cover);
+					}
+				}
+				.benefit-tit {
+					@include txt(16);
+				}
+				.benefit-info {
+					margin-top: 12px;
+					@include txt(14);
+				}
+			}
+		}
+		.step-wrap {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 40px;
+			margin-bottom: 64px;
+			.step-image-slide {
+				position: relative;
+				width: 532px;
+				height: 339px;
+				border-radius: 10px;
+				overflow: hidden;
+				.swiper-slide {
+					border-radius: 10px;
+					img {
+						@include image-fit($fit: cover);
+					}
+				}
+				.step-swiper-button-prev,
+				.step-swiper-button-next {
+					width: 24px;
+					height: 24px;
+					background-size: contain;
+				}
+				.step-swiper-button-prev {
+					background-image: icon(prev-lg, 484848);
+				}
+				.step-swiper-button-next {
+					background-image: icon(next-lg, 484848)
+				}
+			}
+			.step-list {
+				li {
+					@include txt(16);
+					p {
+						margin-top: 8px;
+					}
+					& + li {
+						margin-top: 24px;
+					}
+				}
+			}
+		}
+		&.benefits {
+			background: $color-gray-15;
+			padding: 60px 0 86px;
+		}
+	}
+	/*계정연동시 주의사항*/
+	.linking-accounts {
+		.account-tit {
+			font-weight: 700;
+		}
+		.dot-list {
+			margin-top: 12px;
+			@include txt(14);
+		}
+	}
+	.link-email {
+		text-decoration: underline;
+		color: $color-blue-1;
+	}
+	.searh-form-wrap {
+		.search-txt {
+			text-align: center;
+			margin-bottom: 24px;
+		}
+	}
+	/* 운영정책_이용약관 */
+	.terms-head {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 40px;
+		.form-drop-box {
+			width: 327px;
+		}
+	}
+	.terms_of_use_list {
+		@include txt(14);
+		line-height: 22px;
+		h3 {
+			margin-bottom: 16px;
+			font-weight: 700;
+		}
+	}
+	/* 기타_JP */
+	.etc-board-wrap {
+		margin-top: 40px;
+	}
+}
+/* 반응형 */
+@include desktop {
+
+}
+@include tablet {
+	.customer {
+		#container {
+			&:has(.tab-underline) {
+				margin-top: 85px;
+			}
+		}
+		.cmn-content-detail {
+			.license-form {
+				.form-item {
+					padding-left: 0;
+				}
+			}
+			.license-guide {
+				padding-left: 0;
+			}
+			.license-info {
+				dl {
+					dd {
+						text-align: right;
+						word-break: break-all;
+					}
+				}
+			}
+		}
+	}
+}
+@include mobile {
+	.customer {
+		&:has(.header_depth) {
+			#contents-head {
+				display: none;
+			}
+		}
+		/*임시 헤드라인 (추후 공통화시 재반영 예정)*/
+		#contents-head {
+			height: 140px;
+			padding-top: 60px;
+			h1 {
+				@include txt(20);
+			}
+			&.product-guide {
+				height: unset;
+				h1 {
+					display: none;
+				}
+				.sub-tit {
+					font-weight: 700;
+					@include txt(20);
+				}
+			}
+		}
+		/*임시 헤드라인 (추후 공통화시 재반영 예정)*/
+		/*tab index*/
+		.tab-underline {
+			position: fixed;
+			top: 48px;
+			z-index: 2;
+			width: 100%;
+			background: $color-white;
+			box-sizing: border-box;
+		}
+		.searh-qna {
+			margin: 40px 0 24px;
+		}
+		.tab-bar {
+			margin-top: 16px;
+		}
+		.move-to-qna {
+			margin-top: 60px;
+			padding: 24px;
+			display: block;
+			text-align: center;
+			.btn-sm {
+				margin-top: 16px;
+			}
+		}
+		.cmn-content-head {
+			&.search-head {
+				padding-bottom: 0;
+				.noti-check {
+					padding-left: 0px;
+					margin-top: 24px;
+					&::before {
+						display: none;
+					}
+				}
+				.sort-list-right {
+					position: unset;
+					display: block;
+					margin-top: 24px;
+					.btn-sm {
+						margin-left: 0;
+					}
+					.form-cont {
+						text-align: right;
+						.form-drop-box {
+							display: inline-block;
+						}
+					}
+				}
+			}
+			&.select-head {
+				align-items: normal;
+				flex-direction: column;
+				flex-wrap: wrap;
+				& > .form-cont {
+					& + .select-wrap {
+						margin-bottom: 40px;
+					}
+				}
+				.select-wrap {
+					order: -1;
+					margin-left: unset;
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					gap: 24px 16px;
+					.form-cont {
+						.form-drop-box {
+							width: inherit;
+						}
+						&.mo-full {
+							grid-column: 1 / span 2;
+						}
+						& + .form-cont {
+							margin-left: 0;
+						}
+					}
+				}
+			}
+		}
+		.cmn-content-detail {
+			&.email {
+				border: 0;
+				padding: 0;
+			}
+			&.multi {
+				.cmn-col {
+					.btn-ghost {
+						top: 0;
+						transform: unset;
+					}
+					& + .cmn-col {
+						.btn-ghost {
+							top: 20px;
+						}
+					}
+				}
+			}
+		}
+		/* 1:1 문의 */
+		.inquiry-guide {
+			margin: 40px 0 56px;
+		}
+		/* 자막 등록 */
+		.regist-guide {
+			position: static;
+			margin-top: 16px;
+		}
+		/*자막 자료실 */
+		.tbl-board-wrap.archive {
+			.common-table-list {
+				display: block;
+				thead {
+					display: none;
+				}
+				tbody {
+					width: 100%;
+					display: block;
+					tr {
+						width: 100%;
+						display: block;
+						padding: 24px  0;
+						th, td {
+							padding: 0;
+							width: 100%;
+							display: none;
+							box-sizing: border-box;
+
+							&.td-cate {
+								display: block;
+								margin-bottom: 16px;
+								font-weight: 400;
+							}
+							&.td-key {
+								display: block;
+							}
+							&.nodata {
+								display: block;
+							}
+						}
+						& + tr {
+							border-top: 1px solid $color-gray-19;
+						}
+					}
+				}
+			}
+		}
+		/*제품 사용 가이드*/
+		.product-guide-index {
+			gap: 0 3px;
+			li {
+				width: calc((100% - 6px) / 3);
+				a {
+					max-width: 107px;
+					margin: 0 auto;
+					height: 138px;
+					display: block;
+					padding: 20px 10px;
+					@include txt(14);
+					.img-wrap {
+						width: auto;
+						height: 48px;
+						margin-bottom: 12px;
+					}
+					&:hover {
+						background-color: transparent;
+					}
+				}
+			}
+		}
+		/*사용가이드 상세*/
+		&.pd-guide-detail {
+			#container {
+				.panel {
+					&:has(.snb-wrap) {
+						.inner {
+							padding-left:24px;
+						}
+					}
+				}
+			}
+		}
+		.post-wrap {
+			h2 {
+				@include txt(24);
+			}
+			h3 {
+				@include txt(20);
+			}
+			h4 {
+				@include txt(18);
+			}
+			h5, h6 {
+				@include txt(16);
+			}
+			p {
+				margin-top: 16px;
+				@include txt(14);
+				color: $color-black-2;
+			}
+			ul.dot {
+				li {
+					&::before {
+						top: 5px;
+					}
+				}
+			}
+			.edit-table-wrap {
+				+ p {
+					margin-top:16px;
+				}
+			}
+			table {
+				@include txt(14);
+				tbody {
+					th, td {
+						padding: 16px;
+						p {
+							@include txt(14);
+						}
+					}
+					/* gomlab측-제거 */
+					// th {
+					// 	background: $color-gray-15;
+					// 	color: $color-black-2;
+					// }
+					td {
+						// color: $color-gray-14; /* gomlab측-제거 */
+						p {
+							margin-top:0;
+							+ p {
+								margin-top:16px;
+							}
+						}
+					}
+				}
+			}
+			/* gomlab측 */
+			.img-txt-area {
+				flex-direction:column;
+				.txt-area {
+					margin:16px 0 0 0;
+					@include txt(14);
+
+				}
+			}
+			.dl-group {
+				flex-direction: column;
+				dl {
+					dt {
+						padding:10px 0;
+						background:$color-gray-21;
+						font-weight:700;
+						text-align:center;
+					}
+					dd {
+						display:flex;
+						flex-wrap: wrap;
+						img {
+							width:calc(50% - 8px);
+							margin-right:8px;
+							&:nth-child(even) {
+								margin-right:0;
+								margin-left:8px;
+							}
+						}
+					}
+					+ dl {
+						margin-left:0;
+						margin-top:16px;
+					}
+				}
+			}
+			.img-txt-groups {
+				display:block;
+				> .cell {
+					& + .cell {
+						margin-top:24px;
+						margin-left:0
+					}
+					.img-area {
+						margin-top:0;
+					}
+					.txt-area {
+
+					}
+				}
+			}
+			/* // gomlab측 */
+		}
+		/* 비회원 메뉴 */
+		.no-customer-tit {
+			.btn-ghost {
+				position: static;
+				transform: none;
+				width: 100%;
+				margin-top: 24px;
+			}
+		}
+		/*라이선스 정보 리스트*/
+		.license-check {
+			margin-top: 56px;
+		}
+		.no-customer-content {
+			h2 {
+				margin-bottom: 32px;
+			}
+			.benefit-list {
+				flex-direction: column;
+				li {
+					.img-wrap {
+						width: 80px;
+						height: 80px;
+					}
+				}
+			}
+			.step-wrap {
+				flex-direction: column;
+				align-items: normal;
+				gap: 36px;
+				.step-image-slide {
+					width: 100%;
+					margin: 0 auto;
+				}
+				.step-list {
+					li {
+						align-items: center;
+						text-align: center;
+					}
+				}
+			}
+			&.benefits {
+				background: $color-gray-15;
+				padding: 60px 0 86px;
+			}
+		}
+		.btn-wrap {
+			flex-direction: column;
+			.btn-md {
+				width: 100%;
+			}
+		}
+		.search-key {
+			position: unset;
+			text-align: right;
+			margin-top: 16px;
+
+			a + a {
+				margin-left: 24px;
+			}
+		}
+
+		.searh-form-wrap {
+			margin: 0 0 40px;
+			// padding: 40px 0 0;
+			.search-txt {
+				margin: 40px 0;
+			}
+		}
+		/* 운영정책_이용약관 */
+		.terms-head {
+			.form-drop-box {
+				flex: 1;
+			}
+		}
+		/* 기타_JP */
+		.etc-board-wrap {
+			table[class^=common-table] {
+				tr {
+					td {
+						padding-left: 16px;
+					}
+				}
+			}
+		}
+	}
+}

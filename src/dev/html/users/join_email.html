@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="개인회원/비즈니스회원 : 회원가입" menucss="/dev/ui/css/users.css"></include>
+<body class="users">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<form class="form-wrap">
+					<div class="panel">
+						<h1>회원가입</h1>
+						<!-- <ul class="step">
+							<li>step1</li>
+							<li class="none">step2</li>
+						</ul> -->
+						<div class="user-content-detail">
+							<!-- [D] 231208_수정 : data- 추가 , li class 추가-->
+							<ul class="tab-round" data-tab-index="login">
+								<li><a href="#individual_member" class="active">개인 회원</a></li>
+								<li><a href="#corporate_member">비즈니스 회원</a></li>
+								<li class="tab-round-bg"></li>
+							</ul>
+							<!-- //[D] 231208_수정 : data- 추가 , li class 추가-->
+							<div class="tab-wrap" data-tab-content="login">
+								<div class="tab-content active" id="individual_member">
+									<div class="user-form-wrap">
+										<div class="form-item">
+											<div class="form-cont">
+												<input type="text" class="inp-box" placeholder="휴대폰 번호 (선택)">
+											</div>
+										</div>
+										<div class="age-check-wrap">
+											<div class="form-item age-form">
+												<label class="form-name">곰랩에서는 만 14세 이상 여부를 확인하고 있습니다. <br>만 14세 이상이십니까?</label>
+												<div class="form-cont">
+													<label for="age0"><input type="radio" name="user-age" id="age0"><span>예</span></label>
+													<label for="age1"><input type="radio" name="user-age" id="age1"><span>아니오</span></label>
+												</div>
+												<div class="help-wrap">
+													<p class="guide-txt">만 14세 미만인 경우 회원가입 및 유료서비스 결제 시, 법정대리인 인증이 필요합니다.</p>
+													<p class="guide-txt">타인의 정보를 도용하여 사용할 경우 민/형사상 책임 및 이용제한 등을 받을 수 있습니다.</p>
+												</div>
+											</div>
+											<div class="form-item">
+												<div class="form-cont">
+													<input type="text" class="inp-box" placeholder="생년월일(YYYY-MM-DD)">
+												</div>
+											</div>
+											<div class="form-item">
+												<div class="form-cont">
+													<!-- [D] 231208_수정 -->
+													<input type="text" class="inp-box" placeholder="법정대리인 성명">
+													<!-- // [D] 231208_수정 -->
+												</div>
+											</div>
+											<div class="form-item">
+												<div class="form-cont">
+													<input type="text" class="inp-box" placeholder="법정대리인 이메일">
+													<div class="help-wrap">
+														<!-- [D] 에러 텍스트 케이스-->
+														<!--<p class="err-txt">이메일 주소를 입력해 주세요.</p>--> <!--case: 미입력-->
+														<!-- <p class="err-txt">올바른 이메일 주소를 입력해 주세요.</p> --> <!--case: 유효성 체크-->
+													</div>
+												</div>
+											</div>
+											<div class="form-item">
+												<div class="form-col">
+													<div class="form-cont">
+														[D] 231208_수정 :  인증코드 case 추가-->
+														<input type="text" class="inp-line" placeholder="인증코드 입력">
+														<!-- [D] 인증코드 타이머-->
+														<!-- <span class="timer">00:00</span> -->
+														<!-- [D] 인증코드 검증완료-->
+														<!-- <span class="compleat"></span> -->
+														<div class="help-wrap">
+															<!-- [D] 에러 텍스트 케이스-->
+															<p class="err-txt">인증코드를 입력해 주세요</p>
+															<!-- <p class="err-txt">인증코드를 확인해 주세요</p> -->
+															<!-- <p class="err-txt">인증코드 재발송이 10회 초과했습니다. 1시간 후 다시 시도해 주세요.</p> -->
+															<!-- [D] 인증완료 텍스트-->
+															<!-- <p>인증되었습니다.</p> -->
+														</div>
+													</div>
+													<!-- [D] 인증코드 버튼 disabled 케이스-->
+													<button type="button" class="btn-sm btn-default disabled">인증코드 보내기</button>
+													<!-- <button type="button" class="btn-sm btn-default">인증코드 재발송</button> -->
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tab-content" id="corporate_member">
+									<div class="user-form-wrap">
+										<div class="form-item">
+											<div class="form-cont">
+												<label for="business01"><input type="radio" name="business-type" id="business01"><span>기업</span></label>
+												<label for="business02"><input type="radio" name="business-type" id="business02"><span>교육</span></label>
+												<label for="business03"><input type="radio" name="business-type" id="business03"><span>공공</span></label>
+											</div>
+										</div>
+										<div class="form-item">
+											<div class="form-cont">
+												<input type="text" class="inp-box" placeholder="단체명">
+											</div>
+										</div>
+										<div class="form-item">
+											<div class="form-cont">
+												<input type="text" class="inp-box" placeholder="담당자명">
+											</div>
+										</div>
+										<div class="form-item">
+											<div class="form-cont">
+												<input type="text" class="inp-box" placeholder="휴대폰 번호 (선택)">
+											</div>
+										</div>
+										<div class="age-check-wrap">
+											<div class="form-item age-form">
+												<label class="form-name">곰랩에서는 만 14세 이상 여부를 확인하고 있습니다. <br>만 14세 이상이십니까?</label>
+												<div class="form-cont">
+													<label for="age0"><input type="radio" name="user-age" id="age0"><span>예</span></label>
+													<label for="age1"><input type="radio" name="user-age" id="age1"><span>아니오</span></label>
+												</div>
+												<div class="help-wrap">
+													<p class="err-txt">비즈니스 회원은 만 14세 이하인 경우 회원가입이 불가합니다.</p>
+													<p class="err-txt">타인의 정보를 도용하여 사용할 경우 민/형사상 책임 및 이용제한 등을 받을 수 있습니다.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<ul class="agree-form" data-agree="agree-group">
+								<li><label for="agree-all" data-agree="agree-all"><input type="checkbox" id="agree-all" class="inp-sm"><strong>모두 동의 합니다.</strong></label></li>
+								<li><label for="chk1"><input type="checkbox" id="chk1" class="inp-sm">이용약관에 동의합니다. (필수)</label></li>
+								<li><label for="chk2"><input type="checkbox" id="chk2" class="inp-sm">개인정보처리방침에 동의합니다. (필수)</label></li>
+								<li>
+									<label for="chk3"><input type="checkbox" id="chk3" class="inp-sm">소프트웨어 관련한 정보 및 이벤트 정보 수신에 동의합니다. (선택)</label>
+									<div class="sub-check">
+										<label for="chk4"><input type="checkbox" id="chk4" class="inp-sm">이메일</label>
+										<label for="chk5"><input type="checkbox" id="chk5" class="inp-sm">SMS</label>
+									</div>
+								</li>
+							</ul>
+							<div class="help-wrap">
+								<p class="err-txt">필수 약관에 체크하세요.</p>
+							</div>
+							<div class="btn-wrap">
+								<!-- [D] 버튼 disabled 케이스 -->
+								<!-- <a href="#" class="btn-md btn-default">확인</a> -->
+								<a href="#" class="btn-md btn-default disabled">확인</a>
+							</div>
+						</div>
+					</div>
+
+				</form>
+			</section>
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

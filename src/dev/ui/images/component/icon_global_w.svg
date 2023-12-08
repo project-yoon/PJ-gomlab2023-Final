@@ -1,0 +1,13 @@
+<svg id="global" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <line id="선_12114" data-name="선 12114" y1="18" transform="translate(12 3)" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <line id="선_12115" data-name="선 12115" x2="16.272" transform="translate(3.864 7.031)" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <line id="선_12116" data-name="선 12116" x2="16.272" transform="translate(3.864 16.969)" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <line id="선_12117" data-name="선 12117" x2="18" transform="translate(3 12)" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <path id="패스_45683" data-name="패스 45683" d="M12.924,20.953A10.862,10.862,0,0,0,17.178,12a10.862,10.862,0,0,0-4.254-8.953" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="1.5"/>
+  <path id="패스_45684" data-name="패스 45684" d="M11.076,3.047A10.862,10.862,0,0,0,6.822,12a10.862,10.862,0,0,0,4.254,8.953" fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="1.5"/>
+  <rect id="사각형_41779" data-name="사각형 41779" width="24" height="24" fill="none"/>
+  <g id="타원_1119" data-name="타원 1119" transform="translate(3.5 3.5)" fill="none" stroke="#fff" stroke-width="1.5">
+    <circle cx="8.5" cy="8.5" r="8.5" stroke="none"/>
+    <circle cx="8.5" cy="8.5" r="9.25" fill="none"/>
+  </g>
+</svg>

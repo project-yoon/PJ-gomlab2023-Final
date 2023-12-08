@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>삼성SDI 공식사이트</title>
+</head>
+<body>
+	<style>
+	/* font setting */@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 400;src: url("assets/fonts/Montserrat-Regular.ttf") format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 500;src: url("assets/fonts/Montserrat-Medium.ttf") format('truetype');}@font-face {font-family: 'Montserrat';font-style: normal;font-weight: 700;src: url("assets/fonts/Montserrat-Bold.ttf") format('truetype');}@font-face {font-family: 'NotoKr';font-style: normal;font-weight: 400;src: url('assets/fonts/notokr-regular.woff2') format('woff2'),url('assets/fonts/notokr-regular.woff') format('woff');}@font-face {font-family: 'NotoKr';font-style: normal;font-weight: 500;src: url('assets/fonts/notokr-medium.woff2') format('woff2'),url('assets/fonts/notokr-medium.woff') format('woff');}@font-face {font-family: 'NotoKr';font-style: normal;font-weight: 700;src: url('assets/fonts/notokr-bold.woff2') format('woff2'),url('assets/fonts/notokr-bold.woff') format('woff');}
+	/* page setting */html,body {width:100%; height:100%;}body {color: #222;font-family:'Montserrat', 'NotoKr', sans-serif;font-size: 18px;font-weight: 400;line-height: 1;margin: 0px;padding: 0px;background-color: #ffffff;letter-spacing: -0.25px;word-break:break-all;text-rendering: optimizeLegibility;-webkit-font-smoothing: antialiased;}body.load_complete {opacity: 1;}ul, ol, li {list-style: none;padding: 0px;margin: 0px;}input,button,select,textarea {color: #222;font-family: 'Montserrat', 'NotoKr', sans-serif;font-size: 18px;font-weight: 300;border: 0px;padding: 0px;margin: 0px;background: none;vertical-align: middle;}h1,h2,h3,h4,h5,h6 {margin: 0px;font-weight: 500;}h1 {font-size: 70px;font-weight: 700;}h2 {font-size: 40px;font-weight: 700;letter-spacing: -.025em;}h3 {font-size: 22px;}th {font-weight: 500;}strong,b {font-weight: 500;}*[class$="_req"] {color: #435CE7;}
+	/* page common */#container {padding:0;margin:0;}#header {border-bottom:1px solid #dddddd;height:140px;line-height:140px;margin-bottom:160px;}#header {background:url(err_header_logo.svg) no-repeat;background-position:50% 50%;background-size:160px 29px;}#header + .wrap {padding-top: 0;}.wrap {max-width:1200px;padding: 240px 0 120px;margin:0 auto;text-align:center;}#container>.wrap:only-child {padding: 160px 0 120px;}
+	/* err ONLY css */#container.err {display:block;position:relative;}.err .contGrp {position:relative;margin-top:180px;}.err h1 {text-indent:-9999px;}.err h2 {margin-bottom: 70px;line-height: 1.4;}.err h2::after {content: '';display: block;width: 100%;height: 1px;background-color:#DDDDDD;margin-top: 70px;}.err .maintain,.err .system,.err .notfind{display: block;position: relative;}.err .maintain .contGrp::before ,.err .notfind .contGrp::before,.err .system .contGrp::before {content: '';display: block;width: 160px;height: 160px;background-repeat: no-repeat;background-position: 50% 50%;background-size: 100%;/* background-color: #f4f4f4;*/ position: absolute;top: 0;top: -200px;left: 50%;transform: translateX(-50%);}.err .maintain .contGrp::before {background-image: url(ico_maintain_err.png);}.err .notfind .contGrp::before {background-image: url(ico_notfind_err.png);}.err .system .contGrp::before {background-image: url(ico_system_err.png);}#header + .wrap .contGrp::before {content: '';display: none;}.err .contGrp p {margin:0 auto; padding:0 24px; word-break: keep-all; max-width: 844px;}.err p {font-size:16px;font-weight: 400;color:#666666;margin:0;line-height: 26px;letter-spacing:-.025em;}.err p.tit {font-size:18px;color:#222222;font-weight:400;letter-spacing:-.025em;}.err p.acc {margin-top: 40px;font-size:18px;color:#435CE7;font-weight:500;letter-spacing:-.025em;}.err p.min {font-size:14px;font-weight:400;letter-spacing:-.025em;}.err p.ps {font-size:14px;color:#435CE7;font-weight:600;letter-spacing:-.025em;}.err a {padding-bottom:2px;border-bottom:2px solid #435CE7;color:#435CE7;font-weight:600;text-decoration:none;}.err .btn {display:inline-block;width:240px;margin-bottom:0;padding:19px;font-size:18px;font-weight:500;line-height:20px;text-align:center;vertical-align:bottom;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;box-sizing:border-box;border-width:1px;border-style:solid;border-color:#dddddd;border-radius: 10px;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;-ms-touch-action:manipulation;touch-action:manipulation;-webkit-transition:all 200ms ease;-moz-transition:all 200ms ease;-ms-transition:all 200ms ease;-o-transition:all 200ms ease;transition:all 200ms ease;cursor:pointer;}.err .btn_group {margin:40px 0;}.err .btn_group::after {content:'';display:block;clear:both;}.err .btn_group .btn {color:#222222;background-color:rgb(255 255 255 / 0);border-color:#dddddd;margin-left:0.5rem;margin-right:0.5rem;}.err .btn_group .btn_primary {color:#ffffff;background-color:#435CE7;border-color:#435CE7;}.err .infoGrp {margin:60px auto;padding:40px 60px;border:1px solid #eeeeee;box-sizing:border-box;width:100%;max-width:660px;}.err ul{width: auto;margin: 0 auto;display: inline-block;}.err ul li{position: relative;padding-left: 10px;text-align: left;}.err ul li:before{content:''; position: absolute;top: 9px;left: 0;width: 3px;height: 3px;background-color: #666;} .err .btn_group.btn_block .btn {display: block;margin: 0 auto;}.err .btn_group.btn_block .btn:not(:first-child),.err .btn_group button:not(:first-child) {margin-top:10px;}.none_pc {display:none;}.none_m {display:inline-block;}/* retina style */@media all and (max-width: 720px) {body{min-width: 100%;font-size: 16px;}#header {margin-bottom: 80px;margin-left:-24px;margin-right:-24px;}#container.err{margin: 0 24px;text-align: center;width: auto;}.err .contGrp {margin-top:120px;}.err h2{margin-bottom: 45px;font-size: 24px;}.err h2::after {margin-top: 45px;}.err .maintain .contGrp::before,.err .notfind .contGrp::before,.err .system .contGrp::before {content: '';display: block;width: 130px;height: 130px;background-repeat: no-repeat;background-position: 50% 50%;background-size: 100%;/* background-color: #f4f4f4; */position: absolute;top: 0;top: -150px;left: 50%;transform: translateX(-50%);}.err .contGrp p {padding:0 0px;}.err p {line-height: 23px;}.err .btn {width:100%; max-width:327px;}.err .btn_group .btn {display: block;margin:0 auto 20px;padding: 16px 19px;font-size: 16px;}.err .infoGrp {margin:50px auto;padding:20px 0; max-width:327px;}.err .infoGrp li:first-of-type {margin-bottom: 16px;}.none_pc {display:inline-block;}.none_m {display: none;}}
+	</style>
+
+		<!--  container -->
+		<div id="container" class="err">
+			<!-- <div id="header"><h1>SAMSUNG SDI</h1></div>	 -->
+	
+			<div class="wrap maintain">
+			<!-- <div class="wrap"> -->
+				<!--
+				 아이콘 사용 시, 키클래스로 스타일 추가 후 제어할 것
+					- notfind  접속에러 : 다시한번 확인해 주세요!
+					- system 시스템에러 : 페이지가 작동하지 않습니다.잠시 후 다시 확인해 주세요.
+					- maintain 서비스 점검 중입니다
+				 -->
+	
+				<!-- 문단 템플릿 -->
+				<div class="contGrp">
+					<h2>삼성SDI 홈페이지 <br class="none_pc">서비스 점검 중입니다.</h2>
+					<p>더욱 안정적인 서비스를 제공하기 위해<br>
+						<span class="_req">시스템 점검</span>을 진행하고 있습니다.</p>
+					<p>점검이 완료 된 후 <span class="_req">다시 접속</span>해 주세요.</p>
+				</div>
+
+				<!-- 상세정보템플릿 -->
+				<div class="infoGrp">
+					<ul>
+						<li><p>점검 대상 : <br class="none_pc">삼성SDI 홈페이지 전체 서비스</p></li>
+						<li><p>점검 시간 : <br class="none_pc"><span class="_req">YYYY년 N월 D일(수) 00:00 ~ 00:00</span></p></li>
+					</ul>
+					<!-- <p>점검 대상 : 삼성SDI 홈페이지 전체 서비스</p> -->
+					<!-- <p>점검 시간 : <span class="_req">YYYY년 N월 D일(수) 00:00 ~ 00:00</span></p> -->
+				</div>
+	
+				<!-- 버튼템플릿 -->
+				<!-- <div class="btn_group">
+					<a href="javascript:void(0);" class="btn"><span>삼성SDI 홈페이지 바로가기</span></a>
+				</div> -->
+
+			<!-- End Of Main Contents -->
+			</div>	
+	
+	
+		</div>
+		<!-- // container -->	
+	
+	</body>
+</html>

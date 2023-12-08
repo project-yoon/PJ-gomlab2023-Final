@@ -1,0 +1,146 @@
+@charset "utf-8";
+@import "./utilities/variables";
+@import "./utilities/mixins";
+
+.blog {
+    .blog-head {
+        .head-tit-wrap {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 80px;
+        }
+        .intro {
+            margin-top: 24px;
+            line-height: 26px;
+        }
+        .tab-button {
+            margin: 80px auto 40px;
+        }
+    }
+    .blog-form-item {
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: 40px;
+
+		.form-cont {
+			.form-drop-box {
+				min-width: 138px;
+                width: auto;
+                ul.drop-list {
+                    width:  auto;
+                    white-space: nowrap;
+                    right: 0;
+                }
+			}
+		}
+	}
+    .gallery-wrap {
+        &.blog-list {
+            li {
+                border-radius: 10px;
+                box-shadow: 0px 8px 20px rgba($color-black, 0.05);
+                a {
+                    .gallery-content {
+                        border: 1px solid $color-gray-13;
+                        border-top-width: 0;
+                        height: 138px;
+                        box-sizing: border-box;
+                        .gallery-title {
+                            line-height: 24px;
+                            font-weight: 700;
+                        }
+                        .gallery-info {
+                            @include txt(12);
+                        }
+                    }
+                }
+            } 
+        }
+    } 
+    .board-page-navi {
+        margin-top: 80px;
+    }
+    .det-head {
+        position: relative;
+        .det-share-wrap {
+            @include posRight($top: 24px, $posY: unset);
+        }
+    }
+    .det-content {
+        & > img {
+			border-radius: 4px;
+		}
+		.hash-tags {
+			display: flex;
+			align-items: center;
+			margin-top: 36px;
+			a {
+				display: flex;
+				align-items: center;
+				margin: 12px 12px 0 0;
+				color: $color-gray-06;
+				@include txt(14);
+				&::before {
+					content: '#';
+				}
+			}
+		}
+    }
+}
+
+
+/* 반응형 */
+@include tablet {
+
+}
+@include mobile {
+    .blog {
+        .blog-head {
+            h1 {
+                margin-top: 40px;
+            }
+            .intro {
+                margin-top: 16px;
+            }
+            .tab-button {
+                margin: 44px 0 48px;
+            }
+        }
+        .gallery-wrap {
+            &.blog-list {
+                li {
+                    a {
+                        .gallery-content {
+                            height: unset;
+                            .gallery-title {
+                                @include txt(14);
+                            }
+                            .gallery-info {
+                                margin-top: 8px;
+                            }
+                            .gallery-date {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .blog-form-item {
+            margin-bottom: 20px;
+        }
+        .board-page-navi {
+            margin-top: 40px;
+        }
+        .det-head {
+            .det-share-wrap {
+                position: static;
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
+}

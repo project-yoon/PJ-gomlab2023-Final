@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="1:1문의 : 고객지원" menucss="/dev/ui/css/customer.css"></include>
+<body class="customer inquiry"> <!-- [D] inquiry : 1:1 문의 전용 키클래스 -->
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<div id="contents-head" class="contents-head">
+			<div class="head-tit-wrap">
+				<h1>1:1 문의</h1>
+			</div>
+		</div>
+		<!-- contents -->
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel">
+					<div class="inner">
+						<p class="inquiry-guide">
+							불편한 사항이나 개선점이 있다면 1:1 문의를 통해 의견을 전달해 주세요. <br>
+							1:1문의는 24시간 접수 가능하며, 문의에 대한 답변은 평일 근무시간 (오전10시 ~ 오후5시 KST)내 처리중입니다. <br>
+							모든 사항을 작성해주시면, 더욱 정확하고 빠른 답변을 받으실 수 있습니다.
+						</p>
+						<div class="cmn-content-head">
+							<h2 class="head-tit-sm">문의 내용</h2>
+							<span class="required-guide">*는 필수 입력 사항입니다.</span>
+						</div>
+						<form action="" name="" id="" class="form-wrap">
+							<div class="cmn-content-detail">
+								<div class="form-item">
+									<label class="form-label">이메일</label>
+									<div class="form-cont">
+										<input type="text" class="inp-box" value="yeonjung@gomcorp.com">
+									</div>
+								</div>
+								<div class="form-item">
+									<label class="form-label required">제품 선택</label>
+									<div class="form-cont">
+										<select class="btn-drop-box">
+											<option value="">제품 선택</option>
+											<option value="">제품 선택</option>
+											<option value="">제품 선택</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-item">
+									<label class="form-label required">운영체제</label>
+									<div class="form-cont">
+										<select class="btn-drop-box">
+											<option value="">운영체제 선택</option>
+											<option value="">운영체제 선택</option>
+											<option value="">운영체제 선택</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-item">
+									<label class="form-label required">사용언어</label>
+									<div class="form-cont">
+										<select class="btn-drop-box">
+											<option value="">언어 선택</option>
+											<option value="">언어 선택</option>
+											<option value="">언어 선택</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-item">
+									<label class="form-label required">문의분류</label>
+									<div class="form-cont">
+										<select class="btn-drop-box">
+											<option value="">분류 선택</option>
+											<option value="">분류 선택</option>
+											<option value="">분류 선택</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-item">
+									<label class="form-label required">제목</label>
+									<div class="form-cont">
+										<input type="text" class="inp-box wide" placeholder="제목을 입력해 주세요">
+									</div>
+								</div>
+								<div class="form-item">
+									<label class="form-label required">내용</label>
+									<div class="form-cont">
+										<textarea class="wide" placeholder="상세 내용을 입력해 주세요.(최대 500byte)"></textarea>
+									</div>
+								</div>
+								<div class="form-item">
+									<label for="" class="form-label">자막파일</label>
+									<div class="form-col">
+										<div class="form-cont">
+											[D] 231208_수정 :  placeholder 제거-->
+											<input type="file" id="file">
+											<span class="form-filename">선택된 파일 없음</span>
+										</div>
+										<label for="file" class="btn-sm btn-ghost">파일 선택</label>
+									</div>
+									<div class="help-wrap">
+										<p>※ 파일은 최대 2MB까지 JPG또는 PNG형식만 첨부할 수 있습니다.</p>
+									</div>
+									<div class="form-privacy">
+										<p class="privacy-tit">개인정보 수집 및 이용 동의​</p>
+										<ul class="dot-list">
+											<li>수집 항목 : 단체명, 사업자등록번호, 이름, 이메일 주소​​</li>
+											<li>수집 목적 : 맞춤형 견적 안내</li>
+											<li>보유 및 이용기간 : 3년 보관 후 파기</li>
+										</ul>
+										<div class="form-cont">
+											<label for="chk0"><input type="checkbox" name="" id="chk0">개인정보 수집 및 이용에 동의합니다. (필수)</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="btn-wrap wrap-right">
+								<button type="submit" class="btn-md btn-default">문의 접수</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- //contents -->
+
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script src="/dev/ui/js/libs/swiper.min.js"></script>
+	<script>
+
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+</body>
+</html>

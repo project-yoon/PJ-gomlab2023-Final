@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="라이센스" transform="translate(-1 -3275.5)">
+    <path id="패스_45700" data-name="패스 45700" d="M10,0H38A10,10,0,0,1,48,10V38A10,10,0,0,1,38,48H10A10,10,0,0,1,0,38V10A10,10,0,0,1,10,0Z" transform="translate(1 3275.5)" fill="rgba(255,255,255,0)"/>
+    <g id="사각형_61893" data-name="사각형 61893" transform="translate(11 3285.5)" fill="#fff" stroke="#131313" stroke-width="1.5">
+      <rect width="28" height="28" rx="4" stroke="none"/>
+      <rect x="0.75" y="0.75" width="26.5" height="26.5" rx="3.25" fill="none"/>
+    </g>
+    <path id="패스_45695" data-name="패스 45695" d="M1.619,0H5.666C6.56,0,7.285,1.1,7.285,2.457V13.513c.013.1-2.839-1.438-3.542-1.853C3.047,12.05-.032,13.482,0,13.513V2.457C0,1.1.725,0,1.619,0Z" transform="translate(11.358 3302.5)" fill="#fff" stroke="#131313" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <g id="타원_1146" data-name="타원 1146" transform="translate(7 3295.5)" fill="#fff" stroke="#131313" stroke-width="1.5">
+      <circle cx="8" cy="8" r="8" stroke="none"/>
+      <circle cx="8" cy="8" r="7.25" fill="none"/>
+    </g>
+    <line id="선_12428" data-name="선 12428" x2="14" transform="translate(18 3293.5)" fill="none" stroke="#131313" stroke-linecap="round" stroke-width="1.5"/>
+    <path id="패스_45696" data-name="패스 45696" d="M8.006,0H19.8" transform="translate(12.197 3298.5)" fill="none" stroke="#131313" stroke-linecap="round" stroke-width="1.5"/>
+  </g>
+</svg>

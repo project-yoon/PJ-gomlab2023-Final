@@ -1,0 +1,588 @@
+// component_Tabs
+.tab-index {
+	display: flex;
+	overflow: auto;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	li {
+		position: relative;
+		box-sizing: border-box;
+		a {
+			position: relative;
+			text-align: center;
+			white-space: nowrap;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			box-sizing: border-box;
+			font-weight: 700;
+		}
+	}
+	&.scrolled {
+		li {
+			flex: 0 0 auto;
+		}
+	}
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+/*tab index type*/
+.tab-round {
+	@extend .tab-index;
+	position: relative;
+	align-items: center;
+	background-color: $color-gray-20;
+	border-radius: 51px;
+	li {
+		position: relative;
+		flex: 1;
+		z-index: 1;
+		a {
+			width: 100%;
+			padding: 0 23px;
+			height: 36px;
+			@include txt(12);
+			color: $color-gray-04;
+			border-radius: 51px;
+			transition: color .13s ease;
+			transition-delay: .17s;
+			&.active {
+				color: $color-white;
+			}
+		}
+
+		&.tab-round-bg {
+			z-index: 0;
+			@include posLeft;
+			border-radius: 51px;
+			background-color: $color-black-1;
+			width: 50%;
+			height: 100%;
+			box-sizing: border-box;
+			// transition: left .3s ease;
+		}
+	}
+}
+.tab-underline {
+	@extend .tab-index;
+	border-bottom: 1px solid $color-gray-11;
+	li {
+		a {
+			width: 164px;
+			height: 37px;
+			@include txt(14);
+			&.active {
+				&::before {
+					content: '';
+					@include posBottom;
+					width: 100%;
+					height: 2px;
+					background-color: $color-gray-01;
+				}
+			}
+		}
+	}
+	&.scrolled {
+		li {
+			& + li {
+				margin-left: 20px;
+			}
+		}
+	}
+}
+.tab-button {
+	@extend .tab-index;
+	li {
+		a {
+			@include txt(12);
+			padding: 0 20px;
+			height: 29px;
+			border-radius: 51px;
+			&.active {
+				color: $color-white;
+				background-color: $color-black-1;
+			}
+		}
+		& + li {
+			margin-left: 12px;
+		}
+	}
+}
+.tab-bar {
+	@extend .tab-index;
+	li {
+		position: relative;
+
+		a {
+			@include txt(12);
+			color: $color-gray-06;
+			&.active {
+				color: $color-black-1;
+			}
+		}
+		& + li {
+			margin-left: 20px;
+			padding-left: 20px;
+
+			&::before {
+				content: '';
+				width: 1px;
+				height: 13px;
+				background-color: $color-gray-11;
+				@include posLeft;
+			}
+		}	
+	}
+}
+/*tab content*/
+.tab-content {
+	display: none;
+	&.active {
+		display: block;
+	}
+}
+/* accodion content */
+[data-accordion='panel'] {
+	display: none;
+}
+// component_Lists
+/*content head default*/
+.cmn-content-head {
+	position: relative;
+	margin-bottom: 16px;
+	.head-tit-sm {
+		@include txt(16)
+	}
+	h2 {
+		@include txt(20);
+		&.head-tit-sm {
+			@include txt(16)
+		}
+	}
+	.exp {
+		@include txt(14);
+		margin-top: 8px;
+	}
+	.form-item:has(input.search) {
+		position: absolute;
+		right: 0;
+		bottom: 20px;
+	}
+	.more-view {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+	.right-wrap {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+}
+.cmn-content-detail {
+	padding: 24px 0;
+	border-top: 2px solid $color-black;
+	border-bottom: 1px solid $color-gray-11;
+	.cmn-col {
+		& + .cmn-col {
+			border-top: 1px solid $color-gray-20;
+			margin-top: 24px;
+			padding-top: 24px;
+		}
+	}
+
+	& + .cmn-content-head {
+		margin-top: 40px;
+	}
+}
+.cmn-content-util {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 16px;
+}
+.board-common {
+	@extend .cmn-content-detail;
+	padding: 0;
+	li {
+		padding: 24px 0;
+		border-bottom: 1px solid $color-gray-20;
+		.list-index {
+			display: inline-block;
+			width: 80px;
+			margin-right: 10px;
+			@include txt(18);
+		}
+		.list-label {
+			display: inline-block;
+			width: 114px;
+			margin-right: 10px;
+			@include txt(18);
+		}
+		.list-title {
+			position: relative;
+			flex: 1;
+			@include txt(18);
+			font-weight: 700;
+			padding-right: 24px;
+			@include ellipsis;
+			&::before {
+				content: "";
+				@include posRight;
+				width: 24px;
+				height: 24px;
+				background: icon(down-lg) center no-repeat;
+				transition: transform .3s ease;
+			}
+		}
+		.list-date {
+			padding: 0 25px 0 80px;
+		}
+	}
+}
+.board-common-multi {
+	@extend .board-common;
+	li {
+		display: flex;
+		gap: 16px;
+		.list-info {
+			flex: 1;
+			@include txt(14);
+			.list-label {
+				display: block;
+				margin-bottom: 16px;
+				@include txt(14);
+				font-weight: 700;
+			}
+		}
+		.img-wrap {
+			display: block;
+			width: 66px;
+			height: 66px;
+			background: $color-gray-06;
+			border-radius: 4px;
+			overflow: hidden;
+			img {
+				@include image-fit($fit: cover);
+			}
+		}
+	}
+}
+.check-list { //체크 박스가 있는 형태의 리스트
+	li {
+		margin-top: 0;
+		padding: 24px 0 24px 32px;
+		.form-item {
+			margin-left: -32px;
+		}
+		&.no-data { //검색 내용이 없는 경우
+			text-align: center;
+		}
+	}
+}
+.label-det {
+	display: flex;
+	margin-top: 12px;
+	dt {
+		width: 42px;
+	}
+	dd {
+		flex: 1;
+		font-weight: 700;
+	}
+}
+
+/*라이선스*/
+.license-info-wrap {
+	span {
+		@include txt(14);
+	}
+	p {
+		@include txt(14);
+	}
+	.board-common-top {
+		.board-common-num {
+			font-weight: 700;
+		}
+	}
+	.board-common-mid {
+		margin: 13px 0 8px 0;
+		.board-common-key {
+			font-weight: 700;
+		}
+	}
+	.board-common-product {
+		margin-bottom: 15px;
+		font-weight: 700;
+	}
+}
+.stauts-wrap {
+	margin-top: 13px;
+	font-size: 0;
+	line-height: 0;
+	span {
+		display: inline-block;
+		vertical-align: top;
+		@include txt(14);
+		line-height: 1.5;
+		font-weight: 700;
+		& + span:before {
+			display: inline-block;
+			vertical-align: top;
+			width: 1px;
+			height: 13px;
+			margin: 3px 12px 4px;
+			background-color: $color-gray-11;
+			content: '';
+		}
+		&.full {
+			display: block;
+			margin-top: 12px;
+			&::before {
+				content: none;
+			}
+			strong {
+				margin-left: 8px;
+			}
+			& + span {
+				&::before {
+					content: none;
+				}
+			}
+		}
+	}
+}
+.form-wrap {
+	.use-label {
+		li {
+			align-items: baseline;
+		}
+	}
+}
+.use-label {
+	@extend .cmn-content-detail;
+	& > li {
+		display: flex;
+		@include txt(14);
+		.label {
+			display: block;
+			width: 132px;
+		}
+		& > div {
+			flex: 1;
+			word-break: break-all;
+			.vat {
+				@include txt(11);
+				font-weight: 400;
+			}
+		}
+		div {
+			font-weight: 700
+		}
+	}
+	&:not(.board-common) {
+		> li + li {
+			margin-top: 25px;
+		}
+		.dot-list {
+			margin-top: 10px;
+			li {
+				display: block;
+				font-weight: 400;
+				@include txt(12);
+				line-height: 18px;
+				&::before {
+					top: 7px;
+				}
+				& + li {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+// 아코디언 리스트
+.doard-acco-list {
+	@extend .board-common;
+	li {
+		padding: 0;
+		.acco-head {
+			display: flex;
+			padding: 20px 0;
+			&.active {
+				.list-title {
+					&::before {
+						transform: translateY(-50%) rotate(-180deg);
+					}
+				}
+			}
+		}
+		.acco-content {
+			margin: 0 0 20px 0;
+			padding: 12px;
+			background: $color-gray-21;
+			border-radius: 4px;
+		}
+	}
+}
+// 자주 묻는 질문 게시판
+.borad-ask {
+	border-top: 2px solid $color-black;
+	border-bottom: 1px solid $color-gray-11;
+	padding: 20px 0;
+	li {
+		@include ellipsis;
+		@include txt(18);
+		& + li {
+			margin-top: 20px;
+		}
+	}
+	&.doard-acco-list { //토글이 있는 경우
+		padding: 12px 0;
+		li {
+			@include txt(18);
+			border: 0 none;
+			& + li {
+				margin-top: 0;
+			}
+		}
+		.acco-head {
+			display: flex;
+			padding: 14px 0;
+			&.active {
+				.list-title {
+					&::before {
+						transform: translateY(-50%) rotate(-180deg);
+					}
+				}
+			}
+		}
+		.list-title {
+			position: relative;
+			flex: 1;
+			padding-right: 24px;
+			font-weight: 400;
+			@include ellipsis;
+			&::before {
+				content: "";
+				@include posRight;
+				width: 24px;
+				height: 24px;
+				background: icon(down-lg) center no-repeat;
+				transition: transform .3s ease;
+			}
+		}
+		.acco-content {
+			margin: 0 0 20px 0;
+			padding: 12px;
+			background: $color-gray-21;
+			border-radius: 4px;
+			@include txt(16);
+		}
+	}
+}
+.more-view {
+	display: flex;
+	align-items: center;
+	&::after {
+		content: '';
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		background: icon(next) no-repeat;
+	}
+}
+.badge-type {
+	padding: 4px;
+	border: 1px solid $color-gray-06;
+	border-radius: 4px;
+	@include txt(11);
+	font-weight: 700;
+}
+/*label type*/
+.multi-tit {
+	@include txt(14);
+	font-weight: 700;
+	margin-bottom: 16px;
+}
+.multi-lst {
+	dl {
+		position: relative;
+		padding-left: 108px;
+		@include txt(14);
+		dt {
+			width: 100px;
+			position: absolute;
+			left: 0;
+		}
+		dd {
+			font-weight: 700;
+		}
+		& + dl {
+			margin-top: 12px;
+		}
+	}
+}
+/* 반응형 */
+@include mobile {
+	.tab-underline {
+		margin: 0 -24px;
+		padding: 0 24px;
+		li {
+			a {
+				width: auto;
+				padding: 0 6px;
+			}
+		}
+	}
+	.cmn-content-head {
+		h2 {
+			@include txt(16);
+		}
+	}
+	.board-common {
+		@extend .cmn-content-detail;
+		li {
+			.list-title {
+				@include ellipsis;
+				@include txt(14);
+			}
+		}
+	}
+	.borad-ask {
+		li {
+			a {
+				.list-label {
+					@include txt(14);
+				}
+			}
+		}
+		&.doard-acco-list { //토글이 있는 경우
+			padding: 12px 0;
+			li {
+				@include txt(14);
+			}
+			.acco-head {
+				padding: 12px 0;
+			}
+			.list-title {
+				padding-right: 20px;
+				&::before {
+					width: 20px;
+					height: 20px;
+					background: icon(down) center no-repeat;
+				}
+			}
+			.acco-content {
+				@include txt(14);
+			}
+		}
+	}
+	.doard-acco-list {
+		li {
+			.acco-content {
+				@include txt(14);
+			}
+		}
+	}
+}

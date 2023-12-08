@@ -1,0 +1,940 @@
+@charset "utf-8";
+@import "./utilities/variables";
+@import "./utilities/mixins";
+
+.membership {
+	/* (공통) 헤더 부분 */
+	.head-visual {
+		height: 800px;
+		background: transparent linear-gradient(90deg, #00000099 0%, #16161666 42%, #61616100 100%) 0% 0% no-repeat;
+		color: $color-white;
+		.head-visual-wrap {
+			.btn-play {
+				display: none;
+			}
+		}
+		.logo {
+			width: 241px;
+			height: 70px;
+			img {
+				@include image-fit;
+			}
+		}
+		h1 {
+			margin-top: 40px;
+			font-size: 56px; //임시 적용
+			line-height: 80px; //임시 적용
+			color: $color-white;
+		}
+		.intro {
+			margin-top: 40px;
+		}
+	}
+	/* (공통) 컨텐츠 부분 */
+	.inner {
+		position: relative;
+		z-index: 1;
+		padding-top: 114px;
+		&:has(.membership-news) {
+			padding-top: 140px;
+		}
+		&:has(.gom-use-guide-inner-wrap) {
+			padding-top: 0;
+		}
+	}
+	.cmn-content-head {
+		margin-top: 80px;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	/* 상세 혜택 영역 */
+	.membership-benefit {
+		position: relative;
+		height: 600vh;
+		background-color: $color-blue-9;
+	}
+	.benefit-wrap {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: calc(100vh - 79px);
+		//padding: 80px 0 0; 
+		align-items: center;
+		box-sizing: border-box;
+		&::before {
+			@include posLeft($top: -110px, $left: 50%, $posY: 0%);
+			z-index: 1;
+			width: 1555px;
+			height: 1555px;
+			margin-left: 163px;
+			background: transparent radial-gradient(closest-side at 50% 50%, #991FE8 0%, #991FE8 33%, #991FE841 73%, #991FE800 100%) 0% 0% no-repeat padding-box;
+			filter: blur(50px);
+			content: '';
+		}
+		.inner {
+			overflow: hidden;
+			display: flex;
+			justify-content: space-between;
+			gap: 17px;
+			padding: 0 0 85px;
+			height: 100%;
+			align-items: center;
+		}
+		.cmn-content-head {
+			min-width: 600px;
+			margin-bottom: 0;
+			color: $color-white;
+			h2 {
+				color: $color-white;
+				font-size: 50px; //임시 적용
+				line-height: 66px; //임시 적용
+			}
+			.exp {
+				margin-top: 20px;
+				@include txt(24);
+				font-weight: 700;
+			}
+		}
+	}
+	.benefit-item-wrap {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		flex-basis: calc(50% + 63px);
+		.benefit-item {
+			position: absolute;
+			width: 435px;
+			height: 600px;
+			padding: 37px 40px 40px;
+			background: linear-gradient(180deg, #FFFFFFCC 0%, #FFFFFF 100%) 0% 0% no-repeat;
+			border: 1px solid $color-white;
+			box-shadow:  0 40px 60px #5772E833;
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+			border-radius: 20px;
+			box-sizing: border-box;
+			transition: 0.5s ease-in-out;
+			transition-property: transform, opacity;
+			transform-origin: -150% 150%;
+			left: 50%;
+			top: 235px;
+			transform: translateX(-42%);
+			dt {
+				@include txt(36);
+				letter-spacing: -1px;
+				font-weight: 700;
+				color: $color-blue-9;
+				.num {
+					display: block;
+					margin-bottom: 20px;
+					color: $color-gray-06;
+				}
+				.img {
+					position: absolute;
+					display: block;
+					width: 200px;
+					height: 200px;
+					bottom: 40px;
+					left: 40px;
+					img {
+						@include image-fit;
+					}
+				}
+			}
+			dd {
+				padding-top: 40px;
+				@include txt(16);
+				p {
+					& + p {
+						margin-top: 16px;
+					}
+				}
+			}
+			&:nth-child(1) {
+				z-index: 6;
+				transform: translateX(-46%) translateY(-2%) rotate(-8deg);
+			}
+			&:nth-child(2) {
+				z-index: 5;
+			}
+			&:nth-child(3) {
+				z-index: 4;
+				transform: translateX(-50.8%) translateY(-12%) rotate(6deg);
+			}
+			&:nth-child(4)  {
+				z-index: 3;
+				transform: translateX(-62%) translateY(-25%) rotate(12deg);
+			}
+			&:nth-child(5) {
+				z-index: 2;
+				transform: translateX(-68%) translateY(-40%) rotate(18deg);
+				opacity: 0;
+			}
+			&:nth-child(6) {
+				z-index: 1;
+				transform: translateX(-77%) translateY(-54%) rotate(24deg);
+				opacity: 0;
+			}
+		}
+		&.card-2-active {
+			.benefit-item {
+				&:nth-child(1) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+				}
+				&:nth-child(2) {
+					transform: translateX(-46%) translateY(-2%) rotate(-8deg);
+				}
+				&:nth-child(3) {
+					transform: translateX(-42%) translateY(0) rotate(0);
+				}
+				&:nth-child(4)  {
+					transform: translateX(-50.8%) translateY(-12%) rotate(6deg);
+				}
+				&:nth-child(5) {
+					transform: translateX(-62%) translateY(-25%) rotate(12deg);
+					opacity: 1;
+				}
+				&:nth-child(6) {
+					transform: translateX(-68%) translateY(-40%) rotate(18deg);
+					opacity: 0;
+				}
+			}
+		}
+		&.card-3-active {
+			.benefit-item {
+				&:nth-child(1) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+				}
+				&:nth-child(2) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+				}
+				&:nth-child(3) {
+					transform: translateX(-46%) translateY(-2%) rotate(-8deg);
+				}
+				&:nth-child(4) {
+					transform: translateX(-42%) translateY(0) rotate(0);
+				}
+				&:nth-child(5)  {
+					transform: translateX(-50.8%) translateY(-12%) rotate(6deg);
+					opacity: 1;
+				}
+				&:nth-child(6) {
+					transform: translateX(-62%) translateY(-25%) rotate(12deg);
+					opacity: 1;
+				}
+			}
+		}
+		&.card-4-active {
+			.benefit-item {
+				&:nth-child(1) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+				}
+				&:nth-child(2) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+				}
+				&:nth-child(3) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+				}
+				&:nth-child(4) {
+					transform: translateX(-46%) translateY(-2%) rotate(-8deg);
+				}
+				&:nth-child(5) {
+					transform: translateX(-42%) translateY(0) rotate(0);
+					opacity: 1;
+				}
+				&:nth-child(6)  {
+					transform: translateX(-50.8%) translateY(-12%) rotate(6deg);
+					opacity: 1;
+				}
+			}
+		}
+		&.card-5-active {
+			.benefit-item {
+				&:nth-child(1) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+				}
+				&:nth-child(2) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+				}
+				&:nth-child(3) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+				}
+				&:nth-child(4) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+				}
+				&:nth-child(5) {
+					transform: translateX(-46%) translateY(-2%) rotate(-8deg);
+					opacity: 1;
+				}
+				&:nth-child(6) {
+					transform: translateX(-42%) translateY(0) rotate(0);
+					opacity: 1;
+				}
+			}
+		}
+		&.card-6-active {
+			.benefit-item {
+				&:nth-child(1) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+				}
+				&:nth-child(2) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+				}
+				&:nth-child(3) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+				}
+				&:nth-child(4) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+				}
+				&:nth-child(5) {
+					transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					opacity: 1;
+				}
+				&:nth-child(6) {
+					transform: translateX(-46%) translateY(-2%) rotate(-8deg);
+					opacity: 1;
+				}
+			}
+		}
+	}
+	/* 이용권 영역 */
+	.membership-ticket {
+		position: relative;
+		background: linear-gradient(180deg, #ffffff 0%, #F4F4F4 100%) 0% 0% no-repeat;
+		.cmn-content-head {
+			z-index: 2;
+			padding-top: 120px;
+			.easy-txt {
+				height: 229px;
+				margin-bottom: 48px;
+				background: url('#{$img-url}/membership/membership_ticket_txt.png') center center no-repeat;
+				background-size: auto 100%;
+				font-size: 0;
+				line-height: 0;
+				text-indent: -9999px;
+			}
+		}
+		.membership-title {
+			text-align: center;
+			@include txt(48);
+			span {
+				display: block;
+				color: $color-blue-9;
+			}
+		}
+		.gom-card-box-defalut {
+			padding: 80px 0 160px;
+		}
+		.gom-package-item {
+			.gom-package-bnr {
+				position: relative;
+				z-index: 1;
+				top: unset;
+				margin-top: -61px;
+			}  
+		}
+		&:before {
+			position: absolute;
+			bottom: -300px;
+			z-index: -1;
+			left: -786px;
+			width: 1932px;
+			height: 1933px;
+			background:radial-gradient(closest-side at 50% 50%, #5772E8 0%, #5772E8E7 25%, #5772E800 100%) 0% 0% no-repeat;
+			filter: blur(50px);
+			content: '';
+		}
+	}
+	.download-list {
+		display: flex;
+		gap: 34px;
+		padding: 24px 0 0;
+		li {
+			text-align: center;
+			span {
+				display: block;
+				width: 80px;
+				height: 80px;
+				margin: 0 auto 12px;
+				img {
+					@include image-fit;
+				}
+			}
+			p {
+				margin-bottom: 24px;
+				@include txt(16);
+			}
+			[class^=btn-] {
+				padding: 0 35px;
+			}
+		}
+	}
+	/* 소식 */
+	.membership-news {
+		height: 403px;
+		border-radius: 10px;
+		background-color:  #00FF2233;
+	}
+	/* 곰패스 유의사항 */
+	.membership-notice {
+		dt {
+			margin-bottom: 12px;
+			font-weight: 700;
+			@include txt(14);
+		}
+		dd {
+			@include txt(12);
+		}
+	}
+	/* animate 요소 */
+	.animate-item {
+		position: absolute;
+		z-index: 1;
+		&.animate-item-01 {
+			top: -55px;
+			right: 62px;
+		}
+		&.animate-item-02 {
+			bottom: -400px;
+			left: 0;
+			&.active {
+				transform: translateX(-41%) translateY(0px);
+			}
+		}
+		&.animate-item-03 {
+			bottom: -260px;
+			right: 0;
+			transform: translateX(60%) translateY(80px);
+			&.active {
+				transform: translateX(60%) translateY(0px);
+			}
+		}
+		img {
+			@include image-fit;
+		}
+	}
+}
+
+/* 반응형 */
+@include tablet {
+	.membership {
+		.benefit-wrap {
+			padding: 48px 0 0;
+			.inner {
+				align-items: unset;
+				flex-direction: column;
+				gap: 36px
+			}
+			.cmn-content-head {
+				min-width: unset;
+				color: $color-white;
+				h2 {
+					@include txt(36);
+				}
+				.exp {
+					margin-top: 18px;
+					@include txt(20);
+					font-weight: 400;
+				}
+			}
+		}
+		.benefit-item-wrap {
+			flex-basis: unset;
+			.benefit-item {
+				&:nth-child(1) {
+					transform: translateX(-46%) translateY(-16%) rotate(-6deg);
+				}
+				&:nth-child(2) {
+					transform: translateX(-42%) translateY(-8%);
+				}
+				&:nth-child(3) {
+					transform: translateX(-50.8%) translateY(-22%) rotate(7deg);
+				}
+				&:nth-child(4) {
+					transform: translateX(-62%) translateY(-36%) rotate(14deg);
+				}
+				&:nth-child(5) {
+					transform: translateX(-68%) translateY(-67%) rotate(21deg);
+				}
+				&:nth-child(6) {
+					transform: translateX(-77%) translateY(-81%) rotate(27deg);
+				}
+			}
+			&.card-2-active {
+				.benefit-item {
+					&:nth-child(1) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(2) {
+						transform: translateX(-46%) translateY(-16%) rotate(-6deg);
+					}
+					&:nth-child(3) {
+						transform: translateX(-42%) translateY(-8%);
+					}
+					&:nth-child(4) {
+						transform: translateX(-50.8%) translateY(-22%) rotate(7deg);
+					}
+					&:nth-child(5) {
+						transform: translateX(-62%) translateY(-36%) rotate(14deg);
+					}
+					&:nth-child(6) {
+						transform: translateX(-68%) translateY(-67%) rotate(21deg);
+					}
+				}
+			}
+			&.card-3-active {
+				.benefit-item {
+					&:nth-child(1) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(2) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(3) {
+						transform: translateX(-46%) translateY(-16%) rotate(-6deg);
+					}
+					&:nth-child(4) {
+						transform: translateX(-42%) translateY(-8%);
+					}
+					&:nth-child(5) {
+						transform: translateX(-50.8%) translateY(-22%) rotate(7deg);
+					}
+					&:nth-child(6) {
+						transform: translateX(-62%) translateY(-36%) rotate(14deg);
+					}
+				}
+			}
+			&.card-4-active {
+				.benefit-item {
+					&:nth-child(1) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(2) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(3) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(4) {
+						transform: translateX(-46%) translateY(-16%) rotate(-6deg);
+					}
+					&:nth-child(5) {
+						transform: translateX(-42%) translateY(-8%);
+					}
+					&:nth-child(6) {
+						transform: translateX(-50.8%) translateY(-22%) rotate(7deg);
+					}
+				}
+			}
+			&.card-5-active {
+				.benefit-item {
+					&:nth-child(1) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(2) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(3) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(4) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(5) {
+						transform: translateX(-46%) translateY(-16%) rotate(-6deg);
+					}
+					&:nth-child(6) {
+						transform: translateX(-42%) translateY(-8%);
+					}
+				}
+			}
+			&.card-6-active {
+				.benefit-item {
+					&:nth-child(1) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(2) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(3) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(4) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(5) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(6) {
+						transform: translateX(-46%) translateY(-16%) rotate(-6deg);
+					}
+				}
+			}
+		}
+	}
+}
+
+@include mobile {
+	.membership {
+		/* (공통) 헤더 부분 */
+		.head-visual {
+			display: block;
+			height: auto;
+			padding: 0;
+			background: none;
+			text-align: center;
+			color: $color-black;
+			.head-visual-wrap {
+				position: static;
+				.btn-play {
+					display: block;
+					z-index: 5;
+					@include posCenter;
+					width: 64px;
+					height: 64px;
+					background-image: icon(btn-play);
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-position: 0 0;
+					font-size: 0;
+					line-height: 0;
+					text-indent: -9999px;
+					&.disabled {
+						opacity: 0;
+						visibility: hidden;
+					}
+				}
+			}
+			.head-tit-wrap {
+				margin-top: 12px;
+				padding: 40px 24px;
+				background: linear-gradient(270deg, #E5FAFF 0%, #F9F4FF 100%) 0% 0% no-repeat; 
+			}
+			.logo {
+				width: unset;
+				height: 34px;
+				img {
+					margin: 0 auto;
+				}
+			}
+			h1 {
+				margin-top: 24px;
+				color: $color-black;
+				@include txt(24);
+			}
+			.intro {
+				margin-top: 16px;
+				@include txt(14);
+			}
+			.btn_set {
+				margin-top: 24px;
+				[class^=btn-] {
+					width: 100%;
+					height: 36px;
+					background: linear-gradient(270deg, #5772E8 0%, #991FE8 100%) 0% 0% no-repeat;
+					color: $color-white;
+				}
+			}
+		}
+		/* (공통) 컨텐츠 부분 */
+		#container {
+			.panel {
+				&.membership-benefit {
+					margin: 11px auto 0;
+				}
+			}
+		}
+		.inner {
+			padding-top: 64px;
+			&:has(.membership-news) {
+				padding-top: 40px;
+			}
+			&:has(.gom-use-guide-inner-wrap) {
+				padding-top: 0;
+			}
+		}
+		.cmn-content-head {
+			margin-top: 64px;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+		/* 상세 혜택 영역 */
+		.membership-benefit {
+			.inner {
+				display: block;
+				box-sizing: border-box;
+			}
+		}
+		.benefit-wrap {
+			height: calc(100vh - 48px);
+			&::before {
+				top: 4vh;
+				width: 217vw;
+				height: 217vw;
+				margin-left: -30.4vw;
+			}
+			.inner {
+				padding: 0 0 80px;
+				align-items: unset;
+				flex-direction: column;
+			}
+			.cmn-content-head {
+				min-width: unset;
+				color: $color-white;
+				h2 {
+					@include txt(24);
+				}
+				.exp {
+					margin-top: 16px;
+					@include txt(14);
+					font-weight: 400;
+				}
+			}
+		}
+		.benefit-item-wrap {
+			position: absolute;
+			top: 140px;
+			left: 24px;
+			width: calc(100% - 48px);
+			height: calc(100% - 140px);
+			.benefit-item {
+				top: 35%;
+				width: 75.2vw;
+				max-width: 335px;
+				height: unset;
+				min-height: 320px;
+				transform: unset;
+				padding: 24px 24px 32px;
+				box-shadow:  0 20px 20px #5772E833;
+				border-radius: 10px;
+				transform-origin: -150% 150%;
+				dt {
+					@include txt(16);
+					color: $color-black-1;
+					.num {
+						width: 29px;
+						margin-bottom: 0;
+						img {
+							@include image-fit;
+						}
+					}
+					.img {
+						position: static;
+						bottom: unset;
+						left: unset;
+						width: 120px;
+						height: 120px;
+						margin-bottom: 12px;
+					}
+				}
+				dd {
+					padding-top: 16px;
+					@include txt(12);
+				}
+				&:nth-child(1) {
+					transform: translateX(-46%) translateY(-36%) rotate(-4deg);
+				}
+				&:nth-child(2) {
+					transform: translateX(-59%) translateY(-49%) rotate(4deg);
+				}
+				&:nth-child(3) {
+					transform: translateX(-64%) translateY(-53%) rotate(8deg);
+				}
+				&:nth-child(4)  {
+					transform: translateX(-71%) translateY(-65%) rotate(13deg);
+				}
+				&:nth-child(5) {
+					transform: translateX(-78%) translateY(-78%) rotate(16deg);
+				}
+				&:nth-child(6) {
+					transform: translateX(-85%) translateY(-92%) rotate(20deg);
+				}
+			}
+			&.card-2-active {
+				.benefit-item {
+					&:nth-child(1) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(2) {
+						transform: translateX(-46%) translateY(-36%) rotate(-4deg);
+					}
+					&:nth-child(3) {
+						transform: translateX(-59%) translateY(-49%) rotate(4deg);
+					}
+					&:nth-child(4) {
+						transform: translateX(-64%) translateY(-53%) rotate(8deg);
+					}
+					&:nth-child(5)  {
+						transform: translateX(-71%) translateY(-65%) rotate(13deg);
+					}
+					&:nth-child(6) {
+						transform: translateX(-78%) translateY(-78%) rotate(16deg);
+					}
+				}
+			}
+			&.card-3-active {
+				.benefit-item {
+					&:nth-child(1) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(2) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(3) {
+						transform: translateX(-46%) translateY(-36%) rotate(-4deg);
+					}
+					&:nth-child(4) {
+						transform: translateX(-59%) translateY(-49%) rotate(4deg);
+					}
+					&:nth-child(5) {
+						transform: translateX(-64%) translateY(-53%) rotate(8deg);
+					}
+					&:nth-child(6)  {
+						transform: translateX(-71%) translateY(-65%) rotate(13deg);
+					}
+				}
+			}
+			&.card-4-active {
+				.benefit-item {
+					&:nth-child(1) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(2) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(3) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(4) {
+						transform: translateX(-46%) translateY(-36%) rotate(-4deg);
+					}
+					&:nth-child(5) {
+						transform: translateX(-59%) translateY(-49%) rotate(4deg);
+					}
+					&:nth-child(6) {
+						transform: translateX(-64%) translateY(-53%) rotate(8deg);
+					}
+				}
+			}
+			&.card-5-active {
+				.benefit-item {
+					&:nth-child(1) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(2) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(3) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(4) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(5) {
+						transform: translateX(-46%) translateY(-36%) rotate(-4deg);
+					}
+					&:nth-child(6) {
+						transform: translateX(-59%) translateY(-49%) rotate(4deg);
+					}
+				}
+			}
+			&.card-6-active {
+				.benefit-item {
+					&:nth-child(1) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(2) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(3) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(4) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(5) {
+						transform: translateX(-59%) translateY(-200vh) rotate(-18deg);
+					}
+					&:nth-child(6) {
+						transform: translateX(-46%) translateY(-36%) rotate(-4deg);
+					}
+				}
+			}
+		}
+		/* 이용권 영역 */
+		.membership-ticket {
+			.cmn-content-head {
+				padding-top: 0;
+				.easy-txt {
+					display: none;
+				}
+			}
+			.membership-title {
+				@include txt(24);
+				span {
+					margin-top: 12px;
+					@include txt(20);
+				}
+			}
+			.gom-card-box-defalut {
+				padding: 16px 0 100px;
+			}
+			.gom-package-item {
+				.gom-package-bnr {
+					margin-top: 0;
+				}  
+			}
+			&:before {
+				display: none;
+			}
+		}
+		/* 소식 */
+		.membership-news {
+			height: 119px;
+			background-color:  #00FF2233;
+		}
+		/* 곰패스 유의사항 */
+		.membership-notice {
+			dt {
+				margin-bottom: 12px;
+				font-weight: 700;
+				@include txt(14);
+			}
+			dd {
+				@include txt(12);
+			}
+		}
+		/* animate 요소 */
+		.animate-item {
+			&.animate-item-01 {
+				width: 67.2vw;
+				top: -6.1vw;
+				right: 0;
+				transform: translateX(60%) translateY(80px);
+				&.active {
+					transform: translateX(60%) translateY(0px);
+				}
+			}
+			&.animate-item-02 {
+				width: 109vw;
+				bottom: -5.9vw;
+				left: 0;
+				transform: translateX(-42%) translateY(80px);
+				&.active {
+					transform: translateX(-42%) translateY(0px);
+				}
+			}
+			&.animate-item-03 {
+				width: 68.8vw;
+				bottom: -10.6vw;
+				right: 0;
+				transform: translateX(60%) translateY(80px);
+				&.active {
+					transform: translateX(60%) translateY(0px);
+				}
+			}
+		}
+	}
+}

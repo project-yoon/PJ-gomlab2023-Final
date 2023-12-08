@@ -1,0 +1,1108 @@
+@charset "utf-8";
+@import "./utilities/variables";
+@import "./utilities/mixins";
+
+.mypage {
+	.my-info {
+		display: flex;
+		flex-direction: column;
+		margin: 24px 0;
+		padding: 16px 12px;
+		border-radius: 4px;
+		background: $color-gray-20;
+		.name {
+			font-weight: 700;
+			@include txt(14);
+		}
+		.email {
+			display: block;
+			margin-top: 8px;
+			font-weight: 700;
+			@include txt(11);
+			color: $color-gray-01;
+		}
+	}
+	.my-until {
+		margin-top: 16px;
+		padding: 16px 24px 20px;
+		border-radius: 4px;
+		background: $color-gray-21;
+		ul {
+			display: flex;
+			justify-content: space-between;
+			gap: 20px;
+			li {
+				a {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					text-align: center;
+					@include txt(14);
+					&::before {
+						content: '';
+						display: block;
+						width: 48px;
+						height: 48px;
+						margin-bottom: 8px;
+					}
+					h2 {
+						font-weight: 400;
+						@include txt(14);
+					}
+					span {
+						margin-top: 4px;
+						font-weight: 700;
+					}
+				}
+				&.license {
+					a::before {
+						background: url(#{$img-url}/layout/ico_my_license.svg);
+					}
+				}
+				&.coupon {
+					a::before {
+						background: url(#{$img-url}/layout/ico_my_license.svg);
+					}
+				}
+				&.inquiry {
+					a::before {
+						background: url(#{$img-url}/layout/ico_my_license.svg);
+					}
+				}
+			}
+		}
+	}
+	.mypage-home {
+		.command-cont {
+			width: 100%;
+			height: 320px;
+			background: #00FF2233;
+		}
+		.my-group {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			gap: 18px;
+			margin-top: 40px;
+			> div {
+				flex: 1;
+				overflow: hidden;
+				padding-bottom: 24px;
+				border-bottom: 1px solid $color-gray-11;
+			}
+		}
+		.subscribe-list {
+			li {
+				width: 80px;
+			}
+			.empty {
+				width: unset;
+			}
+		}
+	}
+	[class^=my-] {
+		.tit {
+			margin-bottom: 24px;
+			padding-bottom: 16px;
+			font-weight: 700;
+			@include txt(16);
+			border-bottom: 2px solid $color-black-1;
+		}
+	}
+	.notice-list {
+		margin-top: 24px;
+		.empty {
+			text-align: center;
+			@include txt(14);
+		}
+		.notice-item {
+			a {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+			.txt {
+				flex: 1;
+				@include ellipsis;
+				font-weight: 700;
+				@include txt(14)
+			}
+			& + .notice-item {
+				margin-top: 24px;
+			}
+			&:not(:has(a)) {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+		}
+	}
+	.my-license {
+		padding-bottom: 24px;
+		border-bottom: 1px solid $color-gray-11;
+		.tit {
+			margin-bottom: 34px;
+			padding-bottom: 16px;
+			font-weight: 700;
+			@include txt(16);
+			border-bottom: 2px solid $color-black-1;
+		}
+		.subscribe-list {
+			display: flex;
+			justify-content: flex-start;
+			gap: 8px;
+			flex-wrap: wrap;
+			&:has(.empty) {
+				display: block;
+			}
+		}
+		.empty {
+			width: unset;
+			text-align: center;
+			@include txt(14);
+		}
+		.subscribe-item {
+			position: relative;
+			width: 100px;
+			a {
+				display: block;
+			}
+			.logo-ico {
+				display: block;
+				width: 64px;
+				height: 64px;
+				margin: 0 auto;
+			}
+			.num {
+				position: absolute;
+				right: 8px;
+				top: -10px;
+				display: inline-block;
+				min-width: 20px;
+				height: 20px;
+				padding: 5px 8px;
+				border-radius: 20px;
+				font-weight: 700;
+				@include txt(10);
+				color: $color-white;
+				background: $color-black-1;
+				box-sizing: border-box;
+			}
+			.name {
+				margin-top: 18px;
+				font-weight: 700;
+				@include txt(14);
+				text-align: center;
+			}
+		}
+		.notice-list {
+			margin-top: 20px;
+		}
+	}
+	.cmn-content-head { //공통 head 부분
+		&:not(:first-child) {
+			margin-top: 80px;
+		}
+		h3 {
+			@include txt(16);
+		}
+	}
+	.cmn-content-sub-head {	//공통 sub-head 부분
+		margin: 40px 0 16px;
+		h3 {
+			@include txt(20);
+		}
+	}
+	.cmn-content-util {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 16px;
+	}
+	.mypage-head { //탈퇴하기, 라이선스 사용
+		position: relative;
+		margin-bottom: 32px;
+		h1 {
+			@include txt(24);
+			font-weight: 700;
+			&.my-out-title {
+				@include txt(20);
+			}
+		}
+		.title-ac {
+			text-align: center;
+		}
+		p {
+			text-align: center;
+			margin-top: 12px;
+		}
+		.exp {
+			margin-top: 32px;
+			@include txt(14);
+			span {
+				display: block;
+				margin-top: 10px;
+				color: $color-orange-2;
+			}
+		}
+		.current-step-wrap {
+			@include posRight($top: 0, $right: 0, $posY: 0%);
+			@include txt(14);
+			color: $color-gray-06;
+			text-align: right;
+			span {
+				color: $color-black-1;
+			}
+		}
+	}
+	a.move-to {
+		text-decoration: underline;
+		font-weight: 700;
+	}
+	.btn-withdrawal {
+		text-decoration: underline;
+		color: $color-gray-06;
+		@include txt(14);
+		cursor: pointer;
+	}
+	.my-license-info { //이용권 영역
+		margin-bottom: 40px;
+		padding: 24px;
+		border-radius: 10px;
+		background: linear-gradient(90deg, #5772E8 0%, #7D42E8 33%, #991FE8 100%) 0% 0% no-repeat;
+		color: $color-white;
+		dl {
+			position: relative;
+			min-height: 55px;
+			padding: 8px 0 16px 80px;
+			border-bottom: 1px solid #DADADA;
+			.pd-logo {
+				@include posLeft($top: 0px, $posY: 0%);
+				width: 64px;
+				height: 64px;
+			}
+			dt {
+				margin-bottom: 12px;
+				@include txt(16);
+				font-weight: 700;
+				.badge-b-white {
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 8px;
+					background-color: transparent;
+					border: 1px solid $color-white;
+				}
+			}
+			dd {
+				font-size: 0;
+				line-height: 0;
+				a {
+					@include txt(14);
+					color: $color-white;
+					font-weight: 700;
+					&::after {
+						display: inline-block;
+						vertical-align: middle;
+						width: 20px;
+						height: 20px;
+						margin: 0 0 0 4px;
+						background: url(#{$img-url}/layout/icon_next_md_w.svg);
+						fill: $color-white;
+						content: "";
+					}
+				}
+			}
+		}
+		ul {
+			margin-top: 16px;
+			font-size: 0;
+			line-height: 0;
+			li {
+				display: inline-block;
+				vertical-align: top;
+				@include txt(14);
+				& + li {
+					margin-left: 27px;
+				}
+				span {
+					position: relative;
+					margin-right: 24px;
+					&::before {
+						@include posRight($right: -12px);
+						width: 1px;
+						height: 13px;
+						background-color: $color-white;
+						content: "";
+					}
+				}
+			}
+		}
+	}
+	.mypage-detail{	//마이페이지 > 상세 내역
+		.command-cont {
+			margin-top: 64px;
+		}
+		.dot-list {
+			margin-top: 24px;
+			li {
+				margin: 0;
+				@include txt(11);
+				&::before {
+					top: 6px;
+					background-color: $color-black-1;
+				}
+			}
+		}
+	}
+	.use-label { //내계정
+		li {
+			gap: 12px;
+		}	
+		.label {
+			width: 120px;
+		}
+		.list-content {
+			span {
+				font-weight: 700;
+			}
+		}
+		.form-col:has(input:disabled) {
+			width: 327px;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+	.sub-check {
+		font-size: 0;
+		line-height: 0;
+		label {
+			& + label {
+				margin-left: 12px;
+			}
+		}
+	}
+	.mypage-account-util {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 24px;
+		&:not(:has(.btn-withdrawal)){
+			justify-content: flex-end;
+		}
+		.btn-withdrawal {
+			order: -1;
+		}
+	}
+	.license-wrap { //라이선스
+		.license-util {
+			margin-top: 24px;
+			* {
+				min-width: 158px;
+			}
+		}
+		.list-content {
+			display: flex;
+			.btn-wrap {
+				margin-top: -8px;
+				margin-left: auto;
+			}
+			.end-date {
+				display: block;
+				margin-top: 8px;
+				color: $color-orange-2;
+			}
+		}
+		.use-label {
+			li {
+				display: flex;
+				.label {
+					width: 88px;
+				}
+			}
+		}
+		.board-common {
+			.btn-wrap {
+				@include posRight($top: 24px, $right: 0, $posY: 0%); 
+			}
+		}
+	}
+	.license-cont {
+		margin-top: 40px;
+	}
+	.board-common {
+		li {
+			position: relative;
+			@include txt(14);
+			&.empty {
+				text-align: center;
+			}
+			p[class] {
+				font-weight: 700;
+			}
+			p {
+				& + p {
+					margin-top: 12px;
+				}
+			}
+			.title {
+				margin-bottom: 16px;
+				font-weight: 700;
+				span {
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 10px;
+				}
+			}
+			.num {
+				margin-bottom: 16px;
+			}
+			.stauts-wrap {
+				margin-top: 12px;
+				padding-right: 80px;
+			}
+			.license-cancel {
+				position: absolute;
+				bottom: 24px;
+				right: 0;
+				@include txt(14);
+				font-weight: 700;
+				color: $color-gray-06;
+				text-decoration: underline;
+			}
+			.btn-wrap {
+				gap: 8px;
+				&.coupon-btn {
+					@include posRight($top: 24px, $right: 0, $posY: 0%); 
+				}
+			}
+			&.disabled {
+				color: $color-gray-04;
+				strong {
+					color: $color-gray-04;
+				}
+			}
+		}
+		&.check-list { //내자막 업로드 내역, 라이선스 연장 주문 내 체크 박스가 있는 형태의 리스트
+			li {
+				.stauts-wrap {
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+	.license-form { //이용권 추가 등록
+		width: 370px;
+		margin: 32px auto 0;
+		& + .btn-wrap {
+			margin-top: 40px;
+		}
+	}
+	.subtitle-detail-wrap, .inquiry-wrap {
+		margin-top: 24px;
+	}
+	.doard-acco-list { //결제내역, 내 문의내역 사용
+		li {
+			position: relative;
+			padding: 0;
+			@include txt(14);
+			&.active, &:last-child {
+				border: 0 none;
+			}
+			&.active {
+				.list-info {
+					&::before {
+						transform: translateY(-50%) rotate(-180deg);
+					}
+				}
+			}
+			&.empty {
+				padding: 24px 0;
+				text-align: center;
+			}
+		}
+		.acco-head {
+			padding: 24px 0;
+		}
+		.list-info {
+			flex: 1;
+			&::before {
+				content: "";
+				@include posRight($top: 40px);
+				width: 24px;
+				height: 24px;
+				background: url(#{$img-url}/layout/icon_down_lg.svg) center no-repeat;
+				transition: transform .3s ease;
+			}
+			.title {
+				margin-bottom: 18px;
+				font-weight: 700;
+				span[class^=badge-b-] {
+					margin-right: 8px;
+				}
+			}
+		}
+		.label-det {
+			gap: 8px;
+			margin-top: 12px;
+			dt {
+				width: auto;
+			}
+			dd {
+				flex: 1;
+				font-weight: 700;
+			}
+		}
+		.acco-content {
+			padding: 32px 24px;
+			border-radius: 4px;
+			background-color: $color-gray-21;
+		}
+		&.inquiry-list { //내 문의내역
+			.list-info {
+				overflow: hidden;
+				&::before {
+					content: "";
+					@include posRight($top: 26px);
+					width: 16px;
+					height: 16px;
+					background-image: url(#{$img-url}/layout/icon_down_md.svg);
+				}
+				.title {
+					@include ellipsis;
+					padding-right: 36px;
+				}
+			}
+			.acco-content {
+				margin: 0 0 16px 0;
+				padding: 24px 16px;
+				p {
+					& + p {
+						margin-top: 22px;
+					}
+				}
+			}
+			li {
+				&:not(:has(.acco-head)) {
+					padding: 24px 0;
+					.list-info {
+						&::before {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+	.pay-summary-wrap {
+		margin-bottom: 24px;
+		border-bottom: 1px solid $color-gray-11;
+		&:last-child {
+			margin-bottom: 0;
+			.pay-summary {
+				margin-bottom: 12px;
+			}
+		}
+		.pay-summary {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 24px;
+			span {
+				@include txt(14)
+			}
+			.pay-info {
+				text-align: right;
+				p {
+					& + p {
+						margin-top: 8px;
+					}
+				}
+			}
+			.cancel {
+				text-decoration: underline;
+				color: $color-orange-2;
+				font-weight: 700;
+			}
+		}
+		&:has(.pay-total) {
+			border: 0 none;
+		}
+	}
+	.check-list {
+		.form-item {
+			margin-bottom: 10px;
+		}
+		.stauts-wrap {
+			&:has(strong) {
+				span {
+					font-weight: 400;
+				}
+			}
+		}
+	}
+	//탈퇴하기, 자동결제 해지
+	.out-step-form {
+		div.agree-form {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 16px;
+			@include txt(14)
+		}
+		.btn-wrap {
+			margin-top: 40px;
+			gap: 11px
+		}
+		.out-agree {
+			padding-bottom: 40px;
+			border-bottom: 1px solid $color-gray-11;
+			.form-name {
+				display: block;
+				margin-bottom: 20px;
+			}
+			& + .out-step-title {
+				margin-top: 40px;
+			}
+		}
+		.out-step-title {
+			margin: 80px 0 20px;
+			@include txt(16);
+			font-weight: 700;
+			&:first-child {
+				margin-top: 40px;
+			}
+		}
+		.out-step-check-list {
+			@include txt(14);
+			.board-common-name {
+				@include txt(16);
+				font-weight: 700;
+			}
+			.board-common-mid {
+				margin: 16px 0 8px;
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+			.board-common-date {
+				font-weight: 400;
+			}
+		}
+		.out-step-agree-form {
+			.form-item {
+				margin-top: 20px;
+			}
+			.agree-form {
+				li {
+					& + li {
+						margin-top: 6px;
+					}
+				}
+			}
+		}
+		.notice-txt {
+			margin-top: 16px;
+			@include txt(14);
+		}
+		.benefits-wrap {
+			height: 233px;
+			background-color: #CCFFD2;
+			&:has(button) {
+				position: relative;
+				padding-bottom: 86px;
+			}
+			button {
+				@include posBottom($bottom: 40px, $left: 50%, $posX: -50%)
+			}
+		}
+	}
+	.simple-content {
+		.simple-tit-exp {
+			margin-top: 16px;
+		}
+		.btn-wrap {
+			margin-top: 45px;
+		}
+	}
+}
+// 팝업 > 이메일 변경하기
+#popModifyEmail {
+	.current-step-wrap {
+		@include posRight($top: 30px, $right: 40px, $posY: 0%);
+		@include txt(14);
+		color: $color-gray-06;
+		text-align: right;
+		span {
+			color: $color-black-1;
+		}
+	}
+	.pop-sub-title {
+		@include txt(14);
+		font-weight: 400;
+	}
+	.pop-content-no-border {
+		border: 0 none;
+	}
+	.form-wrap {
+		& > *:not(p) {
+			width: 327px;
+			margin: 0 auto;
+		}
+		.current-email {
+			margin-bottom: 40px;
+			padding: 20px;
+			background-color: $color-gray-21;
+			dt {
+				margin-bottom: 10px;
+			}
+			span {
+				font-weight: 700;
+			}
+		}
+		.form-item {
+			margin-top: 32px;
+			.help-wrap {
+				text-align: left;
+			}
+		}
+		.btn-wrap {
+			margin-top: 40px;
+			& > *{
+			flex: 1;
+			}
+		}
+	}
+}
+// 팝업 > 쿠폰선택 팝업
+#popCoupon {
+	ul.coupon-list {
+		padding: 40px 40px 0;
+		display: grid;
+		grid-template-columns: repeat(3, 130px);
+		gap: 6px;
+		li {
+			padding: 0 20px;
+			display: grid;
+			gap: 14px;
+			.name {
+				@include txt(14);
+				font-weight: 700;
+			}
+			[class^=btn-] {
+				align-self: end; 
+			}
+		}
+	}
+}
+/* 반응형 */
+@include desktop {}
+@include tablet {
+	.mypage {
+		.mypage-home {
+			.my-group {
+				> div {
+					flex: 1 1 auto;
+				}
+			}
+		}
+		//내 계정
+		.mypage-detail, .mypage-account {
+			.use-label {
+				.list-content {
+					flex: 1;
+				}
+			}
+			.license-info {
+				flex-direction: column-reverse;
+			}
+		} 
+	}  
+}
+@include mobile {
+	.mypage {
+		.my-until {
+			& + .snb-menu {
+				margin-top: 48px;
+			}
+		}
+		.mypage-home {
+			.command-cont {
+				margin-top: 40px;
+			}
+		}
+		.cmn-content-head {
+			.right-wrap {
+				bottom: 10px;
+			}
+			h2 {
+				@include txt(18);
+			}
+		}
+		.cmn-content-sub-head {
+			h3 {
+				@include txt(18);
+			}
+		}
+		.mypage-head { //탈퇴하기, 자동 결제 해지 step 사용
+			h1 {
+				@include txt(20);
+				&.my-out-title {
+					@include txt(18);
+				}
+			}
+			.sub-title {
+				margin-top: 12px;
+			}
+			.exp {
+				text-align: left;
+				span {
+					margin-top: 12px;
+					@include txt(12);
+				}
+			}
+			.current-step-wrap {
+				top: 40px;
+			}
+			&.mypage-regitst {
+				* {
+					text-align-last: left;
+				}
+			}
+		}
+		.my-license-info { //이용권 영역
+			padding: 16px;
+			dl {
+				position: relative;
+				min-height: 55px;
+				padding: 7px 0 16px 80px;
+				dt {
+					margin-bottom: 14px;
+				}
+				dd {
+					a {
+						@include txt(12);
+					}
+				}
+			}
+			ul {
+				li {
+					display: block;
+					& + li {
+						margin: 10px 0 0;
+					}
+				}
+			}
+		}
+		.license-form {
+			width: auto;
+		}
+		.use-label { //내계정
+			li {
+				display: block;
+				.label {
+					margin-bottom: 12px;
+				}
+			}
+			.form-col:has(input[type=text]:disabled) {
+				max-width: none;
+			}
+		}
+		.mypage-account-util {
+			display: block;
+			text-align: center;
+			margin-top: 24px;
+			.btn-md {
+				width: 100%;
+				margin-bottom: 32px;
+			}
+		}
+		.license-wrap { //라이선스
+			.use-label {
+				.label {
+					margin-bottom: 0;
+				}
+				.list-content {
+					display: block;
+					.btn-wrap {
+						margin-top: 16px;
+						justify-content: flex-start;
+					}
+				}
+				.end-date {
+					display: block;
+					margin-top: 8px;
+					color: $color-orange-2;
+				}
+			}
+			.license-util {
+				*{
+					flex: 1;
+					min-width: auto;
+					padding: 0;
+				}
+			}
+		}
+		.license-regist {
+			width: auto;
+			.form-col {
+				display: flex;
+			}
+			.btn-wrap {
+				margin-top: 40px;
+				.btn-md {
+					width: 100%;
+				}
+			}
+		}
+		.mypage-detail{
+			.command-cont {
+				margin-top: 60px;
+			}
+		}
+		.doard-acco-list { //결제 내역, 내문의내역 사용
+			padding: 0;
+			.list-info {
+				&::before {
+					content: "";
+					@include posRight($top: 24px);
+					width: 20px;
+					height: 20px;
+					background-image: url(#{$img-url}/layout/icon_down_md.svg);
+				}
+			}
+			&.payment-list {
+				.acco-head {
+					padding: 24px 0;
+				}
+			}
+			&.inquiry-list {
+				.acco-head {
+					padding: 26px 0 24px;
+				}
+				.acco-content {
+					margin: 0 0 12px 0;
+				}
+			}
+		}
+		//탈퇴하기
+		.out-step-form {
+			div.agree-form {
+				display: block;
+				text-align: right;
+				span {
+					display: block;
+					text-align: left;
+					margin-bottom: 5px;
+					@include txt(14);
+					letter-spacing: -0.3px;
+				}
+			}
+			.btn-wrap {
+				*[class^=btn-] {
+					flex: 1;
+				}
+			}
+			.out-agree {
+				.form-name {
+					@include txt(14);
+				}
+			}
+			.benefits-wrap {
+				height: 120px;
+				background-color: #CCFFD2;
+				&:has(button) {
+					position: relative;
+					padding-bottom: 65px;
+				}
+				button {
+					@include posBottom($bottom: 24px, $left: 50%, $posX: -50%);
+					width: max-content;
+				}
+			}
+		}
+		.simple-content {
+			.simple-tit-exp {
+				margin-top: 8px;
+			}
+			.btn-wrap {
+				margin-top: 40px;
+			}
+		}
+		.coupcon-form {
+			.cmn-content-head {
+				margin-top: 40px;
+				padding-top: 70px;
+				.right-wrap {
+					width: 100%;
+					bottom: unset;
+					top: 0;
+				}
+			}
+		}
+	}
+	// 팝업 > 이메일 변경하기
+	#popModifyEmail {
+		.current-step-wrap {
+			top: 20px;
+			right: 20px;
+			span {
+				color: $color-black-1;
+			}
+		}
+		.pop-sub-title {
+			padding: 0 30px;
+		}
+		.pop-content {
+			margin: 32px 0 0;
+			padding: 0 30px;
+		}
+		.form-wrap {
+			& > *:not(p) {
+				width: auto;
+			}
+			.current-email {
+				margin-bottom: 40px;
+				padding: 20px;
+				background-color: $color-gray-21;
+				dt {
+					margin-bottom: 10px;
+				}
+				span {
+					font-weight: 700;
+				}
+			}
+			.form-item {
+				margin-top: 32px;
+				.help-wrap {
+					text-align: left;
+				}
+			}
+			.btn-wrap {
+				margin-top: 40px;
+				& > *{
+				flex: 1;
+				}
+			}
+		}
+	}
+	// 팝업 > 쿠폰선택 팝업
+	#popCoupon {
+		ul.coupon-list {
+			padding: 20px 37px 0;
+			display: grid;
+			grid-template-columns: unset;
+			gap: 32px;
+			li {
+				padding: 0;
+				display: grid;
+				grid-template-columns: 40px auto 78px; 
+				gap: 8px;
+				align-items: center;
+				text-align: left;
+				.name {
+					@include txt(14);
+					font-weight: 700;
+				}
+				[class^=btn-] {
+					align-self: center; 
+				}
+			}
+		}
+	}
+}

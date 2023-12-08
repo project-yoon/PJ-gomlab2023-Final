@@ -1,0 +1,185 @@
+@charset "utf-8";
+@import "./utilities/variables";
+@import "./utilities/mixins";
+/* cp_guide_only scss */
+.cp_guide_only {
+	background-color: $color-gray-19 !important;
+	padding-top: 100px;
+	padding-bottom: 200px;
+	.cp_guide_inner {
+		margin: 0 40px;
+	}
+	.cp_guide_grid{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 12px 23px;
+		padding: 30px;
+	}
+
+	.cp_g{
+		text-align: center;
+		&.contents-head{
+			text-align: initial;
+			margin-top: -100px;
+		}
+		&.panel{
+			background-color: $color-gray-09;
+			margin-top:50px !important;
+			padding-top: 50px;
+			padding-bottom: 50px;
+			text-align: center;
+			.inner{
+				background-color: $color-gray-10;
+			}
+			&:first-child{
+				margin-top:0!important;
+			}
+		}
+	}
+	h1 {
+		&.cp_g{
+			font-size: 42px;
+			padding: 64px 0 0;
+			font-weight: 700;
+		}
+	}
+	h2 {
+		&.cp_g{
+			font-size: 26px;
+			font-weight: 700;
+			padding: 48px 0 24px;
+			margin-top: 50px;
+		}
+	}
+	h3 {
+		&.cp_g{
+			font-size: 20px;
+			font-weight: 700;
+			padding: 18px 0 12px;
+		}
+	}
+	code{
+		font-size: 16px;
+		background-color: $color-green-1;
+		color: $color-green-2;
+		padding: 6px;
+		border-radius: 6px;
+	}
+	.cp_g-ele-grid {
+		display: grid;
+		grid-template-columns: repeat(14, 1fr);
+		align-items: center;
+		gap: 24px;
+		text-align: -webkit-center;
+	}
+	.cp_g-ele-flex {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 24px;
+	}
+	.cp_g-indicator {
+		display: flex;
+		gap: 5px;
+		span {
+			display: block;
+			width: 5px;
+			height: 5px;
+			background: $color-black;
+			border-radius: 6px;
+			&.active {
+				width: 34px;
+			}
+		}
+	}
+	.lnb-wrap{
+		&.guide-lnb{
+			position: absolute !important;
+			bottom: unset !important;
+			top: unset !important;
+		}
+	}
+
+	$iconNames: (
+		profile,
+		login,
+		logout,
+		search,
+		list,
+		checkbox-off,
+		checkbox-on,
+		radio-off,
+		radio-on,
+		link,
+		info,
+		project-place,
+		image,
+		global,
+		reset,
+		post-write,
+		delete,
+		download,
+		guide,
+		close-lg,
+		close,
+		up-lg,
+		up,
+		down-lg,
+		down,
+		prev-lg,
+		prev,
+		prev-end-lg,
+		prev-end,
+		next-lg,
+		next,
+		next-end-lg,
+		next-end,
+		check-lg,
+		check,
+		check-circle,
+		add,
+		remove,
+		btn-play,
+		btn-pause,
+		sns-youtube,
+		sns-facebook,
+		sns-instagram,
+		sns-google,
+		sns-twitter,
+		sns-twitter-x,
+		sns-kakao,
+		sns-naver-blog,
+	);
+	
+	@each $iconName in $iconNames {
+		.cp-guide-#{$iconName} {
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			background: no-repeat center;
+			background-size: contain;
+			background-image: icon($iconName);
+		}
+	}
+}
+/* 반응형 */
+@include desktop {
+
+}
+@include tablet {
+	.cp_guide_only {
+		.cp_g-ele-grid {
+			grid-template-columns: repeat(7, 1fr);
+		}
+	}
+}
+@include mobile {
+	.cp_guide_only {
+		.cp_g-ele-grid {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+}
+@include sm-mobile {
+
+}

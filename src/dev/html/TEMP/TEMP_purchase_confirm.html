@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="GUIDE : 구매 확인서" menucss="/dev/ui/css/order.css"></include>
+<body class="payment">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container" class="cp_guide_only" style="background-color: #FFFFFF !important;">
+		<div id="contents">
+			<section class="panel-wrap">
+				<div class="panel">
+					<div class="inner">
+
+						<div class="btn-print-wrap">
+							<button type="button" class="btn-md btn-default" onclick="return printPage();">출력하기</button>
+						</div>
+						<div id="printArea">
+							<h1 class="buy-confirm-title">SW 구매 확인서</h1>
+							<div class="buy-confirm-code">
+								<p>No. PFE2sd1515qdsd453asd4513516742asdw</p>
+								<p>견적일 2023-00-00</p>
+							</div>
+							<table class="buy-confirm-table">
+								<caption>
+									<col style="width: 12.4%;">
+									<col style="width:50%;">
+								</caption>
+								<thead>
+								<tr>
+									<th>제품 사용자</th>
+									<th></th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>구매자명</td>
+									<td>곰곰이들</td>
+								</tr>
+								<tr>
+									<td>이메일</td>
+									<td>email@email.com</td>
+								</tr>
+								<tr>
+									<td>상품명</td>
+									<td>[B2BG] 곰믹스 프로 1년 이용권</td>
+								</tr>
+								<tr>
+									<td>결제일/결제방법</td>
+									<td>2022-00-00 / 신용카드</td>
+								</tr>
+								<tr>
+									<td>수량</td>
+									<td>10 EA</td>
+								</tr>
+								<tr>
+									<td>공급가액</td>
+									<td>₩ 200,000</td>
+								</tr>
+								<tr>
+									<td>할인금액</td>
+									<td>₩ 20,000</td>
+								</tr>
+								<tr>
+									<td>VAT</td>
+									<td>₩ 18,000</td>
+								</tr>
+								<tr>
+									<td>결제금액</td>
+									<td>일금 십구만팔천 원정(₩ 198,000)</td>
+								</tr>
+								</tbody>
+							</table>
+
+							<table class="buy-confirm-table">
+								<caption>
+									<col style="width: 12.4%;">
+									<col style="width:50%;">
+								</caption>
+								<thead>
+								<tr>
+									<th>소프트웨어 납품 현황</th>
+									<th></th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>회사명</td>
+									<td>곰앤컴퍼니</td>
+								</tr>
+								<tr>
+									<td>대표명</td>
+									<td>이병기</td>
+								</tr>
+								<tr>
+									<td>사업자번호</td>
+									<td>120-81-86669</td>
+								</tr>
+								<tr>
+									<td>결제일/결제방법</td>
+									<td>2022-00-00 / 신용카드</td>
+								</tr>
+								<tr>
+									<td>주소</td>
+									<td>서울 강남구 개포로216</td>
+								</tr>
+								<tr>
+									<td>담당자</td>
+									<td>고혜진 (SW사업팀)</td>
+								</tr>
+								<tr>
+									<td>담당자 이메일</td>
+									<td>gomcam-gb@gomcorp.com</td>
+								</tr>
+								</tbody>
+							</table>
+
+							<div class="buy-confirm-info">
+								<p>“사용자”는 “소프트웨어＂를 상기와 같이 취득하였으며, “회사＂는 본 확인서를 통해 구매확인을 증명합니다.<br>본 증서는 “사용자“ 외 다른 목적으로 이용될 수 없으며 사용기간 동안 “소프트웨어“ 이용에 대한 관리가 필요한 경우 본 증서를 통해 “회사"에 접수할 수 있으니 보관에 유의해 주시기 바랍니다.</p>
+								<a href="#" class="gom-logo-company md"></a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script>
+		let initBodyHtml;
+
+		function printPage() {
+			window.print();
+		}
+
+		function beforePrint() {
+			initBodyHtml = document.body.innerHTML;
+			document.body.innerHTML = document.getElementById('printArea').innerHTML;
+		}
+
+		function afterPrint() {
+			document.body.innerHTML = initBodyHtml;
+		}
+
+		window.onbeforeprint = beforePrint;
+		window.onafterprint = afterPrint;
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

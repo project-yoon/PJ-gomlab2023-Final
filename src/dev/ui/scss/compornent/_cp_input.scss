@@ -1,0 +1,733 @@
+// component_Input
+
+/*input*/
+.form-item {
+	.form-name {
+		display: block;
+		@include txt(14);
+		margin-bottom: 16px;
+	}
+	.form-label {
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: inline-flex;
+		align-items: center;
+		@include txt(14);
+		margin-right: 12px;
+		width: 120px;
+		min-height: $inputSize-md;
+		font-weight: 400;
+		&.required::before {
+			content: '*';
+			display: inline-block;
+			padding-right: 2px;
+		}
+	}
+	.fake-label {
+		@include txt(14);
+		color: $color-gray-06;
+		@include posLeft($top: 5px, $posY: unset);
+		&.required::before {
+			content: '*';
+			display: inline-block;
+			padding-right: 2px;
+			color: $color-orange-2;
+		}
+	}
+	.form-filename {
+		display: block;
+		padding: 4px 0;
+		@include txt(14);
+		max-width: 217px;
+		box-sizing: border-box;
+		@include ellipsis;
+
+		&.null {
+			color: $color-gray-06;
+		}
+	}
+	.timer {
+		@include txt(12);
+		@include posRight($top: 9px, $posY: unset);
+	}
+	.compleat {
+		@include posRight($top: 3px, $posY: unset);
+		width: 24px;
+		height: 24px;
+		background: no-repeat center;
+		background-image: icon(check-circle, 69b703);
+	}
+	.inp-box + .fake-label {
+		@include posLeft($top: 9px, $left: 12px, $posY: unset);
+	}
+	& + .form-item {
+		margin-top: 24px;
+	}
+	&:has(.form-label) {
+		position: relative;
+		padding-left: 132px;
+	}
+}
+.form-cont {
+	position: relative;
+	.form-drop-box {
+		width: 327px;
+	}
+	input[type=text],
+	input[type=password] {
+		display: block;
+		box-sizing: border-box;
+		@include txt(14);
+		font-weight: 600;
+		width: 327px;
+		height: $inputSize-md;
+		&::placeholder {
+			font-weight: initial;
+			color: $color-gray-06;
+		}
+		&.search {
+			width: 327px;
+			padding-left: 30px;
+		}
+		&.wide {
+			width: $input-col;
+		}
+	}
+	input[type=file] {
+		width: 0;
+		height: 0;
+		overflow: hidden;
+		position: absolute;
+	}
+	select {
+		display: none;
+	}
+	label + label {
+		margin-left: 20px;
+	}
+	.inp-line {
+		border-bottom: 1px solid $color-gray-04;
+		&:focus {
+			border-bottom-color: $color-black-1;
+		}
+		&.caution {
+			border-bottom-color: $color-orange-2;
+		}
+	}
+	.inp-box {
+		background-color: $color-gray-20;
+		border-radius: 4px;
+		padding: 0 12px;
+	}
+	.inp-dropbox {
+		border: 1px solid $color-gray-11;
+		border-radius: 4px;
+		padding-left: 12px;
+	}
+	.btn-password-view {
+		@include posRight($top: 10px, $posY: unset);
+	}
+	.btn-search {
+		@include posLeft($top: 6px, $posY: unset);
+	}
+	&.form-cont-bottom { // footer selectbox 디자인 사용
+		.form-drop-box {
+			width: 140px;
+			.btn-drop-box {
+				&::before {
+					background: no-repeat center icon(down, ffffff);
+				}
+			}
+			ul {
+				&.drop-list {
+					top: unset;
+					bottom: 45px;
+					li {
+						a {
+							color: $color-black-1 !important;
+							font-weight: 700;
+						}
+					}
+				}
+			}
+		}
+	}
+	&:has(.btn-drop-quantity) {
+		width: 140px;
+		& > input {
+			width: inherit;
+			padding-right: 44px;
+		}
+		.form-drop-box {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 44px;
+		}
+	}
+}
+.form-col {
+	display: flex;
+	gap: 13px;
+	max-width: $input-col;
+	&:has([class^=btn-]) {
+		width: 327px;
+	}
+	&:has(.btn-item-util) {
+		width: 370px;
+		align-items: center;
+	}
+	.form-cont {
+		flex: 1;
+		input[type=text],
+		input[type=password] {
+			width: 100%;
+		}
+	}
+}
+/*search-box*/
+.searh-form-wrap {
+	margin: 40px 0;
+	.form-cont {
+		margin: 0 auto;
+		max-width: 632px;
+		position: relative;
+		border: 1px solid $color-gray-11;
+		background-color: $color-white;
+		border-radius: 4px;
+		display: flex;
+		select {
+			display: none;
+		}
+		.form-drop-box {
+			padding: 0;
+			width: unset;
+			.btn-drop-search {
+				height: unset;
+				width: 166px;
+				padding: 17px 36px 17px 16px;
+				&::before {
+					right: 8px;
+				}
+				& + ul.drop-list {
+					top: 65px;
+				}
+			}
+		}
+		.inp-search {
+			box-sizing: border-box;
+			height: auto;
+			padding: 17px 56px 17px 16px;
+			@include txt(14);
+			flex: 1;
+		}
+		.btn-search {
+			@include posRight($right: 16px);
+			left: unset;
+			width: 24px;
+			height: 24px;
+			background-image: icon(search, 858585);
+			background-size: 24px auto;
+		}
+	}
+}
+.help-wrap {
+	margin-top: 10px;
+	p {			
+		word-break: keep-all;
+		@include txt(12);
+		font-weight: 400;
+		&.guide-txt {
+			position: relative;
+			padding-left: 5px;
+			&::before {
+				content: '';
+				@include posLeft($top: 6px, $posY: unset);
+				width: 2px;
+				height: 2px;
+				border-radius: 50%;
+				background-color: $color-black-1;
+			}
+		}
+		&.err-txt {
+			color: $color-orange-2;
+		}
+		&.noti-gry {
+			text-align: left;
+			color: $color-gray-05;
+		}
+	}
+	.move-to {
+		text-decoration: underline;
+		@include txt(12);
+		font-weight: bold;
+	}
+}
+.password-forgot-txt {
+	display: inline-block;
+	margin-top: 12px;
+	text-decoration: underline;
+	@include txt(14);
+	font-weight: 700;
+}
+/*text area*/
+textarea {
+	background-color: $color-gray-20;
+	padding: 16px 12px;
+	@include txt(14);
+	border-radius: 4px;
+	height: 200px;
+	width: 100%;
+	box-sizing: border-box;
+	resize: vertical;
+	&.wide {
+		width: $input-col;
+	}
+	&::placeholder {
+		color: $color-gray-06;
+	}
+}
+/*checkbox*/
+input[type=checkbox]{
+	width: 24px;
+	height: 24px;
+	background: no-repeat center icon(checkbox-off);
+	background-size: contain auto;
+	&:checked {
+		background-image: icon(checkbox-on);
+	}
+	&:disabled + span {
+		color: $color-gray-04;
+	}
+	&:checked + span {
+		color: $color-black-1;
+	}
+}
+/*radio*/
+input[type=radio] {
+	width: 24px;
+	height: 24px;
+	background: no-repeat center icon(radio-off);
+	background-size: contain;
+	&:checked {
+		background-image: icon(radio-on);
+	}
+	& + span {
+		display: inline-block;
+		@include txt(14);
+	}
+	&:disabled + span {
+		color: $color-gray-04;
+	}
+	&:checked + span {
+		color: $color-black-1;
+	}
+}
+/*label has radio && checkbox*/
+.inp-chk {
+	position: relative;
+	display: inline-block;
+	padding-left: 32px;
+	@include txt(14);
+	line-height: 24px;
+	cursor: pointer;
+	input {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+}
+label:has(input[type=radio]),
+label:has(input[type=checkbox]) {
+	@extend .inp-chk;
+	&:has(:disabled) {
+		color: $color-gray-04;
+		cursor: no-drop;
+	}
+}
+.chk-notice {
+	@extend .inp-chk;
+	input[type=checkbox] {
+		background-image: icon(checkbox-off, F10001);
+		&:checked {
+			background-image: icon(checkbox-on, F10001);
+		}
+	}
+}
+/* agree form */
+.agree-form {
+	margin-top: 24px;
+	li {
+		& + li {
+			margin-top: 12px;
+		}
+	}
+	label {
+		display: inline-block;
+		& + label {
+			margin-left: 16px;
+		}
+		a, button {
+			font-size: inherit;
+		}
+	}
+	.sub-check {
+		margin: 12px 0 0 32px;
+	}
+}
+
+/*dropdown*/
+.form-drop-box {
+	position: relative;
+
+	/*dropdown btn*/
+	button {
+		cursor: pointer;
+		position: relative;
+		box-sizing: border-box;
+		text-align: left;
+		height: $inputSize-md;
+		@include txt(14);
+		width: 100%;
+		&[class^='btn-drop-'] {
+			padding-right: 32px;
+			&::before {
+				content: '';
+				@include posRight;
+				display: block;
+				width: 20px;
+				height: 20px;
+				background: no-repeat center icon(down);
+				transition: .3s ease;
+			}
+			&.open {
+				&::before {
+					transform: translateY(-50%) rotate(-180deg);
+				}
+			}
+		}
+		& > span {
+			color: $color-gray-11;
+			pointer-events: none;
+			// &.required {
+			// 	&::before {
+			// 		content: '*';
+			// 		display: inline-block;
+			// 		padding-right: 2px;
+			// 		color: $color-orange-2;
+			// 	}
+			// }
+		}
+		&.btn-drop-box {
+			border: 1px solid $color-gray-11;
+			border-radius: 4px;
+			padding-left: 12px;
+			&::before {
+				@include posRight($right: 12px);
+			}
+			& + ul.drop-list {
+				li {
+					a.active {
+						padding-right: 32px;
+						background: no-repeat center right 12px icon(check);
+						background-color: $color-gray-20;
+						background-size: 20px auto;
+					}
+				}
+			}
+		}
+		&.btn-drop-line {
+			border-bottom: 1px solid $color-gray-04;
+		}
+		&.btn-drop-quantity {
+			font-size: 0;
+			line-height:0;
+			color: transparent;
+			width: 100%;
+			padding: 0;
+
+			&::before {
+				@include posCenter;
+			}
+			&.open::before {
+				transform: translate(-50%, -50%) rotate(-180deg);
+			}
+			& + ul.drop-list {
+				max-height: 144px;
+				overflow-y: scroll;
+				width: 140px;
+				right: 0;
+			}
+		}
+	}
+
+	/*list*/
+	ul.drop-list {
+		position: absolute;
+		box-sizing: border-box;
+		z-index: 2;
+		top: calc($inputSize-md + 12px);
+		border-radius: 4px;
+		width: 100%;
+		border: 1px solid $color-gray-11;
+		background-color: $color-white;
+		display: none;
+		// overflow: auto;
+		li {
+			a {
+				display: flex;
+				align-items: center;
+				height: $inputSize-md;
+				padding: 0 12px;
+				@include txt(14);
+				// white-space: nowrap;
+				&:hover {
+					background-color: $color-gray-20;
+				}
+			}
+			button {
+				padding-left: 40px;
+				&::before {
+					content: '';
+					@include posLeft($left: 12px);
+					display: block;
+					width: 20px;
+					height: 20px;
+					background: no-repeat center icon(down);
+					transition: .3s ease;
+				}
+				&.active {
+					background-color: $color-gray-20;
+					color: $color-gray-01;
+					
+					&::before {
+						transform: translateY(-50%) rotate(-180deg);
+					}
+				}
+				&:hover {
+					background-color: $color-gray-20;
+				}
+				&.open {
+					background-color: $color-gray-20;
+					&::before {
+						transform: translateY(-50%) rotate(-180deg);
+					}
+				}
+			}
+			ul {
+				display: none;
+			}
+		}
+	}
+}
+.txt-blue {
+	color: $color-blue-1;
+}
+.txt-red {
+	color: $color-red-1;
+}
+.dot-list {
+	display: inline-block;
+	li {
+		position: relative;
+		padding-left: 12px;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 9px;
+			left: 4px;
+			border-radius: 50%;
+			display: block;
+			width: 2px;
+			height: 2px;
+			border-radius: 50%;
+			background-color: $color-black;
+		}
+		&.txt-blue::before {
+			background-color: $color-blue-1;	
+		}
+	}
+	&.sub {
+		li {
+			color: $color-gray-04;
+			&::before {
+				background-color: $color-gray-04;
+			}
+		}
+	}
+}
+.dash-list {
+	li {
+		position: relative;
+		padding-left: 8px;
+		@include txt(12);
+		&::before {
+			content: '-';
+			position: absolute;
+			top: 0px;
+			left: 0;
+			border-radius: 50%;
+		}
+	}
+}
+/* 툴팁 */
+.tooltip-wrap {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	.tooltip-button {
+		font-size: 0;
+		line-height: 0;
+		text-indent: -9999px;
+		display: inline-block;
+		vertical-align: top;
+		width: 24px;
+		height: 24px;
+		background: icon(guide) center center no-repeat;
+		&.active {
+			opacity: .7;
+		}
+	}
+	.tooltip-cont {
+		display: none;
+		@include posBottom($bottom: 36px, $left: 0, $posX: -50%);
+		width: max-content;
+		min-width: 327px;
+		padding: 18px 16px;
+		border-radius: 4px;
+		border: 1px solid $color-gray-11;
+		background-color: $color-gray-21;
+		box-sizing: border-box;
+		@include txt(12);
+		.tooltip-title {
+			margin-bottom: 12px;
+			@include txt(14);
+			font-weight: 700;
+		}
+		.dot-list {
+			li {
+				&:before {
+					top: 5px;
+				}
+			}
+		}
+		.btn-close-tooltip {
+			@include posRight($top: 18px, $right: 18px, $posY: 0);
+			width: 16px;
+			height: 16px;
+		}
+	}
+}
+
+
+/* 반응형 */
+@include tablet {
+	.form-cont {
+		input[type=text],
+		input[type=password] {
+			width: 100%;
+			&.search {
+				width: auto;
+			}
+			&.wide {
+				width: 100%;
+			}
+		}
+		.form-drop-box {
+			width: 100%;
+		}
+	}
+	.form-item {
+		.form-label {
+			position: unset;
+			margin: 0 0 12px;
+			width: auto;
+			min-height: unset;
+			display: block;
+		}
+		&:has(.form-label) {
+			display: block;
+			padding-left: 0;
+		}
+	}
+	.form-col {
+		max-width: unset;
+		&:has([class^=btn-]) {
+			width: auto;
+		}
+		.form-cont {
+			flex: 1;
+			width: unset;
+		}
+	}
+	textarea {
+		&.wide {
+			width: 100%;
+		}
+	}
+}
+@include mobile {
+	/*search-box*/
+	.searh-form-wrap {
+		margin: 40px 0;
+		.form-cont {
+			max-width: unset;
+			border: 0;
+			background-color: transparent;
+			border-radius: unset;
+			display: block;
+			.form-drop-box {
+				border: 1px solid $color-gray-11;
+				border-radius: 4px;
+				margin-bottom: 16px;
+				.btn-drop-search {
+					height: $inputSize-md;
+					width: 100%;
+					padding: 0 44px 0 12px;
+					&::before {
+						@include posRight($right: 12px);
+					}
+					& + ul.drop-list {
+						top: calc($inputSize-md + 10px);
+					}
+				}
+			}
+			.inp-search {
+				border: 1px solid $color-gray-11;
+				border-radius: 4px;
+				@include txt(14);
+			}
+			.btn-search {
+				top: unset;
+				transform: unset;
+				bottom: 16px;
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+	.help-wrap {
+		p {			
+			@include txt(12);
+		}
+	}
+	.form-col {
+		display: block;
+		&:has([class^=btn-]) {
+			display: flex;
+		}
+		.form-cont + .form-cont {
+			margin-top: 16px;
+		}
+	}
+	/* 툴팁 */
+	.tooltip-wrap { 
+		.tooltip-cont {
+			left: unset;
+			right: 0;
+			transform: unset;
+			min-width: calc(100% - 32px);
+		}
+	}
+}

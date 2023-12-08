@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="내 문의 내역 : 마이페이지" menucss="/dev/ui/css/mypage.css"></include>
+<body class="mypage">
+	<!-- 헤더 -->
+	<include src="../include/header_tit.html" titlename="내 문의 내역"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<!-- contents -->
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel">
+					<!-- snb -->
+					<div class="snb-wrap snb-fix">
+						<div class="snb-inner">
+							<h1 class="snb-title only-pc">마이페이지</h1>
+							<div class="my-info only-pc">
+								<span class="name">고연정</span>
+								<span class="email">yeonjung@gomcorp.com</span>
+							</div>
+							<nav class="snb-menu" data-menu="scroll">
+								<ul>
+									<li><a href="#">내 계정</a></li>
+									<li><a href="#">제품 및 라이선스</a></li>
+									<li><a href="#">결제 내역</a></li>
+									<li><a href="#">내 쿠폰함</a></li>
+									<li><a href="#" class="active">내 문의 내역</a></li>
+									<li><a href="#">내 자막 업로드 내역</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- //snb -->
+					<div class="inner mypage-detail">
+						<div class="cmn-content-head">
+							<h2>내 문의내역</h2>
+						</div>
+
+						<div class="inquiry-wrap">
+							<div class="cmn-content-head">
+								<h3>내 문의내역 00개</h3> 
+							</div>
+							<!-- [D] 231208_수정 : 문의 내용 없는 경우 추가 -->
+							<ul class="doard-acco-list inquiry-list" data-accordion="container">
+								<li class="empty">
+									<p>문의내역이 없습니다.</p>
+								</li>
+							</ul>
+							<!-- //[D] 231208_수정 : 문의 내용 없는 경우 추가 -->
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- //contents -->
+
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script src="/dev/ui/js/libs/swiper.min.js"></script>
+	<script>
+
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+</body>
+</html>

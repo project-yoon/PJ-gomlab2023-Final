@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="구매 확인서 : 마이페이지" menucss="/dev/ui/css/mypage.css"></include>
+<body class="mypage print-preview">
+	<!-- 컨텐츠 -->
+	<main id="container">
+
+		<!-- contents -->
+		<div id="contents">
+			<section class="panel-wrap">
+				<div class="panel licenses-issued-bg">
+					<div class="inner licenses-issued-wrap">
+						<h2 class="gom-title">구매 확인서</h2>
+						<div class="num--date">
+							<p>NO.000000</p>
+							<p>견적일 : YYYY-MM-DD</p>
+						</div>
+						<div class="cmn-content-head">
+							<h2>사용자</h2>
+						</div>
+						<ul class="use-label">
+							<li>
+								<span class="label">단체명</span>
+								<div>곰앤컴퍼니</div>
+							</li>
+							<li>
+								<span class="label">사업자등록번호</span>
+								<div>120-81-8666</div>
+							</li>
+							<li>
+								<span class="label">이메일</span>
+								<div>example@gomcorp.com</div>
+							</li>
+							<li>
+								<span class="label">상품명</span>
+								<div>곰믹스 맥스 1년 이용권</div>
+							</li>
+							<li>
+								<span class="label">결제일/결제방법</span>
+								<div>YYYY-MM-DD / 신용카드</div>
+							</li>
+							<li>
+								<span class="label">수량</span>
+								<div>10 EA</div>
+							</li>
+							<li>
+								<span class="label">공급가액</span>
+								<div>₩990,000</div>
+							</li>
+							<li>
+								<span class="label">할인금액</span>
+								<div>₩0</div>
+							</li>
+							<li>
+								<span class="label">결제금액</span>
+								<div>일금 구십구만원정 (000,000원)</div>
+							</li>
+						</ul>
+						<div class="cmn-content-head">
+							<h2>소프트웨어 납품 현황</h2>
+						</div>
+						<ul class="use-label">
+							<li>
+								<span class="label">회사명</span>
+								<div>곰앤컴퍼니</div>
+							</li>
+							<li>
+								<span class="label">대표명</span>
+								<div>이병기</div>
+							</li>
+							<li>
+								<span class="label">사업자등록번호</span>
+								<div>120-81-86669</div>
+							</li>
+							<li>
+								<span class="label">주소</span>
+								<div>서울시 송파구 문정로 4길 16<br>(곰앤컴퍼니 빌딩)</div>
+							</li>
+							<li>
+								<span class="label">담당자</span>
+								<div>SW 담당자</div>
+							</li>
+							<li>
+								<span class="label">담당자 이메일</span>
+								<div>gomsales@gomcorp.com</div>
+							</li>
+						</ul>
+						<div class="print-logo">
+							<p class="gom-logo-company sm">gom &amp; company</p>
+						</div>
+						<div class="print-noti only-mo"><em>모바일 버전에서는 출력이 불가합니다.<br>PC버전에서 사용해주시기 바랍니다.</em></div>
+					</div>
+				</div>
+				<div class="btn-wrap wrap-right print-not-area">
+					<button type="button" class="btn-md btn-ghost" onclick="return printPage();">출력하기</button>
+				</div>
+			</section>
+		</div>
+		<!-- //contents -->
+
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script>
+		let initBodyHtml;
+
+		function printPage() {
+			window.print();
+		}
+
+		function beforePrint() {
+			initBodyHtml = document.body.innerHTML;
+			document.body.innerHTML = document.querySelector('.panel-wrap').innerHTML;
+		}
+
+		function afterPrint() {
+			document.body.innerHTML = initBodyHtml;
+		}
+
+		window.onbeforeprint = beforePrint;
+		window.onafterprint = afterPrint;
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+</body>
+</html>

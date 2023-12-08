@@ -1,0 +1,10 @@
+<svg id="banner_left" data-name="banner left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60.633" height="60.633" viewBox="0 0 60.633 60.633">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_60" data-name="사각형 60" width="60.633" height="60.633" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="banner_left-2" data-name="banner left" clip-path="url(#clip-path)">
+    <path id="패스_255" data-name="패스 255" d="M30.316,0A30.316,30.316,0,1,0,60.632,30.317,30.316,30.316,0,0,0,30.316,0M34.1,38.782a1.021,1.021,0,1,1-1.443,1.443l-9.187-9.187a1.02,1.02,0,0,1,0-1.443l9.187-9.187A1.021,1.021,0,1,1,34.1,21.851l-8.466,8.466Z" transform="translate(0 0)" fill="#fff"/>
+  </g>
+</svg>

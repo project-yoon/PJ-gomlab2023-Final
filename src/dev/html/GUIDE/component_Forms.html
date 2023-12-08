@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="GUIDE : Forms" menucss="/dev/ui/css/guide-only.css"></include>
+<body>
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container" class="cp_guide_only" style="background-color: #fff !important;">
+		<div style="margin: 0 40px;" >
+			<h1 class="cp_g">Forms</h1>
+			<h2 class="cp_g">(1) Checkbox</h2>
+	
+			<label for="checkbox01" class="inp-chk"><input type="checkbox" name="checkbox17" id="checkbox01" checked>item1</label>
+			<label for="checkbox02" class="inp-chk"><input type="checkbox" name="checkbox17" id="checkbox02">item2</label>
+			
+			<h3 class="cp_g">Disable</h3>
+			<label for="checkbox03" class="inp-chk"><input type="checkbox" name="checkbox15" id="checkbox03" checked disabled>item1</label>
+			<label for="checkbox05" class="inp-chk"><input type="checkbox" name="checkbox15" id="checkbox05" disabled>item2</label>
+	
+			<h3 class="cp_g">agree form</h3>
+			<ul class="agree-form" data-agree="agree-group">
+				<li><label for="agree-all" data-agree="agree-all"><input type="checkbox" id="agree-all"><strong>모두 동의 합니다.</strong></label></li>
+				<li><label for="chk1"><input type="checkbox" id="chk1">이용약관에 동의합니다. (필수)</label></li>
+				<li><label for="chk2"><input type="checkbox" id="chk2">개인정보처리방침에 동의합니다. (필수)</label></li>
+				<li>
+					<label for="chk3"><input type="checkbox" id="chk3">소프트웨어 관련한 정보 및 이벤트 정보 수신에 동의합니다. (선택)</label>
+					<div class="sub-check">
+						<label for="chk4"><input type="checkbox" id="chk4">이메일</label>
+						<label for="chk5"><input type="checkbox" id="chk5">SMS</label>
+					</div>
+				</li>
+			</ul>
+			<h3 class="cp_g">guide form</h3>
+			<div class="form-item">
+				<label class="form-name">자동결제를 해지하시더라도<br>YYYY-MM-DD까지 서비스 이용이 가능합니다.</label>
+				<div class="form-cont">
+					<label for="out1"><input type="checkbox" name="user-age" id="out1"><span>네, 자동결제를 해지하겠습니다.​</span></label>
+				</div>
+			</div>
+
+			<h2 class="cp_g">(2) Radio</h2>
+			
+			<label for="radio01" class="inp-chk"><input type="radio" name="radio20" id="radio01" checked><span>item1</span></label>
+			<label for="radio03" class="inp-chk"><input type="radio" name="radio20" id="radio03"><span>item2</span></label>
+	
+			<h3 class="cp_g">Disable</h3>
+			<label for="radio03" class="inp-chk"><input type="radio" name="radio15" id="radio03" checked disabled><span>item1</span></label>
+			<label for="radio05" class="inp-chk"><input type="radio" name="radio15" id="radio05" disabled><span>item2</span></label>
+
+			<h2 class="cp_g">(3) select Form</h2>
+			<div class="form-item">
+				<div class="form-cont">
+					<select class="btn-drop-box">
+						<option value="item1">item1</option>
+						<option value="item2">item2</option>
+						<option value="item3">item3</option>
+						<option value="item4">item4</option>
+						<option value="item5">item5</option>
+						<option value="item6">item6</option>
+						<option value="item7">item7</option>
+						<option value="item8">item8</option>
+						<option value="item9">item9</option>
+						<option value="item10">item10</option>
+					</select>
+					<!--동적으로 생성되는 리스트 구조-->
+					<!-- <div class="form-drop-box">
+						<button type="button" class="btn-drop-box" data-event="dropdown">전체</button>
+						<ul class="drop-list">
+							<li class="active"><a href="#">list01</a></li>
+							<li><a href="#">list02</a></li>
+							<li><a href="#">list03</a></li>
+							<li><a href="#">list04</a></li>
+						</ul>
+					</div> -->
+					<div class="help-wrap">
+						<p class="err-txt">단체명을 입력해주세요</p>
+						<p class="guide-txt">단체명을 입력해주세요</p>
+					</div>
+				</div>
+			</div>
+			<div class="form-item">
+				<div class="form-cont">
+					<select class="btn-drop-line">
+						<option value="line1" selected>item1</option>
+						<option value="line2">item2</option>
+						<option value="line3">item3</option>
+						<option value="line4">item4</option>
+						<option value="line5">item5</option>
+						<option value="line6">item6</option>
+						<option value="line7">item7</option>
+						<option value="line8">item8</option>
+						<option value="line9">item9</option>
+						<option value="line10">item10</option>
+					</select>
+					<div class="help-wrap">
+						<p class="err-txt">단체명을 입력해주세요</p>
+						<p class="guide-txt">단체명을 입력해주세요</p>
+					</div>
+				</div>
+			</div>
+
+			<h3 class="cp_g">option - hidden && required</h3>
+			<div class="form-item">
+				<div class="form-cont">
+					<select class="btn-drop-box" required>
+						<option value="" hidden selected>선택</option>
+						<option value="item1">item1</option>
+						<option value="item2">item2</option>
+						<option value="item3">item3</option>
+						<option value="item4">item4</option>
+						<option value="item5">item5</option>
+						<option value="item6">item6</option>
+						<option value="item7">item7</option>
+						<option value="item8">item8</option>
+						<option value="item9">item9</option>
+						<option value="item10">item10</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-item">
+				<div class="form-cont">
+					<select class="btn-drop-line" required>
+						<option value="" hidden selected>선택</option>
+						<option value="value1">item1</option>
+						<option value="value2">item2</option>
+						<option value="value3">item3</option>
+					</select>
+					<div class="help-wrap">
+						<p class="err-txt">단체명을 입력해주세요</p>
+						<p class="guide-txt">단체명을 입력해주세요</p>
+					</div>
+				</div>
+			</div>
+			<div class="form-item">
+				<div class="form-cont">
+					<select class="btn-drop-box">
+						<option value="" hidden selected>선택</option>
+						<option value="value1">item1</option>
+						<option value="value2">item2</option>
+						<option value="value3">item3</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-item">
+				<div class="form-cont">
+					<select class="btn-drop-line">
+						<option value="" hidden selected>선택</option>
+						<option value="value1">item1</option>
+						<option value="value2">item2</option>
+						<option value="value3">item3</option>
+					</select>
+				</div>
+			</div>
+			<h3 class="cp_g">option - hidden && required</h3>
+			<div class="form-item">
+				<div class="form-cont">
+					<select class="btn-drop-line">
+						<option value="" hidden selected>선택</option>
+						<option value="value1">item1</option>
+						<option value="value2">item2</option>
+						<option value="value3">item3</option>
+					</select>
+				</div>
+			</div>
+			<h3 class="cp_g">Quantity</h3>
+			<div class="form-cont">
+				<input type="text" class="inp-line" value="1">
+				<select class="btn-drop-quantity" data-event="quantity">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			</div>
+			<div class="form-cont">
+				<input type="text" class="inp-dropbox" value="1">
+				<select class="btn-drop-quantity" data-event="quantity">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+				</select>
+			</div>
+
+			<h3 class="cp_g">multi dropdown</h3>
+			<div class="form-drop-box">
+				<button type="button" class="btn-drop-box" data-event="dropdown">곰믹스 2024 제품 소개</button>
+				<ul class="drop-list">
+					<li class="active"><a href="#">곰믹스 2024 제품 소개</a></li>
+					<li><a href="#">홈</a></li>
+					<li><a href="#">프로젝트</a></li>
+					<li>
+						<button type="button" data-event="dropdown">빠른학습</button>
+						<ul>
+							<li><a href="#">간단한 동영상 제작</a></li>
+							<li><a href="#">단축키</a></li>
+						</ul>
+					</li>
+					<li>
+						<button type="button" data-event="dropdown">기능학습</button>
+						<ul>
+							<li><a href="#">클립</a></li>
+							<li><a href="#">키프레임</a></li>
+							<li><a href="#">모션 그래프</a></li>
+							<li><a href="#">프레임 컨트롤</a></li>
+							<li><a href="#">트림</a></li>
+							<li><a href="#">마커</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<h2 class="cp_g">input</h2>
+			<h3 class="cp_g">input search box</h3>
+			<div class="searh-form-wrap">
+				<!-- <p>총 222,546 건의 자막을 마음껏 사용해 보세요.</p> -->
+				<div class="form-cont">
+					<select class="btn-drop-search">
+						<option value="item1">전체</option>
+						<option value="item2">전체</option>
+						<option value="item3">전체</option>
+					</select>
+					<input type="text" class="inp-search" placeholder="필요한 자막을 검색해 보세요.">
+					<button type="button" class="btn-search"></button>
+				</div>
+			</div>
+			<div class="searh-form-wrap">
+				<!-- <p>총 222,546 건의 자막을 마음껏 사용해 보세요.</p> -->
+				<div class="form-cont">
+					<input type="text" class="inp-search" placeholder="필요한 자막을 검색해 보세요.">
+					<button type="button" class="btn-search"></button>
+				</div>
+			</div>
+
+			<!--input 기본-->
+			<h3 class="cp_g">input - style line</h3>
+			<div class="form-item">
+				<label for="" class="form-label">form line type</label>
+				<div class="form-cont">
+					<input type="text" class="inp-line">
+					<div class="help-wrap">
+						<p class="err-txt">단체명을 입력해주세요</p>
+						<p class="guide-txt">단체명을 입력해주세요</p>
+						<a href="#" class="move-to">비밀번호 분실</a>
+					</div>
+				</div>
+			</div>
+			<div class="form-item">
+				<label for="" class="form-label">form caution</label>
+				<div class="form-cont">
+					<input type="text" class="inp-line caution">
+					<div class="help-wrap">
+						<p class="guide-txt">단체명을 입력해주세요</p>
+						<p class="err-txt">단체명을 입력해주세요</p>
+						<a href="#" class="move-to">비밀번호 분실</a>
+					</div>
+				</div>
+			</div>
+			<h3 class="cp_g">input - style box</h3>
+			<div class="form-item">
+				<label for="" class="form-name">form title text form title text</label>
+				<div class="form-cont">
+					<input type="text" class="inp-box">
+					<div class="help-wrap">
+						<p class="err-txt">단체명을 입력해주세요</p>
+					</div>
+				</div>
+			</div>
+			<div class="form-item">
+				<label for="" class="form-label">form box type</label>
+				<div class="form-cont">
+					<input type="text" class="inp-box">
+					<div class="help-wrap">
+						<p class="err-txt">단체명을 입력해주세요</p>
+					</div>
+				</div>
+			</div>
+			<div class="form-item">
+				<label for="" class="form-label">form box type</label>
+				<div class="form-cont">
+					<input type="text" class="inp-box" required>
+					<span class="fake-label required">이메일</span>
+					<div class="help-wrap">
+						<p class="err-txt">단체명을 입력해주세요</p>
+					</div>
+				</div>
+			</div>
+			<div class="form-item">
+				<label for="" class="form-label">생년월일</label>
+				<div class="form-cont">
+					<input type="text" class="inp-box" placeholder="생년월일(YYYY-MM-DD)">
+				</div>
+			</div>
+			<div class="form-item">
+				<label for="" class="form-label">생년월일</label>
+				<div class="form-cont">
+					<input type="text" class="inp-box" placeholder="법정대리인 이메일">
+				</div>
+			</div>
+			<h3 class="cp_g">input - multi</h3>
+			<div class="form-item">
+				<label for="" class="form-label">cart</label>
+				<div class="form-col">
+					<div class="form-cont">
+						<input type="text" class="inp-line">
+						<div class="help-wrap">
+							<p class="err-txt">단체명을 입력해주세요</p>
+						</div>
+					</div>
+					<button type="button" class="btn-sideform cart"></button>
+				</div>
+			</div>
+			<div class="form-item">
+				<label for="" class="form-label">search</label>
+				<div class="form-cont">
+					<button type="button" class="legel btn-search"></button>
+					<input type="text" class="inp-line search" placeholder="키워드를 검색해보세요">
+				</div>
+			</div>
+			<div class="form-item">
+				<label for="" class="form-label">password</label>
+				<div class="form-cont">
+					<input type="password" class="inp-line">
+					<button type="button" class="btn-password-view"></button>
+					<div class="help-wrap">
+						<p class="err-txt">단체명을 입력해주세요</p>
+					</div>
+				</div>
+			</div>
+			<div class="form-item">
+				<label for="" class="form-label">password</label>
+				<div class="form-col">
+					<div class="form-cont">
+						<input type="password" class="inp-line">
+						<button type="button" class="btn-password-view"></button>
+						<div class="help-wrap">
+							<p class="err-txt">단체명을 입력해주세요</p>
+						</div>
+					</div>
+					<button type="button" class="btn-sm btn-default">로그인</button>
+				</div>
+			</div>
+			<div class="form-item">
+				<label for="" class="form-label">인증코드</label>
+				<div class="form-col">
+					<div class="form-cont">
+						<input type="text" class="inp-line" placeholder="인증코드 입력">
+						<!-- <span class="timer">00:00</span> -->
+						<!-- <span class="compleat"></span> -->
+						<div class="help-wrap">
+							<p class="err-txt">인증코드를 입력해주세요</p>
+						</div>
+					</div>
+					<button type="button" class="btn-sm btn-default disabled">인증코드 보내기</button>
+				</div>
+			</div>
+			<div class="form-item">
+				<label for="" class="form-label">인증코드</label>
+				<div class="form-col">
+					<div class="form-cont">
+						<input type="text" class="inp-line" placeholder="인증코드 입력" value="000000">
+						<span class="timer">00:00</span>
+						<!-- <span class="compleat"></span> -->
+						<div class="help-wrap">
+							<p class="err-txt">인증코드를 입력해주세요</p>
+						</div>
+					</div>
+					<button type="button" class="btn-sm btn-default">인증코드 재발송</button>
+				</div>
+			</div>
+			<div class="form-item">
+				<label for="" class="form-label">인증코드</label>
+				<div class="form-col">
+					<div class="form-cont">
+						<input type="text" class="inp-line" placeholder="인증코드 입력" value="574318">
+						<!-- <span class="timer">00:00</span> -->
+						<span class="compleat"></span>
+						<div class="help-wrap">
+							<p>인증되었습니다.</p>
+						</div>
+					</div>
+					<button type="button" class="btn-sm btn-default disabled">인증코드 재발송</button>
+				</div>
+			</div>
+
+			<h3 class="cp_g">input add</h3>
+			<form action="" name="" id="" class="form-wrap">
+				<div class="license-form" data-maxlength="5">
+					<div class="form-item">
+						<div class="form-col">
+							<div class="form-cont">
+								<input type="text" class="inp-box" placeholder="12자리 or 16자리 이용권 정보를 입력하세요.">
+							</div>
+							<button type="button" class="btn-item-util btn-add">추가</button>
+						</div>
+						<div class="help-wrap">
+							<p class="err-txt">이용권을 다시 확인해 주세요.</p>
+						</div>
+					</div>
+				</div>
+			</form>
+			<h3 class="cp_g">input - file upload</h3>
+			<div class="form-item">
+				<label for="" class="form-label">자막 파일</label>
+				<div class="form-col">
+					<div class="form-cont">
+						<input type="file" id="file">
+						<span class="form-filename null">선택된 파일 없음</span>
+					</div>
+					<label for="file" class="btn-sm btn-ghost">파일 선택</label>
+				</div>
+				<div class="help-wrap">
+					<p class="guide-txt">파일은 최대 2MB까지 JPG또는 PNG형식만 첨부할 수 있습니다.</p>
+				</div>
+			</div>
+			<h3 class="cp_g">tooltip</h3>
+			<div class="agree-wrap form-cont">
+				<label for="agree1" class="inp-chk"><input type="checkbox" name="" id="agree1">개인정보 수집 및 이용에 동의합니다.(필수)</label>
+				<div class="tooltip-wrap">
+					<a href="#" class="tooltip-button">툴팁 보기</a>
+					<div class="tooltip-cont">
+						<p class="tooltip-title">개인정보 수집 및 이용 동의​</p>
+						<ul class="dot-list">
+							<li>수집 항목 : 단체명, 사업자등록번호, 이름, 이메일 주소​</li>
+							<li>수집 목적 : 맞춤형 견적 안내​</li>
+							<li>보유 및 이용기간 : 3년 보관 후 파기</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

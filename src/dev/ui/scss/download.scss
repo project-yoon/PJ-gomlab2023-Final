@@ -1,0 +1,259 @@
+@charset "utf-8";
+@import "./utilities/variables";
+@import "./utilities/mixins";
+
+.download {
+	#container {
+		.panel {
+			position: relative;
+			&:has(.snb-wrap) {
+				padding-top: 80px;
+			}
+		}
+	}
+	.contents-body {
+		position: relative;
+		background-color: $color-gray-21;
+	}
+	.snb-wrap {
+		.snb-title {
+			letter-spacing: -1px;
+		}
+		.snb-radio {
+			ul {
+				li {
+					margin-top: 12px;
+				}
+			}
+		}
+		.btn-md {
+			margin-top: 24px;
+			white-space: nowrap;
+			padding: 0;
+			width: 100%;
+		}
+	}
+	.btn-wrap {
+		gap: 10px;
+	}
+	.download-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 21px;
+	}
+	.download-item {
+		width: 278px;
+		.download-card {
+			padding: 20px;
+			border: 1px solid $color-gray-11;
+			border-radius: 4px;
+			background: $color-white;
+			box-sizing: border-box;
+			.card-top {
+				position: relative;
+				display: flex;
+				align-items: center;
+				height: 48px;
+				gap: 16px;
+				margin-bottom: 20px;
+				padding-bottom: 20px;
+				padding-left: 64px;
+				border-bottom: 1px solid $color-gray-20;
+				.logo-ico {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 48px;
+					height: 48px;
+					display: block;
+				}
+				.name {
+					[class^=badge-b-] {
+						& + p {
+							margin-top: 6px;
+						}
+					}
+					p {
+						@include txt(16);
+						font-weight: 700;
+					}
+				}
+			}
+			.inp-chk {
+				font-weight: 700;
+				& + .inp-chk {
+					margin-left: 16px;
+				}
+			}
+			.btn-wrap {
+				margin-top: 12px;
+			}
+		}
+	}
+	.download-noti {
+		@include txt(12);
+		margin-top: 40px;
+		& + .download-noti {
+			margin-top: 0;
+		}
+	}
+	//이전 버전 다운로드
+	.prev-download-list {
+		li {
+			.list-info {
+				display: flex;
+				align-items: center;
+				.list-label {
+					width: 20%;
+					margin-right: 82px;
+					margin-bottom: 0;
+					@include txt(14);
+					font-weight: 700;
+				}
+				.list-content {
+					flex: 1;
+				}
+			}
+		}
+	}
+}
+// 다운로드 _DIAT 팝업
+.fc-orange {
+	color: $color-orange-2;
+}
+.diat-noti {
+	margin-top: 24px;
+	@include txt(14);
+	color: $color-black-1;
+}
+.diat-download-list {
+	margin-top: 56px;
+	padding: 0 30px;
+	li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+		font-weight: 700;
+		@include txt(12);
+		color: $color-black-1;
+		& + li { 
+			margin-top: 32px;
+			padding-top: 32px;
+			border-top: 1px solid $color-gray-11;
+		}
+		button {
+			width: 132px;
+			padding: 0;
+		}
+	}
+}
+/* 반응형 */
+@include desktop {
+	.download {
+		.prev-download-list {
+			li {
+				.list-info {
+					.list-label {
+						margin-right: 40px;
+					}
+				}
+			}
+		}
+	}
+}
+@include mobile {
+	.download {
+		#container {
+			.panel:has(.snb-wrap) {
+				padding-top: 24px;
+			}
+		}
+		.contents-head {
+			h1 {
+				@include txt(18);
+			}
+			.head-tit-wrap {
+				// padding: 0;
+				.logo {
+					display: none;
+				}
+			}
+			&.head-visual {
+				height: 117px;
+				padding-bottom: 34px;
+			}
+		}
+		.snb-wrap {
+			display: flex;
+			align-items: center;
+			.snb-inner {
+				.snb-radio {
+					ul {
+						display: flex;
+						gap: 12px;
+						li {
+							margin-top: 0;
+							padding-left: 0;
+						}
+					}
+				}
+			}
+			.btn-md {
+				padding: 0 24px;
+				margin-top: 0;
+				margin-left: auto;
+				width: auto;
+			}
+		}
+		.download-cont {
+			margin-top: 26px;
+		}
+		.download-item {
+			width: 100%;
+			.download-card {
+				.card-top {
+					padding-bottom: 16px;
+					margin-bottom: 16px;
+				}
+				.btn-wrap {
+					margin-top: 20px;
+				}
+			}
+		}
+		.download-list {
+			gap: 16px;
+		}
+		.download-noti {
+			margin-top: 16px;
+		}
+		//이전 버전 다운로드
+		.prev-download-list {
+			li {
+				align-items: center;
+				gap: 40px;
+				.list-info {
+					display: block;
+					.list-label {
+						width: auto;
+						margin: 0;
+						@include txt(16);
+						font-weight: 700;
+					}
+					.list-content {
+						flex: 1;
+						word-break: keep-all;
+						@include txt(12);
+					}
+				}
+			}
+		}
+	}
+	// 다운로드 _DIAT 팝업
+	.diat-download-list {
+		li {
+			flex-direction: column-reverse;
+			gap: 12px;
+		}
+	}
+}

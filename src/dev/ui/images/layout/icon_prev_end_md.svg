@@ -1,0 +1,7 @@
+<svg id="start_thin_20_n" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <rect id="Rectangle_6370" data-name="Rectangle 6370" width="20" height="20" fill="none" opacity="0.2"/>
+  <g id="Group_172672" data-name="Group 172672" transform="translate(4 4)">
+    <path id="back" d="M0-1,6,5l6-6" transform="translate(11) rotate(90)" fill="none" stroke="#484848" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="back-2" data-name="back" d="M0-1,6,5l6-6" transform="translate(5) rotate(90)" fill="none" stroke="#484848" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

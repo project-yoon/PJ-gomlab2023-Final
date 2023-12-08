@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+// 글꼴 크기와 줄 높이 매핑
+$typography-styles: (
+    10: ($text-font-size-10, $text-line-height-of-10),
+    11: ($text-font-size-11, $text-line-height-of-11),
+    12: ($text-font-size-12, $text-line-height-of-12),
+    14: ($text-font-size-14, $text-line-height-of-14),
+    16: ($text-font-size-16, $text-line-height-of-16),
+    18: ($text-font-size-18, $text-line-height-of-18),
+    20: ($text-font-size-20, $text-line-height-of-20),
+	22: ($text-font-size-22, $text-line-height-of-22),
+    24: ($text-font-size-24, $text-line-height-of-24),
+	26: ($text-font-size-26, $text-line-height-of-26),
+    28: ($text-font-size-28, $text-line-height-of-28),
+    32: ($text-font-size-32, $text-line-height-of-32),
+    36: ($text-font-size-36, $text-line-height-of-36),
+    40: ($text-font-size-40, $text-line-height-of-40),
+	48: ($text-font-size-48, $text-line-height-of-48),
+	50: ($text-font-size-50, $text-line-height-of-50)
+);
+// 각 글꼴 크기에 대한 믹스인 자동 생성
+@mixin apply-typography-style($font-size, $line-height) {
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+@mixin txt($size) {
+    @if map-has-key($typography-styles, $size) {
+        $values: map-get($typography-styles, $size);
+        @include apply-typography-style(nth($values, 1), nth($values, 2));
+    } @else {
+        // $size가 맵에 없는 경우 기본값으로 16 적용
+        $values: map-get($typography-styles, 16);
+        @include apply-typography-style(nth($values, 1), nth($values, 2));
+    }
+}
+
+@mixin image-fit($fit: contain) {
+	width: 100%;
+	height: 100%;
+	object-fit: $fit;
+}
+
+@mixin posCenter($top: 50%, $left: 50%, $posX: -50%, $posY: -50%) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	transform: translate($posX, $posY);
+}
+
+@mixin posBottom($bottom: 0, $left: 50%, $posX: -50%) {
+	position: absolute;
+	bottom: $bottom;
+	left: $left;
+	transform: translateX($posX);
+}
+
+@mixin posLeft($top: 50%, $left: 0, $posY: -50%) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	transform: translateY($posY);
+}
+
+@mixin posRight($top: 50%, $right: 0, $posY: -50%) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	transform: translateY($posY);
+}
+
+
+@mixin posSet($top: 50%, $left: 0, $bottom: 0, $right: 0, $posX: 0, $posY: -50%) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	bottom: $bottom;
+	right: $right;
+	transform: translate($posX, $posY);
+}
+
+@mixin ellipsis {
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+
+@mixin ellipsis-multi($line: 2, $font-size: 16, $line-height: $text-line-height-of-16) {
+    // 맵에서 해당 글꼴 크기에 맞는 스타일 조회
+    $style: if(map-has-key($typography-styles, $font-size), map-get($typography-styles, $font-size), null);
+    // 스타일이 맵에 없는 경우 기본값 적용
+    @if ($style == null) {
+        $style: ($font-size, $text-line-height-of-16); // 기본값 설정
+    }
+    // 변수 할당
+    $font-size: nth($style, 1);
+    $line-height: nth($style, 2);
+    // line-height 퍼센트 계산
+	$line-height-percentage: calc($line-height / $font-size);
+	//css 스타일 영역
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    word-wrap: break-word;
+    line-height: $line-height;
+    height: calc(calc($line-height-percentage * $font-size) * $line); // px 단위 추가
+    font-size: $font-size;
+}
+
+@mixin desktop {
+	@media (max-width: #{$breakpoint-desktop}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: #{$breakpoint-tablet}) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media (max-width: #{$breakpoint-mobile}) {
+		@content;
+	}
+}
+
+@mixin sm-mobile {
+	@media (max-width: #{$breakpoint-sm-mobile}) {
+		@content;
+	}
+}
+
+@function __to_opacity($color, $hex) {
+	@return #{$color + $hex};
+}

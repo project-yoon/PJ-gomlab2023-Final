@@ -1,0 +1,14 @@
+@charset "utf-8";
+@import "./utilities/variables";
+@import "./utilities/mixins";
+/* 메뉴별 scss */
+.메뉴별최상위클래스 {
+	#header-wrap {
+		background:$color-gray-17;
+	}
+	.test {
+		color:red;
+		font-size:30px;
+		font-weight:600;
+	}
+}

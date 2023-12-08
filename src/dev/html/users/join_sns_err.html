@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="SNS 계정 연동 ERROR : 회원가입" menucss="/dev/ui/css/users.css"></include>
+<body class="users">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<form class="form-wrap">
+
+					<!-- SNS 계정 연동 ERROR : 회원가입 -->
+					<div class="panel">
+						
+						<h1>SNS 계정 연동</h1>
+						<!-- <ul class="step">
+							<li>step1</li>
+							<li>step2</li>
+						</ul> -->
+						<div class="user-content-detail">
+							<p class="txt-exp">
+								입력하신 이메일 <strong class="account">aaa.@gomcorp.com</strong>으로
+								등록된 곰랩 계정이 있습니다.
+								아래 이메일 계정으로 곰랩에 로그인하시면​ <span>Kakao</span> 계정과 연동되며 이후에는 <span>Kakao</span> 계정으로만 로그인 가능합니다.
+							</p>
+							<div class="user-form-wrap">
+								<div class="form-item">
+									<div class="form-cont">
+										<input type="text" class="inp-box" placeholder="이메일">
+									</div>
+								</div>
+								<div class="form-item">
+									<div class="form-cont">
+										<input type="password" class="inp-box" placeholder="비밀번호">
+										<div class="help-wrap">
+											<!-- [D] 에러 텍스트 케이스 문구 수정-->
+											<p class="guide-txt">비밀번호는 영문, 특수문자, 숫자를 모두 조합하여 8자 이상 30자이하여야 합니다.</p>
+											<!--<p class="err-txt">비밀번호를 입력해 주세요.</p>--> <!--case: 미입력-->
+											<!-- <p class="err-txt">비밀번호를 다시 입력해 주세요.</p> --> <!--case: 패스워드 실패-->
+											<!-- <p class="err-txt">비밀번호는 영문, 특수문자, 숫자를 모두 조합하여 8자 이상 30자이하여야 합니다.</p> --> <!--case: 유효성 검사-->
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="other">
+								<div class="help-wrap">
+									<p><a href="#" class="move-to">비밀번호를 잊으셨나요?</a></p>
+								</div>
+							</div>
+							<div class="btn-wrap">
+								<!-- [D] 버튼 disabled 케이스 -->
+								<!-- <a href="#" class="btn-md btn-default">SNS 계정 연동하기</a> -->
+								<a href="#" class="btn-md btn-default disabled">SNS 계정 연동하기</a>
+							</div>
+							<div class="other">
+								<div class="help-wrap">
+									<p><a href="#" class="move-to">SNS 계정 연동없이 이메일 계정으로 로그인</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</form>
+			</section>
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

@@ -1,0 +1,345 @@
+/* 갤러리 테이블 목록 */
+.badge-wrap {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-bottom: 12px;
+}
+.badge {
+	z-index: 1;
+	padding: 3px 6px;
+	@include txt(11);
+	text-align: center;
+	color: $color-white;
+	letter-spacing: -0.5px;
+	display: inline-block
+}
+/*뱃지 default*/
+[class^=badge-r-]{
+	@extend .badge;
+	border-radius: 8px;
+	font-weight: 700;
+}
+.badge-r-black {
+	background: $color-black-1;
+	border: 1px solid $color-black-1;
+}
+.badge-r-white {
+	background: $color-white;
+	border: 1px solid $color-white;
+	color: $color-black-1;
+}
+[class^=badge-v-]{
+	@extend .badge;
+	border-radius: 4px;
+}
+.badge-v-nomal {
+	background: $color-black-1;
+	border: 1px solid $color-black-1;
+}
+.badge-v-primary {
+	position: relative;
+	padding-left: 15px;
+	border: 1px solid $color-red-3;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 3px;
+		transform: translateY(-50%);
+		width: 8px;
+		height: 8px;
+		background: $color-red-1;
+		border-radius: 100%;
+	}
+}
+.badge-v-secondary {
+	background: rgba(87, 114, 232, 0.6);
+	border: 1px solid $color-blue-2;
+}
+.badge-v-tertiary {
+	background: $color-orange-1;
+	border: 1px solid $color-orange-1;
+}
+.badge-v-quarternary {
+	background: rgba(242, 54, 86, 0.6);
+	border: 1px solid $color-red-9;
+}
+.badge-v-quinary {
+	background: rgba(225, 37, 55, 0.6);
+	border: 1px solid $color-red-10;
+}
+.badge-v-senary {
+	background: rgba(33, 157, 252, 0.6);
+	border: 1px solid $color-blue-8;
+}
+.badge-v-septenary {
+	background: rgba(51, 128, 215, 0.6);
+	border: 1px solid $color-blue-5;
+}
+/*뱃지 - border line*/
+[class^=badge-l-]{
+	@extend .badge;
+	border-radius: 4px;
+	background: $color-white;
+	font-weight: 700;
+}
+.badge-l-nomal {
+	color: $color-black-1;
+	border: 1px solid $color-black-1;
+}
+.badge-l-primary {
+	background: rgba(105, 183, 3, 0.6);
+	border: 1px solid $color-green-3;
+}
+.badge-l-secondary {
+	color: $color-blue-2;
+	border: 1px solid $color-blue-2;
+}
+.badge-l-tertiary {
+	color: $color-orange-1;
+	border: 1px solid $color-orange-1;
+}
+.chapter-badge {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	padding: 4px 6px;
+	background: rgba(55, 55, 55, 0.6);
+	border-radius: 4px;
+	color: $color-white;
+	@include txt(11);
+}
+/*뱃지 - border box*/
+[class^=badge-b-]{
+	@extend .badge;
+	padding: 4px 6px;
+	border-radius: 4px;
+	font-weight: 700;
+	@include txt(10);
+	background: $color-white;
+	&.disabled {
+		border: 1px solid $color-gray-06;
+		color: $color-gray-06;
+	}
+}
+.badge-b-nomal {
+	color: $color-black-1;
+	border: 1px solid $color-gray-06;
+}
+.badge-b-primary {
+	color: $color-red-3;
+	border: 1px solid $color-red-3;
+}
+.badge-b-secondary {
+	color: $color-blue-2;
+	border: 1px solid $color-blue-2;
+}
+.badge-b-tertiary {
+	color: $color-orange-2;
+	border: 1px solid $color-orange-2;
+}
+.badge-b-membership {
+	border: 1px solid $color-purple-5;
+	color: $color-purple-5;
+}
+
+
+.live-on {
+	position: absolute;
+	top: 15px;
+	right: 18px;
+	z-index: 1;
+	min-width: 33px;
+	height: 12px;
+	background: $color-red-3;
+	border-radius: 8px;
+	@include txt(10);
+	&::before {
+		content: '';
+		position: absolute;
+		left: 4px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 4px;
+		height: 4px;
+		background: $color-white;
+		border-radius: 50%;
+	}
+	span {
+		margin-left: 8px;
+		color: $color-white;
+		font-weight: 700;
+	}
+}
+.gallery-wrap {
+	display: grid;
+	li {
+		a {
+			display: block;
+			.gallery-img {
+				position: relative;
+				background: $color-gray-19;
+				text-align: center;
+				width: 100%;
+				padding-top: 0%;
+				margin-bottom: 0px;
+				overflow: hidden;
+				background: $color-gray-04;
+				border-radius: 10px 10px 0 0;
+				img {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%,-50%);
+					display: block;
+					width: 100%;
+					height: auto;
+				}
+			}
+			.gallery-content {
+				padding: 16px;
+				background: $color-white;
+				border-radius: 0 0 10px 10px;
+				.gallery-title {
+					@include ellipsis-multi($font-size: 16px);
+					height: unset;
+				 }
+				.gallery-info {
+					margin-top: 12px;
+					@include txt(14);
+					@include ellipsis;
+				}
+				.gallery-date {
+					margin-top: 16px;
+					font-weight: 700;
+					@include txt(12);
+					color: $color-gray-04;
+				}
+			 }
+		}
+	}
+	// 3개 타입
+	&.gallery-col-3 {
+		// grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(3, calc((100% - 80px) / 3));
+		grid-gap: 40px 39px;
+		li {
+			.gallery-img {
+				aspect-ratio: 2 / 1;
+			}
+		}
+	}
+	// 4개 타입
+	&.gallery-col-4 {
+		grid-template-columns: repeat(4, calc((100% - 60px) / 4));
+		grid-gap: 45px 20px;
+		li {
+			.gallery-img {
+				aspect-ratio: 2 / 1;
+			}
+			.gallery-content {
+				.gallery-title {
+					@include txt(14);
+				}
+			}
+		}
+	}
+}
+.full-content-flex {
+	display: flex;
+	justify-content: center;
+	gap: 60px;
+	margin-top: 200px;
+	padding: 80px 24px;
+	background: $color-gray-21;
+	.full-content-box {
+		max-width: 320px;
+		text-align: center;
+		.full-content-title {
+			margin-top: 24px;
+			margin-bottom: 16px;
+			@include txt(18);
+			font-weight: 700;
+		}
+		.full-content-info {
+			@include txt(18);
+		}
+		img {
+			width: 80px;
+			height: 80px;
+		}
+	}
+}
+.gom-swiper-pagination {
+	display: none;
+	left: 50%;
+	bottom: -50px;
+	transform: translateX(-50%);
+	.swiper-pagination-bullet {
+		width: 10px;
+		height: 10px;
+		background: $color-gray-11;
+		opacity: 1;
+	}
+	.swiper-pagination-bullet-active {
+		width: 70px;
+		background: $color-gray-04;
+		border-radius: 100px;
+	}
+}
+/* 반응형 */
+@include desktop {
+	.gallery-wrap {
+		&.gallery-col-4 {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}
+@include tablet {
+	.gallery-wrap {
+		&.gallery-col-3 {
+			grid-template-columns: repeat(2, calc((100% - 45px) / 2));
+			grid-gap: 30px 45px;
+		}
+		&.gallery-col-4 {
+			grid-template-columns: repeat(2, calc((100% - 20px) / 2));
+		}
+	}
+}
+@include mobile {
+	.gallery-wrap {
+		// margin-left: -24px;
+		// margin-right: -24px;
+		&.gallery-col-3 {
+			grid-template-columns: repeat(1, 100%);
+			grid-gap: 24px;
+		}
+		&.gallery-col-4 {
+			grid-template-columns: repeat(1, 100%);
+		}
+	}
+	.badge {
+		padding: 3px 4px;
+		border-radius: 4px;
+		@include txt(10);
+	}
+	[class^=badge-b-] {
+		padding: 4px;
+	}
+	.badge-chapter {
+		padding: 4px;
+		border-radius: 4px;
+	}
+	.badge-live {
+		padding-left: 15px;
+	}
+	.full-content-flex {
+		flex-wrap: wrap;
+		margin-top: 100px;
+	}
+	.gom-swiper-pagination {
+		display: flex;
+		gap: 6px;
+	}
+}

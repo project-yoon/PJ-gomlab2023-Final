@@ -1,0 +1,11 @@
+<svg id="trash_24_131313" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect id="Rectangle_276" data-name="Rectangle 276" width="24" height="24" fill="none" opacity="0.2"/>
+  <g id="Path_2323" data-name="Path 2323" transform="translate(6 6)" fill="none">
+    <path d="M-.5,0h13L12,13a1,1,0,0,1-1,1H1a1,1,0,0,1-1-1Z" stroke="none"/>
+    <path d="M -0.5 0 L 0 13 C 0 13.55228042602539 0.4477195739746094 14 1 14 L 11 14 C 11.55228042602539 14 12 13.55228042602539 12 13 L 12.5 0 L -0.5 0 M -2.058799743652344 -1.5 L 14.05879974365234 -1.5 L 13.499755859375 13.03512859344482 C 13.48095035552979 14.39754772186279 12.36680507659912 15.5 11 15.5 L 1 15.5 C -0.3668050765991211 15.5 -1.480950355529785 14.39754772186279 -1.499755859375 13.03512859344482 L -2.058799743652344 -1.5 Z" stroke="none" fill="#484848"/>
+  </g>
+  <line id="Line_494" data-name="Line 494" x2="18" transform="translate(3 5.199)" fill="none" stroke="#484848" stroke-linecap="round" stroke-width="1.5"/>
+  <line id="Line_588" data-name="Line 588" x2="8" transform="translate(8 2.5)" fill="none" stroke="#484848" stroke-linecap="round" stroke-width="1.5"/>
+  <line id="Line_589" data-name="Line 589" x2="9" transform="translate(10 8.5) rotate(90)" fill="none" stroke="#484848" stroke-linecap="round" stroke-width="1.5"/>
+  <line id="Line_590" data-name="Line 590" x2="9" transform="translate(14 8.5) rotate(90)" fill="none" stroke="#484848" stroke-linecap="round" stroke-width="1.5"/>
+</svg>

@@ -1,0 +1,74 @@
+.fam-en {font-family: 'Noto Sans';}
+.fam-jp {font-family: 'Noto Sans JP';}
+.text-light {font-weight: 300;}
+.text-regular {font-weight: 400;}
+.text-bold {font-weight: 700;}
+.text-10 {
+	@include txt(10);
+}
+.text-11 {
+	@include txt(11);
+}
+.text-12 {
+	@include txt(12);
+}
+.text-14 {
+	@include txt(14);
+}
+.text-16 {
+	@include txt(16);
+}
+.text-18 {
+	@include txt(18);
+}
+.text-20 {
+	@include txt(20);
+}
+.text-22 {
+	@include txt(22);
+}
+.text-24 {
+	@include txt(24);
+}
+.text-28 {
+	@include txt(28);
+}
+.text-32 {
+	@include txt(32);
+}
+.text-36 {
+	@include txt(36);
+}
+.text-40 {
+	@include txt(40);
+}
+.text-48 {
+	@include txt(48);
+}
+.cp_g-variety {
+	margin-bottom: 20px;
+	p {
+		line-height: normal;
+	}
+}
+.font-guide {
+	display: grid;
+	grid-template-columns: repeat(3, 17%);
+	grid-gap: 10px;
+	margin-top: 30px;
+}
+/* 반응형 */
+@include desktop {
+
+}
+@include tablet {
+
+}
+@include mobile {
+	.font-guide {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+@include sm-mobile {
+
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="GUIDE : Popups" menucss="/dev/ui/css/guide-only.css"></include>
+<body>
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container" class="cp_guide_only">
+		<div class="cp_guide_inner">
+		<!--
+		팝업 호출 방식 :
+		popup.js 호출
+		button 태그에 속성 추가 data-role="open__호출할파일명"
+		button 클릭 시 만들자하는파일명.html 파일 호출하여 내용 안에 마크업
+		예 : /dev/html/business/popup_bnss_1.html 호출 시에 data-role="data-role="open__/dev/html/business/popup_bnss_1"
+		-->
+
+			<!-- 데스크탑 -->
+			<h1 class="cp_g">Pop-up</h1>
+
+			<h2 class="cp_g">(1) PC</h2>
+
+			<h3 class="cp_g">Default</h3>
+			<div class="pop-float-layer cp_g-pop-float-layer">
+				<button type="button" class="btn-arrow-close-md btn-close-layer"></button>
+				<p class="noti-exclamation"></p>
+				<h3 class="pop-title">에러가 발생하였습니다.</h3>
+				<div class="pop-sub-title">보유 라이선스가 부족합니다. 내부 담당자에게 문의해 주세요.</div>
+				<div class="btn-pop-wrap">
+					<button type="button" class="btn-sm btn-ghost">다시 시도</button>
+					<button type="button" class="btn-sm btn-default">1:1 문의</button>
+				</div>
+			</div>
+
+			<h3 class="cp_g">Alert - license</h3>
+			<div class="pop-float-layer cp_g-pop-float-layer">
+				<button type="button" class="btn-arrow-close-md btn-close-layer"></button>
+				<h3 class="pop-title">이용기간이 연장되었습니다.</h3>
+				<div class="pop-sub-title">계속 GOM 소프트웨어 이용이 가능합니다.</div>
+				<div class="btn-pop-wrap">
+					<button type="button" class="btn-sm btn-ghost">확인</button>
+				</div>
+			</div>
+
+			<h3 class="cp_g">Alert - license</h3>
+			<div class="pop-float-layer cp_g-pop-float-layer">
+				<button type="button" class="btn-arrow-close-md btn-close-layer"></button>
+				<div class="pop-sub-title">회원님은 별도 결제 없이 GOM 소프트웨어 이용이 가능하여 이용권 추가 등록이 불가능합니다.</div>
+				<div class="btn-pop-wrap">
+					<button type="button" class="btn-sm btn-ghost">확인</button>
+				</div>
+			</div>
+
+			<h3 class="cp_g">Alert - download</h3>
+			<div class="pop-float-layer cp_g-pop-float-layer">
+				<button type="button" class="btn-arrow-close-md btn-close-layer"></button>
+				<h3 class="pop-title">다운로드해 주셔서 감사합니다.</h3>
+				<div class="pop-sub-title">다운로드한 인스톨러를 실행해 제품 설치를 완료해 주세요.</div>
+				<div class="pop-content">
+					<div class="pop-content-title">PC사양과 다운로드한 제품의 지원 사양이 다르신가요?</div>
+					<div class="pop-info">
+						<img src="/dev/ui/images/layout/tmp_40_40.png" alt="">
+						<span>곰플레이어+ 2024</span>
+					</div>
+				</div>
+				<div class="btn-pop-wrap">
+					<button type="button" class="btn-sm btn-ghost">64bit 다운로드</button>
+					<button type="button" class="btn-sm btn-ghost">32bit 다운로드</button>
+				</div>
+				<ul class="dot-list">
+					<li>32bit 전용은 제품 업데이트를 지원하지 않습니다.</li>
+					<li>32bit와 64bit의 차이는 무엇인가요? <a href="#!">자세히보기</a></li>
+				</ul>
+			</div>
+
+	<!--		<div id="popToday" class="pop-float-layer cp_g-pop-float-layer pop-full-layer" style="margin-top: 63px;"> &lt;!&ndash; id="popToday" 임시 &ndash;&gt;-->
+	<!--			<button type="button" class="btn-arrow-close-md btn-close-layer"></button>-->
+	<!--			<h3 class="pop-title">타이틀 타이틀 타이틀</h3>-->
+	<!--			<div class="pop-content">내용 내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용 내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용 내용 내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용 내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용 내용 내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용 내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용 내용 내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</div>-->
+	<!--			<div class="btn-pop-wrap">-->
+	<!--				<button type="button" class="btn-sm btn-ghost">X38 White</button>-->
+	<!--				<button type="button" class="btn-sm btn-default">X38 Black</button>-->
+	<!--			</div>-->
+	<!--			<div class="today-close">-->
+	<!--				<input type="checkbox" name="todayClose" class="inp-sm">-->
+	<!--				<a href="#!" id="todayClose">오늘은 그만 보기</a>-->
+	<!--			</div>-->
+	<!--		</div>-->
+			<!-- // 데스크탑 -->
+
+			<!-- 모바일 -->
+			<h2 class="cp_g">(2) Mobile</h2>
+
+			<h3 class="cp_g">Default</h3>
+			<div class="pop-float-layer cp_g-pop-float-layer pop-mo-layer">
+				<button type="button" class="btn-arrow-close-md btn-close-layer"></button>
+				<p class="noti-exclamation"></p>
+				<h3 class="pop-title">에러가 발생하였습니다.</h3>
+				<div class="pop-sub-title">보유 라이선스가 부족합니다. 내부 담당자에게 문의해 주세요.</div>
+				<div class="btn-pop-wrap">
+					<button type="button" class="btn-sm btn-ghost">다시 시도</button>
+					<button type="button" class="btn-sm btn-default">1:1 문의</button>
+				</div>
+			</div>
+
+			<h3 class="cp_g">Alert - license</h3>
+			<div class="pop-float-layer cp_g-pop-float-layer pop-mo-layer">
+				<button type="button" class="btn-arrow-close-md btn-close-layer"></button>
+				<h3 class="pop-title">이용기간이 연장되었습니다.</h3>
+				<div class="pop-sub-title">계속 GOM 소프트웨어 이용이 가능합니다.</div>
+				<div class="btn-pop-wrap">
+					<button type="button" class="btn-sm btn-ghost">확인</button>
+				</div>
+			</div>
+
+			<h3 class="cp_g">Alert - license</h3>
+			<div class="pop-float-layer cp_g-pop-float-layer pop-mo-layer">
+				<button type="button" class="btn-arrow-close-md btn-close-layer"></button>
+				<div class="pop-sub-title">회원님은 별도 결제 없이 GOM 소프트웨어 이용이 가능하여 이용권 추가 등록이 불가능합니다.</div>
+				<div class="btn-pop-wrap">
+					<button type="button" class="btn-sm btn-ghost">확인</button>
+				</div>
+			</div>
+
+			<h3 class="cp_g">Alert - download</h3>
+			<div class="pop-float-layer cp_g-pop-float-layer pop-mo-layer">
+				<button type="button" class="btn-arrow-close-md btn-close-layer"></button>
+				<h3 class="pop-title">다운로드해 주셔서 감사합니다.</h3>
+				<div class="pop-sub-title">다운로드한 인스톨러를 실행해 제품 설치를 완료해 주세요.</div>
+				<div class="pop-content">
+					<div class="pop-content-title">PC사양과 다운로드한 제품의 지원 사양이 다르신가요?</div>
+					<div class="pop-info">
+						<img src="/dev/ui/images/layout/tmp_40_40.png" alt="">
+						<span>곰플레이어+ 2024</span>
+					</div>
+				</div>
+				<div class="btn-pop-wrap">
+					<button type="button" class="btn-sm btn-ghost">64bit 다운로드</button>
+					<button type="button" class="btn-sm btn-ghost">32bit 다운로드</button>
+				</div>
+				<ul class="dot-list">
+					<li>32bit 전용은 제품 업데이트를 지원하지 않습니다.</li>
+					<li>32bit와 64bit의 차이는 무엇인가요? <a href="#!">자세히보기</a></li>
+				</ul>
+			</div>
+			<!-- // 모바일 -->
+
+			<!-- 확인 후 삭제 요망 -->
+			<div style="padding-top: 50px; text-align: center;">
+				<button type="button" data-role="open__layer_test" class="btn-lg btn-default">PC 팝업 호출 예시</button>
+			</div>
+
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" class="dimmed">
+	<include src="../include/head.html" title="popups : order" menucss="/dev/ui/css/order.css"></include>
+<body class="pop-sample">
+	<!-- 가이드 스타일 임시 제거 -->
+	<style>
+		@media (max-width: 768px) {
+			html:has(.pop-sample).dimmed .pop-float-layer {margin-top: 0;}
+		}
+	</style>
+	<!-- 헤더 -->
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+
+			<!-- popOrderAgree1 : 결제 시 유의사항 팝업 -->
+			<include src="popup_order_agree_1.html"></include>
+
+			<!-- popOrderAgree2 : 개인정보 제 3자 제공 동의 팝업 -->
+			<include src="popup_order_agree_2.html"></include>
+
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+</body>
+</html>

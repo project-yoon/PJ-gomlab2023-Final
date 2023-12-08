@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="SNS생년월일미조회 : 회원가입" menucss="/dev/ui/css/users.css"></include>
+<body class="users">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<form class="form-wrap">
+
+					<!-- SNS 계정 연동 : 회원가입 -->
+					<div class="panel">
+						
+						<h1>회원가입</h1>
+						<!-- <ul class="step">
+							<li>step1</li>
+							<li class="none">step2</li>
+						</ul> -->
+						<div class="user-content-detail">
+							<p class="txt-exp">
+								<strong class="account">aaa@gomcorp.com</strong>님 곰랩의 서비스 이용을 위한 약관에 동의해 주세요.
+							</p>
+							<div class="help-wrap">
+								<p class="guide-txt">비즈니스 회원가입은 이메일 회원가입만 가능합니다.<br>이메일 주소로 다시 가입해 주세요.​</p>
+							</div>
+							<div class="user-form-wrap">
+								<div class="age-check-wrap">
+									<div class="form-item age-form">
+										<label class="form-name">곰랩에서는 만 14세 이상 여부를 확인하고 있습니다. <br>만 14세 이상이십니까?</label>
+										<div class="form-cont">
+											<label for="age0"><input type="radio" name="user-age" id="age0"><span>예</span></label>
+											<!-- [D] 231208_수정 -->
+											<label for="age1"><input type="radio" name="user-age" id="age1" checked><span>아니오</span></label>
+											<!-- // [D] 231208_수정 -->
+										</div>
+										<div class="help-wrap">
+											<p class="guide-txt">만 14세 미만인 경우 회원가입 및 유료서비스 결제 시, 법정대리인 인증이 필요합니다.</p>
+											<p class="guide-txt">타인의 정보를 도용하여 사용할 경우 민/형사상 책임 및 이용제한 등을 받을 수 있습니다.</p>
+										</div>
+									</div>
+									<div class="form-item">
+										<div class="form-cont">
+											<input type="text" class="inp-box" placeholder="생년월일(YYYY-MM-DD)">
+										</div>
+									</div>
+									<div class="form-item">
+										<div class="form-cont">
+											<!-- [D] 231208_수정 -->
+											<input type="text" class="inp-box" placeholder="법정대리인 성명">
+											<!-- // [D] 231208_수정 -->
+										</div>
+									</div>
+									<div class="form-item">
+										<div class="form-cont">
+											<input type="text" class="inp-box" placeholder="법정대리인 이메일">
+										</div>
+									</div>
+								</div>
+								<ul class="agree-form" data-agree="agree-group">
+									<li><label for="agree-all" data-agree="agree-all"><input type="checkbox" id="agree-all" class="inp-sm"><strong>모두 동의 합니다.</strong></label></li>
+									<li><label for="chk1"><input type="checkbox" id="chk1" class="inp-sm">이용약관에 동의합니다. (필수)</label></li>
+									<li><label for="chk2"><input type="checkbox" id="chk2" class="inp-sm">개인정보처리방침에 동의합니다. (필수)</label></li>
+									<li>
+										<label for="chk3"><input type="checkbox" id="chk3" class="inp-sm">소프트웨어 관련한 정보 및 이벤트 정보 수신에 동의합니다. (선택)</label>
+										<div class="sub-check">
+											<label for="chk4"><input type="checkbox" id="chk4" class="inp-sm">이메일</label>
+											<label for="chk5"><input type="checkbox" id="chk5" class="inp-sm">SMS</label>
+										</div>
+									</li>
+								</ul>
+								<div class="btn-wrap">
+									<!-- [D] 버튼 disabled 케이스 -->
+									<!-- <a href="#" class="btn-md btn-default">확인</a> -->
+									<a href="#" class="btn-md btn-default disabled">확인</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</form>
+			</section>
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

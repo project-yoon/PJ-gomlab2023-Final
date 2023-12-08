@@ -1,0 +1,50 @@
+// 블릿 리스트
+.bullet_list {
+	li {
+		position:relative;
+		@include txt(16);
+		&::before{
+			position:absolute;
+			left:0;
+			display:block;
+		}
+		+ li {
+			margin-top:12px;
+		}
+	}
+	&.dash {
+		> li {
+			padding-left:10px;
+			&::before{
+				content:'-';
+			}
+		}
+	}
+	&.num_type01 {
+		> li {
+			padding-left:16px;
+			.txt {
+				position:absolute;
+				top:0;
+				left:0;
+			}
+		}
+	}
+}
+@include mobile {
+	.bullet_list {
+		li {
+			@include txt(14);
+		}
+		&.num_type01 {
+			> li {
+				padding-left:16px;
+				.txt {
+					position:absolute;
+					top:0;
+					left:0;
+				}
+			}
+		}
+	}
+}

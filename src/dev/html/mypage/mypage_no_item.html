@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="마이페이지" menucss="/dev/ui/css/mypage.css"></include>
+<body class="mypage">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<!-- contents -->
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel">
+					<!-- snb -->
+					<div class="snb-wrap">
+						<div class="snb-inner">
+							<h1 class="snb-title">마이페이지</h1>
+							<div class="my-info">
+								<span class="name">고연정</span>
+								<span class="email">yeonjung@gomcorp.com</span>
+							</div>
+							<div class="my-until only-mo">
+								<ul>
+									<li class="license"><a href="#">
+										<h2>내 라이선스</h2>
+										<span>101개</span>
+									</a></li>
+									<li class="coupon"><a href="#">
+										<h2>내 할인 쿠폰</h2>
+										<span>3개</span>
+									</a></li>
+									<li class="inquiry"><a href="#">
+										<h2>내 문의 내역</h2>
+										<span>3건</span>
+									</a></li>
+								</ul>
+							</div>
+							<nav class="snb-menu">
+								<ul>
+									<li><a href="#">내 계정</a></li>
+									<li><a href="#">제품 및 라이선스</a></li>
+									<li><a href="#">결제 내역</a></li>
+									<li><a href="#">내 쿠폰함</a></li>
+									<li><a href="#">내 문의 내역</a></li>
+									<li><a href="#">내 자막 업로드 내역</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- //snb -->
+					<!-- mypage-home -->
+					<div class="mypage-home inner only-pc">
+						<div class="command-cont"></div>
+						<div class="my-group">
+							<!-- [D] 231208_수정 : 정보 없음 case 추가 -->
+							<div class="my-license">
+								<h2 class="tit">내 라이선스 <span>0개</span></h2>
+								<ul class="subscribe-list">
+									<!-- [D] 라이선스 없는 경우 하단 내용 노출 -->
+									<li class="empty">
+										<p>보유한 라이선스가 없습니다.</p>
+									</li>
+								</ul>
+							</div>
+							<div class="my-coupon">
+								<h2 class="tit">내 할인 쿠폰 <span>0개</span></h2>
+								<ul class="notice-list">
+									<!-- [D] 보유한 쿠폰 없는 경우 하단 내용 노출 -->
+									<li class="empty">
+										<p>보유한 쿠폰이 없습니다.</p>
+									</li>
+								</ul>
+							</div>
+							<div class="my-inquiry">
+								<h2 class="tit">내 문의 내역 <span>0건</span></h2>
+								<ul class="notice-list">
+									<!-- [D] 문의내역 없는 경우 하단 내용 노출 -->
+									<li class="empty">
+										<p>문의내역이 없습니다.</p>
+									</li>
+								</ul>
+							</div>
+							<!-- //[D] 231208_수정 : 정보 없음 case 추가 -->
+						</div>
+					</div>
+					<!-- //mypage-home -->
+				</div>
+			</section>
+		</div>
+		<!-- //contents -->
+
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script src="/dev/ui/js/libs/swiper.min.js"></script>
+	<script>
+
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+</body>
+</html>

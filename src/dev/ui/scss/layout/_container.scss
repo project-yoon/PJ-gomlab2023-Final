@@ -1,0 +1,531 @@
+/* Container */
+#container {
+	position: relative;
+	margin-top: 79px;
+	box-sizing: border-box;
+	overflow-x: hidden;
+	&:has(.lnb-wrap) {
+		.quick-menu {
+			bottom: 100px;
+		}
+	}
+	
+	&:has(#contents-head) {
+		.contents-body {
+			margin-top: 0;
+		}
+	}
+	.contents-body {
+		margin-top: 80px;
+		padding-bottom: 200px;
+	}
+	.panel {
+		max-width: 1152px;
+		margin: 0 auto;
+		box-sizing: border-box;
+		&::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+		//snb section only layout
+		&:has(.snb-wrap) {
+			display: grid;
+			grid-template-columns: 188px 1fr;
+			max-width: 1152px;
+			padding: 0 24px;
+			margin: 0 auto;
+			box-sizing: border-box;
+			.inner {
+				padding-left: 40px;
+				padding-right: 0;
+				width: 100%;
+				min-width: 0;
+				box-sizing: border-box;
+			}
+			&::after {
+				display: none;
+			}
+		}
+		&[class*='wide'] {
+			width: 100%;
+			max-width: 100%;
+		}
+		&[class*='w876'] { // 주문,결제 완료 화면
+			max-width: 876px;
+		}
+		&[class*='w665'] { // 주문,결제 완료 화면
+			max-width: 713px;
+		}
+		&[class*='w1280'] {
+			max-width: 1280px;
+		}
+	}
+	.inner {
+		max-width: 1104px;
+		margin: 0 auto;
+		padding-left: 24px;
+		padding-right: 24px;
+		&[class*='w1280'] {
+			max-width: 1280px;
+		}
+	}
+	/*snb*/
+	.snb-wrap {
+		.snb-inner {
+			.snb-title {
+				@include txt(24);
+				margin-bottom: 24px;
+				font-weight: 700;
+			}
+			.snb-sub-title {
+				font-weight: 700;
+				@include txt(14);
+				color: $color-gray-08;
+			}
+			.snb-menu {
+				ul {
+					li {
+						margin-top: 12px;
+						a, button {
+							position: relative;
+							display: flex;
+							align-items: center;
+							box-sizing: border-box;
+							width: 100%;
+							height: 32px;
+							padding: 0 32px 0 16px;
+							@include txt(14);
+							font-weight: 700;
+							border-radius: 4px;
+							cursor: pointer;
+							&::before {
+								content: '';
+								display: block;
+								@include posRight($right: 16px);
+								width: 16px;
+								height: 16px;
+								background: no-repeat center;
+								background-size: contain;
+							}
+							&:hover:not(.active) {
+								background-color: $color-gray-20;
+							}
+						}
+						a {
+							&::before {
+								background-image: icon(next, 484848);
+							}
+							&.active {
+								background-color: #9AAAF1;
+								color: $color-white;
+								&::before {
+									background-image: icon(next, fff);
+								}
+							}
+						}
+						button {
+							&::before {
+								background-image: icon(down, 484848);
+							}
+							&.active::before {
+								transform: translateY(-50%) rotate(-180deg);
+							}
+							&:hover {
+								background-color: $color-gray-20;
+							}
+						}
+					}
+				}
+				& + .snb-sub-title {
+					padding-top: 24px;
+					margin-top: 24px;
+					border-top: 1px solid $color-gray-11;
+				}
+			}
+		}
+		/*모바일에서 멀티 드롭다운 case*/
+		&.snb-dropdown {
+			.snb-inner {
+				.snb-fake-label {
+					cursor: pointer;
+					position: relative;
+					width: 100%;
+					box-sizing: border-box;
+					text-align: left;
+					@include txt(14);
+					border: 1px solid $color-gray-11;
+					border-radius: 4px;
+					padding: 10px 44px 10px 12px;
+					display: none;
+					&::before {
+						content: '';
+						width: 20px;
+						height: 20px;
+						@include posRight($right: 12px);
+						background: no-repeat center;
+						background-image: icon(down);
+					}
+				}
+				.snb-menu {
+					overflow-y: auto;
+					ul {
+						li {
+							a {
+								&::before {
+									display: none;
+								}
+							}
+						}
+					}
+					.snb-menu-2deps {
+						display: none;
+						li {
+							a {
+								padding: 0 24px;
+								font-weight: 400;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	/* 서브 페이지별 공통 여백 (제품 유/무료, 비즈니스) [D]이외 추가 확인되면 페이지명을 추가 해주세요 */
+	.gom-content-inner-wrap {
+		padding-top: 120px;
+		padding-bottom: 0;
+		&.full {
+			padding-top: 64px;
+			padding-bottom: 80px;
+			margin-top: 120px;
+		}
+	}
+	.gom-content-inner {
+		padding-top: 64px;
+	}
+	.gom-use-guide-inner-wrap {
+		padding-top: 80px;
+		.gom-use-guide-wrap {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 20px;
+			padding: 40px 100px 40px 60px;
+			margin: 0;
+			background: #F8F9FF;
+			border-radius: 10px;
+			h2 {
+				text-align: left;
+			}
+			p {
+				&:nth-of-type(1) {
+					margin-top: 12px;
+					@include txt(16);
+				}
+				&:nth-of-type(2) {
+					margin-top: 20px;
+					@include txt(12);
+				}
+			}
+			.gom-use-guide-img {
+				display: flex;
+				gap: 24px;
+				font-size: 0;
+				img {
+					width: 80px;
+					height: 80px;
+					object-fit: contain;
+				}
+			}
+		}
+	}
+	/* // 서브 페이지별 공통 여백 (제품 유/무료, 비즈니스) */
+	.content-footer {
+		padding: 80px 0;
+		background: $color-gray-21;
+		&.marquee-banner {
+            padding: 80px 0 100px;
+            // background-color: __to_opacity($color-blue-9, '1A');
+			.partners-list {
+				display: flex;
+				.marquee-part {
+					display: flex;
+					gap: 24px;
+					span {
+						display: block;
+						width: 200px;
+						height: 80px;
+						&:nth-child(1) {
+							padding-left: 24px;
+						}
+					}
+				}
+			}
+        }
+	}
+}
+
+/* Sub Content */
+.sub-contents {
+	position: relative;
+	padding: 94px 0px 200px;
+	.sc-inner {
+		width: 1400px;
+		margin: 0px auto;
+	}
+	h2.sc-tit {
+		font-size: 26px;
+		line-height: 30px;
+		letter-spacing: -0.78px;
+	}
+	.snb {
+		display: flex;
+		gap: 0px 35px;
+		padding: 0px 46px;
+	}
+}
+
+@include desktop {
+}
+@include tablet {
+	#container {
+		margin-top: 48px;
+	}
+}
+@include mobile {
+	#container {
+		&:has(.snb-fix) {
+			margin-top: 85px;
+		}
+		.contents-body {
+			margin-top: 40px;
+			padding-bottom: 150px;
+		}
+		.panel {
+			//snb section only layout
+			&:has(.snb-wrap) {
+				display: block;
+				padding: 0;
+				.inner {
+					padding-left: 24px;
+					padding-right: 24px;
+				}
+			}
+			.snb-dropdown:first-child {
+				.snb-inner {
+					.snb-fake-label {
+						margin-bottom: 40px;
+					}
+				}
+			}
+			&[class*='w665'] { // 주문,결제 완료 화면
+				max-width: 100%;
+			}
+		}
+		/*snb*/
+		.snb-wrap {
+			padding: 0 24px;
+			.snb-inner {
+				.snb-title {
+					@include txt(20);
+					margin-bottom: 20px;
+				}
+			}
+			/*상단 고정 형태 snb*/
+			&.snb-fix {
+				.snb-inner {
+					.snb-title {
+						display: none;
+					}
+					.snb-menu {
+						position: fixed;
+						left: 0;
+						top: 48px;
+						background-color: $color-white;
+						box-sizing: border-box;
+						width: 100%;
+						z-index: 15;
+						ul {
+							padding: 0 24px;
+							display: flex;
+							overflow: auto;
+							-ms-overflow-style: none;
+							scrollbar-width: none;
+							border-bottom: 1px solid $color-gray-11;
+							li {
+								margin: 0;
+								a {
+									text-align: center;
+									white-space: nowrap;
+									display: inline-flex;
+									align-items: center;
+									justify-content: center;
+									box-sizing: border-box;
+									padding: 0;
+									height: 36px;
+									&::before {
+										display: none;
+									}
+									&.active {
+										color: $color-black-1;
+										background-color: transparent;
+										&::after {
+											content: '';
+											width: 100%;
+											height: 2px;
+											background-color: $color-black-1;
+											@include posBottom;
+										}
+									}
+								}
+								& + li {
+									margin-left: 20px;
+								}
+							}
+							&::-webkit-scrollbar {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+			& + .inner {
+				padding: 0 24px;
+			}
+			/*모바일에서 멀티 드롭다운 case*/
+			&.snb-dropdown {
+				.snb-inner {
+					position: relative;
+					.snb-fake-label {
+						display: block;
+					}
+					.snb-menu {
+						background-color: $color-white;
+						border: 1px solid $color-gray-11;
+						border-radius: 4px;
+						position: absolute;
+						top: 48px;
+						z-index: 2;
+						width: 100%;
+						box-sizing: border-box;
+						display: none;
+						ul {
+							li {
+								margin-top: 0;
+								a {
+									padding: 10px 12px;
+								}
+								button {
+									padding-left: 40px;
+									&::before {
+										right: unset;
+										left: 12px;
+									}
+									&.active {
+										background-color: $color-gray-20;
+										color: $color-black-1;
+									}
+								}
+							}
+						}
+						.snb-menu-2deps {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+		.gom-content-inner-wrap {
+			padding-top: 80px;
+			&.first {
+				padding-top: 64px;
+			}
+			&.full {
+				padding-top: 48px;
+				padding-bottom: 60px;
+				margin-top: 80px;
+			}
+		}
+		.gom-content-inner {
+			padding-top: 32px;
+		}
+		.gom-use-guide-inner-wrap {
+			padding-top: 64px;
+			.gom-use-guide-wrap {
+				position: relative;
+				display: block;
+				padding: 24px 0;
+				h2 {
+					@include txt(18);
+				}
+				p {
+					&:nth-of-type(1) {
+						margin-top: 10px;
+						@include txt(14);
+					}
+				}
+				.gom-use-guide-img {
+					padding-left: 64px;
+					justify-content: flex-end;
+					flex-wrap: wrap;
+					gap: 20px;
+					margin-top: 16px;
+					img {
+						width: 64px;
+						height: 64px;
+					}
+				}
+				&::before {
+					position: absolute;
+					z-index: -1;
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 100vw;
+					height: 100%;
+					background-color: #f8f9ff;
+					content: "";
+				}
+			}
+		}
+		.content-footer {
+			padding: 48px 0 56px 0;
+			.gom-title {
+				@include txt(24);
+			}
+			&.marquee-banner {
+                padding: 30px 0 40px;
+                .partners-list {
+                    .marquee-part {
+                        gap: 10px 14px;
+                        span {
+                            width: 100px;
+                            height: 40px;
+                            &:nth-child(1),
+                            &:nth-child(2) {
+                                padding-left: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+		}
+	}
+}
+@include sm-mobile {
+	#container {
+		.inner {
+			max-width: initial;
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+		/*snb*/
+		.snb-wrap {
+			padding: 0 16px;
+			& + .inner {
+				padding: 0 16px;
+			}
+		}
+	}
+}

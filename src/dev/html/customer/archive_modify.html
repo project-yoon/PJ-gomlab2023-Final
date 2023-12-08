@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="수정 : 자료실 : 고객지원" menucss="/dev/ui/css/customer.css"></include>
+<body class="customer archive"> <!-- [D] archive : 자료실 전용 키클래스 -->
+<!-- 헤더 -->
+<include src="../include/header_tit.html" titlename="자막 자료실"></include>
+<!-- //헤더 -->
+
+<!-- 컨텐츠 -->
+<main id="container">
+	<div id="contents-head" class="contents-head">
+		<div class="head-tit-wrap">
+			<h1>자료실</h1>
+		</div>
+	</div>
+
+	<div id="contents" class="contents-body">
+		<section class="panel-wrap">
+			<div class="panel">
+				<div class="inner">
+					<ul class="tab-underline">
+						<li><a href="#" class="active">자막 자료실</a></li>
+						<li><a href="#">코덱 자료실</a></li>
+					</ul>
+					<div class="cmn-content-head">
+						<h2 class="regist-tit">자막수정</h2>
+						<p class="regist-guide">*는 필수 입력 사항입니다.</p>
+					</div>
+					<div class="cmn-content-detail">
+						<form action="" name="" id="" class="form-wrap">
+							<div class="form-item">
+								<span class="form-label required">언어</span>
+								<div class="form-cont">
+									<select class="btn-drop-box">
+										<option value="item1">통합</option>
+										<option value="item2">item2</option>
+										<option value="item3">item3</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-item">
+								<span class="form-label required">자막 파일</span>
+								<div class="form-col">
+									<div class="form-cont">
+										[D] 231208_수정 :  placeholder 제거-->
+										<input type="file" id="file">
+										<span class="form-filename null">선택된 파일 없음</span>
+									</div>
+									<label for="file" class="btn-sm btn-ghost">파일 선택</label>
+								</div>
+								<div class="help-wrap">
+									<p class="err-txt">자막 파일을 첨부해 주세요.<br> 자막 파일은 smi, srt 파일만 업로드 가능합니다.</p>
+								</div>
+							</div>
+							<div class="form-item">
+								<span class="form-label required">제목</span>
+								<div class="form-cont">
+									<input type="text" class="inp-box wide titleArchive" placeholder="제목을 입력해 주세요." value="무빙 자막">
+								</div>
+							</div>
+							<div class="form-item">
+								<span class="form-label">내용</span>
+								<div class="form-cont">
+									<textarea class="wide" placeholder="상세 내용을 입력해 주세요">무빙 통합 자막입니다.</textarea>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="btn-wrap wrap-right">
+						<button type="submit" id="subtitleRegistration" class="btn-md btn-default">자막 수정하기</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<aside class="ad_banner01">광고배너</aside>
+</main>
+<!-- //컨텐츠 -->
+
+<!-- 퀵 메뉴 -->
+<include src="../include/quick_menu.html"></include>
+<!-- //퀵 메뉴 -->
+
+<script>
+	/* 자막 등록하기 */
+	document.querySelector('#subtitleRegistration').addEventListener('click', () => {
+		let titleArchive = document.querySelector('.titleArchive');
+
+		if (titleArchive.value === '') {
+			alert('제목을 입력해 주세요.');
+			titleArchive.focus();
+		}
+	});
+</script>
+
+<!-- 푸터 -->
+<include src="../include/footer.html"></include>
+<!-- //푸터 -->
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="회원가입" menucss="/dev/ui/css/users.css"></include>
+<body class="users">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<form class="form-wrap">
+
+					<!-- 회원가입 -->
+					<div class="panel">
+						
+						<h1>회원가입</h1>
+						<!-- <ul class="step">
+							<li>step1</li>
+							<li class="none">step2</li>
+						</ul> -->
+						<div class="user-content-detail">
+							<p class="sns-login-title">SNS 계정으로 이용하기</p>
+							<div class="sns-login-list">
+								<a href="#" class="btn-common-sns log-facebook">페이스북 로그인</a>
+								<a href="#" class="btn-common-sns log-google">구글 로그인</a>
+								<a href="#" class="btn-common-sns log-kakao">카카오 로그인</a>
+								<a href="#" class="btn-common-sns log-naver">네이버 로그인</a>
+							</div>
+							<p class="txt-login-ather"><span>또는</span></p>
+							<div class="user-form-wrap">
+								<div class="form-item">
+									<div class="form-cont">
+										<input type="text" class="inp-box" placeholder="이메일">
+										<div class="help-wrap">
+											<!-- [D] 에러 텍스트 케이스 문구 수정-->
+											<!--<p class="err-txt">이메일 주소를 입력해 주세요.</p>--> <!--case: 미입력-->
+											<!-- <p class="err-txt">올바른 이메일 주소를 입력해 주세요.</p> --> <!--case: 유효성 체크-->
+											<p class="err-txt">이미 사용중인 이메일 입니다.<br> 다른 이메일을 입력하거나 이 이메일로<a href="#" class="move-to">로그인</a>해 주세요.</p> <!--case: 이미 회원으로 등록된 이메일-->
+										</div>
+									</div>
+								</div>
+								<div class="form-item">
+									<div class="form-cont">
+										<input type="password" class="inp-box" placeholder="비밀번호">
+										<div class="help-wrap">
+											<!-- [D] 에러 텍스트 케이스 문구 수정-->
+											<p class="guide-txt">비밀번호는 영문, 특수문자, 숫자를 모두 조합하여​ 8자 이상 30자 이하여야 합니다.</p>
+											<!-- <p class="err-txt">비밀번호는 영문, 특수문자, 숫자를 모두 조합하여​ 8자 이상 30자 이하여야 합니다.</p> -->
+										</div>
+									</div>
+								</div>
+								<div class="btn-wrap">
+									<!-- [D] 버튼 case -->
+									<a href="#" class="btn-md btn-default disabled">다음</a>
+									<!-- <a href="#" class="btn-md btn-default">다음</a> -->
+
+									<!-- [D] 팝업 노출 예시 : 회원가입완료팝업 -->
+									<!-- <button type="button" data-role="open__popup_join_success" class="btn-md btn-default" disabled>다음</button> -->
+								</div>
+							</div>
+						</div>
+						<!-- [D] '비회원 구매내역조회' 버튼 사용여부 확인 필요 -->
+						<!-- <div class="panel-bottom">
+							<a href="#" class="btn-sm btn-ghost"><span>비회원 구매내역 조회</span></a>
+						</div> -->
+					</div>
+
+				</form>
+			</section>
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

@@ -1,0 +1,700 @@
+@charset "utf-8";
+@import "./utilities/variables";
+@import "./utilities/mixins";
+
+.main {
+    /*레이아웃*/
+    .contents-head {
+        &.main-head {
+            height: 680px;
+            background-color: #991FE841;//임시컬러
+
+            .head-tit-wrap {
+                position: relative;
+                height: 100%;
+                display: flex;
+                align-items: center
+            }
+            h1 {
+                @include txt(40);
+                color: $color-blue-9;
+                margin: 0;
+            }
+        }
+    }
+    #container {
+        .inner {
+            max-width: 1280px
+        }
+    }
+    /*공통요소*/
+    .main-cont-tit {
+        @include txt(36);
+    }
+    .main-cont-exp {
+        @include txt(20);
+        margin-top: 24px;
+        font-weight: 700;
+    }
+    .cnt-tit-wrap {
+        text-align: center;
+        margin-bottom: 48px;
+
+        .cnt-tit {
+            @include txt(40);
+        }
+        .cnt-exp {
+            @include txt(24);
+            margin-top: 24px;
+        }
+    }
+    .icon-box {
+        display: block;
+        width: 80px;
+        height: 80px;
+        img {
+            @include image-fit;
+        }
+    }
+    .swiper-arrow {
+        display: block;
+        width: 40px;
+        height: 40px;
+        z-index: 1;
+        cursor: pointer;
+        font-size: 0;
+        &.swiper-prev {
+            @include posLeft($left: -114px);
+            background: icon(prev, ffffff) no-repeat center/contain;
+        }
+        &.swiper-next {
+            @include posRight($right: -114px);
+            background: icon(next, ffffff) no-repeat center/contain;
+        }
+    }
+    .pagination-bullet {
+        span {
+            width: 12px;
+            height: 12px;
+            background: $color-white;
+            opacity: 0.2;
+            & + span {
+                margin-left: 12px;
+            }
+            &.swiper-pagination-bullet-active {
+                opacity: 0.8;
+            }
+        }
+    }
+    /*곰 이지패스 슬라이드*/
+    .main-easy-pass {
+        position: relative;
+        height: 560px;
+        ul {
+            li {
+                background: no-repeat center;
+                background-size: cover;
+                box-sizing: border-box;
+                height: 100%;
+                .inner {
+                    position: relative;
+                    height: 100%;
+                    box-sizing: border-box;
+                }
+            }
+        }
+        .cont-txt {
+            padding-top: 120px;
+            .main-cont-tit,
+            .main-cont-exp {
+                color: $color-white;
+            }
+        }
+        .easy-pass-logo {
+            display: inline-block;
+            width: 186px;
+            height: 54px;
+            margin-bottom: 40px;
+            img {
+                @include image-fit;
+            }
+        }
+        .icon-boxs {
+            @include posRight($right: 24px);
+            max-width: calc(50% - 24px);
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+        .swiper-util {
+            @include posCenter;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            box-sizing: border-box;
+            background-color: red($color: #000000);
+        }
+        .pagination-bullet {
+            position: absolute;
+            bottom: 48px;
+        }
+    }
+    /*크리에이티브 서비스*/
+    .creative-service {
+        padding: 80px 0 100px;
+        display: flex;
+        align-items: center;
+        .txt-wrap {
+            width: 480px;
+            .main-cont-exp {
+                font-weight: 400;
+            }
+        }
+        .creative-list {
+            margin-left: 72px;
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+            li {
+                padding-top: 180px;
+                width: 180px;
+                text-align: center;
+                background: no-repeat top center;
+                background-size: 100% auto;
+                font-weight: 700;
+                p {
+                    margin-top: 12px;
+                    color: $color-blue-9;
+                    @include txt(50);
+                    b {
+                        color: inherit;
+                        font-size: inherit;
+                    }
+                    &.tit {
+                        color: $color-blue-9;
+                        @include txt(20);
+                    }
+                }
+                &.members {
+                    background-image: url(#{$img-url}/main/main_creative_service_heart.png);
+                }
+                &.execution {
+                    background-image: url(#{$img-url}/main/main_creative_service_chat.png);
+                }
+                &.download {
+                    background-image: url(#{$img-url}/main/main_creative_service_cloud.png);
+                }
+            }
+        }
+    }
+    /*곰이지패스로 만나보는 대표제품*/
+    .main-product-list {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(180deg, #BCC5F6 0%, #FFFFFF1A 49%, #BCC5F6 100%) 0% 0%;
+        padding: 160px 0;
+        .side-visual-card {
+            position: relative;
+            border: 1px solid #BCC5F6;
+            background-color: $color-white;
+            border-radius: 20px;
+            padding: 95px 88px 95px calc(50% + 82px);
+            overflow: hidden;
+            height: 400px;
+            box-sizing: border-box;
+            text-align: center;
+            .img-wrap {
+                position: absolute;
+                width: 50%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                img {
+                    @include image-fit($fit: cover);
+                }
+            }
+            .tit {
+                @include txt(24);
+                font-weight: 700;
+            }
+            .sub {
+                display: inline-block;
+                @include txt(18);
+                margin-top: 24px;
+
+            }
+            .btn-lg {
+                margin-top: 40px;
+            }
+        }
+        .program-list {
+            margin: 40px 0 80px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            li {
+                background-color: $color-white;
+                box-sizing: border-box;
+                padding: 32px;
+                border: 1px solid #BCC5F6;
+                border-radius: 20px;
+                box-shadow: 0px 10px 20px __to_opacity($color-black, '0D');
+                .program-tit {
+                    @include txt(24);
+                    margin-top: 40px;
+                    font-weight: 700;
+                }
+                .program-exp {
+                    @include txt(18);
+                    display: inline-block;
+                    margin-top: 16px;
+                    color: $color-gray-01;
+                }
+                .btn-wrap {
+                    margin-top: 48px;
+                    flex-wrap: nowrap;
+                    justify-content: flex-start;
+                    gap: 12px;
+                    [class^=btn-] {
+                        padding: 0 30px;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+        &::before {
+            content: '';
+            width: 937px;
+            height: 898px;
+            position: absolute;
+            background: no-repeat center url(#{$img-url}/main/bg_main_product_pastel.png);
+            background-size: contain;
+            top: -200px;
+            right: -450px;
+            opacity: .4;
+            z-index: -1;
+        }
+    }
+    /*편집꿀팁*/
+    .editing-tips {
+        background-color: $color-gray-21;
+        padding: 120px 0;
+        .gallery-wrap {
+            li {
+                box-shadow: 0px 8px 20px __to_opacity($color-black, '0D');
+            }
+            .gallery-content {
+                border: 1px solid $color-gray-11;
+                height: 132px;
+                box-sizing: border-box;
+                .gallery-title {
+                    font-weight: 700;
+                }
+
+            }
+        }
+    }
+    /*곰랩 채널*/
+    .main-gomlab-channel {
+        padding: 120px 0 160px;
+        .gomlab-channel-cont {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: 25% 25% 1fr;
+            grid-auto-rows: 322px;
+            gap: 32px;
+            li {
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    img {
+                        @include image-fit($fit: cover);
+                    }
+                }
+
+                &.video {
+                    a {
+                        position: relative;
+                        &::before {
+                            content: '';
+                            display: block;
+                            @include posCenter;
+                            width: 64px;
+                            height: 64px;
+                            border-radius: 50%;
+                            background: no-repeat center;
+                            background-size: contain;
+                            background-image: icon(btn-play);
+                        }
+                    }
+                }
+            }
+        }
+        .btn-move-media {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            width: 330px;
+            height: 52px;
+            border: 1px solid $color-black;
+            border-radius: 51px;
+            font-weight: 700;
+            &::before,
+            &::after {
+                content: '';
+                display: block;
+                background: no-repeat center;
+                background-position: center;
+            }
+            &::before {
+                width: 24px;
+                height: 24px;
+                margin-right: 14px;
+            }
+            &::after {
+                width: 20px;
+                height: 20px;
+                margin-left: 4px;
+                background-image: icon(next, 484848);
+            }
+
+            &.instagram::before {
+                background-image: icon(sns-instagram);
+            }
+            &.youtube::before {
+                background-image: icon(sns-youtube);
+            }
+        }
+    }
+    /*사용자 리뷰*/
+    .gom-product-review {
+        padding-top: 120px;
+        background: linear-gradient(180deg, #5773E81A 0%, #5773E800 100%);
+        .main-review-wrap {
+            position: relative;
+        }
+        .main-review-swiper {
+            overflow: hidden;
+            padding: 0 16px 40px;
+            margin: 0 -16px;
+            ul {
+                li {
+                    background-color: $color-white;
+                    box-shadow: 0px 10px 20px __to_opacity($color-black, '0D');
+                    box-sizing: border-box;
+                    padding: 32px 40px;
+                    border-radius: 10px;
+                    text-align: center;
+                    height: 340px;
+                }
+            }
+        }
+        .pagination-bullet {
+            text-align: center;
+            span {
+                background: $color-gray-06;
+            }
+        }
+        .swiper-arrow {
+            &.swiper-prev {
+                @include posLeft($left: -80px);
+                top: calc(50% - 40px);
+                background-image: icon(prev);
+            }
+            &.swiper-next {
+                @include posRight($right: -80px);
+                top: calc(50% - 40px);
+                background-image: icon(next);
+            }
+        }
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 24px;
+        }
+        .reviewer-name {
+            @include txt(12);
+            color: $color-gray-06;
+        }
+        .star-rating {
+            height: 16px;
+            background-color: rgb(183, 183, 183); //임시영역 컬러 (별 에셋 공유받으면 교체예정)
+            margin: 10px 0 16px;
+        }
+        .review-tit {
+            @include txt(24);
+            font-weight: 700;
+        }
+        .review-detail {
+            margin-top: 16px;
+            word-break: keep-all;
+            @include ellipsis-multi($line: 4, $font-size: 16px);
+            height: unset;
+        }
+    }
+}
+
+@include tablet {
+    .main {
+        /*레이아웃*/
+        .contents-head {
+            &.main-head {
+                height: 433px;
+                .head-tit-wrap {
+                    display: block;
+                }
+                h1 {
+                    position: unset;
+                    transform: unset;
+                    text-align: center;
+                    padding-top: 64px;
+                    @include txt(20);
+                }
+            }
+        }
+        /*공통요소*/
+        .main-cont-tit {
+            @include txt(24);
+        }
+        .main-cont-exp {
+            @include txt(16);
+            margin-top: 16px;
+        }
+        .cnt-tit-wrap {
+            margin-bottom: 40px;
+            .cnt-tit {
+                @include txt(24);
+            }
+            .cnt-exp {
+                @include txt(16);
+                margin-top: 16px;
+            }
+        }
+        .icon-box {
+            width: 64px;
+            height: 64px;
+        }
+        .swiper-arrow {
+            width: 20px;
+            height: 20px;
+            &.swiper-prev {
+                left: 24px;
+            }
+            &.swiper-next {
+                right: 24px;
+            }
+        }
+        /*곰 이지패스 슬라이드*/
+        .main-easy-pass {
+            height: 600px;
+            .cont-txt {
+                padding-top: 45px;
+                text-align: center;
+            }
+            .easy-pass-logo {
+                width: 120px;
+                height: 35px;
+            }
+            .icon-boxs {
+                top: 364px;
+                left: 50%;
+                transform: translateX(-50%);
+                justify-content: center;
+                gap: 24px;
+                min-width: 240px;
+            }
+            .pagination-bullet {
+                bottom: 32px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        /*크리에이티브 서비스*/
+        .creative-service {
+            padding: 64px 0;
+            display: block;
+            text-align: center;
+            .txt-wrap {
+                width: auto;
+            }
+            .creative-list {
+                margin-left: 0;
+                margin-top: 40px;
+                justify-content: center;
+                gap: 14px;
+                li {
+                    padding-top: calc((100% - 28px) / 3);
+                    width: calc((100% - 28px) / 3);
+
+                    p {
+                        @include txt(24);
+                        &.tit {
+                            @include txt(12);
+                        }
+                    }
+                }
+            }
+        }
+        /*곰이지패스로 만나보는 대표제품*/
+        .main-product-list {
+            padding: 64px 0;
+            .side-visual-card {
+                    height: auto;
+                    padding: 55.45vw 20px 40px;
+                    border-radius: 10px;
+                .img-wrap {
+                    height: 55.45vw;
+                    width: 100%;
+                }
+                .tit {
+                    padding-top: 40px;
+                    @include txt(20);
+                }
+                .sub {
+                    display: block;
+                    margin-top: 16px;
+                    @include txt(16);
+                }
+                .btn-lg {
+                    margin-top: 24px;
+                    width: 100%;
+                    height: $button-size-md;
+                }
+            }
+            .program-list {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 12px;
+                margin: 24px 0 48px;
+                li {
+                    padding: 32px 20px 20px;
+                    border-radius: 10px;
+                    .program-wrap {
+                        position: relative;
+                        min-height: 60px;
+                        padding-left: 76px;
+                    }
+                    .icon-box {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 60px;
+                        height: 60px;
+                    }
+                    .program-tit {
+                        margin-top: 0;
+                        @include txt(16);
+                    }
+                    .program-exp {
+                        margin-top: 10px;
+                        @include txt(12);
+                    }
+                    .btn-wrap {
+                        margin-top: 20px;
+                        justify-content: flex-end;
+                        .btn-md {
+                            height: $button-size-sm;
+                            padding: 0 24px;
+                        }
+                    }
+                }
+            }
+        }
+        /*편집꿀팁*/
+        .editing-tips {
+            padding: 64px 0;
+            .gallery-wrap {
+                li {
+                    a {
+                        .gallery-content {
+                            height: 95px;
+                            .gallery-date {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        /*곰랩 채널*/
+        .main-gomlab-channel {
+            padding: 64px 0;
+            .gomlab-channel-cont {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: auto;
+                gap: 10px;
+                li {
+                    border-radius: 4px;
+                }
+                .video {
+                    grid-column: 1 / -1;
+                }
+            }
+            .btn-wrap {
+                gap: 16px;
+            }
+            .btn-move-media {
+                width: 100%;
+                height: 44px;
+                @include txt(14);
+
+                &::before {
+                    margin-right: 6px;
+                }
+                &::after {
+                    margin-left: 10px;
+                }
+            }
+        }
+        /*사용자 리뷰*/
+        .gom-product-review {
+            padding-top: 64px;
+            .main-review-swiper {
+                padding: 0 72px 40px;
+                margin: 0 -24px;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .main {
+        /*곰랩 채널*/
+        .main-gomlab-channel {
+            .gomlab-channel-cont {
+                margin-top: 40px;
+            }
+        }
+        /*사용자 리뷰*/
+        .gom-product-review {
+            .main-review-swiper {
+                overflow: hidden;
+                height: auto;
+                ul {
+                    li {
+                        height: 270px;
+                        padding: 24px 16px;
+                    }
+                }
+            }
+            .icon-box {
+                width: 40px;
+                height: 40px;
+                margin: 0 auto 16px;
+            }
+            .star-rating {
+                margin: 8px 0 16px;
+            }
+            .review-tit {
+                @include txt(16);
+            }
+            .review-detail {
+                margin-top: 12px;
+                @include txt(12);
+            }
+        } 
+    }
+}

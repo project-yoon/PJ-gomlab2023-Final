@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="제품연동2 : 비회원 : 고객지원" menucss="/dev/ui/css/customer.css"></include>
+<body class="customer non-members"> <!-- [D] non-members : 비회원 메뉴 전용 키클래스 -->
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<div id="contents-head" class="contents-head">
+			<div class="head-tit-wrap">
+				<h1>비회원 메뉴</h1>
+			</div>
+		</div>
+
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel">
+					<div class="inner">
+						<ul class="tab-button" data-menu="scroll">
+							<li><a href="#">라이선스키(정품 등록 키) 찾기</a></li>
+							<li><a href="#">정품 인증 해제</a></li>
+							<li><a href="#">자동 결제 정보 확인</a></li>
+							<li><a href="#" class="active">비회원 제품 연동</a></li>
+						</ul>
+						<div class="no-customer-tit">
+							<h2>비회원 제품연동</h2>
+							<p class="exp">곰랩 계정과 동일한 정품 등록 이메일로 구매한 제품입니다.<br> 곰랩 계정과 연동하고 싶은 항목을 선택 후 ‘연동하기’버튼을 클릭하세요.</p>
+						</div>
+						<div class="cmn-content-head">
+							<h3 class="head-tit-sm">조회 정보</h3>
+						</div>
+						<div class="cmn-content-detail">
+							<div class="cmn-col">
+								<!-- [D] 231208_수정_01 : license-info 추가 -->
+								<div class="multi-lst license-info">
+								<!-- //[D] 231208_수정_01 : license-info 추가 -->
+									<dl>
+										<dt>정품 등록 이메일</dt>
+										<dd>aaaa@gomcorp.com</dd>
+									</dl>
+									<dl>
+										<dt>연동 가능 제품</dt>
+										<dd>10개</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="cmn-col">
+								<!-- [D] 231208_수정_01 : license-info 추가 -->
+								<div class="multi-lst license-info">
+								<!-- //[D] 231208_수정_01 : license-info 추가 -->
+									<dl>
+										<dt>곰믹스 맥스</dt>
+										<dd>3개</dd>
+									</dl>
+									<dl>
+										<dt>곰믹스 프로</dt>
+										<dd>2개</dd>
+									</dl>
+									<dl>
+										<dt>곰플레이어 플러스</dt>
+										<dd>5개</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+						<form action="" name="" id="" class="form-wrap license-check" data-agree="agree-group">
+							<div class="cmn-content-head select-head">
+								<div class="form-cont">
+									<label for="agree-all" data-agree="agree-all"><input type="checkbox" id="agree-all" checked><strong>전체선택 2개</strong></label>
+								</div>
+								<div class="select-wrap">
+									<div class="form-cont mo-full">
+										<select class="btn-drop-line">
+											<option value="" hidden selected>제품</option>
+											<option value="전체">전체</option>
+											<option value="곰믹스 프로">곰믹스 프로</option>
+											<option value="곰캠 프로">곰캠 프로</option>
+											<option value="곰플레이어+">곰플레이어+</option>
+											<option value="곰인코더">곰인코더</option>
+										</select>
+									</div>
+									<div class="form-cont">
+										<select class="btn-drop-line">
+											<option value="" hidden selected>인증상태</option>
+											<option value="전체">전체</option>
+											<option value="인증완료">인증완료</option>
+											<option value="인증대기">인증대기</option>
+										</select>
+									</div>
+									<div class="form-cont">
+										<select class="btn-drop-line">
+											<option value="" hidden selected>이용기간</option>
+											<option value="전체">전체</option>
+											<option value="1년">1년</option>
+											<option value="6개월">6개월</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="cmn-content-detail">
+								<div class="cmn-col">
+									<div class="form-cont">
+										<label for="agree1"><input type="checkbox" id="agree1"><strong>제품명1</strong></label>
+									</div>
+									<div class="multi-lst">
+										<dl>
+											<dt>정품 등록 키</dt>
+											<dd>AAAA-BBBB-CCCC-DDDD</dd>
+										</dl>
+										<dl>
+											<dt>인증상태</dt>
+											<dd>인증대기</dd>
+										</dl>
+										<dl>
+											<dt>이용기간</dt>
+											<dd>YYYY-MM-DD</dd>
+										</dl>
+									</div>
+								</div>
+								<div class="cmn-col">
+									<div class="form-cont">
+										<!-- [D] 231208_수정_01 : id 수정 -->
+										<label for="agree2"><input type="checkbox" id="agree2"><strong>제품명1</strong></label>
+										<!-- //[D] 231208_수정_01 : id 수정 -->
+									</div>
+									<div class="multi-lst">
+										<dl>
+											<dt>정품 등록 키</dt>
+											<dd>AAAA-BBBB-CCCC-DDDD</dd>
+										</dl>
+										<dl>
+											<dt>인증상태</dt>
+											<dd>인증대기</dd>
+										</dl>
+										<dl>
+											<dt>이용기간</dt>
+											<dd>YYYY-MM-DD</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div class="btn-wrap wrap-right w-integration">
+							<a href="#" class="btn-md btn-ghost">다른 이메일 조회</a>
+							<a href="#" class="btn-md btn-default">연동하기</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>  

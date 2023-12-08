@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="제품 삭제 완료" menucss="/dev/ui/css/etc.css"></include>
+<body class="etc pd-delete-complete">
+<!-- 헤더 -->
+<include src="../include/header.html"></include>
+<!-- //헤더 -->
+
+<!-- 컨텐츠 -->
+<main id="container">
+	<!-- contents -->
+	<div id="contents" class="contents-body">
+		<div class="pannel-wrap">
+			<div class="panel">
+				<div class="pd-install-head">
+					<img src="/dev/ui/images/layout/icon_pd_gomplayer.png" alt="곰플레이어">
+					<p>곰플레이어가 삭제되었습니다.</p>
+				</div>
+				<div class="pd-install-info">
+					<p>본 프로그램을 삭제하시는 이유와 의견을 보내주시면<br>적극 참고하여 더욱 좋아진 모습으로 다시 찾아 뵙겠습니다.</p>
+				</div>
+				<form action="">
+					<div class="survey-form-wrap">
+						<div class="survey-form">
+							<div class="survey-form-title">1. 곰플레이어의 삭제하는 이유를 알려주세요.</div>
+							<label for="item01" class="inp-chk"><input type="radio" name="radio01" id="item01"><span>원하는 기능이 없어요.</span></label>
+							<label for="item02" class="inp-chk"><input type="radio" name="radio01" id="item02"><span>사용 방법이 너무 어렵고 불편해요.</span></label>
+							<label for="item03" class="inp-chk"><input type="radio" name="radio01" id="item03"><span>제품에 문제(오류)가 있어요.</span></label>
+							<label for="item04" class="inp-chk"><input type="radio" name="radio01" id="item04"><span>더 이상 사용할 일이 없어요.</span></label>
+							<label for="item05" class="inp-chk"><input type="radio" name="radio01" id="item05"><span>이 프로그램을 대체하는 다른 프로그램을 사용할 거에요.</span></label>
+							<label for="isInpChk" class="inp-chk"><input type="radio" name="radio01" id="isInpChk" checked><span>직접입력</span></label>
+							<textarea name="" placeholder="삭제 사유를 입력해주세요. (최대 500자)" class="delete-reason active"></textarea>
+						</div>
+
+						<div class="survey-form">
+							<div class="survey-form-title">2. 곰플레이어의 사용한 기간을 알려주세요.</div>
+							<label for="item06" class="inp-chk"><input type="radio" name="radio02" id="item06"><span>오늘(24시간이내)</span></label>
+							<label for="item07" class="inp-chk"><input type="radio" name="radio02" id="item07"><span>1주일</span></label>
+							<label for="item08" class="inp-chk"><input type="radio" name="radio02" id="item08"><span>1개월</span></label>
+							<label for="item09" class="inp-chk"><input type="radio" name="radio02" id="item09"><span>1년</span></label>
+							<label for="item10" class="inp-chk"><input type="radio" name="radio02" id="item10"><span>1년 이상</span></label>
+						</div>
+
+						<div class="survey-form">
+							<div class="survey-form-title">3. 개선되었으면 하는 점이 있다면 알려주세요.</div>
+							<textarea name="" placeholder="‘어떤 기능 추가해 주세요’, ‘어떤 오류 고쳐주세요’ 와 같은 어떠한 의견이든 좋아요! (최대 500자)"></textarea>
+						</div>
+					</div>
+					<div class="survey-form-submit">
+						<p>*전달 주신 의견은 내부에서 적극적으로 논의해 보겠습니다.</p>
+						<button type="submit" class="btn-lg btn-default">의견 보내기</button>
+					</div>
+				</form>
+
+				<div class="pd-install-complete-ad">
+					<aside class="ad_banner02">광고배너</aside>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="pd-install-complete-ad">
+		<aside class="ad_banner01">광고배너</aside>
+	</div>
+	<!-- //contents -->
+</main>
+<!-- //컨텐츠 -->
+
+<!-- 퀵 메뉴 -->
+<include src="../include/quick_menu.html"></include>
+<!-- //퀵 메뉴 -->
+
+<script>
+	let deleteReason = document.querySelector('.delete-reason');
+
+	document.querySelectorAll('.survey-form .inp-chk input').forEach((el) => {
+		el.addEventListener('click', () => {
+			if (document.querySelector('#isInpChk').checked) {
+				deleteReason.classList.add('active');
+			} else {
+				deleteReason.classList.remove('active');
+			}
+		});
+	});
+</script>
+
+<!-- 푸터 -->
+<include src="../include/footer.html"></include>
+<!-- //푸터 -->
+
+</body>
+</html>

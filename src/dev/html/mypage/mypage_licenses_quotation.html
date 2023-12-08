@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="견적서 : 마이페이지" menucss="/dev/ui/css/mypage.css"></include>
+<body class="mypage print-preview">
+	<!-- 컨텐츠 -->
+	<main id="container">
+
+		<!-- contents -->
+		<div id="contents">
+			<section class="panel-wrap">
+				<div class="panel licenses-issued-bg">
+					<div class="inner licenses-issued-wrap">
+						<h2 class="gom-title">견적서</h2>
+						<p class="exp">하기와 같이 견적합니다.</p>
+						<div class="num--date quotation">
+							<p>NO.000000</p>
+							<!-- [D] 231208_수정 : 유효기간 텍스트 추가 -->
+							<p>견적일 : YYYY-MM-DD <br class="only-mo">(본 견적의 유효 기간은 견적일로부터 30일임)</p>
+							<!-- //[D] 231208_수정 : 유효기간 텍스트 추가 -->
+						</div>
+						<div class="cmn-content-head">
+							<h2>사용자</h2>
+						</div>
+						<ul class="use-label">
+							<li>
+								<span class="label">단체명</span>
+								<div>주식회사 가나다</div>
+							</li>
+							<li>
+								<span class="label">사업자등록번호</span>
+								<div>000-00-00000</div>
+							</li>
+							<li>
+								<span class="label">담당자명</span>
+								<div>고연정</div>
+							</li>
+							<li>
+								<span class="label">이메일</span>
+								<div>gomcorp@gomcorp.com</div>
+							</li>
+							<li>
+								<span class="label">담당자 연락처</span>
+								<div>010-0000-0000</div>
+							</li>
+						</ul>
+						<div class="cmn-content-head">
+							<h2>공급자</h2>
+						</div>
+						<ul class="use-label">
+							<li>
+								<span class="label">사업자 번호</span>
+								<div>120-81-86669</div>
+							</li>
+							<li>
+								<span class="label">상호</span>
+								<div>㈜곰앤컴퍼니​</div>
+							</li>
+							<li>
+								<span class="label">대표이사</span>
+								<div>이병기​</div>
+							</li>
+							<li>
+								<span class="label">사업자 소재지</span>
+								<div>서울시 송파구 문정로 4길 16 (곰앤컴퍼니 빌딩)</div>
+							</li>
+							<li>
+								<span class="label">업태</span>
+								<div>서비스</div>
+							</li>
+							<li>
+								<span class="label">종목</span>
+								<div>프로그램 개발</div>
+							</li>
+							<li>
+								<span class="label">팩스번호</span>
+								<div>02-6007-1178​</div>
+							</li>
+						</ul>
+						<div class="cmn-content-head">
+							<h2>상세 내역</h2>
+						</div>
+						<div class="cmn-content-detail">
+							<div class="pay-summary-wrap">
+								<div class="pay-summary">
+									<span class="label">상품명</span>
+									<span><b>곰믹스 맥스 1년 이용권</b></span>
+								</div>
+								<div class="pay-summary">
+									<span class="label">단가 (VAT 포함)</span>
+									<span><b>00,000원</b></span>
+								</div>
+								<div class="pay-summary">
+									<span class="label">구매 수량</span>
+									<span><b>00개</b></span>
+								</div>
+								<div class="pay-summary">
+									<span class="label">할인 금액</span>
+									<span><b>- 00,000원</b></span>
+								</div>
+								<div class="pay-summary">
+									<span class="label">결제 금액 (VAT 포함)</span>
+									<span><b>00,000원</b></span>
+								</div>
+							</div>
+							<div class="pay-summary-wrap">
+								<div class="pay-summary pay-total">
+									<span>합계 (VAT 포함)</span>
+									<span class="total-price">00,000원</span>
+								</div>
+							</div>
+						</div>
+						<div class="licenses-issued-info">
+							<ul class="dot-list">
+								<li>담당자 이메일 <a href="mailto:gomsales@gomcorp.com">gomsales@gomcorp.com</a></li>
+								<li>결제방법 : 견적받은 계정으로 곰랩 로그인 후 [마이페이지 &lt; 제품 및 라이선스]에서 확인 후 결제하시기 바랍니다.</li>
+								<li>​직인 날인 및 전자 세금계산서 요청 시, 위 담당자 이메일로 연락 부탁 드립니다.</li>
+								<li>​결제영수증 발급 안내는 <a href="#" class="move-to">여기</a>에서 확인해 주세요.</li>
+							</ul>
+						</div>
+						<div class="print-logo">
+							<p class="gom-logo-company sm">gom &amp; company</p>
+						</div>
+						<div class="print-noti only-mo"><em>모바일 버전에서는 출력이 불가합니다.<br>PC버전에서 사용해주시기 바랍니다.</em></div>
+					</div>
+				</div>
+				<div class="btn-wrap wrap-right print-not-area">
+					<button type="button" class="btn-md btn-ghost" onclick="return printPage();">출력하기</button>
+				</div>
+			</section>
+		</div>
+		<!-- //contents -->
+
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script>
+		let initBodyHtml;
+
+		function printPage() {
+			window.print();
+		}
+
+		function beforePrint() {
+			initBodyHtml = document.body.innerHTML;
+			document.body.innerHTML = document.querySelector('.panel-wrap').innerHTML;
+		}
+
+		function afterPrint() {
+			document.body.innerHTML = initBodyHtml;
+		}
+
+		window.onbeforeprint = beforePrint;
+		window.onafterprint = afterPrint;
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+</body>
+</html>

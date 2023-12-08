@@ -1,0 +1,14 @@
+<svg id="edit_24_131313" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <line id="Line_467" data-name="Line 467" x2="8" transform="translate(13 19)" fill="none" stroke="#484848" stroke-linecap="round" stroke-width="1.5"/>
+  <rect id="Rectangle_286" data-name="Rectangle 286" width="24" height="24" fill="none" opacity="0.2"/>
+  <g id="Group_324" data-name="Group 324" transform="translate(149.886 -455.398) rotate(45)">
+    <g id="Path_2322" data-name="Path 2322" transform="translate(231 422.75)" fill="none" stroke-linecap="round">
+      <path d="M0,0H4V12.5L2,15,0,12.5Z" stroke="none"/>
+      <path d="M 0 0 L 0 12.5 L 2 15 L 4 12.5 L 4 0 L 0 0 M -1.5 -1.5 L 5.5 -1.5 L 5.5 13.0261697769165 L 2 17.40117073059082 L -1.5 13.0261697769165 L -1.5 -1.5 Z" stroke="none" fill="#484848"/>
+    </g>
+    <g id="Rectangle_629" data-name="Rectangle 629" transform="translate(231 418.25)" fill="none" stroke="#484848" stroke-linecap="round" stroke-width="1.5">
+      <path d="M1,0H3A1,1,0,0,1,4,1V3A0,0,0,0,1,4,3H0A0,0,0,0,1,0,3V1A1,1,0,0,1,1,0Z" stroke="none"/>
+      <path d="M1-.75H3A1.75,1.75,0,0,1,4.75,1V3A.75.75,0,0,1,4,3.75H0A.75.75,0,0,1-.75,3V1A1.75,1.75,0,0,1,1-.75Z" fill="none"/>
+    </g>
+  </g>
+</svg>

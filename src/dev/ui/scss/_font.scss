@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/* 국문 */
+@font-face {
+	font-family: 'NanumSquare';
+	font-style: normal;
+	font-weight: 300;
+	src: url(../fonts/NanumSquareAcL.woff2) format('woff2'),
+		url(../fonts/NanumSquareAcL.woff) format('woff');
+}
+@font-face {
+	font-family: 'NanumSquare';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../fonts/NanumSquareAcR.woff2) format('woff2'),
+		url(../fonts/NanumSquareAcR.woff) format('woff');
+}
+@font-face {
+	font-family: 'NanumSquare';
+	font-style: normal;
+	font-weight: 700;
+	src: url(../fonts/NanumSquareB.woff2) format('woff2'),
+		url(../fonts/NanumSquareB.woff) format('woff');
+}
+
+/* 영문 */
+
+/* 일문 */
+@font-face {
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../fonts/jp/NotoSansJP-Light.otf) format('otf');
+}
+@font-face {
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 500;
+	src: url(../fonts/jp/NotoSansJP-Regular.otf) format('otf');
+}
+@font-face {
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 700;
+	src: url(../fonts/jp/NotoSansJP-Bold.otf) format('otf');
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="결제완료" menucss="/dev/ui/css/order.css"></include>
+<body class="payment">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel">
+					<div class="inner">
+						<div class="simple-content">
+							<span class="product-icon"><img src="" alt=""></span>
+							<h1>결제가 완료되었습니다.</h1>
+							<p class="simple-tit-exp">
+								결제가 정상적으로 완료되었습니다.<br>
+								이메일 주소로 발송된 결제 정보를 확인해 주시기 바랍니다.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel w665 payment-complete">
+					<div class="inner">
+						<div class="cmn-content-head">
+							<h2>결제 정보</h2>
+						</div>
+						<ul class="board-common use-label">
+							<li>
+								<span class="label">결제일(결제번호)</span>
+								<div>
+									<p>YYYY년 MM월 DD일(NNNNN)</p>
+								</div>
+							</li>
+							<li>
+								<span class="label">상품</span>
+								<div>
+									<p>곰믹스 맥스 영구 이용권 1PC 외 1</p>
+									<p>다음 결제일 2023-10-23</p>
+								</div>
+							</li>
+							<li>
+								<span class="label">상품 금액</span>
+								<div>
+									<p>00,000원</p>
+									<span class="vat">VAT 포함</span>
+								</div>
+							</li>
+							<li>
+								<span class="label">할인금액</span>
+								<div>
+									<p>- 00,000원 [쿠폰명]</p>
+									<p>- 00,000원 [쿠폰명]</p>
+								</div>
+							</li>
+							<li>
+								<span class="label">최종 결제 금액</span>
+								<div>
+									<p>00,000원</p>
+									<span class="vat">VAT 포함</span>
+								</div>
+							</li>
+							<li>
+								<span class="label">결제수단</span>
+								<div>
+									<p>신용카드</p>
+								</div>
+							</li>
+						</ul>
+						<div class="btn-wrap wrap-right">
+							<a href="#!" class="btn-md btn-ghost" download>제품 다운로드</a>
+							<a href="#!" class="btn-md btn-default">마이페이지</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script>
+		console.log('여기는 화면 전용 js구현영역 입니다. 필요 없을 경우 주석부터 삭제해주세요.')
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

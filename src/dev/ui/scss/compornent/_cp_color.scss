@@ -1,0 +1,138 @@
+// component_Color
+.color-grid {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	text-align: center;
+	&.color-sementic {
+		grid-template-columns: repeat(10, 1fr);
+		grid-gap: 40px;
+	}
+	.grid-1-6 {
+		grid-column: 1 / 6;
+	}
+}
+.color-guide {
+	padding-bottom: 70%;
+	margin-right: -1px;
+	margin-left: -1px;
+	border: 1px solid $color-gray-11;
+	&.color-guide-2 {
+		padding-bottom: 70%;
+		border-radius: 5px;
+	}
+	&.color-guide-grid-first {
+		padding-bottom: 14%;
+	}
+	&.color-FFFFFF {
+		background: $color-white;
+	}
+	&.color-F4F4F4 {
+		background: $color-gray-20;
+	}
+	&.color-DADADA {
+		background: $color-gray-11;
+	}
+	&.color-A1A1A1 {
+		background: $color-gray-06;
+	}
+	&.color-828282 {
+		background: $color-gray-04;
+	}
+	&.color-484848 {
+		background: $color-gray-01;
+	}
+	&.color-373737 {
+		background: $color-black-3;
+	}
+	&.color-131313 {
+		background: $color-black-1;
+	}
+	&.color-FF0000 {
+		background: $color-red-4;
+	}
+	&.color-FF3110 {
+		background: $color-red-6;
+	}
+	&.color-FE421B {
+		background: $color-orange-3;
+	}
+	&.color-FF552A {
+		background: $color-orange-4;
+	}
+	&.color-009C97 {
+		background: $color-green-8;
+	}
+	&.color-3FC8C4 {
+		background: $color-green-9;
+	}
+	&.color-6BDEDA {
+		background: $color-green-10;
+	}
+	&.color-A0ECEA {
+		background: $color-green-11;
+	}
+	&.color-FFC501 {
+		background: $color-yellow-2;
+	}
+	&.color-CD7C13 {
+		background: $color-orange-5;
+	}
+	&.color-F77300 {
+		background: $color-orange-6;
+	}
+	&.color-FF3400 {
+		background: $color-red-7;
+	}
+	&.color-DA115A {
+		background: $color-red-8;
+	}
+	&.color-C615bA {
+		background: $color-purple-6;
+	}
+	&.color-991FE8 {
+		background: $color-purple-5;
+	}
+	&.color-9658E8 {
+		background: $color-purple-7;
+	}
+	&.color-5872E8 {
+		background: $color-blue-6;
+	}
+	&.color-69B703 {
+		background: $color-green-3;
+	}
+	&.color-0FAC58 {
+		background: $color-green-4;
+	}
+	&.color-029C64 {
+		background: $color-green-5;
+	}
+	&.color-029C97 {
+		background: $color-green-6;
+	}
+	&.color-1DA5C7 {
+		background: $color-green-7;
+	}
+	&.color-3380D7 {
+		background: $color-blue-5;
+	}
+	&.color-2747EF {
+		background: $color-blue-7;
+	}
+}
+/* 반응형 */
+@include mobile {
+	.color-grid {
+		grid-template-columns: repeat(3, 1fr);
+		&.color-sementic {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+}
+@include sm-mobile {
+	.color-grid {
+		&.color-sementic {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}

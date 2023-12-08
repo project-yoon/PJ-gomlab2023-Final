@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="제품연동3_다른메일조회 : 비회원 : 고객지원" menucss="/dev/ui/css/customer.css"></include>
+<body class="customer non-members"> <!-- [D] non-members : 비회원 메뉴 전용 키클래스 -->
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<div id="contents-head" class="contents-head">
+			<div class="head-tit-wrap">
+				<h1>비회원 메뉴</h1>
+			</div>
+		</div>
+
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel">
+					<div class="inner">
+						<ul class="tab-button" data-menu="scroll">
+							<li><a href="#">라이선스키(정품 등록 키) 찾기</a></li>
+							<li><a href="#">정품 인증 해제</a></li>
+							<li><a href="#">자동 결제 정보 확인</a></li>
+							<li><a href="#" class="active">비회원 제품 연동</a></li>
+						</ul>
+						<div class="no-customer-tit">
+							<h2>비회원 제품연동</h2>
+							<p class="exp">곰랩 계정과 다른 정품 등록 이메일로구매한 제품 조회해 보세요.</p>
+						</div>
+						<div class="cmn-content-head">
+							<h3 class="head-tit-sm">다른 이메일 조회</h3>
+							<div class="right-wrap">
+								<a href="#" class="btn-search-icon">정품 등록 키 찾기</a>
+								<a href="#" class="btn-reset-icon">초기화</a>
+							</div>
+						</div>
+						<form action="" name="" id="" class="form-wrap">
+							<div class="cmn-content-detail">
+								<div class="form-item">
+									<span class="form-label">정품 등록 이메일</span>
+									<div class="form-cont">
+										<input type="text" class="inp-box" value="gom@gomcorp.com">
+										<div class="help-wrap">
+											<p class="err-txt">이메일 주소를 입력해 주세요.</p>
+											<p class="err-txt">올바른 이메일 주소를 입력해 주세요.</p>
+										</div>
+									</div>
+								</div>
+								<!-- [D] 231208_수정_01 : data-maxlength 추가 -->
+								<div class="license-form" data-maxlength="10">
+								<!-- //[D] 231208_수정_01 : data-maxlength 추가 -->
+									<div class="form-item">
+										<span class="form-label">라이선스키<br>(정품등록키)</span>
+										<div class="form-col">
+											<div class="form-cont">
+												<input type="text" class="inp-box" placeholder="라이선스 키를 입력하세요." value="AAAA-BBBB-CCCC-DDFF">
+											</div>
+											<button type="button" class="btn-item-util btn-add">추가</button>
+										</div>
+										<!-- <div class="help-wrap">
+											<p class="err-txt">라이선스키(정품등록키)를 입력해 주세요.</p>
+										</div> -->
+									</div>
+								</div>
+								<p class="license-guide">곰랩계정과 다른 정품 등록 이메일로 구매한 제품의 연동을 원하시는 경우 정품 등록 이메일과 라이선스키(정품등록키)를 모두 입력하셔야 합니다.</p>
+							</div>
+						</form>
+						<div class="btn-wrap wrap-right">
+							<a href="#" class="btn-md btn-default">조회하기</a>
+							<!--[D] disabled case-->
+							<!-- <a href="#" class="btn-md btn-default disabled">조회하기</a> -->
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

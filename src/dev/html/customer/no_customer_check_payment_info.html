@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="자동 결제 정보 확인 : 비회원 : 고객지원" menucss="/dev/ui/css/customer.css"></include>
+<body class="customer non-members"> <!-- [D] non-members : 비회원 메뉴 전용 키클래스 -->
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<div id="contents-head" class="contents-head">
+			<div class="head-tit-wrap">
+				<h1>비회원 메뉴</h1>
+			</div>
+		</div>
+
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel">
+					<div class="inner">
+						<ul class="tab-button" data-menu="scroll">
+							<li><a href="#">라이선스키(정품 등록 키) 찾기</a></li>
+							<li><a href="#">정품 인증 해제</a></li>
+							<li><a href="#" class="active">자동 결제 정보 확인</a></li>
+							<li><a href="#">비회원 제품 연동</a></li>
+						</ul>
+						<div class="no-customer-tit">
+							<h2>자동 결제 정보 확인</h2>
+							<p class="exp">자동 결제 정보 확인을 원하시는 경우, 구매 시 입력한 이메일로 확인 메일을 발송해 드립니다.</p>
+						</div>
+						<!-- [D] 231208_수정_01 : 태그 수정 -->
+						<div class="cmn-content-detail">
+							<div class="form-item">
+								<span class="form-label">곰플레이어 플러스</span>
+								<div class="form-cont">
+									<select class="btn-drop-box">
+										<option value="곰플레이어 플러스">곰플레이어 플러스</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-item">
+								<span class="form-label">이메일</span>
+								<div class="form-cont">
+									<input type="text" class="inp-box" placeholder="이메일 주소를 입력해 주세요.">
+									<div class="help-wrap">
+										<p class="err-txt">이메일 주소를 입력해 주세요.</p>
+										<p class="err-txt">이메일 주소를 확인해 주세요.</p>
+										<p class="err-txt">구매하신 정보가 없습니다.</p>
+									</div>
+									<div class="help-wrap">
+										<p class="guide-txt">이메일이 수신되지 않을 경우, 스팸 폴더를 확인해 주세요.</li>
+										<p class="guide-txt">
+											비회원으로 구매하신 경우만 조회해 주세요. 회원으로 구매하신 경우<br>
+											<a href="#" class="link-mypage">마이페이지</a>에서 확인이 가능합니다.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //[D] 231208_수정_01 : 태그 수정 -->
+						<div class="btn-wrap wrap-right">
+							<button type="button" class="btn-md btn-default">보내기</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>  

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="견적 요청서 : 비즈니스" menucss="/dev/ui/css/business.css"></include>
+<body class="business">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel">
+					<div class="inner estimate-request">
+						<div class="cmn-content-head">
+							<h1>견적 요청서</h1>
+							<p class="exp">아래 입력 사항을 작성해 주시면, 담당자가 확인하여 최적의 견적서를 보내드립니다.​</p>
+						</div>
+						<div class="cmn-content-detail">
+							<dl class="discount-criteria">
+								<dt>※ 대량 구매 할인 기준</dt>
+								<dd>
+									<ul class="dot-list">
+										<li>1년형 : 100개 이상, 2년형 : 70개 이상, 3년형 : 50개 이상​</li>
+										<li>여러 제품을 동시에 구매하시는 경우 할인 기준이 상이합니다. (별도 안내)</li>
+									</ul>
+								</dd>
+							</dl>
+							<div class="cmn-col">
+								<div class="form-item">
+									<span class="form-label required">단체 정보</span>
+									<div class="form-col">
+										<div class="form-cont">
+											<input type="text" class="inp-box" required="" placeholder="단체명">
+											<div class="help-wrap">
+												<p class="err-txt">단체명을 입력해 주세요.</p>
+												<p class="err-txt">형식이 올바르지 않습니다. 문자 또는 숫자만 입력해 주세요.</p>
+											</div>
+										</div>
+										<div class="form-cont">
+											<input type="text" class="inp-box" required="" placeholder="사업자등록번호">
+											<div class="help-wrap">
+												<p class="err-txt">사업자등록번호를 입력해 주세요.</p>
+												<p class="err-txt">형식이 올바르지 않습니다. 숫자만 입력해 주세요.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-item">
+									<span class="form-label required">담당자 정보</span>
+									<div class="form-col">
+										<div class="form-cont">
+											<input type="text" class="inp-box" required="" placeholder="담당자명">
+											<div class="help-wrap">
+												<p class="err-txt">단체명을 입력해 주세요.</p>
+											</div>
+										</div>
+										<div class="form-cont">
+											<input type="text" class="inp-box" required="" placeholder="이메일">
+											<!-- [D] 231208_수정 help-wrap 추가 -->
+											<div class="help-wrap">
+												<p class="err-txt">이메일을 입력해 주세요</p>
+												<p class="err-txt">이메일 형식이 올바르지 않습니다.</p>
+											</div>
+											<!-- //[D] 231208_수정 help-wrap 추가 -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="cmn-col">
+								<div class="form-item">
+									<span class="form-label required">제품</span>
+									<div class="form-col">
+										<div class="form-cont">
+											<select name="" id="" required="">
+												<option value="" hidden selected>제품 선택</option>
+												<option value="">곰믹스 맥스 비즈니스</option>
+												<option value="">곰캠</option>
+												<option value="">곰플레이어 플러스</option>
+												<option value="">곰팩 Expert</option>
+											</select>
+											<div class="help-wrap">
+												<p class="err-txt">제품을 선택해 주세요.</p>
+											</div>
+										</div>
+										<div class="form-cont">
+											<select name="" id="" required="">
+												<option value="" hidden selected>이용권</option>
+												<option value="">1년 이용권</option>
+												<option value="">2년 이용권</option>
+												<option value="">3년 이용권</option>
+											</select>
+											<div class="help-wrap">
+												<p class="err-txt">이용권을 선택해 주세요.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-item">
+									<span class="form-label required">제품 수량</span>
+									<div class="form-col">
+										<div class="form-cont">
+											<input type="text" class="inp-box" required="" placeholder="수량">
+											<!-- [D] 231208_수정 help-wrap 추가 -->
+											<div class="help-wrap">
+												<p class="err-txt">구매 수량을 입력해 주세요.</p>
+												<p class="err-txt">형식이 올바르지 않습니다. 숫자만 입력해 주세요.</p>
+											</div>
+											<!-- //[D] 231208_수정 help-wrap 추가 -->
+										</div>
+										<!-- [D] 231208_수정 버튼 수정 -->
+										<button type="button" class="btn-sm btn-ghost">제품 담기</button>
+										<!-- [D] 제품 미선택인 경우 버튼 disabled 처리 -->
+										<!-- <button type="button" class="btn-sm btn-ghost" disabled="disabled">제품 담기</button> -->
+										<!-- //[D] 231208_수정 버튼 수정 -->
+									</div>
+									<ul class="product-list">
+										<!-- [D] 제품이 없는 경우 아래 내용 노출 -->
+										<!-- <li class="empty">
+											제품을 선택해주세요.
+										</li> -->
+										<li>
+											<p class="title">곰믹스 맥스 비즈니스</p>
+											<p>2년 이용권</p>
+											<p>000개</p>
+											<button type="button" class="btn-arrow-close-md btn-product-delete">삭제</button>
+										</li>
+										<li>
+											<p class="title">곰플레이어 플러스 비즈니스</p>
+											<p>1년 이용권</p>
+											<p>000개</p>
+											<button type="button" class="btn-arrow-close-md btn-product-delete">삭제</button>
+										</li>
+										<li>
+											<p class="title">곰믹스 맥스 비즈니스</p>
+											<p>2년 이용권</p>
+											<p>000개</p>
+											<button type="button" class="btn-arrow-close-md btn-product-delete">삭제</button>
+										</li>
+										<li>
+											<p class="title">곰믹스 맥스 비즈니스</p>
+											<p>2년 이용권</p>
+											<p>000개</p>
+											<button type="button" class="btn-arrow-close-md btn-product-delete">삭제</button>
+										</li>
+										<li>
+											<p class="title">곰믹스 맥스 비즈니스</p>
+											<p>2년 이용권</p>
+											<p>000개</p>
+											<button type="button" class="btn-arrow-close-md btn-product-delete">삭제</button>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="cmn-col">
+								<!-- [D] 231208_수정 required-item, required 삭제 -->
+								<div class="form-item">
+									<span class="form-label">문의 사항</span>
+									<div class="form-cont">
+										<textarea name="" id="" cols="30" rows="10" class="wide"></textarea>
+									</div>
+								</div>
+								<!-- //[D] 231208_수정 required-item, required 삭제 -->
+							</div>
+						</div>
+						<div class="agree-wrap form-cont">
+							<label for="agree1" class="inp-chk"><input type="checkbox" name="" id="agree1">개인정보 수집 및 이용에 동의합니다.(필수)</label>
+							<div class="tooltip-wrap">
+								<a href="#" class="tooltip-button">툴팁 보기</a>
+								<div class="tooltip-cont">
+									<p class="tooltip-title">개인정보 수집 및 이용 동의​</p>
+									<ul class="dot-list">
+										<li>수집 항목 : 단체명, 사업자등록번호, 이름, 이메일 주소​</li>
+										<li>수집 목적 : 맞춤형 견적 안내​</li>
+										<li>보유 및 이용기간 : 3년 보관 후 파기</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="btn-wrap wrap-right">
+							<!-- [D] 231208_수정 버튼 수정 -->
+							<button type="submit" class="btn-md btn-default">견적요청</button>
+							<!-- [D] 견적 요청서 내용 미 입력의 경우 버튼 disabled 처리 -->
+							<!-- <button type="submit" class="btn-md btn-default disabled">견적요청</button> -->
+							<!-- //[D] 231208_수정 버튼 수정 -->
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script>
+		
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

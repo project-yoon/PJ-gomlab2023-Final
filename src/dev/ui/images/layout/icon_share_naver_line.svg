@@ -1,0 +1,10 @@
+<svg id="SNS_S" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27.505" height="27.505" viewBox="0 0 27.505 27.505">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_8984" data-name="사각형 8984" width="27.505" height="27.505" fill="#13c100"/>
+    </clipPath>
+  </defs>
+  <g id="그룹_19580" data-name="그룹 19580" clip-path="url(#clip-path)">
+    <path id="패스_5371" data-name="패스 5371" d="M13.753,0A13.752,13.752,0,1,0,27.505,13.752,13.753,13.753,0,0,0,13.753,0m.158,20.417a9.921,9.921,0,0,1-3.711-.712L6.349,21.27,7.94,18.381A6.222,6.222,0,0,1,5.528,13.6c0-3.766,3.753-6.82,8.383-6.82s8.383,3.054,8.383,6.82-3.753,6.82-8.383,6.82" transform="translate(0 0)" fill="#13c100"/>
+  </g>
+</svg>

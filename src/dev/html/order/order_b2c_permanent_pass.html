@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="B2C 결제하기 영구이용권" menucss="/dev/ui/css/order.css"></include>
+<body class="payment">
+	<!-- 헤더 -->
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<div id="contents-head" class="contents-head">
+			<div class="head-tit-wrap">
+				<h1>결제하기</h1>
+			</div>
+		</div>
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel">
+					<div class="order-side">
+						<div class="order-side-inner">
+							<div class="order-head">
+								<span class="img-wrap"><img src="/dev/ui/images/layout/icon_pd_gommix2024.png" alt=""></span>
+								<p class="order-product-tit">제품명 2024</p>
+								<p class="order-product-exp">
+									<span>영구 이용권</span>
+									<span>1 PC</span>
+								</p>
+							</div>
+							<div class="order-form">
+								<dl>
+									<dt>추가상품</dt>
+									<dd>
+										<!-- <p class="no-data">추가 상품 없음</p> -->
+										<ul class="order-select-list">
+											<li>
+												<label for="add_product1" class="inp-chk"><input type="checkbox" name="add_product" id="add_product1">추가 상품1</label>
+												<span>+ 00,000</span>
+											</li>
+											<li>
+												<label for="add_product2" class="inp-chk"><input type="checkbox" name="add_product" id="add_product2">추가 상품2</label>
+												<span>+ 00,000</span>
+											</li>
+										</ul>
+									</dd>
+								</dl>
+								<dl>
+									<dt>할인적용</dt>
+									<dd>
+										<p class="order-select-tit">쿠폰</p>
+										<!-- <p class="no-data">적용 가능한 할인쿠폰이 없습니다.</p> -->
+										<ul class="order-select-list">
+											<li>
+												<label for="coupon1" class="inp-chk"><input type="radio" name="coupon" id="coupon1">쿠폰1</label>
+												<span>- 00,000</span>
+											</li>
+											<li>
+												<label for="coupon2" class="inp-chk"><input type="radio" name="coupon" id="coupon2">쿠폰2</label>
+												<span>- 00,000</span>
+											</li>
+											<li>
+												<label for="coupon_not" class="inp-chk"><input type="radio" name="coupon" id="coupon_not">적용안함</label>
+											</li>
+										</ul>
+										<p class="order-select-tit">중복쿠폰</p>
+										<!-- <p class="no-data">적용 가능한 할인쿠폰이 없습니다.</p> -->
+										<ul class="order-select-list">
+											<li>
+												<label for="duplication_coupon1" class="inp-chk"><input type="radio" name="duplication_coupon" id="duplication_coupon1">할인쿠폰</label>
+												<span>- 00,000</span>
+											</li>
+											<li>
+												<label for="duplication_coupon_not" class="inp-chk"><input type="radio" name="duplication_coupon" id="duplication_coupon_not">적용안함</label>
+											</li>
+										</ul>
+									</dd>
+								</dl>
+							</div>
+							<p class="all-product">곰 소프트웨어 전 제품 한 번에</p>
+							<a href="#!" class="btn-all-product">멤버십 전환하기</a>
+						</div>
+					</div>
+					<div class="inner">
+						<div class="order-form-detail">
+							<div class="cmn-content-head">
+								<h2>곰랩 이메일 계정 입력</h2>
+								<p class="exp">신규 고객인 경우 해당 정보로 곰랩 회원 가입이 됩니다.</p>
+							</div>
+							<div class="cmn-content-detail">
+								<div class="form-item">
+									<div class="form-cont">
+										<input type="text" class="inp-box" required placeholder="이메일 주소">
+										<!-- <div class="help-wrap">
+											<p class="err-txt">단체명을 입력해주세요</p>
+										</div> -->
+									</div>
+								</div>
+								<div class="info-box">
+									<p>※ 개인 회원인 경우에는 개인회원용 이용권을 구매해 주시기 바랍니다.</p>
+									<p>※ 이용권 결제 완료 후, 7일 이내 소프트웨어의 로그인 (정품등록) 기록이 없을 경우에 한하여 결제 취소가 가능합니다. 다만, 일부 결제수단은 환불 수수료가 발생할 수 있습니다.</p>
+								</div>
+							</div>
+							<div class="cmn-content-head">
+								<h2>결제요약</h2>
+							</div>
+							<div class="cmn-content-detail">
+								<div class="pay-summary-wrap">
+									<div class="pay-summary">
+										<span><b>곰믹스 2024</b></span>
+										<span class="price">30 PC</span>
+									</div>
+									<div class="pay-summary">
+										<span>1년 이용권</span>
+										<span class="price">00,000원</span>
+									</div>
+									<div class="pay-summary">
+										<span>+ 추가상품1</span>
+										<span class="price">00,000원</span>
+									</div>
+									<div class="pay-summary">
+										<span>+ 추가상품2</span>
+										<span class="price">00,000원</span>
+									</div>
+								</div>
+								<div class="pay-summary-wrap">
+									<div class="pay-summary">
+										<span>- 할인적용1</span>
+										<span class="price">- 00,000원</span>
+									</div>
+									<div class="pay-summary">
+										<span>- 할인적용2</span>
+										<span class="price">- 00,000원</span>
+									</div>
+								</div>
+								<div class="pay-summary-wrap">
+									<div class="pay-summary pay-total">
+										<span>최종 결제 금액</span>
+										<span class="total-price">00,000원</span>
+									</div>
+								</div>
+							</div>
+							<div class="cmn-content-head">
+								<h2>결제수단</h2>
+							</div>
+							<div class="cmn-content-detail">
+								<label for="radio01" class="inp-pay">
+									<input type="radio" name="radio" id="radio01" checked>
+									<span>신용카드</span>
+								</label>
+								<label for="radio02" class="inp-pay">
+									<input type="radio" name="radio" id="radio02">
+									<span><img src="/dev/ui/images/layout/icon_sns_pay_kakao.png" class="btn-common-sns-img" alt="카카오페이"></span>
+								</label>
+								<label for="radio03" class="inp-pay">
+									<input type="radio" name="radio" id="radio03">
+									<span><img src="/dev/ui/images/layout/icon_sns_pay_naver.png" class="btn-common-sns-img" alt="네이버페이"></span>
+								</label>
+								<label for="radio04" class="inp-pay">
+									<input type="radio" name="radio" id="radio04">
+									<span>휴대폰</span>
+								</label>
+								<label for="radio05" class="inp-pay">
+									<input type="radio" name="radio" id="radio05">
+									<span>가상계좌</span>
+								</label>
+								<ul class="dot-list sub">
+									<li>주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
+									<li>네이버페이는 네이버ID로 별도 앱 설치 없이 신용카드 또는 은행계좌 정보를 등록하여 네이버페이 비밀번호로 결제할 수 있는 간편결제 서비스입니다.</li>
+									<li>결제 가능한 신용카드:신한,삼성,현대, BC,국민,하나,롯데, NH농협,씨티,카카오뱅크</li>
+									<li>결제 가능한 은행: KB국민,IBK기업,NH농협,신한,씨티,SC제일,우리,카카오뱅크,케이뱅크,토스뱅크,하나,경남,광주,대구,부산,KDB산업,수협,우체국, 전북,제주,새마을금고,신협,SBI저축,저축,미래에셋,삼성,신한금융투자,SK,유안타,유진투자,한국투자</li>
+									<li>네이버페이 카드 간편결제는 네이버페이에서 제공하는 카드사 별 무이자,청구할인 혜택을 받을 수 있습니다.</li>
+								</ul>
+								<div class="info-box">
+									<p>※ 멤버십 서비스는 결제 즉시 10일간 무료 트라이얼 기간을 제공하며, 10일이 지난 후에는 소프트웨어의 로그인(정품 등록)을 하지 않았더라도 결제 취소 및 환불이 불가하니 이용에 주의바랍니다.</p>
+								</div>
+							</div>
+							<ul class="agree-form" data-agree="agree-group">
+								<li><label for="pay-agree-all" data-agree="agree-all"><input type="checkbox" id="pay-agree-all"><strong>모두 동의 합니다.</strong></label></li>
+								<li><label for="pay_chk1"><input type="checkbox" id="pay_chk1">매월(30일)마다 자동 결제되는 것에 동의합니다.</label></li>
+								<li><label for="pay_chk2"><input type="checkbox" id="pay_chk2"><a href="#">유료서비스 이용약관</a>에 동의합니다. (필수)</label></li>
+								<li><label for="pay_chk3"><input type="checkbox" id="pay_chk3"><button type="button" data-role="open__popup_order_agree_1">결제 시 유의사항</button>에 동의합니다.(필수)</label></li>
+								<li><label for="pay_chk4"><input type="checkbox" id="pay_chk4"><button type="button" data-role="open__popup_order_agree_2">개인정보 제3자 제공</button>에 동의합니다.(필수)</label></li>
+							</ul>
+							<div class="btn-wrap wrap-right">
+								<button type="button" class="btn-lg btn-default">결제하기</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="content-footer">
+			<div class="inner">
+				<ul class="benefit-list">
+					<li>
+						<span class="img-wrap"><img src="/dev/ui/images/order/img_fluency_protect.png" alt=""></span>
+						<h3 class="benefit-tit">보안</h3>
+						<p class="benefit-info">곰랩 내의 모든 결제/개인정보는 암호화하여 안전하게 취급하고 있습니다.</p>
+					</li>
+					<li>
+						<span class="img-wrap"><img src="/dev/ui/images/order/img_fluency_collaboration.png" alt=""></span>
+						<h3 class="benefit-tit">고객 지원</h3>
+						<p class="benefit-info">실시간 채팅, 카카오톡, 1:1 문의, 원격지원 등 다양한 방법을 통한 지원이 가능합니다. +제품별 사용 가이드, 영상 제공</p>
+					</li>
+					<li>
+						<span class="img-wrap"><img src="/dev/ui/images/order/img_fluency_reset.png" alt=""></span>
+						<h3 class="benefit-tit">환불 정책</h3>
+						<p class="benefit-info">구매 후 사용(정품 등록)하지 않았다면 결제일로부터 7일 내에 결제 취소가 가능합니다.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<!-- //퀵 메뉴 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script>
+		console.log('여기는 화면 전용 js구현영역 입니다. 필요 없을 경우 주석부터 삭제해주세요.')
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+
+	<!-- 푸터 -->
+	<!-- //푸터 -->
+</body>
+</html>

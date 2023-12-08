@@ -1,0 +1,319 @@
+@charset "utf-8";
+@import "./utilities/variables";
+@import "./utilities/mixins";
+
+.etc {
+	/* 공통 */
+	.pd-install-head {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 24px;
+		& > img {
+			width: 60px;
+		}
+		p {
+			@include txt(32);
+			font-weight: 700;
+		}
+	}
+	.pd-install-info {
+		margin: 40px 0 60px 0;
+		& > p {
+			text-align: center;
+			@include txt(18);
+		}
+	}
+	.dot-list {
+		margin-top: 12px;
+		margin-bottom: 12px;
+		li {
+			@include txt(12);
+			&.dot-not {
+				padding-left: 0;
+				&::before {
+					display: none;
+				}
+			}
+		}
+	}
+	.help-wrap {
+		p {
+			@include txt(14);
+		}
+	}
+	.btn-wrap {
+		margin-top: 40px;
+	}
+	/* 제품 삭제 완료 */
+	&.pd-delete-complete {
+		.panel {
+			padding: 0 212px;
+		}
+		.pd-install-complete-ad {
+			.ad_banner01 {
+				top: 465px;
+			}
+		}
+	}
+	/* // 제품 삭제 완료 */
+	/* 브라우저 최적화 */
+	&.browser {
+		#container {
+			margin-top: 0;
+		}
+		.browser-bg-1 {
+			height: 870px;
+			padding-top: 130px;
+			background: linear-gradient(180deg, $color-blue-9 0%, $color-purple-5 100%);
+			.browser-optimization-top {
+				padding: 0 75px;
+				text-align: center;
+				.browser-optimization-info {
+					max-width: 790px;
+					margin: 0 auto;
+					& > img {
+						width: 186px;
+					}
+					p {
+						color: $color-white;
+						&:nth-of-type(1) {
+							margin: 40px 0 20px 0;
+							@include txt(32);
+							font-weight: 700;
+						}
+						&:nth-of-type(2) {
+							@include txt(20);
+							font-weight: 300;
+						}
+					}
+				}
+				.browser-optimization-use {
+					padding-top: 40px;
+					margin-top: 40px;
+					border-top: 1px solid rgba(255, 255, 255, 0.2);
+					p {
+						&:nth-of-type(1) {
+							color: #BCC5F6;
+							@include txt(16);
+						}
+						&:nth-of-type(2) {
+							margin: 16px 0 40px 0;
+							color: $color-white;
+							@include txt(24);
+						}
+					}
+					.btn-wrap {
+						.btn-browser {
+							gap: 25px;
+							height: 70px;
+							padding: 15px 45px 15px 40px;
+							@include txt(18);
+						}
+					}
+				}
+			}
+		}
+		.gomlab-site-bg {
+			position: absolute;
+			bottom: 210px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 100%;
+			text-align: center;
+		}
+		.browser-bg-2 {
+			margin-top: 240px;
+			margin-bottom: 80px;
+			.browser-optimization-bottom {
+				text-align: center;
+				& > img {
+					width: 119px;
+				}
+				.browser-language {
+					display: flex;
+					justify-content: center;
+					gap: 10px;
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+	/* // 브라우저 최적화 */
+	/* 제품 설치 완료 */
+	.pd-install-complete-info {
+		display: flex;
+		justify-content: center;
+		gap: 40px;
+		margin-top: 60px;
+		.pd-install-complete-box {
+			aspect-ratio: 1.42 / 1;
+			height: 300px;
+			padding: 50px 50px 0 50px;
+			border-radius: 10px;
+			&.pd-install-complete-box-bg-1 {
+				background: url(#{$img-url}/layout/usingguide_bg.png) no-repeat bottom right, linear-gradient(90deg, #AC4BEC 0%, #C279F1 100%);
+			}
+			&.pd-install-complete-box-bg-2 {
+				background: url(#{$img-url}/layout/qna_bg.png) no-repeat bottom right, linear-gradient(90deg, #5773E8 0%, #9BAAF0 100%);
+			}
+			& > p {
+				margin-bottom: 24px;
+				color: $color-white;
+				@include txt(24);
+			}
+		}
+	}
+	.pd-install-complete-qa {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 40px;
+		margin-top: 40px;
+		padding: 20px;
+		background: $color-gray-21;
+		p {
+			@include txt(14);
+			font-weight: 700;
+		}
+	}
+	.pd-install-complete-ad {
+		.ad_banner01 {
+			top: 100px;
+		}
+		.ad_banner02 {
+			margin: 64px auto 0 auto;
+		}
+	}
+	/* // 제품 설치 완료 */
+	/* 제품 설치 중단 */
+	.restart-box {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 584px;
+		margin: 0 auto;
+		padding: 40px;
+		background: linear-gradient(90deg, $color-blue-9 0%, #9BAAF0 100%);
+		border-radius: 10px;
+		& > p {
+			color: $color-white;
+			@include txt(24);
+		}
+	}
+	/* // 제품 설치 중단 */
+	/* 제품 삭제 완료 */
+	.survey-form-wrap {
+		padding: 24px 0;
+		border-bottom: 1px solid $color-gray-11;
+		border-top: 2px solid $color-black-1;
+		.survey-form {
+			padding-top: 24px;
+			margin-top: 24px;
+			border-top: 1px solid $color-gray-20;
+			&:first-child {
+				padding-top: 0;
+				margin-top: 0;
+				border-top: none;
+			}
+			.survey-form-title {
+				margin-bottom: 16px;
+				@include txt(16);
+				font-weight: 700;
+			}
+			label {
+				display: table;
+				margin-bottom: 8px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			textarea {
+				margin-top: 8px;
+			}
+			.delete-reason {
+				display: none;
+				&.active {
+					display: block;
+				}
+			}
+		}
+	}
+	.survey-form-submit {
+		margin-top: 40px;
+		text-align: center;
+		p {
+			margin-bottom: 24px;
+			@include txt(12);
+		}
+	}
+	/* // 제품 삭제 완료 */
+	/* 광고 제휴문의 */
+	.ad-partnership-inquiry-wrap {
+		.ad-partnership-inquiry-info {
+			margin-bottom: 40px;
+			h2 {
+				margin-bottom: 12px;
+				@include txt(20);
+			}
+			p {
+				@include txt(14);
+			}
+		}
+		.ad-partnership-inquiry-form-title {
+			@include txt(16);
+			font-weight: 700;
+		}
+		.ad-partnership-inquiry-form {
+			padding: 24px 0;
+			margin: 24px 0;
+			border-top: 2px solid $color-black-1;
+			border-bottom: 1px solid $color-gray-11;
+			.ad-partnership-inquiry-form-side {
+				padding-top: 24px;
+				margin-top: 24px;
+				border-top: 1px solid #F7F7F7;
+				.usage-agree-title {
+					margin-top: 24px;
+					@include txt(14);
+					font-weight: 700;
+				}
+			}
+		}
+	}
+	/* // 광고 제휴문의 */
+}
+
+@include mobile {
+	.etc {
+		/* 공통 */
+		.btn-wrap {
+			button,
+			a {
+				width: 100%;
+			}
+		}
+		/* 광고 제휴문의 */
+		.ad-partnership-inquiry-wrap {
+			.ad-partnership-inquiry-form-title {
+				@include txt(14);
+			}
+			.ad-partnership-inquiry-form {
+				.form-item {
+					.inp-chk {
+						margin-bottom: 10px;
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+				.ad-partnership-inquiry-form-side {
+					.usage-agree-title {
+						margin-top: 40px;
+					}
+				}
+			}
+		}
+		/* // 광고 제휴문의 */
+	}
+}

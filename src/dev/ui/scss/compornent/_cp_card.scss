@@ -1,0 +1,654 @@
+// cards
+.card-box-wrap {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 44px 48px;
+}
+.card-box-sm,
+.card-box-md,
+.card-box-lg {
+	padding: 24px 0 100px 0;
+	border-radius: 24px;
+	background: $color-gray-10;
+	box-shadow: 0px 10px 30px rgba(87, 114, 232, 0.1);
+}
+.card-box-sm {
+	max-width: 600px;
+}
+.card-box-md {
+	max-width: 830px;
+	&.card-box-grid {
+		max-width: 100%;
+	}
+	&.card-box-event {
+		position: relative;
+		background: $color-red-2;
+		&::before {
+			content: '';
+			//position: absolute;
+			//bottom: 0;
+			//right: 0;
+			//width: 420px;
+			//height: 315px;
+			//background-image: url(#{$img-url}/layout/card_event.png);
+			//background-repeat: no-repeat;
+		}
+	}
+	.card-box {
+		height: 100%;
+		padding: 0 34px;
+		background: $color-black;
+		box-sizing: border-box;
+	}
+	.card-category {
+		@include txt(16);
+		color: $color-white;
+	}
+	h2,
+	h3 {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		word-wrap: break-word;
+	}
+	h2 {
+		margin: 20px 0 20px 0;
+		color: $color-white;
+	}
+	h3 {
+		margin-bottom: 30px;
+		color: $color-white;
+		@include txt(20);
+		font-weight: 400;
+	}
+	.card-naming {
+		margin-bottom: 20px;
+	}
+	.btn-wrap {
+		.color-red {
+			color: $color-red-2;
+		}
+	}
+}
+.card-box-lg {
+	max-width: 1455px;
+}
+.box-col-3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 40px 39px;
+	.col-box {
+		text-align: center;
+		img {
+			width: 100%;
+			border-radius: 10px;
+		}
+		p {
+			&:nth-of-type(1) {
+				margin-top: 24px;
+				@include txt(20);
+				font-weight: 700;
+			}
+			&:nth-of-type(2) {
+				margin-top: 16px;
+				@include txt(14);
+			}
+		}
+	}
+}
+.gom-step-wrap {
+	max-width: 1140px;
+	margin: 0 auto;
+	.gom-step {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		margin-top: 64px;
+		padding-top: 64px;
+		border-top: 1px solid $color-gray-20;
+		text-align: center;
+		.gom-step-box {
+			p {
+				@include txt(16);
+				font-weight: 700;
+				&:nth-of-type(3) {
+					margin-top: 16px;
+					font-weight: 400;
+				}
+			}
+			& > img {
+				margin: 20px 0 32px 0;
+			}
+		}
+	}
+}
+.gom-card-box-defalut {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px;
+	&:has(.gom-package-item) {
+		grid-template-columns: repeat(2, calc(50% - 20px));
+		grid-gap: 40px;
+		align-items: start;
+	}
+}
+.gom-card-box-type-2 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 21px;
+}
+.gom-permanent-pass,
+.gom-easy-pass {
+	padding: 36px 30px 32px 30px;
+	.card-category {
+		@include txt(28);
+		font-weight: 700;
+	}
+	.pass-composition-info {
+		position: relative;
+		min-height: 173px;
+		margin: 21px 0 24px 0;
+		border-bottom: 1px solid $color-gray-10;
+		ul {
+			position: relative;
+			li {
+				padding-left: 26px;
+				margin-bottom: 9px;
+				&::before {
+					content: '';
+					position: absolute;
+					left: 0;
+					width: 24px;
+					height: 24px;
+				}
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.pass-composition-price {
+			position: absolute;
+			bottom: 17px;
+			right: 0;
+			span {
+				font-weight: 700;
+				&:nth-of-type(1) {
+					@include txt(20);
+					font-weight: 400;
+				}
+				&:nth-of-type(2) {
+					@include txt(40);
+				}
+			}
+		}
+	}
+}
+.gom-permanent-pass { // 영구이용권
+	background: $color-white;
+	.pass-composition-info {
+		ul {
+			li {
+				&::before {
+					background: icon(check-lg) center no-repeat;
+				}
+			}
+		}
+	}
+	.card-category {
+		color: $color-black-1;
+	}
+}
+.gom-easy-pass { // 곰이지패스
+	background: linear-gradient(90deg, $color-blue-6 0%, $color-purple-5 100%) 0% 0%;
+	.pass-composition-info {
+		ul {
+			li {
+				color: $color-white;
+				&::before {
+					background: url(#{$img-url}/layout/icon_chk_g_lg.svg) center no-repeat;
+				}
+			}
+		}
+		.pass-composition-price {
+			span {
+				color: $color-white;
+			}
+		}
+	}
+}
+.gom-package-item { //1.5v 카드 영역
+	position: relative;
+	padding: 0;
+	border-radius: 10px;
+	background-color: transparent;
+	& > *:first-child {
+		border-radius: 10px 10px 0 0;
+		overflow: hidden;
+	}
+	& > *:last-child {
+		border-radius: 0 0 10px 10px;
+		overflow: hidden;
+	}
+	.gom-package-swiper-container {
+		overflow: hidden;
+		position: relative;
+		.gom-prev, .gom-next {
+			margin-top: -12px;
+			width: 24px;
+			height: 24px;
+			background-size: 24px auto;
+		}
+		.gom-prev {
+			left: 20px;
+			background-image: icon(prev-lg);
+		}
+		.gom-next {
+			right: 20px;
+			background-image: icon(next-lg);
+		}
+	}
+	&.expert { //곰팩 Expert의 경우 포인트 컬러 추가
+		.gom-package-bnr {
+			background-color: $color-blue-9;
+		}
+		.pagkage-mid {
+			.btn-purchase {
+				background-color: $color-blue-9;
+				border-color: $color-blue-9;
+				color: $color-white;
+			}
+		}
+		.pagkage-bottom {
+			.pagkage-more-info {
+				li {
+					color: $color-blue-9;
+				}
+			}
+		}
+	}
+	&.easypass { //곰이지패스의 경우 포인트 컬러 추가
+		.gom-package-bnr {
+			background: linear-gradient(90deg, #5772E8 0%, #991FE8 100%) 0% 0% no-repeat;
+		}
+		.pagkage-mid {
+			.btn-purchase {
+				background: linear-gradient(90deg, #5772E8 0%, #991FE8 100%) 0% 0% no-repeat;
+				border: 0 none;
+				color: $color-white;
+			}
+		}
+	}
+	.gom-package-bnr {
+		@include posLeft($top: -61px, $posY: 0%);
+		width: 100%;
+		padding: 20px 32px 18px;
+		text-align: center;
+		color: $color-white;
+		@include txt(20);
+		box-sizing: border-box;
+	}
+	.gom-package-info {
+		padding: 32px 32px 0;
+		background-color: $color-white;
+		.pagkage-top {
+			position: relative;
+			.title {
+				@include txt(24);
+				font-weight: 700;
+				.logo {
+					display: inline-block;
+					vertical-align: middle;
+					width: 48px;
+					height: 48px;
+					margin-right: 16px;
+					img {
+						@include image-fit;
+						border-radius: 10px;
+					}
+				}
+			}
+		}
+		.pagkage-mid {
+			margin-top: 24px;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			.price {
+				dt {
+					margin-bottom: 10px;
+					@include txt(16);
+					font-weight: 700;	
+				}
+				dd {
+					strong {
+						@include txt(36);
+						font-weight: 700;
+					}
+					span {
+						display: inline-block;
+						margin-left: 8px;
+						vertical-align: baseline;
+						@include txt(12);
+					}
+				}
+			}
+		}
+		.pagkage-bottom { //아코디언 영역
+			margin-top: 24px;
+			.acco-head {
+				display: block;
+				padding: 27px 0 36px;
+				border-top: 1px solid $color-gray-06;
+				@include txt(16);
+				&::after {
+					display: inline-block;
+					vertical-align: top;
+					width: 24px;
+					height: 24px;
+					margin-top: -3px;
+					background: icon(down-lg);
+					content: "";
+				}
+				&.active::after {
+					transform: rotate(-180deg);
+				}
+			}
+			.pagkage-more-info {
+				margin-bottom: 24px;
+				p {
+					@include txt(16);
+					&.exp {
+						margin-top: 12px;
+						color: $color-gray-01;
+						@include txt(12);
+					}
+				}
+				li {
+					@include txt(14);
+					font-weight: 700;
+				}
+				.bl-check-list {
+					li {
+						position: relative;
+						padding: 3px 0 3px 30px;
+						@include txt(16);
+						&::before {
+							@include posLeft($top: 0px, $posY: 0%);
+							width: 24px;
+							height: 24px;
+							background: icon(check) center center no-repeat;
+							content: "";
+						}
+					}
+				}
+			}
+			.total-price {
+				position: relative;
+				margin-bottom: 24px;
+				.price {
+					margin-bottom: 24px;
+					padding-right: 150px;
+					@include txt(20);
+				}
+				.form-cont {
+					@include posRight($top: 0, $posY: 0);
+				}
+			}
+		}
+	}
+}
+
+/* 반응형 */
+@include tablet {
+	.box-col-3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.gom-step-wrap {
+		.gom-step {
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 100px 10px;
+		}
+	}
+	.gom-card-box-type-2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@include mobile {
+	.card-box-wrap {
+		grid-template-columns: repeat(1, 1fr)
+	}
+	.card-box-sm,
+	.card-box-md,
+	.card-box-lg {
+		max-width: 100%;
+	}
+	.card-box-md {
+		.card-category {
+			@include txt(11);
+		}
+		h2 {
+			@include txt(18);
+		}
+		h3 {
+			@include txt(14);
+		}
+	}
+	.box-col-3 {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 32px 16px;
+		padding-bottom: 0;
+		.col-box {
+			p {
+				&:nth-of-type(1) {
+					margin-top: 12px;
+					@include txt(14);
+				}
+				&:nth-of-type(2) {
+					display: none;
+				}
+			}
+		}
+	}
+	.gom-step-wrap {
+		max-width: 100%;
+		.gom-title {
+			@include txt(18);
+		}
+		.gom-step {
+			grid-template-columns: repeat(1, 1fr);
+			grid-gap: 64px;
+			margin-top: 48px;
+			padding-top: 48px;
+			.gom-step-box {
+				p {
+					@include txt(14);
+					&:nth-of-type(2) {
+						@include txt(16);
+					}
+					&:nth-of-type(3) {
+						margin-top: 12px;
+					}
+				}
+				& > img {
+					margin: 23px 0 32px 0;
+				}
+			}
+		}
+	}
+	.gom-card-box-defalut {
+		grid-template-columns: repeat(1, 1fr);
+		&:has(.gom-package-item) {
+			grid-template-columns: repeat(1, 100%);
+		}
+	}
+	.gom-permanent-pass,
+	.gom-easy-pass {
+		.card-category {
+			@include txt(18);
+		}
+		.pass-composition-info {
+			min-height: auto;
+			margin: 15px 0 16px 0;
+			ul {
+				li {
+					margin-bottom: 5px;
+					@include txt(14);
+					&::before {
+						width: 16px;
+						height: 16px;
+					}
+				}
+			}
+			.pass-composition-price {
+				position: unset;
+				margin-top: 14px;
+				margin-bottom: 10px;
+				text-align: right;
+				span {
+					&:nth-of-type(1) {
+						@include txt(16);
+						font-weight: 400;
+					}
+					&:nth-of-type(2) {
+						@include txt(24);
+					}
+				}
+			}
+		}
+	}
+	.gom-permanent-pass {
+		order: 2;
+	}
+	.gom-card-box-type-2 {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.gom-package-item { //1.5v 카드 영역
+		.gom-package-bnr {
+			position: static;
+			top: unset;
+			left: unset;
+			padding: 12px 32px 12px;
+			@include txt(14);
+		}
+		.gom-package-swiper-container {
+			.gom-prev, .gom-next {
+				margin-top: -10px;
+				width: 20px;
+				height: 20px;
+			}
+			.gom-prev {
+				left: 12px;
+				background-image: icon(prev);
+			}
+			.gom-next {
+				right: 12px;
+				background-image: icon(next);
+			}
+		}
+		.gom-package-info {
+			padding: 20px 20px 0;
+			.pagkage-top {
+				.title {
+					@include txt(18);
+					.logo {
+						width: 40px;
+						height: 40px;
+						margin-right: 10px;
+					}
+				}
+			}
+			.pagkage-mid {
+				margin-top: 16px;
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				align-items: unset;
+				.price {
+					dt {
+						margin-bottom: 8px;
+						@include txt(14);
+					}
+					dd {
+						strong {
+							@include txt(24);
+						}
+					}
+				}
+				.btn-purchase {
+					height: 36px;
+				}
+			}
+			.pagkage-bottom { //아코디언 영역
+				margin-top: 20px;
+				.acco-head {
+					display: block;
+					padding: 18px 0 22px;
+					border-top: 1px solid $color-gray-06;
+					@include txt(14);
+					&::after {
+						display: inline-block;
+						vertical-align: top;
+						width: 20px;
+						height: 20px;
+						margin-top: -3px;
+						background: icon(down-lg);
+						content: "";
+					}
+					&.active::after {
+						transform: rotate(-180deg);
+					}
+				}
+				.acco-content {
+					margin-bottom: 16px;
+				}
+				.pagkage-more-info {
+					p {
+						@include txt(12);
+					}
+					.bl-check-list {
+						li {
+							padding-left: 24px;
+							@include txt(12);
+							&::before {
+								width: 20px;
+								height: 20px;
+								background-size: 20px auto;
+							}
+						}
+					}
+				}
+				.total-price {
+					position: relative;
+					.price {
+						margin-bottom: 16px;
+						padding: 9px 80px 9px 0;
+						@include txt(16);
+					}
+					.form-cont {
+						@include posRight($top: 0, $posY: 0);
+						&:has(.btn-drop-quantity) {
+							width: 80px;
+							.drop-list {
+								width: 100%;
+								min-width: 80px;
+							}
+						}
+					}
+					.btn-wrap {
+						gap: 10px;
+						.btn-md {
+							height: 29px;
+							padding: 0 24px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@include sm-mobile {
+	.box-col-3 {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="GUIDE : 테이블 갤러리" menucss="/dev/ui/css/guide-only.css"></include>
+<body>
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container" class="cp_guide_only">
+		<div id="contents-head" class="cp_g contents-head">
+			<div class="head-tit-wrap">
+				<div class="location">
+					<a href="#">홈</a> &gt; 테이블 갤러리
+				</div>
+				<h1>테이블 갤러리</h1>
+			</div>
+		</div>
+		<nav id="lnb" class="lnb-wrap">
+			<div class="lnb-inner">
+				<div class="logo"><img src="" alt="곰플레이어 플러스 2024" /></div>
+				<div class="intro_wrap">
+					<p class="intro">곰플레이어+ 2024</p>
+					<div class="btn-downloads">
+						<a href="#" class="btn-md btn-ghost">시작하기</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<h2 class="cp_g"> (1) 3개 타입 <br><br><code>.board-wrap</code> &gt; <code>.gallery-wrap + .gallery-col-3</code><br><br></h2>
+		<div id="contents">
+			<section class="panel-wrap">
+				<div class="panel">
+					<div class="inner">
+						<div class="board-wrap">
+							<h2 class="board-tit">영상 편집, 인코딩, 녹화, 플레이어와 관련된 다양한 정보들을 전달합니다.</h2>
+							<p class="board-info" style="font-size: 19px; margin-top: 25px; margin-bottom: 100px;">
+								안녕하세요. 곰앤컴퍼니 대학생 기자단 유한나입니다!<br>오늘은 각 분야의 대학생들이 디지털 리터러시를 어떻게 이해하고 활용하는지 담아내고자 합니다.
+							</p>
+							<ul class="tab-underline" data-tab-index="tab00">
+								<li><a href="#tabname-01" class="active">전체</a></li>
+								<li><a href="#tabname-02">영상 편집</a></li>
+								<li><a href="#tabname-03">영상 재생</a></li>
+								<li><a href="#tabname-04">강의/게임 영상녹화</a></li>
+								<li><a href="#tabname-05">영상 인코딩</a></li>
+								<li><a href="#tabname-06">영상편집 튜토리얼</a></li>
+								<li><a href="#tabname-07">디지털 리터러시 지원센터</a></li>
+							</ul>
+							<div class="tab-wrap" data-tab-content="tab00"> <!-- [D] 탭리스트 연결 data-tab-content -->
+								<div class="tab-content active" id="tabname-01"> <!-- [D] ID로 탭 컨텐츠 구분 -->
+									<ul class="gallery-wrap gallery-col-3"> <!-- [D] 갤러리 사이즈 gallery-col-3 체크 -->
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="http://placehold.it/420x240" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">[권장 : 썸네일 예시] 1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+													<p class="gallery-info">이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가? 이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가?</p>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="http://placehold.it/400x100" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">[가로형 : 썸네일 예시] 1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+													<p class="gallery-info">이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가? 이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가?</p>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="http://placehold.it/100x400" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">[세로형 : 썸네일 예시] 1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+													<p class="gallery-info">이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가? 이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가?</p>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="http://placehold.it/200x200" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">[정사각형 : 썸네일 예시] 1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+													<p class="gallery-info">이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가? 이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가?</p>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+													<p class="gallery-info">이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가? 이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가?</p>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+													<p class="gallery-info">이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가? 이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가?</p>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-content" id="tabname-02"> <!-- [D] ID로 탭 컨텐츠 구분 -->
+									<ul class="gallery-wrap gallery-col-3"> <!-- [D] 갤러리 사이즈 gallery-col-3 체크 -->
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+													<p class="gallery-info">이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가? 이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가?</p>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-content" id="tabname-03">
+									<ul class="gallery-wrap gallery-col-3">
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+													<p class="gallery-info">이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가? 이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가?</p>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-content" id="tabname-04">
+									<ul class="gallery-wrap gallery-col-3">
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+													<p class="gallery-info">이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가? 이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가?</p>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-content" id="tabname-05">
+									<ul class="gallery-wrap gallery-col-3">
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+													<p class="gallery-info">이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가? 이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가?</p>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-content" id="tabname-06">
+									<ul class="gallery-wrap gallery-col-3">
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+													<p class="gallery-info">이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가? 이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가?</p>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-content" id="tabname-07">
+									<ul class="gallery-wrap gallery-col-3">
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+													<p class="gallery-info">이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가? 이번엔 디자인이다! 디지털리터러시는 어디까지 뻗어나갈 것인가?</p>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="board-page-navi">
+								<a href="#" class="btn prev">prev</a>
+								<a href="#" class="num active">1</a>
+								<a href="#" class="num">2</a>
+								<a href="#" class="num">3</a>
+								<a href="#" class="num">4</a>
+								<a href="#" class="num">5</a>
+								<a href="#" class="num">6</a>
+								<a href="#" class="btn next">next</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<h2 class="cp_g"> (2) 4개 타입 <br><br><code>.board-wrap</code> &gt; <code>.gallery-wrap + .gallery-col-4</code><br><br></h2>
+		<div id="contents">
+			<section class="panel-wrap">
+				<div class="panel">
+					<div class="inner">
+						<div class="board-wrap">
+							<h2 class="board-tit" style="margin-bottom: 63px;">기초부터 응용까지 곰랩 공인 편집 강의들을 만나보세요.</h2>
+							<ul class="tab-index tab-underline tab-autofill" data-tab-index="tab01">
+								<li><a href="#tabname-11" class="active">전체</a></li>
+								<li><a href="#tabname-12">튜토리얼</a></li>
+								<li><a href="#tabname-13">라이브</a></li>
+								<li><a href="#tabname-14">녹화본</a></li>
+							</ul>
+							<div class="tab-wrap" data-tab-content=="tab01"> <!-- [D] 탭리스트 연결 data-tab-index -->
+								<div class="tab-content active" id="tabname-11"> <!-- [D] ID로 탭 컨텐츠 구분 -->
+									<ul class="gallery-wrap gallery-col-4"> <!-- [D] 갤러리 사이즈 gallery-col-4 체크 -->
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<div class="chapter-badge">총 10강</div>
+													<img src="http://placehold.it/320x200" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<div class="badge-wrap">
+														<div class="badge-v-secondary">튜토리얼</div>
+														<div class="badge-l-primary">수강가능</div>
+													</div>
+													<p class="gallery-title">[권장 : 썸네일 예시] 1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<div class="live-on">
+														<span>LIVE</span>
+													</div>
+													<img src="http://placehold.it/300x100" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<div class="badge-wrap">
+														<div class="badge-v-primary">라이브</div>
+														<div class="badge-l-primary">시청가능</div>
+													</div>
+													<p class="gallery-title">[가로형 : 썸네일 예시] 1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="http://placehold.it/100x300" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<div class="badge-wrap">
+														<div class="badge-v-tertiary">무료</div>
+														<div class="badge-v-primary">라이브</div>
+														<div class="badge-l-primary">03월 10일 20시 오픈</div>
+													</div>
+													<p class="gallery-title">[세로형 : 썸네일 예시] 1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="http://placehold.it/200x200" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<div class="badge-wrap">
+														<div class="badge-v-secondary">튜토리얼</div>
+														<div class="badge-l-primary">수강가능</div>
+													</div>
+													<p class="gallery-title">[정사각형 : 썸네일 예시] 1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-content" id="tabname-12"> <!-- [D] ID로 탭 컨텐츠 구분 -->
+									<ul class="gallery-wrap gallery-col-4"> <!-- [D] 갤러리 사이즈 gallery-col-4 체크 -->
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-content" id="tabname-13">
+									<ul class="gallery-wrap gallery-col-4">
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="tab-content" id="tabname-14">
+									<ul class="gallery-wrap gallery-col-4">
+										<li>
+											<a href="#">
+												<div class="gallery-img">
+													<img src="" alt="이미지">
+												</div>
+												<div class="gallery-content">
+													<p class="gallery-title">1분이면 완성하는 영상 색보정, 필터까지 한번에 1분이면 완성하는 영상 색보정, 필터까지 한번에</p>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="board-page-navi">
+								<a href="#" class="btn prev">prev</a>
+								<a href="#" class="num active">1</a>
+								<a href="#" class="num">2</a>
+								<a href="#" class="num">3</a>
+								<a href="#" class="num">4</a>
+								<a href="#" class="num">5</a>
+								<a href="#" class="num">6</a>
+								<a href="#" class="btn next">next</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

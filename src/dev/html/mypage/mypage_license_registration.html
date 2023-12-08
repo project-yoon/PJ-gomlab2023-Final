@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="이용권 추가 등록 : 마이페이지" menucss="/dev/ui/css/mypage.css"></include>
+<body class="mypage">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<!-- contents -->
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel w665">
+					<div class="inner mypage-detail">
+						<div class="mypage-head">
+							<h1 class="title-ac">이용권 추가 등록</h1>
+							<p class="exp">
+								다른 사이트를 통해 구매 또는 선물 받은 이용권을 등록해 주세요.
+								<span>곰랩에서 구매하신 이용권은 별도의 등록이 필요하지 않습니다.</span>
+							</p>
+						</div>
+						<form action="" name="" id="" class="form-wrap">
+							<!-- [D] 231208_수정 : data-maxlength 추가 -->
+							<div class="license-form" data-maxlength="5">
+							<!-- //[D] 231208_수정 : data-maxlength 추가 -->
+								<div class="form-item">
+									<!-- [D] 231208_수정 : 노출 갯수 변경 -->
+									<div class="form-col">
+										<div class="form-cont">
+											<input type="text" class="inp-box" placeholder="12자리 or 16자리 이용권 정보를 입력하세요.">
+										</div>
+										<button type="button" class="btn-item-util btn-add">추가</button>
+									</div>
+									<div class="help-wrap">
+										<p class="err-txt">이용권을 다시 확인해 주세요.</p>
+									</div>
+									<!-- //[D] 231208_수정 : 노출 갯수 변경 -->
+								</div>
+							</div>
+							<!-- [D] 231208_수정 : 버튼 비활성화 case 추가 -->
+							<div class="btn-wrap">
+								<button type="submit" class="btn-md btn-default disabled">이용권 등록하기</button>
+								<!-- [D] 활성 시 아래 버튼 노출 -->
+								<!-- <button type="submit" class="btn-md btn-default">이용권 등록하기</button> -->
+							</div>
+							<!-- //[D] 231208_수정 : 버튼 비활성화 case 추가 -->
+						</form>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- //contents -->
+
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script src="/dev/ui/js/libs/swiper.min.js"></script>
+	<script>
+
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+</body>
+</html>

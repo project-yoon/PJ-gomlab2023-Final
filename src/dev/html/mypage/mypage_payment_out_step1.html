@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="결제 취소 step1 : 마이페이지" menucss="/dev/ui/css/mypage.css"></include>
+<body class="mypage">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<!-- contents -->
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel w665">
+					<div class="inner">
+						<div class="mypage-head">
+							<h1>회원님!<br>​정말 곰이지패스를 해지하실 건가요?​</h1>
+							<div class="current-step-wrap">
+								<span>1</span> / 3
+							</div>
+						</div>
+						<form action="" name="" id="" class="form-wrap">
+							<div class="out-step-form">
+								<div class="out-agree">
+									<label class="form-name">아직 NN일동안 무료체험이 가능합니다.</label>
+									<div class="form-cont">
+										<label for="out1"><input type="checkbox" name="user-age" id="out1"><span>네, 자동결제를 해지하겠습니다.</span></label>
+									</div>
+								</div>
+
+								<div class="out-step-title">더 나은 서비스 제공을 위해<br class="only-mo">자동결제 해지 사유를 선택해 주세요.</div>
+									<div class="out-step-agree-form">
+										<ul class="agree-form">
+											<!-- 231129_수정_01 : type교체, name추가 -->
+											<li><label for="out-agree1"><input type="radio" id="out-agree1" name="agree">서비스에 만족하지 않아 더 이상 사용하지 않습니다.</label></li>
+											<li><label for="out-agree2"><input type="radio" id="out-agree2" name="agree">상품의 다양성/가격 품질 불만</label></li>
+											<li><label for="out-agree3"><input type="radio" id="out-agree3" name="agree">기타 사유 (직접입력)</label></li>
+											<!-- // 231129_수정_01 -->
+										</ul>
+										<div class="form-item">
+											<div class="form-cont">
+												<textarea name="" id="" cols="30" rows="10" placeholder="기타 사유를 입력해주세요. (최대 500byte)"></textarea>
+											</div>
+										</div>
+									</div>
+								
+								<div class="btn-wrap wrap-right">
+									<button type="submit" class="btn-md btn-default disabled">다음</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- //contents -->
+
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script src="/dev/ui/js/libs/swiper.min.js"></script>
+	<script>
+
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+</body>
+</html>

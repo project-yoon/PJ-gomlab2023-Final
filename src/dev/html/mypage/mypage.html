@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="마이페이지" menucss="/dev/ui/css/mypage.css"></include>
+<body class="mypage">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<!-- contents -->
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel">
+					<!-- snb -->
+					<div class="snb-wrap">
+						<div class="snb-inner">
+							<h1 class="snb-title">마이페이지</h1>
+							<div class="my-info">
+								<span class="name">고연정</span>
+								<span class="email">yeonjung@gomcorp.com</span>
+							</div>
+							<div class="my-until only-mo">
+								<ul>
+									<!-- [D] 231208_수정 : a태그 추가 -->
+									<li class="license"><a href="#">
+										<h2>내 라이선스</h2>
+										<span>101개</span>
+									</a></li>
+									<li class="coupon"><a href="#">
+										<h2>내 할인 쿠폰</h2>
+										<span>3개</span>
+									</a></li>
+									<li class="inquiry"><a href="#">
+										<h2>내 문의 내역</h2>
+										<span>3건</span>
+									</a></li>
+									<!-- // [D] 231208_수정 : a태그 추가 -->
+								</ul>
+							</div>
+							<nav class="snb-menu">
+								<ul>
+									<li><a href="#">내 계정</a></li>
+									<li><a href="#">제품 및 라이선스</a></li>
+									<li><a href="#">결제 내역</a></li>
+									<li><a href="#">내 쿠폰함</a></li>
+									<li><a href="#">내 문의 내역</a></li>
+									<li><a href="#">내 자막 업로드 내역</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- //snb -->
+					<!-- mypage-home -->
+					<div class="mypage-home inner only-pc">
+						<div class="command-cont"></div>
+						<div class="my-group">
+							<div class="my-license">
+								<h2 class="tit">내 라이선스 <span>101개</span></h2>
+								<ul class="subscribe-list">
+									<li class="subscribe-item">
+										<!-- 231208_수정_01 [D] a 태그로 하위 감싸서 추가 .. 이하 동일 -->
+										<a href="#!">
+											<span class="logo-ico"><img src="/dev/ui/images/layout/icon_pd_gommix2024.png" alt="곰믹스"></span>
+											<span class="num">1</span>
+											<p class="name">상품명1</p>
+										</a>
+										<!-- // 231208_수정_01 [D] a 태그로 하위 감싸서 추가 .. 이하 동일 -->
+									</li>
+									<li class="subscribe-item">
+										<a href="#!">
+											<span class="logo-ico"><img src="/dev/ui/images/layout/icon_pd_gomcam2024.png" alt="곰캠"></span>
+											<span class="num">1</span>
+											<p class="name">상품명1</p>
+										</a>
+									</li>
+									<li class="subscribe-item">
+										<a href="#!">
+											<span class="logo-ico"><img src="/dev/ui/images/layout/icon_pd_gomplayer_plus2024.png" alt="곰플레이어+"></span>
+											<span class="num">1</span>
+											<p class="name">상품명1</p>
+										</a>
+									</li>
+									<!-- [D] 라이선스 없는 경우 하단 내용 노출 -->
+									<!-- <li class="empty">
+										<p>보유한 라이선스가 없습니다.</p>
+									</li> -->
+								</ul>
+								<!-- [D] 라이선스 없는 경우 하단 내용 비노출 -->
+								<ul class="notice-list">
+									<!-- 231208_수정_01 [D] a 태그로 하위 감싸서 추가 -->
+									<a href="#!">
+										<li class="notice-item">
+											<span class="badge-b-secondary">알림</span>
+											<p class="txt">[상품명] 다음 결제일 20223-10-24</p>
+										</li>
+									</a>
+									<!-- // 231208_수정_01 [D] a 태그로 하위 감싸서 추가 -->
+								</ul>
+							</div>
+							<div class="my-coupon">
+								<h2 class="tit">내 할인 쿠폰 <span>3개</span></h2>
+								<ul class="notice-list">
+									<li class="notice-item"><a href="#">
+										<span class="badge-b-nomal">사용가능</span>
+										<p class="txt">[중복쿠폰] 신규 회원 가입 쿠폰</p>
+									</a></li>
+									<li class="notice-item"><a href="#">
+										<span class="badge-b-nomal">사용가능</span>
+										<p class="txt">[중복쿠폰] 신규 회원 가입 쿠폰</p>
+									</a></li>
+									<li class="notice-item"><a href="#">
+										<span class="badge-b-nomal">사용가능</span>
+										<p class="txt">[중복쿠폰] 신규 회원 가입 쿠폰</p>
+									</a></li>
+									<!-- [D] 보유한 쿠폰 없는 경우 하단 내용 노출 -->
+									<!-- <li class="empty">
+										<p>보유한 쿠폰이 없습니다.</p>
+									</li> -->
+								</ul>
+							</div>
+							<div class="my-inquiry">
+								<h2 class="tit">내 문의 내역 <span>3건</span></h2>
+								<ul class="notice-list">
+									<li class="notice-item"><a href="#">
+										<span class="badge-b-tertiary">접수중</span>
+										<p class="txt">2개 이상의 라이선스 구매 시</p>
+									</a></li>
+									<li class="notice-item"><a href="#">
+										<span class="badge-b-nomal">답변완료</span>
+										<p class="txt">2개 이상의 라이선스 구매 시 2개 이상의 라이선스 구매 시</p>
+									</a></li>
+									<li class="notice-item"><a href="#">
+										<span class="badge-b-nomal">답변완료</span>
+										<p class="txt">2개 이상의 라이선스 구매 시</p>
+									</a></li>
+									<!-- [D] 문의내역 없는 경우 하단 내용 노출 -->
+									<!-- <li class="empty">
+										<p>문의내역이 없습니다.</p>
+									</li> -->
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- //mypage-home -->
+				</div>
+			</section>
+		</div>
+		<!-- //contents -->
+
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script src="/dev/ui/js/libs/swiper.min.js"></script>
+	<script>
+
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+</body>
+</html>

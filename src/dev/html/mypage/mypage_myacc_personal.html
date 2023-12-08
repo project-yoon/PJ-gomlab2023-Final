@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="내 계정 (개인) : 마이페이지" menucss="/dev/ui/css/mypage.css"></include>
+<body class="mypage">
+	<!-- 헤더 -->
+	<include src="../include/header_tit.html" titlename="마이페이지"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<!-- contents -->
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel">
+					<div class="snb-wrap snb-fix">
+						<div class="snb-inner">
+							<h1 class="snb-title">마이페이지</h1>
+							<div class="my-info only-pc">
+								<span class="name">고연정</span>
+								<span class="email">yeonjung@gomcorp.com</span>
+							</div>
+							<!-- snb -->
+							<nav class="snb-menu" data-menu="scroll">
+								<ul>
+									<li><a href="#" class="active">내 계정</a></li>
+									<li><a href="#">제품 및 라이선스</a></li>
+									<li><a href="#">결제 내역</a></li>
+									<li><a href="#">내 쿠폰함</a></li>
+									<li><a href="#">내 문의 내역</a></li>
+									<li><a href="#">내 자막 업로드 내역</a></li>
+								</ul>
+							</nav>
+							<!-- //snb -->
+						</div>
+					</div>
+					<div class="inner mypage-detail">
+						<div class="cmn-content-head">
+							<h2>내 계정</h2>
+						</div>
+						<ul class="use-label">
+							<li>
+								<span class="label">이메일 주소</span>
+								<div class="list-content">
+									<span>yeonjung@gomcorp.com</span>
+								</div>
+							</li>
+							<li>
+								<span class="label">닉네임</span>
+								<div class="list-content">
+									<span>고연정</span>
+								</div>
+							</li>
+							<li>
+								<span class="label">휴대폰 번호</span>
+								<div class="list-content">
+									<span>010-1234-5678</span>
+								</div>
+							</li>
+							<li>
+								<span class="label">만 14세 이상 여부</span>
+								<div class="list-content">
+									<span>휴대폰 인증 완료</span>
+								</div>
+							</li>
+							<li>
+								<span class="label">비밀번호</span>
+								<div class="list-content">
+									<span>*****</span>
+								</div>
+							</li>
+							<li>
+								<span class="label">국가</span>
+								<div class="list-content">
+									<span>대한민국</span>
+								</div>
+							</li>
+							<li>
+								<span class="label">이벤트 및 혜택알림</span>
+								<div class="list-content">
+									<!-- [D] 231208_수정 : disabled 추가 -->
+									<div class="sub-check">
+										<label for="event1" disa><input type="checkbox" id="event1" class="inp-sm" checked="" disabled>이메일</label>
+										<label for="event2"><input type="checkbox" id="event2" class="inp-sm" disabled>문자메시지 (SMS)</label>
+									</div>
+									<!-- //[D] 231208_수정 : disabled 추가 -->
+									<div class="help-wrap">
+										<p class="guide-txt">알림 수신 동의와 함께 개인정보 마케팅 활용에 동의함으로 간주합니다.</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="mypage-account-util">
+							<a href="#" class="btn-md btn-default">수정하기</a>
+							<a href="#" class="btn-withdrawal">회원탈퇴</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- //contents -->
+
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script src="/dev/ui/js/libs/swiper.min.js"></script>
+	<script>
+
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+</body>
+</html>
