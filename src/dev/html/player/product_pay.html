@@ -183,41 +183,41 @@
 				</div>
 			</div>
 
-			<div class="panel">
+			<!-- 231212_수정_01 -->
+			<div class="panel sw-news">
+			<!-- //231212_수정_01 -->
 				<div class="inner">
 					<div class="gom-content-inner-wrap">
 						<h2 class="gom-title">제품 소식</h2>
-						<div class="gom-content-inner gom-product-news-inner">
+						<!-- 231212_수정_01 -->
+						<div class="gom-content-inner gom-product-news-inner cols-3"> <!-- 소식이 3개일 때 cols-3, 2개일 때 cols-2 클래스 추가 -->
+						<!-- //231212_수정_01 -->
 							<div class="swiper-container gom-swiper-container product-news-swiper-container">
 								<div class="swiper-wrapper">
 									<div class="swiper-slide">
 										<a href="#!">
 											<div class="gom-thumbnail news-thumbnail">
-												<img src="http://placehold.it/200x200" alt="썸네일1:1예시">
+												<img src="/dev/ui/images/@thumbs/346x346_01.png" alt="썸네일1:1예시">
 											</div>
 										</a>
 									</div>
+
 									<div class="swiper-slide">
 										<a href="#!">
 											<div class="gom-thumbnail news-thumbnail">
-												<img src="http://placehold.it/200x200" alt="썸네일1:1예시">
+												<img src="/dev/ui/images/@thumbs/346x346_02.png" alt="썸네일1:1예시">
 											</div>
 										</a>
 									</div>
+
 									<div class="swiper-slide">
 										<a href="#!">
 											<div class="gom-thumbnail news-thumbnail">
-												<img src="http://placehold.it/200x200" alt="썸네일1:1예시">
+												<img src="/dev/ui/images/@thumbs/346x346_03.png" alt="썸네일1:1예시">
 											</div>
 										</a>
 									</div>
-									<div class="swiper-slide">
-										<a href="#!">
-											<div class="gom-thumbnail news-thumbnail">
-												<img src="http://placehold.it/200x200" alt="썸네일1:1예시">
-											</div>
-										</a>
-									</div>
+
 								</div>
 							</div>
 						</div>
@@ -526,21 +526,35 @@
 	});
 
 	// 제품 소식 슬라이더
-	const productNewsSwiper = new Swiper(".product-news-swiper-container", {
-		spaceBetween: 19,
-		slidesPerView: 4,
-		centeredSlides: false,
-		roundLengths: true,
-		loop: true,
-		loopAdditionalSlides: 1,
-		breakpoints: {
-			768: {
-				spaceBetween: 18,
-				slidesPerView: 1.5,
-				centeredSlides: true,
-			},
+	/* 231212_수정_01 */
+	const breakpoint = window.matchMedia( '(max-width: 768px)' );
+	let productNewsSwiper;
+	const breakpointChecker = function() {
+		const productNews = $(".product-news-swiper-container");
+		const productNewsSlideItems = $(".product-news-swiper-container .swiper-slide");
+		if ( breakpoint.matches === true && productNewsSlideItems.length > 2 ) {
+			productNews.addClass("swiper-init");
+			return enableSwiper();
+		} else if ( breakpoint.matches === false  || productNewsSlideItems.length < 2 ) {
+			if ( productNewsSwiper !== undefined ) {
+				productNews.removeClass("swiper-init");
+				productNewsSwiper.destroy( true, true );
+			};
 		}
-	});
+	}
+	const enableSwiper = function() {
+		productNewsSwiper = new Swiper(".product-news-swiper-container", {
+			loop: true,
+			roundLengths: true,
+			loopAdditionalSlides: 1,
+			slidesPerView: 1.5,
+			// spaceBetween: 18,
+			centeredSlides: true,
+		});
+	}
+	breakpoint.addListener(breakpointChecker);
+	breakpointChecker();
+	/* //231212_수정_01 */
 
 	// 파트너스 슬라이더
 	const partnersSwiper = new Swiper(".partners-swiper-container", {

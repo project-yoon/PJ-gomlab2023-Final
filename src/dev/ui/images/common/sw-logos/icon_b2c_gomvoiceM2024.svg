@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.889" y1="0.118" x2="0.12" y2="0.923" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f10668"/>
+      <stop offset="1" stop-color="#ffa9c6"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" y1="-7.242" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f4f4f4"/>
+    </linearGradient>
+    <filter id="패스_16">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.098" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="패스_17">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur-2"/>
+      <feFlood flood-opacity="0.098" result="color-2"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color-2"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="icon_b2c_gomvoiceM2024" transform="translate(-1104 -3200)">
+    <path id="패스_51343" data-name="패스 51343" d="M32.982,0H87.018A32.982,32.982,0,0,1,120,32.982V87.018A32.982,32.982,0,0,1,87.018,120H32.982A32.982,32.982,0,0,1,0,87.018V32.982A32.982,32.982,0,0,1,32.982,0Z" transform="translate(1104 3200)" fill="url(#linear-gradient)"/>
+    <g data-type="innerShadowGroup">
+      <path id="패스_16-2" data-name="패스 16" d="M35.609,45.911H8.058a4.754,4.754,0,1,0,0,9.507H35.609a4.754,4.754,0,1,0,0-9.507" transform="translate(1142.504 3245.512)" fill="url(#linear-gradient-2)"/>
+      <g transform="matrix(1, 0, 0, 1, 1104, 3200)" filter="url(#패스_16)">
+        <path id="패스_16-3" data-name="패스 16" d="M35.609,45.911H8.058a4.754,4.754,0,1,0,0,9.507H35.609a4.754,4.754,0,1,0,0-9.507" transform="translate(38.5 45.51)" fill="#fff"/>
+      </g>
+    </g>
+    <g data-type="innerShadowGroup">
+      <path id="패스_17-2" data-name="패스 17" d="M42.438,37.364H47.69V31.083H42.438A4.18,4.18,0,0,1,38.259,26.9V26.8a4.18,4.18,0,0,1,4.179-4.179h5.19a23.813,23.813,0,0,0-47.566,0h5.19A4.18,4.18,0,0,1,9.431,26.8V26.9a4.18,4.18,0,0,1-4.181,4.179H0v6.281H5.251a4.18,4.18,0,0,1,4.181,4.179v.108A4.18,4.18,0,0,1,5.251,45.83H.061a23.813,23.813,0,0,0,47.566,0h-5.19a4.18,4.18,0,0,1-4.179-4.179v-.108a4.18,4.18,0,0,1,4.179-4.179" transform="translate(1140.491 3217.543)" fill="url(#linear-gradient-2)"/>
+      <g transform="matrix(1, 0, 0, 1, 1104, 3200)" filter="url(#패스_17)">
+        <path id="패스_17-3" data-name="패스 17" d="M42.438,37.364H47.69V31.083H42.438A4.18,4.18,0,0,1,38.259,26.9V26.8a4.18,4.18,0,0,1,4.179-4.179h5.19a23.813,23.813,0,0,0-47.566,0h5.19A4.18,4.18,0,0,1,9.431,26.8V26.9a4.18,4.18,0,0,1-4.181,4.179H0v6.281H5.251a4.18,4.18,0,0,1,4.181,4.179v.108A4.18,4.18,0,0,1,5.251,45.83H.061a23.813,23.813,0,0,0,47.566,0h-5.19a4.18,4.18,0,0,1-4.179-4.179v-.108a4.18,4.18,0,0,1,4.179-4.179" transform="translate(36.49 17.54)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

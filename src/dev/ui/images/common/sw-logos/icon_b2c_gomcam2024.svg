@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.84" y1="0.115" x2="0.118" y2="0.913" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#9226ff"/>
+      <stop offset="0.494" stop-color="#6839ff"/>
+      <stop offset="1" stop-color="#0057ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" y1="-0.792" x2="0.5" y2="1.713" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f4f4f4"/>
+    </linearGradient>
+    <filter id="패스_3">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.098" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="패스_4">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur-2"/>
+      <feFlood flood-opacity="0.098" result="color-2"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color-2"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="패스_5">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur-3"/>
+      <feFlood flood-opacity="0.098" result="color-3"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-3"/>
+      <feComposite operator="in" in="color-3"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="icon_b2c_gomcam2024" transform="translate(-1364 -2893)">
+    <path id="패스_51339" data-name="패스 51339" d="M32.982,0H87.018A32.982,32.982,0,0,1,120,32.982V87.018A32.982,32.982,0,0,1,87.018,120H32.982A32.982,32.982,0,0,1,0,87.018V32.982A32.982,32.982,0,0,1,32.982,0Z" transform="translate(1364 2893)" fill="url(#linear-gradient)"/>
+    <g data-type="innerShadowGroup">
+      <path id="패스_3-2" data-name="패스 3" d="M31.433,17.9A16.879,16.879,0,1,0,46.547,36.374,16.9,16.9,0,0,0,31.433,17.9" transform="translate(1393.918 2917.673)" fill="url(#linear-gradient-2)"/>
+      <g transform="matrix(1, 0, 0, 1, 1364, 2893)" filter="url(#패스_3)">
+        <path id="패스_3-3" data-name="패스 3" d="M31.433,17.9A16.879,16.879,0,1,0,46.547,36.374,16.9,16.9,0,0,0,31.433,17.9" transform="translate(29.92 24.67)" fill="#fff"/>
+      </g>
+    </g>
+    <g data-type="innerShadowGroup">
+      <path id="패스_4-2" data-name="패스 4" d="M41.057,5.129A37.335,37.335,0,1,0,74.487,46a37.335,37.335,0,0,0-33.43-40.87M59.38,44.485A22.152,22.152,0,1,1,39.544,20.238,22.179,22.179,0,0,1,59.38,44.485" transform="translate(1386.331 2910.086)" fill="url(#linear-gradient-2)"/>
+      <g transform="matrix(1, 0, 0, 1, 1364, 2893)" filter="url(#패스_4)">
+        <path id="패스_4-3" data-name="패스 4" d="M41.057,5.129A37.335,37.335,0,1,0,74.487,46a37.335,37.335,0,0,0-33.43-40.87M59.38,44.485A22.152,22.152,0,1,1,39.544,20.238,22.179,22.179,0,0,1,59.38,44.485" transform="translate(22.33 17.09)" fill="#fff"/>
+      </g>
+    </g>
+    <g data-type="innerShadowGroup">
+      <path id="패스_5-2" data-name="패스 5" d="M51.829.041A8.254,8.254,0,1,0,59.22,9.077,8.254,8.254,0,0,0,51.829.041" transform="translate(1411.529 2907.174)" fill="url(#linear-gradient-2)"/>
+      <g transform="matrix(1, 0, 0, 1, 1364, 2893)" filter="url(#패스_5)">
+        <path id="패스_5-3" data-name="패스 5" d="M51.829.041A8.254,8.254,0,1,0,59.22,9.077,8.254,8.254,0,0,0,51.829.041" transform="translate(47.53 14.17)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

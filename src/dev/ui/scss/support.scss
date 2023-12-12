@@ -1,0 +1,83 @@
+@charset "utf-8";
+@import "./utilities/variables";
+@import "./utilities/mixins";
+
+.support {
+	/* 공지사항 */
+	.move-to-qna {
+		margin-top: 80px;
+		padding: 20px;
+		background-color: #F8F8F8;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 40px;
+		p {
+			@include txt(14);
+		}
+	}
+	/* 운영정책_이용약관 */
+	.terms-head {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 40px;
+		.form-drop-box {
+			width: 327px;
+		}
+	}
+	.terms_of_use_list {
+		@include txt(14);
+		line-height: 22px;
+		h3 {
+			margin-bottom: 16px;
+			font-weight: 700;
+		}
+		.bl-list {
+			& > li {
+				position: relative;
+				padding-left: 1.2em;
+				span {
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
+		.cmn-col {
+			& > dl {
+				& > dd {
+					padding-left: 1.2em;
+				}
+			}
+		}
+		ul {
+			li {
+				ul {
+					padding-left: 20px;
+				}
+			}
+		}
+	}
+}
+
+/* 반응형 */
+@include desktop {}
+@include tablet {}
+@include mobile {
+	/* 공지사항 */
+	.move-to-qna {
+		margin-top: 60px;
+		padding: 24px;
+		display: block;
+		text-align: center;
+		.btn-sm {
+			margin-top: 16px;
+		}
+	}
+	/* 운영정책_이용약관 */
+	.terms-head {
+		.form-drop-box {
+			flex: 1;
+		}
+	}
+}

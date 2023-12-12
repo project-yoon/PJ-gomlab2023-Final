@@ -23,7 +23,7 @@
 		h1 {
 			margin-top: 40px;
 			font-size: 56px; //임시 적용
-			line-height: 80px; //임시 적용
+			line-height: 71px; //임시 적용
 			color: $color-white;
 		}
 		.intro {
@@ -51,7 +51,7 @@
 	/* 상세 혜택 영역 */
 	.membership-benefit {
 		position: relative;
-		height: 600vh;
+		height: 550vh;
 		background-color: $color-blue-9;
 	}
 	.benefit-wrap {
@@ -59,7 +59,6 @@
 		top: 0;
 		width: 100%;
 		height: calc(100vh - 79px);
-		//padding: 80px 0 0; 
 		align-items: center;
 		box-sizing: border-box;
 		&::before {
@@ -88,7 +87,7 @@
 			h2 {
 				color: $color-white;
 				font-size: 50px; //임시 적용
-				line-height: 66px; //임시 적용
+				line-height: 61px; //임시 적용
 			}
 			.exp {
 				margin-top: 20px;
@@ -420,7 +419,6 @@
 @include tablet {
 	.membership {
 		.benefit-wrap {
-			padding: 48px 0 0;
 			.inner {
 				align-items: unset;
 				flex-direction: column;
@@ -428,6 +426,7 @@
 			}
 			.cmn-content-head {
 				min-width: unset;
+				padding-top: 48px;
 				color: $color-white;
 				h2 {
 					@include txt(36);
@@ -662,6 +661,7 @@
 		}
 		/* 상세 혜택 영역 */
 		.membership-benefit {
+			height: 380vh;
 			.inner {
 				display: block;
 				box-sizing: border-box;

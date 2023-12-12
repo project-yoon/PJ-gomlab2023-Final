@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.928" y1="0.097" x2="0.09" y2="0.93" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffac00"/>
+      <stop offset="0.728" stop-color="#f72b8c"/>
+      <stop offset="1" stop-color="#ff00b4"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f4f4f4"/>
+    </linearGradient>
+    <filter id="패스_2">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.098" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="icon_b2c_gomencoder" transform="translate(-1104 -2892)">
+    <path id="패스_51338" data-name="패스 51338" d="M32.982,0H87.018A32.982,32.982,0,0,1,120,32.982V87.018A32.982,32.982,0,0,1,87.018,120H32.982A32.982,32.982,0,0,1,0,87.018V32.982A32.982,32.982,0,0,1,32.982,0Z" transform="translate(1104 2892)" fill="url(#linear-gradient)"/>
+    <g data-type="innerShadowGroup">
+      <path id="패스_2-2" data-name="패스 2" d="M71.336,4.172l-.7-.875L65.256,7.461l.718.9a33.667,33.667,0,0,1,.73,41.114,34.936,34.936,0,1,0-31.768,20.4c.573,0,1.142-.018,1.707-.045.979.072,1.961.12,2.951.12A40.611,40.611,0,0,0,80.159,29.386,40.1,40.1,0,0,0,71.336,4.172M34.937,46.23A11.254,11.254,0,1,1,46.191,34.975,11.255,11.255,0,0,1,34.937,46.23" transform="translate(1125.754 2917.766)" fill="url(#linear-gradient-2)"/>
+      <g transform="matrix(1, 0, 0, 1, 1104, 2892)" filter="url(#패스_2)">
+        <path id="패스_2-3" data-name="패스 2" d="M71.336,4.172l-.7-.875L65.256,7.461l.718.9a33.667,33.667,0,0,1,.73,41.114,34.936,34.936,0,1,0-31.768,20.4c.573,0,1.142-.018,1.707-.045.979.072,1.961.12,2.951.12A40.611,40.611,0,0,0,80.159,29.386,40.1,40.1,0,0,0,71.336,4.172M34.937,46.23A11.254,11.254,0,1,1,46.191,34.975,11.255,11.255,0,0,1,34.937,46.23" transform="translate(21.75 25.77)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

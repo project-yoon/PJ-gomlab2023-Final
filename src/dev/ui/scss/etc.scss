@@ -282,6 +282,11 @@
 		}
 	}
 	/* // 광고 제휴문의 */
+	/* 기타_JP */
+	.etc-board-wrap {
+		margin-top: 40px;
+	}
+	/* //기타_JP */
 }
 
 @include mobile {
@@ -315,5 +320,16 @@
 			}
 		}
 		/* // 광고 제휴문의 */
+		/* 기타_JP */
+		.etc-board-wrap {
+			table[class^=common-table] {
+				tr {
+					td {
+						padding-left: 16px;
+					}
+				}
+			}
+		}
+		/* //기타_JP */
 	}
 }

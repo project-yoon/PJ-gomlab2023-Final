@@ -484,12 +484,14 @@
 .more-view {
 	display: flex;
 	align-items: center;
+	gap: 4px;
 	&::after {
 		content: '';
 		display: inline-block;
 		width: 16px;
 		height: 16px;
 		background: icon(next) no-repeat;
+		background-size: cover;
 	}
 }
 .badge-type {

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.928" y1="0.097" x2="0.09" y2="0.93" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fd0015"/>
+      <stop offset="0.63" stop-color="#fb03de"/>
+      <stop offset="1" stop-color="#fb03f5"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" y1="-0.014" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f3f3f3"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="1.141" y1="0.091" x2="0.365" y2="0.905" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fb0028"/>
+      <stop offset="1" stop-color="#fb06f1"/>
+    </linearGradient>
+    <filter id="사각형_2">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.102" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="패스_1">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur-2"/>
+      <feFlood flood-opacity="0.102" result="color-2"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color-2"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="사각형_3">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur-3"/>
+      <feFlood flood-opacity="0.102" result="color-3"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-3"/>
+      <feComposite operator="in" in="color-3"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="icon_b2b_gommix2024" transform="translate(-1623 -3520)">
+    <path id="패스_51353" data-name="패스 51353" d="M32.982,0H87.018A32.982,32.982,0,0,1,120,32.982V87.018A32.982,32.982,0,0,1,87.018,120H32.982A32.982,32.982,0,0,1,0,87.018V32.982A32.982,32.982,0,0,1,32.982,0Z" transform="translate(1623 3520)" fill="url(#linear-gradient)"/>
+    <path id="패스_51354" data-name="패스 51354" d="M30.877,0H84.912a30.877,30.877,0,0,1,30.877,30.877V84.912a30.877,30.877,0,0,1-30.877,30.877H30.877A30.877,30.877,0,0,1,0,84.912V30.877A30.877,30.877,0,0,1,30.877,0Z" transform="translate(1625.105 3522.105)" fill="url(#linear-gradient-2)"/>
+    <g data-type="innerShadowGroup">
+      <rect id="사각형_2-2" data-name="사각형 2" width="12.478" height="17.41" transform="translate(1654.364 3528.024)" fill="url(#linear-gradient-3)"/>
+      <g transform="matrix(1, 0, 0, 1, 1623, 3520)" filter="url(#사각형_2)">
+        <rect id="사각형_2-3" data-name="사각형 2" width="12.478" height="17.41" transform="translate(31.36 8.02)" fill="#fff"/>
+      </g>
+    </g>
+    <g data-type="innerShadowGroup">
+      <path id="패스_1-2" data-name="패스 1" d="M64.178,13.533H13.533V64.178A12.564,12.564,0,0,0,26.1,76.741H64.178A12.563,12.563,0,0,0,76.741,64.178V26.1A12.565,12.565,0,0,0,64.178,13.533M58.414,48.127l-9.387,5.419-9.385,5.419a3.452,3.452,0,0,1-5.179-2.989V34.3a3.452,3.452,0,0,1,5.179-2.989l9.385,5.419,9.387,5.419a3.452,3.452,0,0,1,0,5.98" transform="translate(1640.83 3536.428)" fill="url(#linear-gradient-3)"/>
+      <g transform="matrix(1, 0, 0, 1, 1623, 3520)" filter="url(#패스_1)">
+        <path id="패스_1-3" data-name="패스 1" d="M64.178,13.533H13.533V64.178A12.564,12.564,0,0,0,26.1,76.741H64.178A12.563,12.563,0,0,0,76.741,64.178V26.1A12.565,12.565,0,0,0,64.178,13.533M58.414,48.127l-9.387,5.419-9.385,5.419a3.452,3.452,0,0,1-5.179-2.989V34.3a3.452,3.452,0,0,1,5.179-2.989l9.385,5.419,9.387,5.419a3.452,3.452,0,0,1,0,5.98" transform="translate(17.83 16.43)" fill="#fff"/>
+      </g>
+    </g>
+    <g data-type="innerShadowGroup">
+      <rect id="사각형_3-2" data-name="사각형 3" width="17.409" height="12.478" transform="translate(1632.427 3549.961)" fill="url(#linear-gradient-3)"/>
+      <g transform="matrix(1, 0, 0, 1, 1623, 3520)" filter="url(#사각형_3)">
+        <rect id="사각형_3-3" data-name="사각형 3" width="17.409" height="12.478" transform="translate(9.43 29.96)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

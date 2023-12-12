@@ -592,7 +592,8 @@
 						width: 20px;
 						height: 20px;
 						margin-top: -3px;
-						background: icon(down-lg);
+						background-image: icon(down-lg);
+						background-size: cover;
 						content: "";
 					}
 					&.active::after {
