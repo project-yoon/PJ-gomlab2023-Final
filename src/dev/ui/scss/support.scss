@@ -3,6 +3,25 @@
 @import "./utilities/mixins";
 
 .support {
+	u {
+		font-weight: 700;
+	}
+	/* 테이블 공통 */
+	.tbl-board-wrap {
+		table[class^=common-table] {
+			tbody {
+				tr {
+					td {
+						a {
+							display: unset;
+							overflow: unset;
+							text-overflow: unset;
+						}
+					}
+				}
+			}
+		}
+	}
 	/* 공지사항 */
 	.move-to-qna {
 		margin-top: 80px;
