@@ -24,23 +24,47 @@
 }
 
 /* 영문 */
+@font-face {
+	font-family: 'Noto Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../fonts/en/NotoSans-Regular.ttf) format('truetype'),
+		url(../fonts/en/NotoSans-Regular.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Noto Sans';
+	font-style: normal;
+	font-weight: 500;
+	src: url(../fonts/en/NotoSans-Medium.ttf) format('truetype'),
+	url(../fonts/en/NotoSans-Medium.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'Noto Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: url(../fonts/en/NotoSans-Bold.ttf) format('truetype'),
+	url(../fonts/en/NotoSans-Bold.ttf) format('truetype');
+}
 
 /* 일문 */
 @font-face {
 	font-family: 'Noto Sans JP';
 	font-style: normal;
 	font-weight: 400;
-	src: url(../fonts/jp/NotoSansJP-Light.otf) format('otf');
+	src: url(../fonts/jp/NotoSansJP-Regular.otf) format('opentype'),
+		url(../fonts/jp/NotoSansJP-Regular.otf) format('opentype');
 }
 @font-face {
 	font-family: 'Noto Sans JP';
 	font-style: normal;
 	font-weight: 500;
-	src: url(../fonts/jp/NotoSansJP-Regular.otf) format('otf');
+	src: url(../fonts/jp/NotoSansJP-Medium.otf) format('opentype'),
+		url(../fonts/jp/NotoSansJP-Medium.otf) format('opentype');
 }
 @font-face {
 	font-family: 'Noto Sans JP';
 	font-style: normal;
 	font-weight: 700;
-	src: url(../fonts/jp/NotoSansJP-Bold.otf) format('otf');
+	src: url(../fonts/jp/NotoSansJP-Bold.otf) format('opentype'),
+		url(../fonts/jp/NotoSansJP-Bold.otf) format('opentype');
 }

@@ -138,6 +138,8 @@ function dropdownList() {
 				changeOption.selected = true
 			}
 		}
+
+		languageChange(value);
 	}
 
 	function listDropdown(target) {
@@ -196,6 +198,72 @@ function dropdownList() {
 	}
 	init()
 }
+
+const domHTML = document.querySelectorAll('html');
+
+/* 다국어 변경 시 */
+function languageChange(value) {
+	domHTML.forEach((el) => {
+		localStorage.setItem('lang', value);
+		el.setAttribute('lang', localStorage.getItem('lang'));
+
+		languageInit();
+	});
+
+	document.querySelectorAll('.f-language .drop-list li a').forEach((el) => {
+		if (el.classList.contains('active')) {
+			localStorage.setItem('languageClass', 'active');
+		}
+	});
+}
+
+/* 다국어 lang 초기값 저장 */
+function languageInit() {
+	domHTML.forEach((htmlEle) => {
+		htmlEle.setAttribute('lang', localStorage.getItem('lang'));
+
+		let langData = htmlEle.getAttribute('lang');
+
+		document.querySelectorAll('.f-language .drop-list li a').forEach((fnbDropListEle) => {
+			let languageClassName = localStorage.getItem('languageClass');
+
+			document.querySelectorAll('.f-language .btn-drop-box').forEach((fnbBtnDropBoxEle) => {
+				if (langData === 'ko') {
+					htmlEle.className = 'fam-ko';
+					if (fnbDropListEle.classList.contains('active')) {
+						fnbDropListEle.classList.add(languageClassName);
+						fnbBtnDropBoxEle.textContent = '한국어';
+					}
+					if (fnbDropListEle.getAttribute('data-value') === 'ko') {
+						fnbDropListEle.classList.add(languageClassName);
+					}
+				} else if (langData === 'en') {
+					htmlEle.className = 'fam-en';
+					if (fnbDropListEle.classList.contains('active')) {
+						fnbDropListEle.classList.add(languageClassName);
+						fnbBtnDropBoxEle.textContent = 'English';
+					}
+					if (fnbDropListEle.getAttribute('data-value') === 'en') {
+						fnbDropListEle.classList.add(languageClassName);
+					}
+				} else if (langData === 'ja') {
+					htmlEle.className = 'fam-ja';
+					if (fnbDropListEle.classList.contains('active')) {
+						fnbDropListEle.classList.add(languageClassName);
+						fnbBtnDropBoxEle.textContent = '日本語';
+					}
+					if (fnbDropListEle.getAttribute('data-value') === 'ja') {
+						fnbDropListEle.classList.add(languageClassName);
+					}
+				} else {
+					htmlEle.setAttribute('lang', 'ko');
+					htmlEle.className = 'fam-ko';
+				}
+			});
+		});
+	});
+}
+
 /*tab*/
 function setTabs() {
 	const stringSelectors = '[data-tab-index] a, [data-tab-index] input'
@@ -624,4 +692,5 @@ $(document).ready(function () {
 	tooltip()
 	productRemove()
 	videoSet()
+	languageInit()
 })
