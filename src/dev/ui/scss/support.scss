@@ -82,13 +82,20 @@
 				padding-top: 24px;
 			}
 		}
-		// ul {
-		// 	li {
-		// 		ul {
-		// 			padding-left: 20px;
-		// 		}
-		// 	}
-		// }
+		.tbl-board-wrap {
+			table[class^=common-table] {
+				tbody {
+					tr {
+						td {
+							a {
+								display: block;
+								overflow: inherit;
+							}
+						}
+					}
+				}
+			} 
+		}
 	}
 }
 
