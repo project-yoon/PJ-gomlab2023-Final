@@ -12,23 +12,23 @@
 			<h1 class="cp_g">Forms</h1>
 			<h2 class="cp_g">(1) Checkbox</h2>
 	
-			<label for="checkbox01" class="inp-chk"><input type="checkbox" name="checkbox17" id="checkbox01" checked>item1</label>
-			<label for="checkbox02" class="inp-chk"><input type="checkbox" name="checkbox17" id="checkbox02">item2</label>
+			<label for="checkbox01" class="inp-chk"><input type="checkbox" name="checkbox17" id="checkbox01" checked><span>item1</span></label>
+			<label for="checkbox02" class="inp-chk"><input type="checkbox" name="checkbox17" id="checkbox02"><span>item2</span></label>
 			
 			<h3 class="cp_g">Disable</h3>
-			<label for="checkbox03" class="inp-chk"><input type="checkbox" name="checkbox15" id="checkbox03" checked disabled>item1</label>
-			<label for="checkbox05" class="inp-chk"><input type="checkbox" name="checkbox15" id="checkbox05" disabled>item2</label>
+			<label for="checkbox03" class="inp-chk"><input type="checkbox" name="checkbox15" id="checkbox03" checked disabled><span>item1</span></label>
+			<label for="checkbox05" class="inp-chk"><input type="checkbox" name="checkbox15" id="checkbox05" disabled><span>item2</span></label>
 	
 			<h3 class="cp_g">agree form</h3>
 			<ul class="agree-form" data-agree="agree-group">
-				<li><label for="agree-all" data-agree="agree-all"><input type="checkbox" id="agree-all"><strong>모두 동의 합니다.</strong></label></li>
-				<li><label for="chk1"><input type="checkbox" id="chk1">이용약관에 동의합니다. (필수)</label></li>
-				<li><label for="chk2"><input type="checkbox" id="chk2">개인정보처리방침에 동의합니다. (필수)</label></li>
+				<li><label for="agree-all" data-agree="agree-all" class="inp-chk"><input type="checkbox" id="agree-all"><span><strong>모두 동의 합니다.</strong></span></label></li>
+				<li><label for="chk1" class="inp-chk"><input type="checkbox" id="chk1"><span>이용약관에 동의합니다. (필수)</span></label></li>
+				<li><label for="chk2" class="inp-chk"><input type="checkbox" id="chk2"><span>개인정보처리방침에 동의합니다. (필수)</span></label></li>
 				<li>
-					<label for="chk3"><input type="checkbox" id="chk3">소프트웨어 관련한 정보 및 이벤트 정보 수신에 동의합니다. (선택)</label>
+					<label for="chk3" class="inp-chk"><input type="checkbox" id="chk3"><span>소프트웨어 관련한 정보 및 이벤트 정보 수신에 동의합니다. (선택)</span></label>
 					<div class="sub-check">
-						<label for="chk4"><input type="checkbox" id="chk4">이메일</label>
-						<label for="chk5"><input type="checkbox" id="chk5">SMS</label>
+						<label for="chk4" class="inp-chk"><input type="checkbox" id="chk4"><span>이메일</span></label>
+						<label for="chk5" class="inp-chk"><input type="checkbox" id="chk5"><span>SMS</span></label>
 					</div>
 				</li>
 			</ul>
@@ -36,7 +36,7 @@
 			<div class="form-item">
 				<label class="form-name">자동결제를 해지하시더라도<br>YYYY-MM-DD까지 서비스 이용이 가능합니다.</label>
 				<div class="form-cont">
-					<label for="out1"><input type="checkbox" name="user-age" id="out1"><span>네, 자동결제를 해지하겠습니다.​</span></label>
+					<label for="out1" class="inp-chk"><input type="checkbox" name="user-age" id="out1"><span>네, 자동결제를 해지하겠습니다.​</span></label>
 				</div>
 			</div>
 
@@ -165,7 +165,7 @@
 				</div>
 			</div>
 			<h3 class="cp_g">Quantity</h3>
-			<div class="form-cont">
+			<div class="form-cont form-drop-quantity"> <!--231220_수정 : 클래스 추가-->
 				<input type="text" class="inp-line" value="1">
 				<select class="btn-drop-quantity" data-event="quantity">
 					<option value="1">1</option>
@@ -180,7 +180,7 @@
 					<option value="10">10</option>
 				</select>
 			</div>
-			<div class="form-cont">
+			<div class="form-cont form-drop-quantity"> <!--231220_수정 : 클래스 추가-->
 				<input type="text" class="inp-dropbox" value="1">
 				<select class="btn-drop-quantity" data-event="quantity">
 					<option value="1">1</option>

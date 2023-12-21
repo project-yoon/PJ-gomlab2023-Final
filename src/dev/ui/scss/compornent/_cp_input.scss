@@ -37,12 +37,13 @@
 	}
 	.form-filename {
 		display: block;
-		padding: 4px 0;
+		padding: 0;
 		@include txt(14);
 		max-width: 217px;
 		box-sizing: border-box;
 		@include ellipsis;
-
+		height: $inputSize-md;
+		line-height: $inputSize-md;
 		&.null {
 			color: $color-gray-06;
 		}
@@ -64,13 +65,15 @@
 	& + .form-item {
 		margin-top: 24px;
 	}
-	&:has(.form-label) {
+	&.has-label {
 		position: relative;
 		padding-left: 132px;
 	}
 }
+
 .form-cont {
 	position: relative;
+	max-width: 327px;
 	.form-drop-box {
 		width: 327px;
 	}
@@ -153,7 +156,7 @@
 			}
 		}
 	}
-	&:has(.btn-drop-quantity) {
+	&.form-drop-quantity {
 		width: 140px;
 		& > input {
 			width: inherit;
@@ -171,18 +174,18 @@
 	display: flex;
 	gap: 13px;
 	max-width: $input-col;
-	&:has([class^=btn-]) {
-		width: 327px;
-	}
-	&:has(.btn-item-util) {
-		width: 370px;
-		align-items: center;
-	}
 	.form-cont {
-		flex: 1;
+		width: $input-item-wd;
 		input[type=text],
 		input[type=password] {
 			width: 100%;
+		}
+	}
+	&.narrow {
+		max-width: $input-item-wd;
+		.form-cont {
+			width: unset;
+			flex: 1;
 		}
 	}
 }
@@ -296,8 +299,15 @@ input[type=checkbox]{
 	background-size: contain auto;
 	&:checked {
 		background-image: icon(checkbox-on);
+		&:disabled {
+			background-image: icon(checkbox-on, '828282');
+		}
 	}
-	&:disabled + span {
+	&:disabled {
+		cursor: default;
+		background-image: icon(checkbox-off, '828282');
+	}
+	&:disabled + span, &:disabled + span > strong {
 		color: $color-gray-04;
 	}
 	&:checked + span {
@@ -312,10 +322,17 @@ input[type=radio] {
 	background-size: contain;
 	&:checked {
 		background-image: icon(radio-on);
+		&:disabled {
+			background-image: icon(radio-on, '828282');
+		}
 	}
 	& + span {
 		display: inline-block;
 		@include txt(14);
+	}
+	&:disabled {
+		cursor: default;
+		background-image: icon(radio-off, '828282');
 	}
 	&:disabled + span {
 		color: $color-gray-04;
@@ -331,21 +348,24 @@ input[type=radio] {
 	padding-left: 32px;
 	@include txt(14);
 	line-height: 24px;
-	cursor: pointer;
 	input {
 		position: absolute;
 		left: 0;
 		top: 0;
+		cursor: pointer;
+		& + span {
+			cursor: pointer;
+		}
+		&:disabled {
+			cursor: default;
+			& + span {
+				color: $color-gray-04;
+				cursor: default;
+			}
+		}
 	}
 }
-label:has(input[type=radio]),
-label:has(input[type=checkbox]) {
-	@extend .inp-chk;
-	&:has(:disabled) {
-		color: $color-gray-04;
-		cursor: no-drop;
-	}
-}
+
 .chk-notice {
 	@extend .inp-chk;
 	input[type=checkbox] {
@@ -624,6 +644,7 @@ label:has(input[type=checkbox]) {
 /* 반응형 */
 @include tablet {
 	.form-cont {
+		max-width: unset;
 		input[type=text],
 		input[type=password] {
 			width: 100%;
@@ -646,19 +667,19 @@ label:has(input[type=checkbox]) {
 			min-height: unset;
 			display: block;
 		}
-		&:has(.form-label) {
+		&.has-label {
 			display: block;
 			padding-left: 0;
 		}
 	}
 	.form-col {
 		max-width: unset;
-		&:has([class^=btn-]) {
-			width: auto;
-		}
 		.form-cont {
 			flex: 1;
 			width: unset;
+		}
+		&.narrow {
+			max-width: unset;
 		}
 	}
 	textarea {
@@ -713,12 +734,14 @@ label:has(input[type=checkbox]) {
 		}
 	}
 	.form-col {
-		display: block;
-		&:has([class^=btn-]) {
-			display: flex;
-		}
-		.form-cont + .form-cont {
-			margin-top: 16px;
+		flex-wrap: wrap;
+		.form-cont {
+			flex: 1;
+			& + .form-cont {
+				width: 100%;
+				margin-top: 16px;
+				flex: unset;
+			}
 		}
 	}
 	/* 툴팁 */

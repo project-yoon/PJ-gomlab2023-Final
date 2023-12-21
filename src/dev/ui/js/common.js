@@ -53,12 +53,12 @@ function centerScrollAmount(element) {
 
 // 스크롤 값을 설정하는 함수
 function setScrollLeft(el, smooth = 'auto') {
-    let scrollAmount = centerScrollAmount(el)
-    let menuUl = el.parentElement
-    menuUl.scrollTo({
-        left: scrollAmount,
-        behavior: smooth
-    })
+	let scrollAmount = centerScrollAmount(el)
+	let menuUl = el.parentElement
+	menuUl.scrollTo({
+		left: scrollAmount,
+		behavior: smooth
+	})
 }
 // 스크롤 이벤트 과도한 발생 방지용 함수
 const throttle = (func, limit) => {
@@ -82,28 +82,57 @@ const throttle = (func, limit) => {
 		}
 	}
 }
+const isMobile = () => { return window.innerWidth <= 768 }
 
+function useMobileFixMenu(elFix) {
+	if ($(elFix).length == 0) return
+	let container = $('#container')
+	
+	function setSnbFix() {
+		if (isMobile()) {
+			$(container).css('margin-top', '85px')
+		} else {
+			$(container).attr('style', '')
+		}
+	}
+
+	$(window).on('load resize orientationchange', function () {
+		setSnbFix()
+	});
+	setSnbFix()
+}
 
 //Header Scroll Fixed
 function initHeaderFixed() {
-	let headerWrap = $('#header-wrap');
-	let fixedIs = false;
-	let hwOfsTop;
+	let headerWrap = $('#header-wrap')
+	let isActived
+	let headerOffsetTop
+	let isFixed
 
+	function setValue() {
+		headerOffsetTop = $(headerWrap).offset().top
+		isActived = headerOffsetTop <= $(window).scrollTop()
+	}
+	function setHeaderPosition() {
+		if (isFixed !== isActived) {
+			if (isActived) {
+				$(headerWrap).addClass('fixed');
+			} else {
+				$(headerWrap).removeClass('fixed');
+			}
+			isFixed = isActived
+		}
+	}
 	$(window).on('load resize orientationchange', function () {
-		// hwOfsTop = headerWrap.offset().top;
-		hwOfsTop = 0
+		setHeaderPosition()
 	});
 
 	$(window).on('scroll', function () {
-		if ($(window).scrollTop() >= hwOfsTop && fixedIs == false) {
-			headerWrap.addClass('fixed');
-			fixedIs = true;
-		} else if ($(window).scrollTop() < hwOfsTop && fixedIs == true) {
-			headerWrap.removeClass('fixed');
-			fixedIs = false;
-		}
+		isActived = headerOffsetTop <= $(window).scrollTop()
+		setHeaderPosition()
 	});
+
+	setValue()
 }
 
 //GNB G Navi
@@ -116,24 +145,29 @@ function initGnbGnavi() {
 	let deps2Navi = gnItem.find('>.deps2');
 	let d2nList = deps2Navi.find('>ul');
 	let moGnbOpenIs = false;
+	let deviceWidth;
+	let isMobile
+	
+	function setValue() {
+		isMobile = window.innerWidth <= 1279 ? 'mo' : 'pc'
+	}
 
 	$(window).on('load resize orientationchange', function () {
-		if ($(window).width() > 1279 && deviceMode != 'pc') {
-			deviceMode = 'pc';
-
+		setValue()
+		if ($(window).width() > 1279 && isMobile != 'mo') {
 			moGnbOpenIs = false;
 			btnGnb.removeClass('close').addClass('open');
 			gnb.removeAttr('style');
 			$('body').removeAttr('style')
-		} else if ($(window).width() <= 1279 && deviceMode != 'mo') {
-			deviceMode = 'mo';
+		} else if (isMobile && deviceMode != 'pc') {
+			// $(gnb).removeAttr('style')
 		}
 	});
 
 	/* (변경) 오버 시 */
 	gnItem.find('>a').on({
 		mouseenter: function () {
-			if (deviceMode == 'pc') {
+			if (isMobile == 'pc') {
 				if ($(this).hasClass('on') == false && $(this).parent().find('.deps2').length > 0) {
 					gnItem.find('>a').removeClass('on');
 					deps2Navi.removeAttr('style');
@@ -150,7 +184,7 @@ function initGnbGnavi() {
 			}
 		},
 		mouseleave: function (e) {
-			if (deviceMode == 'pc') {
+			if (isMobile == 'pc') {
 				$(this).removeClass('on');
 			}
 		},
@@ -160,7 +194,7 @@ function initGnbGnavi() {
 		.next('.deps2')
 		.on({
 			mouseleave: function (e) {
-				if (deviceMode == 'pc') {
+				if (isMobile == 'pc') {
 					$(this).prev().removeClass('on');
 					$(this).hide();
 				}
@@ -172,14 +206,14 @@ function initGnbGnavi() {
 	});
 
 	$('html,body').on('click', function () {
-		if (deviceMode == 'pc') {
+		if (isMobile == 'pc') {
 			gnItem.find('>a').removeClass('on');
 			deps2Navi.removeAttr('style');
 		}
 	});
 
 	$(window).on('scroll', function () {
-		if (deviceMode == 'pc') {
+		if (isMobile == 'pc') {
 			gnItem.find('>a').removeClass('on');
 			deps2Navi.removeAttr('style');
 		}
@@ -208,6 +242,8 @@ function initGnbGnavi() {
 			moGnbOpenIs = false;
 		}
 	});
+
+	setValue()
 }
 
 //set quickmenu + Contents LNB
@@ -226,18 +262,13 @@ function initFixElements() {
 	const wrap = document.querySelector('#container')
 	const header = document.querySelector('#header-wrap')
 	const quickMenu = document.querySelector('#quick-menu')
-	const lnb = document.querySelector('.lnb-wrap') || false
-	// const snbFix = document.querySelector('.snb-wrap.snb-fix') || false
-	// const snbFixmenu = snbFix ? snbFix.querySelector('.snb-menu') : false
+	const lnb = document.querySelector('.lnb-wrap:not([data-scroll])') || false
 	const contentFooter = document.querySelector('.content-footer') || false
 
 	let quickMargin = quickMenu ? parseInt(window.getComputedStyle(quickMenu).bottom) : 0
 	let quickLastState = ''
 	let lnbLastState = ''
 	let isLnbUsed = lnb ? 100 : 0
-
-	// let setQuickBottom = quickMargin + isLnbUsed
-	// let isMobile = window.innerWidth <= 768
 
 	function getHeight(element) {
 		if (element) {
@@ -251,7 +282,8 @@ function initFixElements() {
 	let lnbValue = () => {
 		let conFHeight = getHeight(contentFooter)
 		let triggerPoint = getHeight(wrap) + getHeight(header) - conFHeight
-		let endPosition = getHeight(wrap) - getHeight(lnb)
+		let useContentFooter = contentFooter ? getHeight(contentFooter) : 0
+		let endPosition = (getHeight(wrap) - useContentFooter) - getHeight(lnb)
 
 		return {endPosition, triggerPoint}
 	}
@@ -507,15 +539,15 @@ function initLanguageList() {
 // scroll animation util
 function increase(counter, duration) {
 	const  updateCounter = () => {
-        const target = +Number(counter.dataset.counter)
-        const c = +counter.innerText
+		const target = +Number(counter.dataset.counter)
+		const c = +counter.innerText
 
-        const increment = target / duration
-        if(c < target) {
-            counter.innerText = `${Math.ceil(c + increment)}`
+		const increment = target / duration
+		if(c < target) {
+			counter.innerText = `${Math.ceil(c + increment)}`
 			setTimeout(updateCounter, 1) 
 		}
-    }
+	}
 	updateCounter()
 }
 function increaseAnimation(increaseEl) {
@@ -593,10 +625,9 @@ function marquee() {
 	function animateTarget(target) {
 		let distance = 100
 		let currentX = 0
-	  
 		function animate() {
 			if (currentX > -distance) {
-				currentX -= 1 * 0.05 //속도 조절 (숫자 작을수록 느려지게 됩니다)
+				currentX -= 1 * 0.02 //속도 조절 (숫자 작을수록 느려지게 됩니다)
 				target.style.transform = `translateX(${currentX}%)`
 				requestAnimationFrame(animate)
 			} else {
@@ -622,6 +653,9 @@ $(document).ready(function () {
 
 
 window.addEventListener('load', () => {
+	useMobileFixMenu('.snb-fix')
+	useMobileFixMenu('.customer .tab-underline')
+
 	initHeaderFixed(); //Header Scroll Fixed
 	initFixElements(); //Quick Menu + Contents LNB position set
 	dataMenuEvent()

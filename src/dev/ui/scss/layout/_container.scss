@@ -4,22 +4,17 @@
 	margin-top: 79px;
 	box-sizing: border-box;
 	overflow-x: hidden;
-	&:has(.lnb-wrap) {
-		.quick-menu {
-			bottom: 100px;
-		}
-	}
-	
-	&:has(#contents-head) {
-		.contents-body {
-			margin-top: 0;
-		}
+
+	#contents-head + .contents-body,
+	#contents-head + .lnb-wrap + .contents-body {
+		margin-top: 0;
 	}
 	.contents-body {
 		margin-top: 80px;
 		padding-bottom: 200px;
 	}
 	.panel {
+		position: relative;
 		max-width: 1152px;
 		margin: 0 auto;
 		box-sizing: border-box;
@@ -27,25 +22,6 @@
 			content: '';
 			display: block;
 			clear: both;
-		}
-		//snb section only layout
-		&:has(.snb-wrap) {
-			display: grid;
-			grid-template-columns: 188px 1fr;
-			max-width: 1152px;
-			padding: 0 24px;
-			margin: 0 auto;
-			box-sizing: border-box;
-			.inner {
-				padding-left: 40px;
-				padding-right: 0;
-				width: 100%;
-				min-width: 0;
-				box-sizing: border-box;
-			}
-			&::after {
-				display: none;
-			}
 		}
 		&[class*='wide'] {
 			width: 100%;
@@ -72,6 +48,9 @@
 	}
 	/*snb*/
 	.snb-wrap {
+		float: left;
+		padding-left: 24px;
+		width: 188px;
 		.snb-inner {
 			.snb-title {
 				@include txt(24);
@@ -93,8 +72,8 @@
 							align-items: center;
 							box-sizing: border-box;
 							width: 100%;
-							height: 32px;
-							padding: 0 32px 0 16px;
+							min-height: 32px;
+							padding: 10px 32px 10px 16px;
 							@include txt(14);
 							font-weight: 700;
 							border-radius: 4px;
@@ -182,13 +161,17 @@
 						display: none;
 						li {
 							a {
-								padding: 0 24px;
+								padding: 10px 24px;
 								font-weight: 400;
 							}
 						}
 					}
 				}
 			}
+		}
+
+		& + .inner {
+			padding-left: 252px;
 		}
 	}
 	/* 서브 페이지별 공통 여백 (제품 유/무료, 비즈니스) [D]이외 추가 확인되면 페이지명을 추가 해주세요 */
@@ -295,23 +278,11 @@
 }
 @include mobile {
 	#container {
-		&:has(.snb-fix) {
-			margin-top: 85px;
-		}
 		.contents-body {
 			margin-top: 40px;
 			padding-bottom: 150px;
 		}
 		.panel {
-			//snb section only layout
-			&:has(.snb-wrap) {
-				display: block;
-				padding: 0;
-				.inner {
-					padding-left: 24px;
-					padding-right: 24px;
-				}
-			}
 			.snb-dropdown:first-child {
 				.snb-inner {
 					.snb-fake-label {
@@ -325,6 +296,8 @@
 		}
 		/*snb*/
 		.snb-wrap {
+			float: unset;
+			width: auto;
 			padding: 0 24px;
 			.snb-inner {
 				.snb-title {
@@ -395,6 +368,7 @@
 			}
 			/*모바일에서 멀티 드롭다운 case*/
 			&.snb-dropdown {
+				width: auto;
 				.snb-inner {
 					position: relative;
 					.snb-fake-label {

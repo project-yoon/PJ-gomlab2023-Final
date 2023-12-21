@@ -24,7 +24,9 @@
 								<div class="out-agree">
 									<label class="form-name">아직 NN일동안 무료체험이 가능합니다.</label>
 									<div class="form-cont">
-										<label for="out1"><input type="checkbox" name="user-age" id="out1"><span>네, 자동결제를 해지하겠습니다.</span></label>
+										<!-- [D] 231222 inp-chk클래스 추가, span감싸기 -->
+										<label for="out1" class="inp-chk"><input type="checkbox" name="user-age" id="out1"><span>네, 자동결제를 해지하겠습니다.</span></label>
+										<!-- //[D] 231222 inp-chk클래스 추가, span감싸기 -->
 									</div>
 								</div>
 
@@ -32,9 +34,11 @@
 									<div class="out-step-agree-form">
 										<ul class="agree-form">
 											<!-- 231129_수정_01 : type교체, name추가 -->
-											<li><label for="out-agree1"><input type="radio" id="out-agree1" name="agree">서비스에 만족하지 않아 더 이상 사용하지 않습니다.</label></li>
-											<li><label for="out-agree2"><input type="radio" id="out-agree2" name="agree">상품의 다양성/가격 품질 불만</label></li>
-											<li><label for="out-agree3"><input type="radio" id="out-agree3" name="agree">기타 사유 (직접입력)</label></li>
+											<!-- [D] 231222 inp-chk클래스 추가, span감싸기 -->
+											<li><label for="out-agree1"  class="inp-chk"><input type="radio" id="out-agree1" name="agree"><span>서비스에 만족하지 않아 더 이상 사용하지 않습니다.</span></label></li>
+											<li><label for="out-agree2"  class="inp-chk"><input type="radio" id="out-agree2" name="agree"><span>상품의 다양성/가격 품질 불만</span></label></li>
+											<li><label for="out-agree3"  class="inp-chk"><input type="radio" id="out-agree3" name="agree"><span>기타 사유 (직접입력)</span></label></li>
+											<!-- [D] //231222 inp-chk클래스 추가, span감싸기 -->
 											<!-- // 231129_수정_01 -->
 										</ul>
 										<div class="form-item">

@@ -99,6 +99,7 @@
 			padding: 0 20px;
 			height: 29px;
 			border-radius: 51px;
+			background-color: $color-gray-21;
 			&.active {
 				color: $color-white;
 				background-color: $color-black-1;
@@ -478,6 +479,7 @@
 			background: $color-gray-21;
 			border-radius: 4px;
 			@include txt(16);
+			overflow-x: auto;
 		}
 	}
 }

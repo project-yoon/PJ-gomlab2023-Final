@@ -8,26 +8,27 @@
 		height: 800px;
 		background: transparent linear-gradient(90deg, #00000099 0%, #16161666 42%, #61616100 100%) 0% 0% no-repeat;
 		color: $color-white;
-		.head-visual-wrap {
-			.btn-play {
-				display: none;
-			}
+		.head-tit-wrap {
+			max-width: 1280px;
 		}
 		.logo {
-			width: 241px;
-			height: 70px;
+			width: 275px;
+			height: 80px;
 			img {
 				@include image-fit;
 			}
 		}
-		h1 {
-			margin-top: 40px;
-			font-size: 56px; //임시 적용
-			line-height: 71px; //임시 적용
-			color: $color-white;
+		.title {
+			font-size: 88px;
+			line-height: 105px;
+			font-weight: 700;
+			text-shadow: 0 10px 20px #00000099;
 		}
 		.intro {
-			margin-top: 40px;
+			margin-top: 17px;
+		}
+		.btn_set {
+			margin-top: 36px;
 		}
 	}
 	/* (공통) 컨텐츠 부분 */
@@ -35,10 +36,10 @@
 		position: relative;
 		z-index: 1;
 		padding-top: 114px;
-		&:has(.membership-news) {
+		&.membership-news-wrap {
 			padding-top: 140px;
 		}
-		&:has(.gom-use-guide-inner-wrap) {
+		&.gom-use-guide-inner-wrap {
 			padding-top: 0;
 		}
 	}
@@ -103,8 +104,12 @@
 		flex-basis: calc(50% + 63px);
 		.benefit-item {
 			position: absolute;
-			width: 435px;
-			height: 600px;
+			top: 24.6vh;
+			left: 50%;
+			width: 45.64vh;
+			max-width: 435px;
+			height: 62.95vh;
+			max-height: 600px;
 			padding: 37px 40px 40px;
 			background: linear-gradient(180deg, #FFFFFFCC 0%, #FFFFFF 100%) 0% 0% no-repeat;
 			border: 1px solid $color-white;
@@ -116,8 +121,6 @@
 			transition: 0.5s ease-in-out;
 			transition-property: transform, opacity;
 			transform-origin: -150% 150%;
-			left: 50%;
-			top: 235px;
 			transform: translateX(-42%);
 			dt {
 				@include txt(36);
@@ -308,7 +311,7 @@
 				height: 229px;
 				margin-bottom: 48px;
 				background: url('#{$img-url}/membership/membership_ticket_txt.png') center center no-repeat;
-				background-size: auto 100%;
+				background-size: contain;
 				font-size: 0;
 				line-height: 0;
 				text-indent: -9999px;
@@ -371,9 +374,21 @@
 	}
 	/* 소식 */
 	.membership-news {
-		height: 403px;
+		padding: 80px 80px 77px;
 		border-radius: 10px;
 		background-color:  #00FF2233;
+		h2 {
+			@include txt(36);
+			font-weight: 700;
+			margin-bottom: 20px;	
+		}
+		.exp {
+			@include txt(24);
+		}
+		.btn-wrap {
+			margin-top: 32px;
+			justify-content: flex-start;
+		}
 	}
 	/* 곰패스 유의사항 */
 	.membership-notice {
@@ -411,6 +426,17 @@
 		}
 		img {
 			@include image-fit;
+		}
+	}
+	/* 애니메이션 */
+	[data-txt-animation] {
+		opacity: 0;
+		transform: translateY(80px);
+		transition: 1s cubic-bezier(0.23, 1, 0.32, 1);
+		transition-property: opacity, transform;
+		&.active {
+			opacity: 1;
+			transform: translateY(0px);
 		}
 	}
 }
@@ -580,35 +606,16 @@
 		.head-visual {
 			display: block;
 			height: auto;
-			padding: 0;
-			background: none;
-			text-align: center;
+			padding: 48px 24px;
+			background: url(#{$img-url}/membership/membership_visual_bg.png) 0 0 no-repeat;
+			background-size: cover;
+			//text-align: center;
 			color: $color-black;
 			.head-visual-wrap {
+				height: 53.15vw;
+				margin-top: 40px;
 				position: static;
-				.btn-play {
-					display: block;
-					z-index: 5;
-					@include posCenter;
-					width: 64px;
-					height: 64px;
-					background-image: icon(btn-play);
-					background-size: cover;
-					background-repeat: no-repeat;
-					background-position: 0 0;
-					font-size: 0;
-					line-height: 0;
-					text-indent: -9999px;
-					&.disabled {
-						opacity: 0;
-						visibility: hidden;
-					}
-				}
-			}
-			.head-tit-wrap {
-				margin-top: 12px;
-				padding: 40px 24px;
-				background: linear-gradient(270deg, #E5FAFF 0%, #F9F4FF 100%) 0% 0% no-repeat; 
+				border-radius: 4px;
 			}
 			.logo {
 				width: unset;
@@ -617,39 +624,34 @@
 					margin: 0 auto;
 				}
 			}
-			h1 {
-				margin-top: 24px;
-				color: $color-black;
-				@include txt(24);
+			.title {
+				margin-top: 4px;
+				color: #5772E8;
+				font-size: 48px;
+				line-height: 58px;
+				text-align: center;
+				text-shadow: none;
 			}
 			.intro {
-				margin-top: 16px;
+				margin-top: 12px;
 				@include txt(14);
+				text-align: center;
 			}
 			.btn_set {
 				margin-top: 24px;
 				[class^=btn-] {
 					width: 100%;
 					height: 36px;
-					background: linear-gradient(270deg, #5772E8 0%, #991FE8 100%) 0% 0% no-repeat;
-					color: $color-white;
 				}
 			}
 		}
 		/* (공통) 컨텐츠 부분 */
-		#container {
-			.panel {
-				&.membership-benefit {
-					margin: 11px auto 0;
-				}
-			}
-		}
 		.inner {
 			padding-top: 64px;
-			&:has(.membership-news) {
+			&.membership-news-wrap {
 				padding-top: 40px;
 			}
-			&:has(.gom-use-guide-inner-wrap) {
+			&.gom-use-guide-inner-wrap {
 				padding-top: 0;
 			}
 		}
@@ -700,11 +702,11 @@
 			width: calc(100% - 48px);
 			height: calc(100% - 140px);
 			.benefit-item {
-				top: 35%;
+				top: 30vh;
 				width: 75.2vw;
 				max-width: 335px;
 				height: unset;
-				min-height: 320px;
+				min-height: 47.9vh;
 				transform: unset;
 				padding: 24px 24px 32px;
 				box-shadow:  0 20px 20px #5772E833;
@@ -892,8 +894,30 @@
 		}
 		/* 소식 */
 		.membership-news {
-			height: 119px;
-			background-color:  #00FF2233;
+			position: relative;
+			min-height: 400px;
+			padding: 48px 24px 84px;
+			border-radius: 4px;
+			box-sizing: border-box;
+			h2 {
+				text-align: center;
+				@include txt(24);
+			}
+			.exp {
+				text-align: center;
+				@include txt(14);
+			}
+			.btn-wrap {
+				position: absolute;
+				bottom: 24px;
+				left: 0;
+				width: 100%;
+				justify-content: center;
+				.btn-lg {
+					height: 36px;
+					padding: 0 32px;
+				}
+			}
 		}
 		/* 곰패스 유의사항 */
 		.membership-notice {

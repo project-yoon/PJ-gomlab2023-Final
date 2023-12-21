@@ -27,33 +27,39 @@
 							<h2 class="gom-title">[2023-01-12] 임오균 강사의 곰믹스 프로 라이브 강의 (~12/31까지)</h2>
 							<div class="course-live-apply-right-1">
 								<div class="course-live-apply-form">
+									<!-- [D] 231220_수정 : 위키154_필수 항목 표시(required 클래스 추가) -->
 									<div class="form-item">
-										<label for="name" class="form-label">이름</label>
+										<label for="name" class="form-label required">이름</label>
 										<div class="form-cont">
 											<input type="text" id="name" class="inp-box">
 										</div>
 									</div>
 									<div class="form-item">
-										<label for="emailAddress" class="form-label">이메일 주소</label>
+										<label for="emailAddress" class="form-label required">이메일 주소</label>
 										<div class="form-cont">
 											<input type="text" id="emailAddress" class="inp-box">
 										</div>
 									</div>
 									<div class="form-item">
-										<label for="phoneNumber" class="form-label">휴대폰 번호</label>
+										<label for="phoneNumber" class="form-label required">휴대폰 번호</label>
 										<div class="form-cont">
 											<input type="text" id="phoneNumber" class="inp-box">
 										</div>
 									</div>
+									<!-- //[D] 231220_수정 : 위키154_필수 항목 표시(required 클래스 추가) -->
 								</div>
 							</div>
 							<div class="course-live-apply-right-2">
-								<div class="agree-wrap form-cont">
+								<!-- [D] 231222 agree-form 수정 -->
+								<div class="agree-form form-cont">
+									<!-- [D] 231220_수정 : 위키155번 : 툴팁주석처리 및 문구 수정, 팝업연결 -->
 									<label for="agree1" class="inp-chk">
+										<!-- [D] 231222 span감싸기 -->
 										<input type="checkbox" name="" id="agree1">
-										개인정보 제 3자 제공에 동의합니다. (필수)
+										<span>개인정보 제 3자 제공 동의 <button type="button" data-role="open__/dev/html/order/popup_order_agree_2">상세보기</button> (필수)</span>
+										<!-- //[D] 231222 span감싸기 -->
 									</label>
-									<div class="tooltip-wrap">
+									<!-- <div class="tooltip-wrap">
 										<a href="#!" class="tooltip-button">툴팁 보기</a>
 										<div class="tooltip-cont">
 											<p class="tooltip-title">개인정보 수집 및 이용 동의</p>
@@ -63,7 +69,8 @@
 												<li>보유 및 이용기간 : 3년 보관 후 파기</li>
 											</ul>
 										</div>
-									</div>
+									</div> -->
+									<!-- //[D] 231220_수정 : 위키155번 : 툴팁주석처리 및 문구 수정, 팝업연결 -->
 								</div>
 								<div class="apply-notice">
 									<div class="apply-notice-title">신청 유의사항</div>

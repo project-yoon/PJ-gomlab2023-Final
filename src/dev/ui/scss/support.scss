@@ -3,26 +3,16 @@
 @import "./utilities/mixins";
 
 .support {
-	u {
-		font-weight: 700;
-	}
-	/* 테이블 공통 */
-	.tbl-board-wrap {
-		table[class^=common-table] {
-			tbody {
-				tr {
-					td {
-						a {
-							display: unset;
-							overflow: unset;
-							text-overflow: unset;
-						}
-					}
-				}
+	/* 공지사항 */
+	.contents-head {
+		padding-top: 80px;
+		&.page-head {
+			h1 {
+				margin-top: 0;
+				@include txt(20);
 			}
 		}
 	}
-	/* 공지사항 */
 	.move-to-qna {
 		margin-top: 80px;
 		padding: 20px;
@@ -72,7 +62,7 @@
 		ul {
 			li {
 				ul {
-					//padding-left: 20px;
+					padding-left: 20px;
 				}
 			}
 		}
@@ -83,20 +73,25 @@
 @include desktop {}
 @include tablet {}
 @include mobile {
-	/* 공지사항 */
-	.move-to-qna {
-		margin-top: 60px;
-		padding: 24px;
-		display: block;
-		text-align: center;
-		.btn-sm {
-			margin-top: 16px;
+	.support {
+		/* 공지사항 */
+		.contents-head {
+			padding-top: 40px;
 		}
-	}
-	/* 운영정책_이용약관 */
-	.terms-head {
-		.form-drop-box {
-			flex: 1;
+		.move-to-qna {
+			margin-top: 60px;
+			padding: 24px;
+			display: block;
+			text-align: center;
+			.btn-sm {
+				margin-top: 16px;
+			}
+		}
+		/* 운영정책_이용약관 */
+		.terms-head {
+			.form-drop-box {
+				flex: 1;
+			}
 		}
 	}
 }

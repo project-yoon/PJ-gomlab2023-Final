@@ -95,16 +95,16 @@ textarea {
 	-webkit-appearance: none;
 	-webkit-font-smoothing: antialiased;
 }
-input,
-button,
-select,
+input:lang(en),
+button:lang(en),
+select:lang(en),
 textarea:lang(en) {
 	font-family: 'Noto Sans', sans-serif;
 }
-input,
-button,
-select,
-textarea:lang(jp) {
+input:lang(ja),
+button:lang(ja),
+select:lang(ja),
+textarea:lang(ja) {
 	font-family: 'Noto Sans JP', sans-serif;
 }
 button{

@@ -6,14 +6,13 @@
 	#container {
 		.panel {
 			position: relative;
-			&:has(.snb-wrap) {
-				padding-top: 80px;
-			}
+			padding-top: 80px;
 		}
-	}
-	.contents-body {
-		position: relative;
-		background-color: $color-gray-21;
+		.contents-body {
+			position: relative;
+			margin-top: 0;
+			background-color: $color-gray-21;
+		}
 	}
 	.snb-wrap {
 		.snb-title {
@@ -28,9 +27,12 @@
 		}
 		.btn-md {
 			margin-top: 24px;
-			white-space: nowrap;
-			padding: 0;
 			width: 100%;
+			padding: 10px 35px;
+			height: unset;
+			min-height: $button-size-md;
+			text-align: center;
+			white-space: unset;
 		}
 	}
 	.btn-wrap {
@@ -76,6 +78,7 @@
 					p {
 						@include txt(16);
 						font-weight: 700;
+						word-break: keep-all;
 					}
 				}
 			}
@@ -165,7 +168,7 @@
 @include mobile {
 	.download {
 		#container {
-			.panel:has(.snb-wrap) {
+			.panel {
 				padding-top: 24px;
 			}
 		}
@@ -189,6 +192,7 @@
 			align-items: center;
 			.snb-inner {
 				.snb-radio {
+					margin-right: 16px;
 					ul {
 						display: flex;
 						gap: 12px;

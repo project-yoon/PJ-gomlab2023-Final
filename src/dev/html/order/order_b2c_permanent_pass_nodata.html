@@ -73,26 +73,28 @@
 								<h2>결제수단</h2>
 							</div>
 							<div class="cmn-content-detail">
-								<label for="radio01" class="inp-pay">
+								<!-- [D] 231222 inp-chk클래스 추가, span감싸기 -->
+								<label for="radio01" class="inp-chk inp-pay">
 									<input type="radio" name="radio" id="radio01" checked>
 									<span>신용카드</span>
 								</label>
-								<label for="radio02" class="inp-pay">
+								<label for="radio02" class="inp-chk inp-pay">
 									<input type="radio" name="radio" id="radio02">
 									<span><img src="/dev/ui/images/layout/icon_sns_pay_kakao.png" class="btn-common-sns-img" alt="카카오페이"></span>
 								</label>
-								<label for="radio03" class="inp-pay">
+								<label for="radio03" class="inp-chk inp-pay">
 									<input type="radio" name="radio" id="radio03">
 									<span><img src="/dev/ui/images/layout/icon_sns_pay_naver.png" class="btn-common-sns-img" alt="네이버페이"></span>
 								</label>
-								<label for="radio04" class="inp-pay">
+								<label for="radio04" class="inp-chk inp-pay">
 									<input type="radio" name="radio" id="radio04">
 									<span>휴대폰</span>
 								</label>
-								<label for="radio05" class="inp-pay">
+								<label for="radio05" class="inp-chk inp-pay">
 									<input type="radio" name="radio" id="radio05">
 									<span>가상계좌</span>
 								</label>
+								<!-- //[D] 231222 inp-chk클래스 추가, span감싸기 -->
 								<ul class="dot-list sub">
 									<li>주문 변경 시 카드사 혜택 및 할부 적용 여부는 해당 카드사 정책에 따라 변경될 수 있습니다.</li>
 									<li>네이버페이는 네이버ID로 별도 앱 설치 없이 신용카드 또는 은행계좌 정보를 등록하여 네이버페이 비밀번호로 결제할 수 있는 간편결제 서비스입니다.</li>
@@ -105,11 +107,13 @@
 								</div>
 							</div>
 							<ul class="agree-form" data-agree="agree-group">
-								<li><label for="pay-agree-all" data-agree="agree-all"><input type="checkbox" id="pay-agree-all"><strong>모두 동의 합니다.</strong></label></li>
-								<li><label for="pay_chk1"><input type="checkbox" id="pay_chk1">매월(30일)마다 자동 결제되는 것에 동의합니다.</label></li>
-								<li><label for="pay_chk2"><input type="checkbox" id="pay_chk2"><a href="#">유료서비스 이용약관</a>에 동의합니다. (필수)</label></li>
-								<li><label for="pay_chk3"><input type="checkbox" id="pay_chk3"><button type="button" data-role="open__popup_order_agree_1">결제 시 유의사항</button>에 동의합니다.(필수)</label></li>
-								<li><label for="pay_chk4"><input type="checkbox" id="pay_chk4"><button type="button" data-role="open__popup_order_agree_2">개인정보 제3자 제공</button>에 동의합니다.(필수)</label></li>
+								<!-- [D] 231222 inp-chk클래스 추가, span감싸기 -->
+								<li><label for="pay-agree-all" data-agree="agree-all" class="inp-chk"><input type="checkbox" id="pay-agree-all"><span><strong>모두 동의 합니다.</strong></span></label></li>
+								<li><label for="pay_chk1" class="inp-chk"><input type="checkbox" id="pay_chk1"><span>매월(30일)마다 자동 결제되는 것에 동의합니다.</span></label></li>
+								<li><label for="pay_chk2" class="inp-chk"><input type="checkbox" id="pay_chk2"><span><a href="#">유료서비스 이용약관</a>에 동의합니다. (필수)</span></label></li>
+								<li><label for="pay_chk3" class="inp-chk"><input type="checkbox" id="pay_chk3"><span><button type="button" data-role="open__popup_order_agree_1">결제 시 유의사항</button>에 동의합니다.(필수)</span></label></li>
+								<li><label for="pay_chk4" class="inp-chk"><input type="checkbox" id="pay_chk4"><span><button type="button" data-role="open__popup_order_agree_2">개인정보 제3자 제공</button>에 동의합니다.(필수)</span></label></li>
+								<!-- //[D] 231222 inp-chk클래스 추가, span감싸기 -->
 							</ul>
 							<div class="btn-wrap wrap-right">
 								<button type="button" class="btn-lg btn-default">결제하기</button>

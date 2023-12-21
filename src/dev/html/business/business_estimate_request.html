@@ -114,7 +114,7 @@
 										<!-- <button type="button" class="btn-sm btn-ghost" disabled="disabled">제품 담기</button> -->
 										<!-- //[D] 231208_수정 버튼 수정 -->
 									</div>
-									<ul class="product-list">
+									<ul class="product-list"> <!-- [D] 231222_수정: 제품이 없는 경우 empty 클래스 추가-->
 										<!-- [D] 제품이 없는 경우 아래 내용 노출 -->
 										<!-- <li class="empty">
 											제품을 선택해주세요.
@@ -164,7 +164,9 @@
 							</div>
 						</div>
 						<div class="agree-wrap form-cont">
-							<label for="agree1" class="inp-chk"><input type="checkbox" name="" id="agree1">개인정보 수집 및 이용에 동의합니다.(필수)</label>
+							<!-- [D] 231222 inp-chk클래스 추가, span감싸기 -->
+							<label for="agree1" class="inp-chk"><input type="checkbox" name="" id="agree1"><span>개인정보 수집 및 이용에 동의합니다.(필수)</span></label>
+							<!-- //[D] 231222 inp-chk클래스 추가, span감싸기 -->
 							<div class="tooltip-wrap">
 								<a href="#" class="tooltip-button">툴팁 보기</a>
 								<div class="tooltip-cont">

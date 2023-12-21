@@ -389,7 +389,7 @@
                     padding: 32px 40px;
                     border-radius: 10px;
                     text-align: center;
-                    height: 340px;
+                    // height: 340px;
                 }
             }
         }
@@ -421,9 +421,18 @@
             color: $color-gray-06;
         }
         .star-rating {
+            width: 80px;
             height: 16px;
-            background-color: rgb(183, 183, 183); //임시영역 컬러 (별 에셋 공유받으면 교체예정)
-            margin: 10px 0 16px;
+            margin: 10px auto 16px;
+            background: icon(star-fill, DADADA) repeat-x;
+            background-size: auto 16px;
+            .rating {
+                display: block;
+                width: 0;
+                height: 100%;
+                background: icon(star-fill, '5772e8') repeat-x;
+                background-size: auto 16px;
+            }
         }
         .review-tit {
             @include txt(24);
@@ -432,8 +441,16 @@
         .review-detail {
             margin-top: 16px;
             word-break: keep-all;
-            @include ellipsis-multi($line: 4, $font-size: 16px);
-            height: unset;
+            // @include ellipsis-multi($line: 4, $font-size: 16px);
+            // height: unset;
+            @include txt(16);
+        }
+        .logo {
+            width: 100px;
+            height: 40px;
+            margin: 24px auto 0;
+            border-radius: 10px;
+            background: #000;
         }
     }
 }
@@ -675,7 +692,7 @@
                 height: auto;
                 ul {
                     li {
-                        height: 270px;
+                        // height: 270px;
                         padding: 24px 16px;
                     }
                 }
@@ -686,7 +703,7 @@
                 margin: 0 auto 16px;
             }
             .star-rating {
-                margin: 8px 0 16px;
+                margin: 8px auto 16px;
             }
             .review-tit {
                 @include txt(16);

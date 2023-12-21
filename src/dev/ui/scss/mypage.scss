@@ -130,11 +130,6 @@
 			& + .notice-item {
 				margin-top: 24px;
 			}
-			&:not(:has(a)) {
-				display: flex;
-				align-items: center;
-				gap: 8px;
-			}
 		}
 	}
 	.my-license {

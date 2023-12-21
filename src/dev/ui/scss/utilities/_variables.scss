@@ -73,6 +73,43 @@ $color-purple-7: #9658E8;
 $color-yellow-1: #FFDF37;
 $color-yellow-2: #FFC501;
 
+//제품색상
+	//곰믹스 2024
+	$sw-color-gmx2024-01: #FC0219;
+	$sw-color-gmx2024-02: #FB04F4;
+
+	//곰캠 2024
+	$sw-color-gcm2024-01: #9224FF;
+	$sw-color-gcm2024-02: #1755FF;
+
+	//곰플레이어+ 2024, 곰플레이어, 곰플레이어+ 2024 비즈니스
+	$sw-color-gplayer-01: #FF1B03;
+	$sw-color-gplayer-02: #ED0387;
+
+	//곰픽 2024
+	$sw-color-gpic2024-01: #0D35FE;
+	$sw-color-gpic2024-02: #8AD13E;
+
+	//곰보이스 2024
+	$sw-color-gvo2024-01: #F10668;
+	$sw-color-gvo2024-02: #FEA3C0;
+
+	//곰사운드컷 2024
+	$sw-color-gsc2024-01: #6D24F6;
+	$sw-color-gsc2024-02: #2DC7AF;
+
+	//곰인코더
+	$sw-color-gencoder-01: #F9575B;
+	$sw-color-gencoder-02: #FB04F4;
+
+	//곰오디오
+	$sw-color-gaudio-01: #026FF0;
+	$sw-color-gaudio-02: #00DEB5;
+
+	//곰밈메이커
+	$sw-color-gmeme-01: #0346F2;
+	$sw-color-gmeme-02: #05CAFD;
+
 $font-family-0: -apple-system-font, Apple SD Gothic Neo, Helvetica, sans-serif;
 $font-family-1: "NanumSquare", $font-family-0;
 $font-family-2: 'Noto Sans', $font-family-0;
@@ -127,6 +164,7 @@ $inputSize-md: 36px;
 $inputSize-lg: 51px;
 
 $input-col: 664px;
+$input-item-wd: 327px;
 
 // component_Button
 // $button-size-xl: 49px;
@@ -160,18 +198,26 @@ $button-size-sm: 29px;
         guide: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cg fill='none' stroke='%23#{$color}' stroke-width='1.5' data-name='Ellipse 623' transform='translate(3.5 3.5)'%3E%3Ccircle cx='8.5' cy='8.5' r='8.5' stroke='none'/%3E%3Ccircle cx='8.5' cy='8.5' r='9.25'/%3E%3C/g%3E%3Cg fill='none' stroke='%23#{$color}' data-name='Group 2549'%3E%3Cpath stroke-linecap='round' stroke-width='1.5' d='M9.254 9.5a2.751 2.751 0 1 1 3.861 2.516 1.769 1.769 0 0 0-1.111 1.6v.415' data-name='Path 6094'/%3E%3Cg data-name='Ellipse 624' transform='translate(11 15.75)'%3E%3Ccircle cx='1' cy='1' r='1' stroke='none'/%3E%3Ccircle cx='1' cy='1' r='.5'/%3E%3C/g%3E%3C/g%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='Rectangle 6336' opacity='.2'/%3E%3C/svg%3E",
 		close-lg: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-width='1.5' d='m5 5 14 14' data-name='선 465'/%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-width='1.5' d='M19 5 5 19' data-name='선 466'/%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 283' opacity='.2'/%3E%3C/svg%3E",
 		close: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' d='m5 5 10 10' data-name='선 465'/%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' d='M15 5 5 15' data-name='선 466'/%3E%3Cpath fill='none' d='M0 0h20v20H0z' data-name='사각형 283' opacity='.2'/%3E%3C/svg%3E",
+		up-40: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m8.352 24.962 11.7-11.7 11.7 11.7' data-name='패스 137'/%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 316' opacity='.2'/%3E%3C/svg%3E",
 		up-lg: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m4.998 15 7-7 7 7' data-name='패스 137'/%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 316' opacity='.2'/%3E%3C/svg%3E",
 		up: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' d='m4.5 13.5 6-6 6 6' data-name='패스 137'/%3E%3Cpath fill='none' d='M0 0h20v20H0z' data-name='사각형 316' opacity='.2'/%3E%3C/svg%3E",
+		up-16: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cg fill='none'%3E%3Cpath stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' d='m13 10.5-5-5-5 5' data-name='back'/%3E%3Cpath d='M0 16V0h16v16z' data-name='사각형 6370' opacity='.2'/%3E%3C/g%3E%3C/svg%3E",
+		down-40: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m8.396 14.934 11.7 11.7 11.7-11.7' data-name='패스 136'/%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 317' opacity='.2'/%3E%3C/svg%3E",
 		down-lg: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m4.998 9 7 7 7-7' data-name='패스 136'/%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 317' opacity='.2'/%3E%3C/svg%3E",
 		down: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' d='m4.5 7.5 6 6 6-6' data-name='패스 136'/%3E%3Cpath fill='none' d='M0 0h20v20H0z' data-name='사각형 317' opacity='.2'/%3E%3C/svg%3E",
+		down-16: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cg fill='none'%3E%3Cpath stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' d='m3 5.5 5 5 5-5' data-name='back'/%3E%3Cpath d='M16 0v16H0V0z' data-name='사각형 6370' opacity='.2'/%3E%3C/g%3E%3C/svg%3E",
+		prev-40: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M25.99 6.574 12.618 19.946 25.99 33.318'/%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 6370' opacity='.2'/%3E%3C/svg%3E",
 		prev-lg: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m15.501 3.998-8 8 8 8'/%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 6370' opacity='.2'/%3E%3C/svg%3E",
 		prev: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' d='m13 4-6 6 6 6'/%3E%3Cpath fill='none' d='M0 0h20v20H0z' data-name='사각형 6370' opacity='.2'/%3E%3C/svg%3E",
 		prev-end-lg: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='Rectangle 6370' opacity='.2'/%3E%3Cg fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' data-name='Group 172672'%3E%3Cpath d='m20 4-8 8 8 8'/%3E%3Cpath d='m12 4-8 8 8 8' data-name='back'/%3E%3C/g%3E%3C/svg%3E",
 		prev-end: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath fill='none' d='M0 0h20v20H0z' data-name='Rectangle 6370' opacity='.2'/%3E%3Cg fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' data-name='Group 172672'%3E%3Cpath d='m16 4-6 6 6 6'/%3E%3Cpath d='m10 4-6 6 6 6' data-name='back'/%3E%3C/g%3E%3C/svg%3E",
+		prev-16: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' d='m10.5 3-5 5 5 5'/%3E%3Cpath fill='none' d='M0 0h16v16H0z' data-name='사각형 6370' opacity='.2'/%3E%3C/svg%3E",
+		next-40: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m14.333 6.574 13.372 13.372-13.372 13.372'/%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 6370' opacity='.2'/%3E%3C/svg%3E",
 		next-lg: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m8.501 3.998 8 8-8 8'/%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 6370' opacity='.2'/%3E%3C/svg%3E",
 		next: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' d='m7 4 6 6-6 6'/%3E%3Cpath fill='none' d='M0 0h20v20H0z' data-name='사각형 6370' opacity='.2'/%3E%3C/svg%3E",
 		next-end-lg: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='Rectangle 6370' opacity='.2'/%3E%3Cg fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' data-name='Group 172672'%3E%3Cpath d='m4 4 8 8-8 8'/%3E%3Cpath d='m12.001 4 8 8-8 8' data-name='back'/%3E%3C/g%3E%3C/svg%3E",
 		next-end: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath fill='none' d='M0 0h20v20H0z' data-name='Rectangle 6370' opacity='.2'/%3E%3Cg fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' data-name='Group 172672'%3E%3Cpath d='m4 4 6 6-6 6'/%3E%3Cpath d='m10 4 6 6-6 6' data-name='back'/%3E%3C/g%3E%3C/svg%3E",
+		next-16: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' d='m5.5 3 5 5-5 5'/%3E%3Cpath fill='none' d='M0 0h16v16H0z' data-name='사각형 6370' opacity='.2'/%3E%3C/svg%3E",
 		check-lg: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 3998'/%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m5.5 11.088 5 6.449 9-12.037' data-name='패스 2284'/%3E%3C/svg%3E",
 		check: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cpath fill='none' d='M0 0h20v20H0z' data-name='사각형 3998'/%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' d='M4.5 10.141 8.786 15.5l7.714-10' data-name='패스 2284'/%3E%3C/svg%3E",
 		check-circle: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m7.133 11.838 3.691 4.756 6.044-8.143' data-name='패스 2284'/%3E%3Cg fill='none' stroke='%23#{$color}' stroke-width='1.5' data-name='타원 641' transform='translate(3 3)'%3E%3Ccircle cx='9' cy='9' r='9' stroke='none'/%3E%3Ccircle cx='9' cy='9' r='9.75'/%3E%3C/g%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 6372' opacity='.2'/%3E%3C/svg%3E",
@@ -187,6 +233,8 @@ $button-size-sm: 29px;
 		sns-twitter-x: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 6786'/%3E%3Cpath fill='%230f1419' d='m15.178 18.621-3.893-5.092-4.455 5.092h-2.5l5.787-6.619-6.117-8h5.188l3.5 4.637 4.093-4.637h2.5l-5.446 6.156 6.39 8.465Zm.658-1.512h1.374l-8.811-11.7H6.91Z' data-name='합치기 3'/%3E%3C/svg%3E",
 		sns-kakao: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' data-name='Kakao talk_24_131313'%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 6786'/%3E%3Cpath fill='%23#{$color}' d='M11.999 3.613c-5.015 0-9.082 3.211-9.082 7.173a6.993 6.993 0 0 0 4.214 6.057l-.857 3.195a.268.268 0 0 0 .065.273.251.251 0 0 0 .344.015l3.684-2.485a11.5 11.5 0 0 0 1.635.12c5.015 0 9.084-3.211 9.084-7.174s-4.069-7.173-9.084-7.173' data-name='패스 34956'/%3E%3C/svg%3E",
 		sns-naver-blog: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' data-name='Naver blog_24_131313'%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 6786'/%3E%3Cg fill='%23#{$color}' data-name='그룹 44244'%3E%3Cpath d='M6.381 9.577a.687.687 0 1 0 .687.687.687.687 0 0 0-.687-.687Z' data-name='패스 45655'/%3E%3Cpath d='M13.164 9.506a.739.739 0 1 0 .739.739.739.739 0 0 0-.739-.739Z' data-name='패스 45656'/%3E%3Cpath d='M19.302 2.753h-14.6A2.667 2.667 0 0 0 2.035 5.42v8.668a2.667 2.667 0 0 0 2.667 2.667H9.86l1.754 4.134s.121.358.413.358c.293 0 .413-.358.413-.358l1.754-4.134h5.111a2.667 2.667 0 0 0 2.667-2.667V5.42a2.667 2.667 0 0 0-2.67-2.667ZM8.294 10.415a1.652 1.652 0 0 1-1.647 1.63 1.369 1.369 0 0 1-.991-.42v.286H4.462v-4.92s-.005 0 0 0c.074.012 1.193 0 1.193 0v1.882c.281-.478 1.092-.47 1.092-.47a1.747 1.747 0 0 1 1.547 2.012Zm2.1-1.865v3.369H9.226V8.583c0-.454-.563-.58-.563-.58V6.827a1.615 1.615 0 0 1 1.732 1.723Zm2.768 3.5a1.808 1.808 0 1 1 1.958-1.8 1.885 1.885 0 0 1-1.958 1.797Zm6.4 0a1.666 1.666 0 0 1-1.722 1.712h-.529v-1.109h.319s.731.067.722-1.059c0 0-.143.456-1.168.456a1.539 1.539 0 0 1-1.453-1.523v-.538a1.66 1.66 0 0 1 1.63-1.588 1.189 1.189 0 0 1 1.017.454v-.361h1.184Z' data-name='패스 45657'/%3E%3Cpath d='M17.704 9.518a.723.723 0 1 0 .723.723.722.722 0 0 0-.723-.723Z' data-name='패스 45658'/%3E%3C/g%3E%3C/svg%3E",
+		star: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cg fill='none' data-name='다각형 278'%3E%3Cpath d='M10.647 2.826a1.5 1.5 0 0 1 2.706 0l1.893 3.953a1.5 1.5 0 0 0 1.169.841l4.368.539a1.5 1.5 0 0 1 .832 2.592l-3.173 2.92a1.5 1.5 0 0 0-.456 1.391l.823 4.221a1.5 1.5 0 0 1-2.185 1.607l-3.91-2.113a1.5 1.5 0 0 0-1.426 0l-3.91 2.113a1.5 1.5 0 0 1-2.185-1.607l.823-4.221a1.5 1.5 0 0 0-.456-1.391l-3.173-2.92a1.5 1.5 0 0 1 .832-2.592l4.366-.539a1.5 1.5 0 0 0 1.169-.841Z'/%3E%3Cpath fill='%23dadada' d='m12 3.474-1.893 3.953A2.987 2.987 0 0 1 7.77 9.109L3.4 9.648l3.173 2.92a3.02 3.02 0 0 1 .913 2.782l-.823 4.221 3.91-2.112a3.01 3.01 0 0 1 2.852 0l3.91 2.112-.823-4.221a3.02 3.02 0 0 1 .913-2.782l3.173-2.92-4.368-.539a2.987 2.987 0 0 1-2.338-1.682L12 3.474m0-1.5c.54 0 1.08.284 1.353.852l1.893 3.953a1.5 1.5 0 0 0 1.169.841l4.368.54c1.268.156 1.772 1.726.832 2.592l-3.173 2.92a1.5 1.5 0 0 0-.457 1.39l.824 4.222c.242 1.244-1.07 2.21-2.186 1.607l-3.91-2.113a1.5 1.5 0 0 0-1.426 0l-3.91 2.113c-1.115.602-2.428-.363-2.186-1.607l.824-4.221a1.5 1.5 0 0 0-.457-1.391l-3.173-2.92c-.94-.866-.436-2.436.832-2.593l4.368-.539a1.5 1.5 0 0 0 1.17-.84l1.892-3.954A1.482 1.482 0 0 1 12 1.974Z'/%3E%3C/g%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 62474' opacity='.2'/%3E%3C/svg%3E",
+		star-fill: "%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='%23#{$color}' d='M10.647 2.826a1.5 1.5 0 0 1 2.706 0l1.893 3.953a1.5 1.5 0 0 0 1.169.841l4.368.539a1.5 1.5 0 0 1 .832 2.592l-3.173 2.92a1.5 1.5 0 0 0-.456 1.391l.823 4.221a1.5 1.5 0 0 1-2.185 1.607l-3.91-2.113a1.5 1.5 0 0 0-1.426 0l-3.91 2.113a1.5 1.5 0 0 1-2.185-1.607l.823-4.221a1.5 1.5 0 0 0-.456-1.391l-3.173-2.92a1.5 1.5 0 0 1 .832-2.592l4.366-.539a1.5 1.5 0 0 0 1.169-.841Z' data-name='다각형 281'/%3E%3Cpath fill='none' d='M0 0h24v24H0z' data-name='사각형 62473' opacity='.2'/%3E%3C/svg%3E",
 	);
 
 	$icon: map-get($iconList, $iconName);

@@ -105,8 +105,10 @@
 									<span class="label">이벤트 및 혜택알림</span>
 									<div class="list-content">
 										<div class="sub-check">
-											<label for="event1"><input type="checkbox" id="event1" class="inp-sm" checked="">이메일</label>
-											<label for="event2"><input type="checkbox" id="event2" class="inp-sm">문자메시지 (SMS)</label>
+											<!-- [D] 231222 inp-chk클래스 추가, span감싸기 -->
+											<label for="event1" class="inp-chk"><input type="checkbox" id="event1" class="inp-sm" checked=""><span>이메일</span></label>
+											<label for="event2" class="inp-chk"><input type="checkbox" id="event2" class="inp-sm"><span>문자메시지 (SMS)</span></label>
+											<!-- //[D] 231222 inp-chk클래스 추가, span감싸기 -->
 										</div>
 										<div class="help-wrap">
 											<p class="guide-txt">알림 수신 동의와 함께 개인정보 마케팅 활용에 동의함으로 간주합니다.</p>

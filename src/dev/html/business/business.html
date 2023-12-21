@@ -9,14 +9,14 @@
 	<!-- 컨텐츠 -->
 	<main id="container">
 
-		<div id="contents-head" class="contents-head head-visual">
+		<div id="contents-head" class="contents-head head-visual visual-business">  <!-- [D] 231220_수정 : background 용 클래스(visual-business) 추가 -->
 			<div class="head-tit-wrap">
 				<div class="logo"><strong>Business</strong></div>
 				<h1>기업·교육·공공 전용</h1>
 				<p class="intro">곰믹스 맥스, 곰캠, 곰플레이어 플러스</p>
 			</div>
 		</div>
-		<nav id="lnb" class="lnb-wrap">
+		<nav id="lnb" class="lnb-wrap" data-scroll="static"> <!-- [D] 231220_수정 : data-scroll 추가 -->
 			<div class="lnb-inner">
 				<div class="intro_wrap">
 					<p class="intro">대량, 다년형 <span class="thin">등 별도 견적 요청이 가능합니다.</span></p>
@@ -86,8 +86,7 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="panel wide">
+				<div class="panel wide gom-card-wrap"> <!-- [D] 231220_수정 : gom-card-wrap 클래스 추가 -->
 					<div class="inner">
 						<div class="gom-card-box-defalut">
 							<div class="gom-package-item card-box-md expert">
@@ -108,41 +107,45 @@
 										<div class="pagkage-top">
 											<p class="title"><span class="logo"><img src="http://placehold.it/48x48" alt="썸네일1:1예시"></span>곰팩 Expert</p>
 										</div>
-										<div class="pagkage-mid">
+										<!-- 231220_수정 : 비즈니스 카드 기획&디자인 반영-->
+										<div class="pagkage-mid pagkage-mid-m">
 											<dl class="price">
 												<dt>1년 이용권</dt>
-												<dd><strong>129,000원</strong><span>VAT 별도</span></dd>
+												<dd><strong>33,000원</strong><span>VAT 별도</span></dd>
+											</dl>
+											<!-- 231207_수정 -->
+											<div class="form-cont form-drop-quantity"> <!-- 231220_수정 : 클래스 추가-->
+												<input type="text" class="inp-dropbox" value="1">
+												<select class="btn-drop-quantity" data-event="quantity">
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+													<option value="8">8</option>
+													<option value="9">9</option>
+													<option value="10">10</option>
+												</select>
+											</div>
+											<!-- 231207_수정 -->
+										</div>
+										<div class="pagkage-mid pagkage-mid-m">
+											<dl class="price">
+												<dt>총 금액</dt>
+												<dd>90,000원</dd>
 											</dl>
 											<button type="submit" class="btn-lg btn-ghost btn-purchase">구매하기</button>
 										</div>
 										<div class="pagkage-bottom acco-wrap" data-accordion="container">
 											<div class="acco-content pagkage-more-info" data-accordion="panel">
-												<ul>
-													<li>곰믹스 맥스 비즈니스</li>
-													<li>곰캠 비즈니스</li>
-													<li>곰플레이어 플러스 비즈니스</li>
-												</ul>
-												<p class="exp">구매 제품 중 하나를 실행하면 나머지 제품의 유효기간도 동일하게 적용됩니다.</p>
+												<p>녹화부터 편집까지 가능한 만능 화면 녹화 프로그램!<br>
+												원하는 시간 예약, 세밀한 장면 설정, 영상 위에 영상 추가(PIP),<br>
+												메모와 그리기 기능까지. 자유롭게 화면 녹화를 시작해 보세요.
+												</p>
 											</div>
 											<div class="acco-content total-price" data-accordion="panel">
-												<p class="price">총 금액 <strong>129,000원</strong></p>
-												<!-- [D] 231208_수정 :옵션 변경 -->
-												<div class="form-cont">
-													<input type="text" class="inp-dropbox" value="1">
-													<select class="btn-drop-quantity" data-event="quantity">
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-														<option value="5">5</option>
-														<option value="6">6</option>
-														<option value="7">7</option>
-														<option value="8">8</option>
-														<option value="9">9</option>
-														<option value="10">10</option>
-													</select>
-												</div>
-												<!-- [D] 231208_수정 -->
 												<div class="btn-wrap wrap-right">
 													<a href="javascript:openWindowPop('/dev/html/business/business_quotation.html', '_blank');" class="btn-md btn-ghost">견적서 보기</a>
 													<a href="#" class="btn-md btn-ghost">다운로드</a>
@@ -152,6 +155,7 @@
 												상세보기
 											</a>
 										</div>
+										<!-- // 231220_수정 : 비즈니스 카드 기획&디자인 반영-->
 									</div>
 								</form>
 							</div>
@@ -170,36 +174,45 @@
 										<div class="pagkage-top">
 											<p class="title"><span class="logo"><img src="http://placehold.it/48x48" alt="썸네일1:1예시"></span>곰믹스 맥스 비즈니스</p>
 										</div>
-										<div class="pagkage-mid">
+										<!-- 231220_수정 : 비즈니스 카드 기획&디자인 반영-->
+										<div class="pagkage-mid pagkage-mid-m">
 											<dl class="price">
 												<dt>1년 이용권</dt>
-												<dd><strong>90,000원</strong><span>VAT 별도</span></dd>
+												<dd><strong>33,000원</strong><span>VAT 별도</span></dd>
+											</dl>
+											<!-- 231207_수정 -->
+											<div class="form-cont form-drop-quantity"> <!-- 231220_수정 : 클래스 추가-->
+												<input type="text" class="inp-dropbox" value="1">
+												<select class="btn-drop-quantity" data-event="quantity">
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+													<option value="8">8</option>
+													<option value="9">9</option>
+													<option value="10">10</option>
+												</select>
+											</div>
+											<!-- 231207_수정 -->
+										</div>
+										<div class="pagkage-mid pagkage-mid-m">
+											<dl class="price">
+												<dt>총 금액</dt>
+												<dd>90,000원</dd>
 											</dl>
 											<button type="submit" class="btn-lg btn-ghost btn-purchase">구매하기</button>
 										</div>
 										<div class="pagkage-bottom acco-wrap" data-accordion="container">
 											<div class="acco-content pagkage-more-info" data-accordion="panel">
-												<p>초보자도 빠르고 쉽게 사용할 수 있는 영상 편집 프로그램!<br>매뉴얼 없이도 영상 편집이 가능한 직관적인 인터페이스.<br>간단한 클릭 몇 번으로 영상 편집을 시작해 보세요.</p>
+												<p>녹화부터 편집까지 가능한 만능 화면 녹화 프로그램!<br>
+												원하는 시간 예약, 세밀한 장면 설정, 영상 위에 영상 추가(PIP),<br>
+												메모와 그리기 기능까지. 자유롭게 화면 녹화를 시작해 보세요.
+												</p>
 											</div>
 											<div class="acco-content total-price" data-accordion="panel">
-												<p class="price">총 금액 <strong>129,000원</strong></p>
-												<!-- [D] 231208_수정 :옵션 변경 -->
-												<div class="form-cont">
-													<input type="text" class="inp-dropbox" value="1">
-													<select class="btn-drop-quantity" data-event="quantity">
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-														<option value="5">5</option>
-														<option value="6">6</option>
-														<option value="7">7</option>
-														<option value="8">8</option>
-														<option value="9">9</option>
-														<option value="10">10</option>
-													</select>
-												</div>
-												<!-- // [D] 231208_수정 :옵션 변경 -->
 												<div class="btn-wrap wrap-right">
 													<a href="javascript:openWindowPop('/dev/html/business/business_quotation.html', '_blank');" class="btn-md btn-ghost">견적서 보기</a>
 													<a href="#" class="btn-md btn-ghost">다운로드</a>
@@ -209,6 +222,7 @@
 												상세보기
 											</a>
 										</div>
+										<!-- // 231220_수정 : 비즈니스 카드 기획&디자인 반영-->
 									</div>
 								</form>
 							</div>
@@ -227,10 +241,34 @@
 										<div class="pagkage-top">
 											<p class="title"><span class="logo"><img src="http://placehold.it/48x48" alt="썸네일1:1예시"></span>곰캠 비즈니스</p>
 										</div>
-										<div class="pagkage-mid">
+										<!-- 231220_수정 : 비즈니스 카드 기획&디자인 반영-->
+										<div class="pagkage-mid pagkage-mid-m">
 											<dl class="price">
 												<dt>1년 이용권</dt>
 												<dd><strong>33,000원</strong><span>VAT 별도</span></dd>
+											</dl>
+											<!-- 231207_수정 -->
+											<div class="form-cont form-drop-quantity"> <!-- 231220_수정 : 클래스 추가-->
+												<input type="text" class="inp-dropbox" value="1">
+												<select class="btn-drop-quantity" data-event="quantity">
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+													<option value="8">8</option>
+													<option value="9">9</option>
+													<option value="10">10</option>
+												</select>
+											</div>
+											<!-- 231207_수정 -->
+										</div>
+										<div class="pagkage-mid pagkage-mid-m">
+											<dl class="price">
+												<dt>총 금액</dt>
+												<dd>90,000원</dd>
 											</dl>
 											<button type="submit" class="btn-lg btn-ghost btn-purchase">구매하기</button>
 										</div>
@@ -242,24 +280,6 @@
 												</p>
 											</div>
 											<div class="acco-content total-price" data-accordion="panel">
-												<p class="price">총 금액 <strong>33,000원</strong></p>
-												<!-- 231207_수정 -->
-												<div class="form-cont">
-													<input type="text" class="inp-dropbox" value="1">
-													<select class="btn-drop-quantity" data-event="quantity">
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-														<option value="5">5</option>
-														<option value="6">6</option>
-														<option value="7">7</option>
-														<option value="8">8</option>
-														<option value="9">9</option>
-														<option value="10">10</option>
-													</select>
-												</div>
-												<!-- 231207_수정 -->
 												<div class="btn-wrap wrap-right">
 													<a href="javascript:openWindowPop('/dev/html/business/business_quotation.html', '_blank');" class="btn-md btn-ghost">견적서 보기</a>
 													<a href="#" class="btn-md btn-ghost">다운로드</a>
@@ -269,6 +289,7 @@
 												상세보기
 											</a>
 										</div>
+										<!-- // 231220_수정 : 비즈니스 카드 기획&디자인 반영-->
 									</div>
 								</form>
 							</div>
@@ -287,36 +308,45 @@
 										<div class="pagkage-top">
 											<p class="title"><span class="logo"><img src="http://placehold.it/48x48" alt="썸네일1:1예시"></span>곰플레이어+ 비즈니스</p>
 										</div>
-										<div class="pagkage-mid">
+										<!-- 231220_수정 : 비즈니스 카드 기획&디자인 반영-->
+										<div class="pagkage-mid pagkage-mid-m">
 											<dl class="price">
 												<dt>1년 이용권</dt>
-												<dd><strong>20,000원</strong><span>VAT 별도</span></dd>
+												<dd><strong>33,000원</strong><span>VAT 별도</span></dd>
+											</dl>
+											<!-- 231207_수정 -->
+											<div class="form-cont form-drop-quantity"> <!-- 231220_수정 : 클래스 추가-->
+												<input type="text" class="inp-dropbox" value="1">
+												<select class="btn-drop-quantity" data-event="quantity">
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+													<option value="8">8</option>
+													<option value="9">9</option>
+													<option value="10">10</option>
+												</select>
+											</div>
+											<!-- 231207_수정 -->
+										</div>
+										<div class="pagkage-mid pagkage-mid-m">
+											<dl class="price">
+												<dt>총 금액</dt>
+												<dd>90,000원</dd>
 											</dl>
 											<button type="submit" class="btn-lg btn-ghost btn-purchase">구매하기</button>
 										</div>
 										<div class="pagkage-bottom acco-wrap" data-accordion="container">
 											<div class="acco-content pagkage-more-info" data-accordion="panel">
-												<p>광고 없이, 끊김 없이! 쾌적한 환경에서 즐기는 영상 플레이어!<br>사용자 편의성을 고려한 깔끔한 디자인과 기능.<br>손상된 파일도 곰플레이어 플러스에서는 재생이 가능합니다.</p>
+												<p>녹화부터 편집까지 가능한 만능 화면 녹화 프로그램!<br>
+												원하는 시간 예약, 세밀한 장면 설정, 영상 위에 영상 추가(PIP),<br>
+												메모와 그리기 기능까지. 자유롭게 화면 녹화를 시작해 보세요.
+												</p>
 											</div>
 											<div class="acco-content total-price" data-accordion="panel">
-												<p class="price">총 금액 <strong>20,000원</strong></p>
-												<!-- 231207_수정 -->
-												<div class="form-cont">
-													<input type="text" class="inp-dropbox" value="1">
-													<select class="btn-drop-quantity" data-event="quantity">
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4">4</option>
-														<option value="5">5</option>
-														<option value="6">6</option>
-														<option value="7">7</option>
-														<option value="8">8</option>
-														<option value="9">9</option>
-														<option value="10">10</option>
-													</select>
-												</div>
-												<!-- 231207_수정 -->
 												<div class="btn-wrap wrap-right">
 													<a href="javascript:openWindowPop('/dev/html/business/business_quotation.html', '_blank');" class="btn-md btn-ghost">견적서 보기</a>
 													<a href="#" class="btn-md btn-ghost">다운로드</a>
@@ -326,6 +356,7 @@
 												상세보기
 											</a>
 										</div>
+										<!-- 231220_수정 : 비즈니스 카드 기획&디자인 반영-->
 									</div>
 								</form>
 							</div>

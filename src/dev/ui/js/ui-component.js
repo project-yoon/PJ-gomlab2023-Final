@@ -37,7 +37,7 @@ function makeList({ options, required, btnStyle, event }) {
 	}
 	const listItems = optionTexts.map(({ text, value }) => {
 		const isSelected = text === selectedOptionText ? "active" : ""
-		return `<li class="${isSelected}"><a href="#" data-value="${value}">${text}</a></li>`
+		return `<li><a href="#" data-value="${value}" class="${isSelected}">${text}</a></li>`
 	}).join('')
 
 	//버튼 컨텐츠 생성
@@ -88,6 +88,7 @@ function dropdownList() {
 				break;
 			
 			case 'quantity':
+				selectSet(parentElement, value)
 				changedText(quantityInput, target)
 				break;
 			
@@ -138,8 +139,34 @@ function dropdownList() {
 				changeOption.selected = true
 			}
 		}
-
 		languageChange(value);
+	}
+	//select 태그 업데이트 시, list update
+	function reverseSelect() {
+		const selects = document.querySelectorAll('.form-cont select')
+		
+		selects.forEach(select => {
+			const parent = select.closest('.form-cont')
+
+			//text value 변경요소
+			const inputElement = parent.querySelector('.inp-dropbox') || parent.querySelector('.inp-line')
+			const dropBtn = parent.querySelector('button[data-event]')
+			
+			select.addEventListener('change', e => {
+				//list active
+				const dropListElement = parent.querySelector(`.drop-list [data-value="${select.value}"]`)
+				const parentSibs = siblings(dropListElement.closest('li'))
+
+				for (let i = 0; i < parentSibs.length; i++) {
+					parentSibs[i].querySelector('a').classList.remove('active')
+				}
+				dropListElement.classList.add('active')
+
+				//input && button text change
+				if (inputElement) { inputElement.value = select.value }
+				dropBtn.innerText = select.value
+			})
+		})
 	}
 
 	function listDropdown(target) {
@@ -159,6 +186,7 @@ function dropdownList() {
 	}
 
 	function init() {
+		//dropdown click event 정의
 		document.addEventListener('click', function (event) {
 			const eventTarget = event.target
 			const isDropDown = eventTarget.getAttribute('data-event')
@@ -192,9 +220,11 @@ function dropdownList() {
 				openEls.forEach(openEl => {
 					openEvent(openEl, false)
 				})
-
 			}
 		})
+
+		//select 값 업데이트 시 dropdown 에 반영
+		reverseSelect()
 	}
 	init()
 }
@@ -309,6 +339,17 @@ function setTabs() {
 		})
 	})
 
+	function childReset(els) {
+		if (els == null) return
+		
+		let el = els.querySelector('li')
+		let sibs = siblings(el)
+		el.querySelector('a').classList.add('active')
+		for (let i = 0; i < sibs.length; i++) {
+			sibs[i].querySelector('a').classList.remove('active')
+		}
+	}
+
 	//click event
 	selectEl.forEach((target) => {
 		target.addEventListener('click', (e) => {
@@ -318,7 +359,7 @@ function setTabs() {
 			let tabStringId
 
 			if (tabBtn.tagName === 'A') {
-				e.preventDefault()
+				currentTabName !== 'null' ? e.preventDefault() : ''
 				
 				tabStringId = tabBtn.getAttribute('href')
 				
@@ -333,10 +374,10 @@ function setTabs() {
 				tabBtn.classList.add('active')
 
 				const parentWrap = tabBtn.closest(`ul`) || null
-
 				if (parentWrap.classList.contains('tab-round')) {
 					setRoundBg({ target: tabBtn.parentElement, isAnimated: true })
 				}
+				//ul의 스크롤 left 이동 기능
 				const parentScroll = parentWrap.scrollWidth
 				if (parentScroll > parentWrap.getBoundingClientRect().width) {
 					setScrollLeft(tabBtn.parentElement, 'smooth')
@@ -353,6 +394,10 @@ function setTabs() {
 				const currentTabTarget = currentTabContent.querySelector(`${currentTabId}`)
 				if (currentTabContent ==null) return
 				setClass(currentTabTarget, 'active')
+
+				//자식 tab의 첫번째 요소로 초기화
+				const childSet = currentTabTarget.querySelector('[data-menu], [data-tab-index]')
+				childReset(childSet)
 			}
 		})
 	})
@@ -376,6 +421,8 @@ function setAccodion() {
 			var isOpen = !$(target).hasClass('active')
 
 			accodionOpen(isOpen, target)
+
+			//아코디언 클릭 시, 버튼이 현재 화면의 30% 기준 높이로 이동
 		})
 	})
 	
@@ -383,23 +430,44 @@ function setAccodion() {
 		
 		var parent = $(target).parent()
 		var truePanel = $(parent).find(`[data-accordion='panel']`)
+		if ($(target).closest('.gom-card-box-defalut').length !== 0) {
+			var newScroll = $(target).closest('.gom-package-item').offset().top
+			$(window).scrollTop(newScroll - ($(window).innerHeight() * 0.2))
+		}
 
 		if (isOpen) {
 			$(target).addClass('active')
 			$(truePanel).slideDown(300)
 
 			if ($(parent).prop('tagName') === 'LI') {
+				//만약 앞의 요소가 열려 있을 때, scrollTop 보정
+				var parentPrev = $(parent).prevAll('li').find('[data-accordion="tab"].active')
+				updateScrollOnElementOpen(parentPrev, target)
+
+				//다른 열려있는 요소들 모두 닫기
 				sibClose(parent)
 			}
+
 		}else {
 			$(target).removeClass('active')
 			$(truePanel).slideUp(300)
 		}
 
+		function updateScrollOnElementOpen(prevChild, target) {
+			if ($(prevChild).length == 0 || null) return
+			
+			var prevEl = $(prevChild).parent()
+			var prevContHeight = $(prevEl).find(`[data-accordion='panel']`).height()
+
+			if (prevContHeight > window.innerHeight) {
+				var newScrollTop = $(target).offset().top - prevContHeight - (window.innerHeight * 0.3)
+				$(window).scrollTop(newScrollTop)
+			}
+		}
 
 		function sibClose(parent) {
 			$(parent).siblings().find(`[data-accordion='tab']`).removeClass('active')
-			$(parent).siblings().find(`[data-accordion='panel']`).slideUp(300)
+			$((parent).siblings().find(`[data-accordion='panel']`)).slideUp(300)
 		}
 
 	}
@@ -461,6 +529,12 @@ function setChkboxAll() {
 
 /*input 입력*/
 function setInput() {
+	function setMargin() {
+		const labels = document.querySelectorAll('.form-label')
+		labels.forEach(label => {
+			label.closest('.form-item').classList.add('has-label')
+		})
+	}
 	function setFakeLabel() {
 		const labels = document.querySelectorAll('.fake-label')
 
@@ -567,6 +641,7 @@ function setInput() {
 		setFakeLabel()
 		inputFileUpload()
 		addInpForm()
+		setMargin()
 	}
 
 	init()
@@ -635,7 +710,7 @@ function productRemove() {
 
 //visual video load check
 function videoSet() {	
-	const visualHead = document.querySelector('.goms .head-visual-wrap')
+	const visualHead = document.querySelector('.head-visual-wrap')
 	if (!visualHead) return
 	const visualVod = visualHead.querySelector('video')
 	if (!visualVod) return

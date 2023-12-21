@@ -151,7 +151,7 @@
 			dl {
 				padding-left: 132px;
 				dt {
-					width: 120px;
+					width: auto;
 				}
 			}
 		}
@@ -209,10 +209,10 @@
 		}
 		#container {
 			.panel {
-				&:has(.snb-wrap) {
-					grid-template-columns: 240px 1fr;
-					.inner {
-						padding-left:76px;
+				.snb-wrap {
+					width: 240px;
+					& + .inner {
+						padding-left: 316px;
 					}
 				}
 				&[class*='w1280'] {
@@ -391,6 +391,9 @@
 					&.al-mid {
 						vertical-align: middle;
 					}
+					&.txt-center {
+						text-align: center;
+					}
 					/* // gomlab측 */
 				}
 				th {
@@ -399,6 +402,13 @@
 					color: $color-black-2;
 					font-weight: 400;
 					letter-spacing: -0.48px;
+					text-align: center;
+					vertical-align: middle;
+					img {
+						& + img {
+							margin-left: 10px;
+						}
+					}
 				}
 				td {
 					// color: $color-gray-14;
@@ -713,11 +723,6 @@
 }
 @include tablet {
 	.customer {
-		#container {
-			&:has(.tab-underline) {
-				margin-top: 85px;
-			}
-		}
 		.cmn-content-detail {
 			.license-form {
 				.form-item {
@@ -936,8 +941,9 @@
 		&.pd-guide-detail {
 			#container {
 				.panel {
-					&:has(.snb-wrap) {
-						.inner {
+					.snb-wrap {
+						width: auto;
+						& + .inner {
 							padding-left:24px;
 						}
 					}

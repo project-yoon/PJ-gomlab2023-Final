@@ -196,7 +196,7 @@
 <script>
 	/* 플레이어 옵션 */
 	let videoOpt = {
-		playbackRates: [1.7, 1.5, 1.2, 1.0, 0.8], // 재생 속도
+		playbackRates: [2.0, 1.7, 1.5, 1.2, 1.0, 0.8], // 재생 속도 , 231220_수정
 		controls: true,
 		preload: "auto",
 		autoplay: false,
@@ -364,11 +364,11 @@
 		},
 	});
 
-	/* 재생 속도 버튼 이벤트 */
+	/* 재생 속도 버튼 이벤트 */ // [D] 231220_수정: 기능 일부 수정
 	$('.vjs-playback-rate .vjs-icon-placeholder').on({
 		mouseenter: function() {
 			if ($('.vjs-menu').css('display') === 'none') {
-				$('.vjs-menu').show();
+				// $('.vjs-menu').show().addClass('show-menu');
 				$('.vjs-menu-item-text:visible').each(function () {
 					let playbackRatesData = $(this).text().replace(/x/g, ''); // 재생 속도 예)1.0x ... 뒤에 x 특수문자 제거 후 반환
 
@@ -381,11 +381,15 @@
 			}
 		},
 		mouseleave: function() {
-
+			$('.vjs-menu').hasClass('show-menu') ? $('.vjs-menu').removeClass('show-menu') : ''
 		},
 		click: function() {
 			$(this).off('mouseenter');
-			$('.vjs-menu').show();
+			if ($('.vjs-menu').hasClass('show-menu')) {
+				$('.vjs-menu').hide().removeClass('show-menu')
+			} else {
+				$('.vjs-menu').show().addClass('show-menu');
+			}
 			return false;
 		}
 	});

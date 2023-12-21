@@ -4,9 +4,19 @@
 
 // 비즈니스
 .business {
+	.head-visual {
+		&.visual-business {
+			background: no-repeat center url(#{$img-url}/business/head-visual-business-pc.png);
+			background-size: cover;
+			.logo strong,
+			h1,
+			p.intro {
+				color: $color-white;
+			}
+		}
+	}
+
 	.lnb-wrap {
-		position: static;
-		bottom: unset;
 		background: linear-gradient(270deg, #E5FAFF 0%, #F9F4FF 100%) 0% 0% no-repeat;
 	}
 	.gom-step-wrap {
@@ -29,13 +39,17 @@
 			}
 		}
 	}
-	.panel:has(.gom-card-box-defalut){
-		background: linear-gradient(270deg, #E5FAFF 0%, #F9F4FF 100%) 0% 0% no-repeat;
+	.panel {
+		&.gom-card-wrap {
+			background: linear-gradient(270deg, #E5FAFF 0%, #F9F4FF 100%) 0% 0% no-repeat;
+		}
 	}
 	.gom-card-box-defalut {
 		padding: 181px 0 120px;
 		.pagkage-more-info {
-			min-height: 74px;
+			p {
+				min-height: 74px;
+			}
 		}
 	}
 	// 비즈니스_견적 요청서
@@ -66,19 +80,11 @@
 			.form-col {
 				gap: 10px;
 				flex: 1;
-				&:has([class^=btn-]) {
-					width: auto;
-					.form-cont {
-						width: 327px;
-						flex: unset;
-						& + [class^=btn-] {
-							margin-top: 4px;
-						}
+				.form-cont {
+					& + [class^=btn-] {
+						margin-top: 4px;
 					}
 				}
-			}
-			.form-cont {
-				flex: 1;
 			}
 			.product-list {
 				max-width: $input-col;
@@ -91,7 +97,7 @@
 				border-radius: 4px;
 				border: 1px solid $color-gray-11;
 				box-sizing: border-box;
-				&:has(.empty) {
+				&.empty {
 					min-height: unset;
 				}
 				&::-webkit-scrollbar {
@@ -163,6 +169,12 @@
 @include tablet {}
 @include mobile {
 	.business {
+		.head-visual {
+			&.visual-business {
+				background-image: url(#{$img-url}/business/head-visual-business-mo.png);
+				// height: 106vw; /*모바일 배경이미지 비율처리할 것인지 확인 필요*/
+			}
+		}
 		#container {
 			.gom-content-inner-wrap {
 				&.first {
@@ -250,24 +262,6 @@
 		.cmn-col {
 			.form-item {
 				display: block;
-				.form-col {
-					&:has(.form-drop-box){
-						display: block;
-						width: 100%;
-					}
-					&:has([class^=btn-]) {
-						.form-cont{
-							width: auto;
-							flex: 1;
-						}
-					}
-					.form-cont {
-						max-width: none;
-					}
-				}
-				.form-cont {
-					flex: 1;
-				}
 				.product-list {
 					li {
 						padding: 20px 25px 19px 0;

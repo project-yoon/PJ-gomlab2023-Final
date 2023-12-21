@@ -193,55 +193,6 @@
 			}
 		}
 	}
-	.gom-card-box-full {
-		.card-box-grid {
-			max-width: 100%;
-			width: 100%;
-		}
-	}
-	.gom-card-box-type-1,
-	.gom-card-box-type-2 {
-		display: grid;
-		grid-gap: 25px;
-		padding-top: 30px;
-		.card-box-grid {
-			width: auto;
-			max-width: unset;
-			grid-row: 1 / 4;
-		}
-	}
-	.gom-card-box-type-1 {
-		grid-template-columns: repeat(3, 1fr);
-		&.gom-card-box-type-1-pd {
-			padding-bottom: 120px;
-		}
-		&.gom-card-box-type-1-pd-2 {
-			padding-top: 0;
-			padding-bottom: 90px;
-		}
-		.card-box-grid {
-			&.card-box-grid-col-1 {
-				grid-column: 1 / 3;
-			}
-			&.card-box-grid-col-2 {
-				grid-column: 3 / 12;
-			}
-		}
-	}
-	.gom-card-box-type-2 {
-		grid-template-columns: repeat(3, 1fr);
-		&.gom-card-box-type-2-pd {
-			padding-bottom: 120px;
-		}
-		.card-box-grid {
-			&.card-box-grid-col-1 {
-				grid-column: 1 / 2;
-			}
-			&.card-box-grid-col-2 {
-				grid-column: 2 / 4;
-			}
-		}
-	}
 	.gom-card-box-defalut {
 		padding-top: 61px;
 	}
@@ -299,92 +250,67 @@
 			}
 		}
 	}
+	/* 제품 다운로드 영역 */
 	.gom-product-download {
 		margin-top: 64px;
 		padding: 40px 50px;
-		background: $color-gray-21;
-		border-radius: 26px;
+		border-radius: 20px;
+		background-color: #F8F8F8;
+	}
+	.gom-product--download {
+		display: grid;
+		column-gap: 80px;
+		grid-template-columns: repeat(2, 1fr);
+		&.mo-only-type {
+			display: block;
+		}
+		& > div {
+			position: relative;
+			padding-left: 90px;
+		}
+		.pc-area-wrap {
+			&::before {
+				position: absolute;
+				top: 0;
+				right: -40px;
+				width: 1px;
+				height: calc(100% - 8px);
+				background-color: #DADADA;
+				content: ''
+			}
+		}
 		.gom-product-download-title {
+			position: absolute;
+			top: 0;
+			left: 0;
 			@include txt(24);
 			font-weight: 700;
 		}
-		.gom-product--download {
-			position: relative;
+		.mo-area {
 			display: flex;
+			flex-wrap: wrap;
 			justify-content: center;
-			gap: 105px;
-			&::after {
-				content: '';
-				position: absolute;
-				right: 52%;
-				bottom: 0;
-				height: 100%;
-				border-right: 1px solid $color-gray-11;
+			gap: 10px;
+		}
+		.pc-area {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-end;
+			row-gap: 20px;
+			height: 100%;
+		}
+		.area-download {
+			[class^=btn] {
+				padding: 0 31px;
 			}
-			&.mo-only-type {
-				&::after {
-					display: none;
-				}
-				.mo-area-wrap {
-					justify-content: space-between;
-					width: 100%;
-					.mo-area {
-						flex-wrap: nowrap;
-						justify-content: center;
-						gap: 32px;
-						width: 100%;
-					}
-				}
+			img {
+				display: block;
+				margin: 0 auto 24px;
 			}
-			.pd-download-title {
-				margin-bottom: 60px;
-				@include txt(20);
-				font-weight: 700;
-			}
-			.pc-area-wrap,
-			.mo-area-wrap {
-				display: flex;
-				box-sizing: border-box;
-			}
-			.pc-area-wrap {
-				justify-content: space-between;
-				width: 50%;
-				.pc-area {
-					margin-top: 20px;
-					&.one {
-						display: flex;
-						align-items: center;
-						margin-top: 0;
-					}
-					.pc-area-download {
-						&:last-child {
-							a {
-								margin-bottom: 0;
-							}
-						}
-					}
-				}
-			}
-			.mo-area-wrap {
-				.mo-area {
-					display: flex;
-					gap: 10px;
-					.mo-area-download {
-						display: flex;
-						flex-direction: column;
-						align-items: center;
-						gap: 24px;
-						a {
-							margin-bottom: 0;
-						}
-					}
-				}
-			}
-			.area-download {
-				a {
-					width: 200px;
-					padding: 0 32px;
-					margin-bottom: 20px;
+			&.pc-area-download {
+				[class^=btn] {
+					min-width: 200px;
 				}
 			}
 		}
@@ -606,15 +532,6 @@
 		.lecture-introduce-wrap {
 			grid-template-columns: repeat(2, 1fr);
 		}
-		.gom-product-download {
-			.gom-product--download {
-				.mo-area-wrap {
-					.mo-area {
-						flex-wrap: wrap;
-					}
-				}
-			}
-		}
 		.gom-swiper-button-prev,
 		.gom-swiper-button-next {
 			display: none;
@@ -701,16 +618,6 @@
 				}
 			}
 		}
-		.gom-card-box-type-1,
-		.gom-card-box-type-2 {
-			display: block;
-			.card-box-grid {
-				margin-top: 20px;
-				&:first-child {
-					margin-top: 0;
-				}
-			}
-		}
 		.gom-card-box-defalut {
 			padding-top: 0px;
 		}
@@ -720,56 +627,50 @@
 				@include txt(14);
 			}
 		}
+		/* 제품 다운로드 영역 */
 		.gom-product-download {
-			margin-top: 32px;
-			padding: 0;
-			background: transparent;
-			.gom-product-download-title {
-				@include txt(20);
+			margin-top: 34px;
+			padding: 0px;
+			border-radius: 0px;
+			background-color: unset;
+		}
+		.gom-product--download {
+			display: block;
+			& > div {
+				position: relative;
+				padding: 32px;
+				border-radius: 20px;
+				background-color: #f8f8f8;
 			}
-			.gom-product--download {
-				display: block;
-				&::after {
+			.pc-area-wrap {
+				margin-bottom: 16px;
+				&::before {
 					display: none;
 				}
-				&.mo-only-type {
-					.mo-area-wrap {
-						.mo-area {
-							gap: 10px;
-						}
-					}
+			}
+			.mo-area-wrap {
+				padding: 70px 17px 32px;
+			}
+			.gom-product-download-title {
+				position: absolute;
+				top: 32px;
+				left: 32px;
+				@include txt(20);
+			}
+			.pc-area {
+				justify-content: end;
+				row-gap: 12px;
+				height: unset;
+				min-height: 84px;
+			}
+			.area-download {
+				[class^=btn] {
+					height: 36px;
+					padding: 0 18px;
 				}
-				.pc-area-wrap,
-				.mo-area-wrap {
-					width: 100%;
-					padding: 32px;
-					background: $color-gray-21;
-					border-radius: 20px;
-				}
-				.pc-area-wrap {
-					margin-bottom: 16px;
-					.pc-area {
-						margin-top: 0;
-					}
-				}
-				.mo-area-wrap {
-					display: block;
-					.mo-area {
-						justify-content: space-evenly;
-						margin-top: 16px;
-						.mo-area-download {
-							a {
-								width: auto;
-							}
-						}
-					}
-				}
-				.area-download {
-					a {
-						width: 170px;
-						height: 36px;
-						padding: 0 14px;
-						margin-bottom: 12px;
+				&.pc-area-download {
+					[class^=btn] {
+						min-width: 170px;
 					}
 				}
 			}

@@ -15,7 +15,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	max-width: 1240px;
+	max-width: 1280px;
 	height: 78px;
 	padding: 0px 20px;
 	margin: 0px auto;
@@ -61,6 +61,7 @@
 		> ul.g-navi {
 			display: flex;
 			gap: 0px 40px;
+			align-items: center;
 			> li {
 				line-height: 0;
 				> a {
@@ -154,29 +155,31 @@
 				> li {
 					@include txt(14);
 					font-weight: 700;
-					& + li {
-						position: relative;
-						padding-left: 19px;
-						margin-left: 18px;
+					position: relative;
+					padding-left: 19px;
+					margin-left: 18px;
+					&:first-child {
+						padding-left: 0;
+						margin-left: 0;
 					}
-					&:nth-child(1) {
+					&.login {
 						order: 1;
 					}
-					&:nth-child(2) {
+					&.mypage {
 						order: 3;
+						&::after {
+							content: '';
+							display: block;
+							position: absolute;
+							top: 1px;
+							left: 0px;
+							width: 1px;
+							height: 14px;
+							background-color: $color-gray-11;
+						}
 					}
-					&:nth-child(3) {
+					&.logout {
 						order: 2;
-					}
-					&:nth-child(2)::after {
-						content: '';
-						display: block;
-						position: absolute;
-						top: 1px;
-						left: 0px;
-						width: 1px;
-						height: 14px;
-						background-color: $color-gray-11;
 					}
 				}
 		}
@@ -238,6 +241,10 @@
 
 	&.hidden {
 		opacity: 0;
+	}
+	&[data-scroll="static"] {
+		position: static;
+		bottom: unset;
 	}
 }
 
@@ -406,69 +413,57 @@
 				left: 24px;
 				.user-menu {
 					> li {
+						padding-left: 0;
+						margin-left: 0;
+						a {
+							display: inline-flex;
+							align-items: center;
+							padding-left: 30px;
+							background: no-repeat left center;
+							height: 24px;
+							color: $color-gray-01;
+							@include txt(14);
+						}
 						& + li {
 							position: relative;
 							padding-left: 17px;
 							margin-left: 16px;
 							&:after {
-								top: 3px;
-								left: 0px;
-								height: 15px;
-								background-color: $color-gray-16;
+								display: none;
 							}
 						}
-						&:nth-child(1) {
-							order: 1;
+						&.login {
+							order: unset;
 							a {
-								display: flex;
-								align-items: center;
-								width: 60px;
-								height: 24px;
-								padding-left: 30px;
-								background: no-repeat left center;
 								background-image: icon(login);
-								color: $color-gray-01;
-								@include txt(14);
+								height: 24px;
 							}
 						}
-						&:nth-child(2) {
-							order: 2;
-							padding-left: 0;
-							margin-left: 0;
+						&.mypage {
+							order: unset;
 							a {
-								display: inline-block;
-								color: $color-gray-01;
-								width: 70px;
-								height: 24px;
-								padding-left: 30px;
-								background: no-repeat left center;
 								background-image: icon(profile);
 							}
-						}
-						&:nth-child(3) {
-							order: 3;
-							a {
-								display: inline-block;
-								width: 81px;
-								height: 24px;
-								padding-left: 30px;
-								color: $color-gray-04;
-								background: no-repeat left center;
-								background-image: icon(logout);
+							&::after {
+								display: none;
 							}
 						}
-						&:nth-child(2)::after {
-							display: none;
-						}
-						&:nth-child(3)::after {
-							content: '';
-							display: block;
-							position: absolute;
-							top: 4px;
-							left: 0px;
-							width: 1px;
-							height: 16px;
-							background-color: $color-gray-11;
+						&.logout {
+							order: unset;
+							a {
+								color: $color-gray-04;
+								background-image: icon(logout);
+							}
+							&::after {
+								content: '';
+								display: block;
+								position: absolute;
+								top: 4px;
+								left: 0px;
+								width: 1px;
+								height: 16px;
+								background-color: $color-gray-11;
+							}
 						}
 					}
 				}

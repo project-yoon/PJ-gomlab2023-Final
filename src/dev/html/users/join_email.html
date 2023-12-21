@@ -37,8 +37,10 @@
 											<div class="form-item age-form">
 												<label class="form-name">곰랩에서는 만 14세 이상 여부를 확인하고 있습니다. <br>만 14세 이상이십니까?</label>
 												<div class="form-cont">
-													<label for="age0"><input type="radio" name="user-age" id="age0"><span>예</span></label>
-													<label for="age1"><input type="radio" name="user-age" id="age1"><span>아니오</span></label>
+													<!-- [D] 231222 inp-chk클래스 추가, span감싸기 -->
+													<label for="age1" class="inp-chk"><input type="radio" name="user-age" id="age1"><span>아니오</span></label>
+													<label for="age0" class="inp-chk"><input type="radio" name="user-age" id="age0"><span>예</span></label>
+													<!-- //[D] 231222 inp-chk클래스 추가, span감싸기 -->
 												</div>
 												<div class="help-wrap">
 													<p class="guide-txt">만 14세 미만인 경우 회원가입 및 유료서비스 결제 시, 법정대리인 인증이 필요합니다.</p>
@@ -70,7 +72,7 @@
 											<div class="form-item">
 												<div class="form-col">
 													<div class="form-cont">
-														[D] 231208_수정 :  인증코드 case 추가-->
+														<!--[D] 231208_수정 :  인증코드 case 추가-->
 														<input type="text" class="inp-line" placeholder="인증코드 입력">
 														<!-- [D] 인증코드 타이머-->
 														<!-- <span class="timer">00:00</span> -->
@@ -97,9 +99,11 @@
 									<div class="user-form-wrap">
 										<div class="form-item">
 											<div class="form-cont">
-												<label for="business01"><input type="radio" name="business-type" id="business01"><span>기업</span></label>
-												<label for="business02"><input type="radio" name="business-type" id="business02"><span>교육</span></label>
-												<label for="business03"><input type="radio" name="business-type" id="business03"><span>공공</span></label>
+												<!-- [D] 231222 inp-chk클래스 추가, span감싸기 -->
+												<label for="business01" class="inp-chk"><input type="radio" name="business-type" id="business01"><span>기업</span></label>
+												<label for="business02" class="inp-chk"><input type="radio" name="business-type" id="business02"><span>교육</span></label>
+												<label for="business03" class="inp-chk"><input type="radio" name="business-type" id="business03"><span>공공</span></label>
+												<!-- //[D] 231222 inp-chk클래스 추가, span감싸기 -->
 											</div>
 										</div>
 										<div class="form-item">
@@ -121,8 +125,10 @@
 											<div class="form-item age-form">
 												<label class="form-name">곰랩에서는 만 14세 이상 여부를 확인하고 있습니다. <br>만 14세 이상이십니까?</label>
 												<div class="form-cont">
-													<label for="age0"><input type="radio" name="user-age" id="age0"><span>예</span></label>
-													<label for="age1"><input type="radio" name="user-age" id="age1"><span>아니오</span></label>
+													<!-- [D] 231222 inp-chk클래스 추가, span감싸기 -->
+													<label for="age0" class="inp-chk"><input type="radio" name="user-age" id="age0"><span>예</span></label>
+													<label for="age1" class="inp-chk"><input type="radio" name="user-age" id="age1"><span>아니오</span></label>
+													<!-- //[D] 231222 inp-chk클래스 추가, span감싸기 -->
 												</div>
 												<div class="help-wrap">
 													<p class="err-txt">비즈니스 회원은 만 14세 이하인 경우 회원가입이 불가합니다.</p>
@@ -134,16 +140,18 @@
 								</div>
 							</div>
 							<ul class="agree-form" data-agree="agree-group">
-								<li><label for="agree-all" data-agree="agree-all"><input type="checkbox" id="agree-all" class="inp-sm"><strong>모두 동의 합니다.</strong></label></li>
-								<li><label for="chk1"><input type="checkbox" id="chk1" class="inp-sm">이용약관에 동의합니다. (필수)</label></li>
-								<li><label for="chk2"><input type="checkbox" id="chk2" class="inp-sm">개인정보처리방침에 동의합니다. (필수)</label></li>
+								<!-- [D] 231222 inp-chk클래스 추가, span감싸기 -->
+								<li><label for="agree-all" data-agree="agree-all" class="inp-chk"><input type="checkbox" id="agree-all" class="inp-sm"><span><strong>모두 동의 합니다.</strong></span></label></li>
+								<li><label for="chk1" class="inp-chk"><input type="checkbox" id="chk1" class="inp-sm"><span>이용약관에 동의합니다. (필수)</span></label></li>
+								<li><label for="chk2" class="inp-chk"><input type="checkbox" id="chk2" class="inp-sm"><span>개인정보처리방침에 동의합니다. (필수)</span></label></li>
 								<li>
-									<label for="chk3"><input type="checkbox" id="chk3" class="inp-sm">소프트웨어 관련한 정보 및 이벤트 정보 수신에 동의합니다. (선택)</label>
+									<label for="chk3" class="inp-chk"><input type="checkbox" id="chk3" class="inp-sm"><span>소프트웨어 관련한 정보 및 이벤트 정보 수신에 동의합니다. (선택)</span></label>
 									<div class="sub-check">
-										<label for="chk4"><input type="checkbox" id="chk4" class="inp-sm">이메일</label>
-										<label for="chk5"><input type="checkbox" id="chk5" class="inp-sm">SMS</label>
+										<label for="chk4" class="inp-chk"><input type="checkbox" id="chk4" class="inp-sm"><span>이메일</span></label>
+										<label for="chk5" class="inp-chk"><input type="checkbox" id="chk5" class="inp-sm"><span>SMS</span></label>
 									</div>
 								</li>
+								<!-- //[D] 231222 inp-chk클래스 추가, span감싸기 -->
 							</ul>
 							<div class="help-wrap">
 								<p class="err-txt">필수 약관에 체크하세요.</p>

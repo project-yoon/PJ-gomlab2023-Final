@@ -48,6 +48,9 @@
 			padding: 0 30px;
 		}
 	}
+	&.pop-full-window {
+		padding: 40px;
+	}
 	&.cp_g-pop-float-layer {
 		transform: translateY(0);
 		margin-bottom: 50px;
@@ -159,23 +162,28 @@
 			max-width: 100%;
 			margin-top: 0;
 			height: 100vh;
-			padding: 0 10px 40px;
+			padding: 0 24px;
 			box-sizing: border-box;
 			.btn-close-layer {
-				right: 40px;
+				right: 24px;
 				top: 12px;
 				width: 24px;
 				height: 24px;
-				background: url(close-lg);
+				background: icon(close-lg);
 			}
 			.pop-title {
 				height: 48px;
 				line-height: 48px;
 				margin-bottom: 0;
+				border-bottom: 1px solid $color-gray-20;
 			}
 			.cmn-content-detail {
-				height: 100%;
+				height: auto;
 				max-height: calc(100% - 272px);
+				margin-top: 40px;
+			}
+			.common-table {
+				margin-top: 40px;
 			}
 		}
 		.btn-pop-wrap {

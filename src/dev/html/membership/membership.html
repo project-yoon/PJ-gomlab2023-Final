@@ -2,6 +2,22 @@
 <html lang="ko">
 <include src="../include/head.html" title="멤버쉽" menucss="/dev/ui/css/membership.css"></include>
 <body class="membership">
+	<!-- [D] 231220_수정 : 상단띠배너 추가 -->
+	<div id="top-banner-wrap">
+		<aside class="top-banner only-pc">
+			<div class="tb-inner">
+				<span class="tb-txt">모든 제품을 커피 한 잔 값으로! 영상 프로그램 역사상 최저가 1,900원</span>
+				<a href="#" class="btn-sm btn-ghost-w">보러가기</a>
+				<button type="button" class="btn-tb-close">Close</button>
+			</div>
+		</aside>
+		<aside class="top-banner only-mo">
+			<div class="tb-inner">
+				<a href="#" target="_blank" title="새 창으로 자세히 보기" class="tb-txt">모든 제품을 커피 한 잔 값으로!</a>
+			</div>
+		</aside>
+	</div>
+	<!-- // [D] 231220_수정 : 상단띠배너 추가 -->
 	<!-- 헤더 -->
 	<include src="../include/header.html"></include>
 	<!-- //헤더 -->
@@ -9,40 +25,43 @@
 	<!-- 컨텐츠 -->
 	<main id="container">
 		<div id="contents-head" class="contents-head head-visual">
-			<div class="head-visual-wrap">
-				<video poster="/dev/ui/images/banner/test_visual_poster.png" playsinline loop muted>
-					<source src="/dev/ui/images/banner/test_visual.mp4" type="video/mp4">
-				</video>
-				<button type="button" class="btn-play">play</button>
-			</div>
+			<!-- 231220_수정 : 내용 및 태그 수정 -->
 			<div class="head-tit-wrap">
-				<div class="logo">
+				<h1 class="logo">
 					<img src="/dev/ui/images/component/logo_title_gomeasypass_w.svg" alt="곰이지패스" class="only-pc">
 					<img src="/dev/ui/images/component/logo_title_gomeasypass.svg" alt="곰이지패스" class="only-mo">
-				</div>
-				<h1>영상의 모든 순간에,<br>첫 멤버십 곰 이지패스</h1>
-				<p class="intro">편집부터 녹화, 재생까지 통합 구독 서비스!<br>영상 프로그램 역사상 최저가 1,900원</p>			
+				</h1>
+				<p class="title">It’s enough!</p>
+				<p class="intro">1,900원에 편집부터 녹화, 재생<br>그리고 교육까지 곰이지패스로 손쉽게!</p>			
 				<div class="btn_set">
-					<a href="#" class="btn-lg btn-default-w">지금 시작하기</a>
+					<a href="#" class="btn-lg btn-gradient">지금 시작하기!</a>
 					<!-- <a href="#" class="btn-lg btn-default-w">이미 곰이지패스 회원이시네요!<br>이번 달 혜택을 만나보세요</a> -->
 				</div>
 			</div>
+			<div class="head-visual-wrap">
+				<video poster="/dev/ui/images/membership/test_visual_poster.png" playsinline loop muted>
+					<source src="/dev/ui/images/banner/test_visual.mp4" type="video/mp4">
+				</video>
+			</div>
+			<!-- // 231220_수정 : 내용 및 태그 수정 -->
 		</div>
 		<div id="contents" class="contents-body">
 			<section class="panel-wrap">
 				<div class="panel wide membership-benefit">
 					<div class="benefit-wrap">
 						<div class="animate-item animate-item-01" data-animation="slideup">
-							<img src="/dev/ui/images/membership/animate_item_01.png" alt=""/>
+							<img src="/dev/ui/images/membership/animate_item_01.png" alt="">
 						</div>
 						<div class="animate-item animate-item-02 delay-5" data-animation="slideup">
-							<img src="/dev/ui/images/membership/animate_item_02.png" alt=""/>
+							<img src="/dev/ui/images/membership/animate_item_02.png" alt="">
 						</div>
 						<div class="inner w1280">
+							<!-- 231220_수정 : data- 수정, class 수정 -->
 							<div class="cmn-content-head">
-								<h2 class="delay-1" data-animation="slideup">영상 편집의 더 나은 선택,<br>더 나은 혜택</h2>
-								<p class="exp delay-2" data-animation="slideup">한 눈에 보는 곰이지패스 혜택​<br>매달 추가되는 신규 혜택 놓치지 마세요.</p>
+								<h2 data-animation="slideup">영상 편집의 더 나은 선택,<br>더 나은 혜택</h2>
+								<p class="exp" data-txt-animation="slideup">한 눈에 보는 곰이지패스 혜택​<br>매달 추가되는 신규 혜택 놓치지 마세요.</p>
 							</div>
+							<!-- // 231220_수정 : data- 수정, class 수정-->
 							<div class="benefit-item-wrap">
 								<dl class="benefit-item">
 									<dt>
@@ -134,7 +153,7 @@
 
 				<div class="panel wide membership-ticket">
 					<div class="animate-item animate-item-03 delay-2" data-animation="slideup">
-						<img src="/dev/ui/images/membership/animate_item_03.png" alt=""/>
+						<img src="/dev/ui/images/membership/animate_item_03.png" alt="">
 					</div>
 					<div class="inner">
 						<div class="cmn-content-head">
@@ -144,7 +163,8 @@
 							</h2>
 						</div>
 						<div class="gom-card-box-defalut">
-							<div class="gom-package-item card-box-md easypass delay-1" data-animation="slideup">
+							<!-- 231220_수정 : easypass 클래스 삭제 -->
+							<div class="gom-package-item card-box-md delay-1" data-animation="slideup">
 								<div class="gom-package-swiper-container">
 									<div class="swiper-wrapper">
 										<div class="swiper-slide">
@@ -200,15 +220,16 @@
 									<div class="swiper-button-prev gom-prev"></div>
 									<div class="swiper-button-next gom-next"></div>
 								</div>
+								<!-- 231220_수정 : 내용 수정 -->
 								<form action="" class="form-wrap">
 									<div class="gom-package-info">
 										<div class="pagkage-top">
-											<p class="title"><span class="logo"><img src="/dev/ui/images/layout/icon_pd_gomplayer_plus2024.png" alt="곰플레이어+ 2024"></span>곰플레이어+ 2024</p>
+											<p class="title"><span class="logo"><img src="/dev/ui/images/layout/icon_pd_all.png" alt="전제품"></span>전 제품 영구 이용권 구매 시​</p>
 										</div>
 										<div class="pagkage-mid">
 											<dl class="price">
 												<dt>영구 이용권</dt>
-												<dd><strong>00,000원</strong></dd>
+												<dd><strong>150,000원</strong></dd>
 											</dl>
 											<button type="submit" class="btn-lg btn-ghost btn-purchase">구매하기</button>
 										</div>
@@ -226,17 +247,24 @@
 										</div>
 									</div>
 								</form>
+								<!-- //231220_수정 : 내용 수정 -->
 							</div>
 						</div>
 					</div>
 				</div>
 
 				<div class="panel wide">
-					<div class="inner">
+					<!-- 231220_수정 : 내용 및 클래스 수정 -->
+					<div class="inner membership-news-wrap">
 						<div class="membership-news">
-
+							<h2>편집, 녹화, 재생을 한번에!<br>​곰이지패스 런칭 EVENT!</h2>
+							<p class="exp">노트북, 모니터, 네이버페이,<br class="only-mo"> 100만원 상금까지<br class="only-pc"> ​총 3천만원 상당의<br class="only-mo"> 혜택을 받아가세요!</p>
+							<div class="btn-wrap">
+								<a href="#" class="btn-lg btn-default">보러 가기</a>
+							</div>
 						</div>
 					</div>
+					<!-- // 231220_수정 : 내용 및 클래스 수정 -->
 				</div>
 
 				<div class="panel only-pc">
@@ -377,24 +405,24 @@
 				</div>
 
 				<div class="panel w1280">
-					<div class="inner w1280">
-						<div class="gom-use-guide-inner-wrap">
-							<div class="gom-use-guide-wrap">
-								<div>
-									<h2 class="gom-title">사용 가이드</h2>
-									<p>제품 사용에 대한 상세한 안내가 필요하다면<br> 사용 가이드를 참고하세요.</p>
-									<p>*비즈니스용, 개인용 사용가이드 내용 동일합니다.</p>
-								</div>
-								<div class="gom-use-guide-img">
-									<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gommix2024.png" alt="곰믹스 2024"></a>
-									<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gomcam2024.png" alt="곰캠 2024"></a>
-									<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gomplayer_plus2024.png" alt="곰플레이어+ 2024"></a>
-									<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gomvoice2024.png" alt="곰보이스 2024"></a>
-									<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gomsoundcut2024.png" alt="곰사운드컷 2024"></a>
-								</div>
+					<!-- 231220_수정 : 태그 수정 -->
+					<div class="inner w1280 gom-use-guide-inner-wrap">
+						<div class="gom-use-guide-wrap">
+							<div>
+								<h2 class="gom-title">사용 가이드</h2>
+								<p>제품 사용에 대한 상세한 안내가 필요하다면<br> 사용 가이드를 참고하세요.</p>
+								<p>*비즈니스용, 개인용 사용가이드 내용 동일합니다.</p>
+							</div>
+							<div class="gom-use-guide-img">
+								<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gommix2024.png" alt="곰믹스 2024"></a>
+								<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gomcam2024.png" alt="곰캠 2024"></a>
+								<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gomplayer_plus2024.png" alt="곰플레이어+ 2024"></a>
+								<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gomvoice2024.png" alt="곰보이스 2024"></a>
+								<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gomsoundcut2024.png" alt="곰사운드컷 2024"></a>
 							</div>
 						</div>
 					</div>
+					<!-- // 231220_수정 : 태그 수정 -->
 				</div>
 
 				<div class="panel">
@@ -416,83 +444,14 @@
 				</div>
 			</section>
 		</div>
-		<div class="content-footer marquee-banner">
-            <ul class="partners-list">
-                <li class="marquee-part">
-                    <span><img src="/dev/ui/images/main/partners_logo_taimienphi.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_teaware.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_samsung.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_microsoft.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_hancom.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_avast.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_gmo.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_kait.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_mediacenter.png" alt=""></span>
-                </li>
-                <li class="marquee-part">
-                    <span><img src="/dev/ui/images/main/partners_logo_taimienphi.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_teaware.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_samsung.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_microsoft.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_hancom.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_avast.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_gmo.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_kait.png" alt=""></span>
-                    <span><img src="/dev/ui/images/main/partners_logo_mediacenter.png" alt=""></span>
-                </li>
-            </ul>
-        </div>
-
+		<!-- 231220_수정 : 파트너스 영역 삭제 -->
 	</main>
 	<!-- //컨텐츠 -->
 
 	<!-- 각 화면 별 단독 js 영역 -->
 	<script src="/dev/ui/js/libs/swiper.min.js"></script>
 	<script>
-		//visual video control
-		function videoControl () {
-			const visualHead = document.querySelector('.head-visual-wrap')
-			const visualVod = visualHead.querySelector('video')
-			const btnPlay = visualHead.querySelector('.btn-play')
-
-			const breakPoint = 768
-			let isMobile = 'false'
-			let winX = window.innerWidth
-
-			function visualPc() {
-				visualVod.play()
-				visualVod.setAttribute('autoplay', '')
-			}
-
-			function visualMo() {
-				btnPlay.classList.contains('disabled')? btnPlay.classList.remove('disabled') : ''
-				visualVod.pause()
-				visualVod.setAttribute('autoplay', 'false')
-				
-				btnPlay.addEventListener('click', (e) => {
-					e.preventDefault()
-					visualVod.play()
-					visualVod.setAttribute('autoplay', '')
-					btnPlay.classList.add('disabled')
-				})
-			}
-
-			function setVisual(isMobile) {
-				winX = window.innerWidth
-				isMobile = breakPoint >= winX
-				if (isMobile) {
-					visualMo()
-				} else { 
-					visualPc()
-				}
-			}
-			setVisual(isMobile)
-
-			window.addEventListener('resize', () => {
-				setVisual(isMobile)
-			})
-		}
-
+		//231220_수정 : 비디오 이벤트 스크립트 삭제 및 텍스트 모션 추가
 		//card motion
 		function cardEvent () {
 			const header = document.getElementById('header-wrap')
@@ -500,6 +459,7 @@
 			const fixedWrap = document.querySelector('.benefit-wrap')
 			const cards = document.querySelectorAll('.benefit-item')
 			const cardWrap = document.querySelector('.benefit-item-wrap')
+			const benefitTxt = benefitWrap.querySelector('.cmn-content-head .exp')
 			
 			let wrapRect
 			let headerH
@@ -517,7 +477,7 @@
 				winY = window.scrollY
 				viewportY = winY + window.innerHeight
 				wrapTop = wrapRect.top + winY;
-				fullHeight = wrapTop + wrapRect.height
+				fullHeight = wrapTop + (wrapRect.height - (wrapRect.height * 0.08)) //[D] 231220_수정
 				point = fullHeight / (cards.length * 1.2)
 				triggerPoints = [...cards].map((_, i) => Math.floor(wrapTop + (point * i)))
 			}
@@ -536,6 +496,7 @@
 						if (lastIdx !== idx) {
 							setClass(idx)
 							lastIdx = idx
+							idx == 1 ? benefitTxt.classList.add('active') : ''
 						}
 					}
 				})
@@ -582,7 +543,6 @@
 				window.scrollTo(0, 0);
 				cardEvent()
 			}, 1);
-			videoControl()
 		})
 	</script>
 	<!-- //각 화면 별 단독 js 영역 -->

@@ -102,7 +102,9 @@
 								<div class="cmn-content-util">
 									<div class="form-item">
 										<div class="form-cont">
-											<label for="agree-all" data-agree="agree-all"><input type="checkbox" id="agree-all"><strong>전체선택 3개</strong></label>
+											<!-- [D] 231222 inp-chk클래스 추가, span감싸기 -->
+											<label for="agree-all" data-agree="agree-all" class="inp-chk"><input type="checkbox" id="agree-all"><span><strong>전체선택 3개</strong></span></label>
+											<!-- //[D] 231222 inp-chk클래스 추가, span감싸기 -->
 										</div>
 									</div>
 									<a href="#" class="btn-sm btn-default">다운로드</a>
@@ -111,7 +113,9 @@
 									<li>
 										<div class="form-item">
 											<div class="form-cont">
-												<label for="agree1"><input type="checkbox" id="agree1"><strong>AAAA-BBBB-CCCC-DDDD</strong></label>
+												<!-- [D] 231222 inp-chk클래스 추가, span감싸기 -->
+												<label for="agree1" class="inp-chk"><input type="checkbox" id="agree1"><span><strong>AAAA-BBBB-CCCC-DDDD</strong></span></label>
+												<!-- //[D] 231222 inp-chk클래스 추가, span감싸기 -->
 											</div>
 										</div>
 										<div class="stauts-wrap">
@@ -122,7 +126,9 @@
 									<li>
 										<div class="form-item">
 											<div class="form-cont">
-												<label for="agree2"><input type="checkbox" id="agree2"><strong>AAAA-BBBB-CCCC-DDDD</strong></label>
+												<!-- [D] 231222 inp-chk클래스 추가, span감싸기 -->
+												<label for="agree2" class="inp-chk"><input type="checkbox" id="agree2"><span><strong>AAAA-BBBB-CCCC-DDDD</strong></span></label>
+												<!-- //[D] 231222 inp-chk클래스 추가, span감싸기 -->
 											</div>
 										</div>
 										<div class="stauts-wrap">
@@ -133,7 +139,9 @@
 									<li>
 										<div class="form-item">
 											<div class="form-cont">
-												<label for="agree3"><input type="checkbox" id="agree3"><strong>AAAA-BBBB-CCCC-DDDD</strong></label>
+												<!-- [D] 231222 inp-chk클래스 추가, span감싸기 -->
+												<label for="agree3" class="inp-chk"><input type="checkbox" id="agree3"><span><strong>AAAA-BBBB-CCCC-DDDD</strong></span></label>
+												<!-- //[D] 231222 inp-chk클래스 추가, span감싸기 -->
 											</div>
 										</div>
 										<div class="stauts-wrap">
@@ -157,6 +165,15 @@
 									<a href="#" class="btn-md btn-default">결제하기</a>
 								</div>
 								<!-- //[D] 231208_수정 : 버튼 활성, 비활성 case 추가 -->
+
+								<!-- 기획 확인용 (반영X) -->
+								<div class="btn-wrap wrap-right license-util">
+									<!-- <a href="javascript:openWindowPop('/dev/html/mypage/mypage_licenses_quotation.html', '_blank');" class="btn-md btn-ghost disabled">견적서 확인하기</a> -->
+									<!-- [D] 버튼 활성 시 -->
+									<a href="javascript:openWindowPop('/dev/html/mypage/mypage_licenses_quotation.html', '_blank');" class="btn-md btn-ghost ">견적서 확인하기</a>
+									<a href="#" class="btn-md btn-default">결제하기</a>
+								</div>
+								<!-- //기획 확인용 (반영X) -->
 							</form>
 						</div>
 					</div>

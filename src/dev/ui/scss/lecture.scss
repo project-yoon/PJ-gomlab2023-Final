@@ -88,7 +88,6 @@
 		.gom-content-inner-wrap {
 			padding-top: 80px;
 		}
-		.gom-content-inner {}
 		.course-package-wrap {
 			padding-top: 315px;
 			.gom-content-inner-wrap {
@@ -152,9 +151,6 @@
 		&.course-box-wrap {
 			li {
 				a {
-					.gallery-img {
-					
-					}
 					.gallery-content {
 						background-color: $color-black-3;
 						min-height: 77px;
@@ -216,67 +212,53 @@
 					vertical-align: middle;
 				}
 			}
+			&:not(:first-child) {
+				margin-top: 80px;
+			}
 		}
 		.course-curriculum-area {
 			display: flex;
 			justify-content: space-between;
-			margin: 32px 0 80px 0;
+			margin-top: 32px;
 			padding: 24px 20px;
 			background: $color-black-3;
 			border-radius: 10px;
-			&:last-child {
-				margin-bottom: 0;
-			}
-			&.multi {
-				margin-bottom: 32px;
-				&:nth-of-type(3) {
-					margin-bottom: 80px;
+			.course-curriculum-content {
+				flex-grow: 1;
+				.tit-wrap {
+					display: flex;
+					align-items: center
 				}
-			}
-			&.course-curriculum-qa-area {
-				margin: 0;
-				padding: 32px 0 0 0;
-				background: transparent;
-				border-radius: 0;
-				&.single {
-					margin-top: 16px;
-					border-top: 2px solid $color-gray-01;
-				}
-				.course-curriculum-area01 {
-					ul {
-						margin-top: 16px;
-					}
-				}
-			}
-			.course-curriculum-area01 {
 				.course-curriculum-title {
-					color: $color-white;
 					@include txt(20);
+					color: $color-white;
+					font-weight: 700;
 				}
 				ul {
 					margin-top: 24px;
+					color: $color-white;
 					li {
-						margin-bottom: 8px;
-						color: $color-gray-11;
-						@include txt(16);
-						&:last-child {
-							margin-bottom: 0;
-						}
+						position: relative;
+						padding-left: 22px;
 						span {
-							margin-right: 12px;
+							position: absolute;
+							left: 0;
+						}
+						& + li {
+							margin-top: 8px;
 						}
 					}
 				}
 			}
-			.course-curriculum-area02 {
-				.course-curriculum-thumb {
-					background: $color-gray-04;
-					border: 1px solid $color-gray-01;
-					border-radius: 10px;
-					overflow: hidden;
-					img {
-						@include image-fit($fit: cover);
-					}
+			.curriculum-thumb-box {
+				width: 284px;
+				height: 160px;
+				border: 1px solid $color-gray-01;
+				background-color: $color-gray-04;
+				border-radius: 10px;
+				overflow: hidden;
+				img {
+					@include image-fit($fit: cover);
 				}
 			}
 		}
@@ -355,6 +337,7 @@
 			}
 		}
 		.course-movie-list-container {
+			margin-top: 40px;
 			ul {
 				display: grid;
 				grid-template-columns: repeat(4, 1fr);
@@ -475,9 +458,6 @@
 				margin: 16px 0 24px 0;
 				border-top: 2px solid $color-black-1;
 				border-bottom: 1px solid $color-gray-11;
-				.course-live-apply-form {
-				
-				}
 			}
 			.course-live-apply-right-2 {
 				.apply-notice {
@@ -1093,6 +1073,27 @@
 		color: #ACBBFF;
 		font-weight: 700;
 	}
+	/*수강 전 궁금해요!*/
+	.questions_before_course {
+		margin-top: 16px;
+		padding-top: 32px;
+		border-top: 2px solid $color-black-3;
+		li {
+			.qna-title {
+				font-weight: 700;
+				color: $color-white;
+				@include txt(16);
+			}
+			p {
+				margin-top: 16px;
+				color: $color-gray-11;
+			}
+
+			& + li {
+				margin-top: 32px;
+			}
+		}
+	}
 }
 
 /* 반응형 */
@@ -1345,52 +1346,43 @@
 		.course-curriculum-wrap {
 			.gom-title {
 				padding-bottom: 16px;
-				border-bottom: 2px solid $color-gray-01;
+				border-bottom: 1px solid $color-gray-01;
 				@include txt(16);
+				&:not(:first-child) {
+					margin-top: 64px;
+				}
 			}
 			.course-curriculum-area {
-				align-items: flex-end;
-				margin-bottom: 64px;
-				padding-top: 24px;
-				&.multi {
-					margin: 24px 0;
-					&:nth-of-type(3) {
-						margin-bottom: 64px;
-					}
-				}
-				&.course-curriculum-qa-area {
-					padding: 24px 0 0 0;
-					&.single {
-						margin-top: 0;
-						border-top: none;
-					}
-					.course-curriculum-area01 {
-						ul {
-							margin-top: 12px;
+				margin-top: 24px;
+				padding: 44px 16px 16px;
+				position: relative;
+				.course-curriculum-content {
+					.tit-wrap {
+						display: block;
+						.part-tag {
+							position: absolute;
+							top: 16px;
+							left: 16px;
 						}
 					}
-				}
-				.course-curriculum-area01 {
 					.course-curriculum-title {
-						display: block;
 						@include txt(14);
 					}
 					ul {
 						margin-top: 12px;
 						li {
-							margin-bottom: 6px;
+							padding-left: 20px;
 							@include txt(12);
-							span {
-								margin-right: 8px;
+							& + li {
+								margin-top: 6px;
 							}
 						}
 					}
 				}
-				.course-curriculum-area02 {
-					.course-curriculum-thumb {
-						width: 120px;
-						height: 66px;
-					}
+				.curriculum-thumb-box {
+					width: 120px;
+					height: 68px;
+					border-radius: 4px;
 				}
 			}
 		}
@@ -1404,10 +1396,38 @@
 				margin-left: -24px;
 				margin-right: -24px;
 			}
-			.course-movie-list-container,
 			.course-movie-list-swiper-container,
 			.course-movie-list-swiper-container-2 {
 				margin-bottom: 40px;
+			}
+			.course-movie-list-container {
+				margin-top: 42px;
+				ul {
+					display: block;
+					li {
+						margin-top: 32px;
+						> a {
+							display: flex;
+							gap: 16px;
+							align-items: center;
+							padding: 16px;
+							border-radius: 10px;
+							background-color: $color-black-3;
+							.course-movie-list {
+								min-width: 32vw;
+								border-radius: 10px;
+								aspect-ratio: 1.76 / 1;
+								.course-movie-list-time {
+									display: none;
+								}
+							}
+							.course-movie-list-info {
+								padding: 0;
+								min-height: auto;
+							}
+						}
+					}
+				}
 			}
 		}
 		.gallery-wrap {
@@ -1537,6 +1557,24 @@
 		}
 		.btn-md {
 			padding: 0 14px;
+		}
+		/*수강 전 궁금해요!*/
+		.questions_before_course {
+			padding-top: 0;
+			margin-top: 24px;
+			border: none;
+			li {
+				.qna-title {
+					@include txt(14);
+				}
+				p {
+					@include txt(14);
+					margin-top: 12px;
+				}
+				& + li {
+					margin-top: 24px;
+				}
+			}
 		}
 	}
 }

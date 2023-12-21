@@ -100,11 +100,10 @@
 	/*임시 헤드라인 (추후 공통화시 재반영 예정)*/
 	#container {
 		.panel {
-			&:has(.order-side) {
-				display: grid;
-				grid-template-columns: auto 1fr;
-				.inner {
-					padding-left: 40px;
+			.order-side {
+				float: left;
+				& + .inner {
+					padding-left: 464px;
 				}
 			}
 			&.payment-complete {
@@ -365,7 +364,6 @@
 /* 결제시 유의사항 팝업 */
 .pay-notice {
 	height: 476px;
-	margin: 0 30px;
 	overflow-y: auto;
 	text-align: left;
 	h4 {
@@ -384,7 +382,6 @@
 }
 /* 제3자 제공동의 팝업 */
 .privacy-tbl {
-	margin: 0 30px;
 	table[class^=common-table] {
 		th {
 			padding: 20px 12px;
@@ -421,10 +418,10 @@
 			}
 			.panel {
 				padding-top: 0;
-				&:has(.order-side) {
-					display: block;
-					.inner {
-						padding: 0 24px;
+				.order-side {
+					float: unset;
+					& + .inner {
+						padding-left: 24px;
 					}
 				}
 			}

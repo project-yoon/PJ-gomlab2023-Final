@@ -221,6 +221,7 @@ input[type=text] {
 	background-size: contain;
 	font-size: 0;
 	text-indent: -9999px;
+	margin-top: 3px;
 	cursor: pointer;
 	&.btn-add {
 		background-image: url(#{$img-url}/component/icon_add.svg);
@@ -258,6 +259,9 @@ input[type=text] {
 	z-index: 4;
 }
 @include mobile {
+	.btn-arrow-wrap {
+		margin-top: 32px;
+	}
 	.btn-lg {
 		@include txt(14);
 	}

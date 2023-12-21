@@ -125,97 +125,14 @@
 }
 .gom-card-box-defalut {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 20px;
-	&:has(.gom-package-item) {
-		grid-template-columns: repeat(2, calc(50% - 20px));
-		grid-gap: 40px;
-		align-items: start;
-	}
+	grid-template-columns: repeat(2, calc(50% - 20px));
+	grid-gap: 40px;
+	align-items: start;
 }
 .gom-card-box-type-2 {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 21px;
-}
-.gom-permanent-pass,
-.gom-easy-pass {
-	padding: 36px 30px 32px 30px;
-	.card-category {
-		@include txt(28);
-		font-weight: 700;
-	}
-	.pass-composition-info {
-		position: relative;
-		min-height: 173px;
-		margin: 21px 0 24px 0;
-		border-bottom: 1px solid $color-gray-10;
-		ul {
-			position: relative;
-			li {
-				padding-left: 26px;
-				margin-bottom: 9px;
-				&::before {
-					content: '';
-					position: absolute;
-					left: 0;
-					width: 24px;
-					height: 24px;
-				}
-				&:last-child {
-					margin-bottom: 0;
-				}
-			}
-		}
-		.pass-composition-price {
-			position: absolute;
-			bottom: 17px;
-			right: 0;
-			span {
-				font-weight: 700;
-				&:nth-of-type(1) {
-					@include txt(20);
-					font-weight: 400;
-				}
-				&:nth-of-type(2) {
-					@include txt(40);
-				}
-			}
-		}
-	}
-}
-.gom-permanent-pass { // 영구이용권
-	background: $color-white;
-	.pass-composition-info {
-		ul {
-			li {
-				&::before {
-					background: icon(check-lg) center no-repeat;
-				}
-			}
-		}
-	}
-	.card-category {
-		color: $color-black-1;
-	}
-}
-.gom-easy-pass { // 곰이지패스
-	background: linear-gradient(90deg, $color-blue-6 0%, $color-purple-5 100%) 0% 0%;
-	.pass-composition-info {
-		ul {
-			li {
-				color: $color-white;
-				&::before {
-					background: url(#{$img-url}/layout/icon_chk_g_lg.svg) center no-repeat;
-				}
-			}
-		}
-		.pass-composition-price {
-			span {
-				color: $color-white;
-			}
-		}
-	}
 }
 .gom-package-item { //1.5v 카드 영역
 	position: relative;
@@ -248,6 +165,9 @@
 			background-image: icon(next-lg);
 		}
 	}
+	.gom-package-bnr { //기본 배너 컬러
+		background: linear-gradient(90deg, #5772E8 0%, #991FE8 100%) 0% 0% no-repeat;
+	}
 	&.expert { //곰팩 Expert의 경우 포인트 컬러 추가
 		.gom-package-bnr {
 			background-color: $color-blue-9;
@@ -268,9 +188,6 @@
 		}
 	}
 	&.easypass { //곰이지패스의 경우 포인트 컬러 추가
-		.gom-package-bnr {
-			background: linear-gradient(90deg, #5772E8 0%, #991FE8 100%) 0% 0% no-repeat;
-		}
 		.pagkage-mid {
 			.btn-purchase {
 				background: linear-gradient(90deg, #5772E8 0%, #991FE8 100%) 0% 0% no-repeat;
@@ -316,20 +233,24 @@
 			align-items: flex-end;
 			.price {
 				dt {
-					margin-bottom: 10px;
 					@include txt(16);
 					font-weight: 700;	
 				}
 				dd {
+					margin-top: 8px;
+					@include txt(20);
+					font-weight: 700;
 					strong {
+						margin-top: 2px;
 						@include txt(36);
-						font-weight: 700;
+						display: inline-block;
 					}
 					span {
 						display: inline-block;
 						margin-left: 8px;
 						vertical-align: baseline;
 						@include txt(12);
+						font-weight: 400;
 					}
 				}
 			}
@@ -371,6 +292,7 @@
 				.bl-check-list {
 					li {
 						position: relative;
+						margin-top: 4px;
 						padding: 3px 0 3px 30px;
 						@include txt(16);
 						&::before {
@@ -477,48 +399,7 @@
 		}
 	}
 	.gom-card-box-defalut {
-		grid-template-columns: repeat(1, 1fr);
-		&:has(.gom-package-item) {
-			grid-template-columns: repeat(1, 100%);
-		}
-	}
-	.gom-permanent-pass,
-	.gom-easy-pass {
-		.card-category {
-			@include txt(18);
-		}
-		.pass-composition-info {
-			min-height: auto;
-			margin: 15px 0 16px 0;
-			ul {
-				li {
-					margin-bottom: 5px;
-					@include txt(14);
-					&::before {
-						width: 16px;
-						height: 16px;
-					}
-				}
-			}
-			.pass-composition-price {
-				position: unset;
-				margin-top: 14px;
-				margin-bottom: 10px;
-				text-align: right;
-				span {
-					&:nth-of-type(1) {
-						@include txt(16);
-						font-weight: 400;
-					}
-					&:nth-of-type(2) {
-						@include txt(24);
-					}
-				}
-			}
-		}
-	}
-	.gom-permanent-pass {
-		order: 2;
+		grid-template-columns: repeat(1, 100%);
 	}
 	.gom-card-box-type-2 {
 		grid-template-columns: repeat(1, 1fr);
@@ -578,6 +459,24 @@
 				.btn-purchase {
 					height: 36px;
 				}
+
+				&.pagkage-mid-m {
+					flex-direction: row;
+					align-items: flex-end;
+
+					.form-cont.form-drop-quantity {
+						width: 115px;
+					}
+
+					.btn-purchase {
+						padding: 0;
+						width: 130px;
+					}
+				}
+
+				& + .pagkage-mid {
+					margin-top: 20px;
+				}
 			}
 			.pagkage-bottom { //아코디언 영역
 				margin-top: 20px;
@@ -609,6 +508,7 @@
 					}
 					.bl-check-list {
 						li {
+							margin-top: 2px;
 							padding-left: 24px;
 							@include txt(12);
 							&::before {
@@ -628,7 +528,7 @@
 					}
 					.form-cont {
 						@include posRight($top: 0, $posY: 0);
-						&:has(.btn-drop-quantity) {
+						&.form-drop-quantity {
 							width: 80px;
 							.drop-list {
 								width: 100%;

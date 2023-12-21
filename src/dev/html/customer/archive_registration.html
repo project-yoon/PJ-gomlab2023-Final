@@ -8,7 +8,7 @@
 
 <!-- 컨텐츠 -->
 <main id="container">
-	<div id="contents-head" class="contents-head">
+	<div id="contents-head" class="contents-head  only-pc"><!--231222_수정: only-pc 클래스 추가-->
 		<div class="head-tit-wrap">
 			<h1>자료실</h1>
 		</div>
@@ -40,9 +40,9 @@
 							</div>
 							<div class="form-item">
 								<span class="form-label required">자막 파일</span>
-								<div class="form-col">
+								<div class="form-col narrow"> <!--[D] 231222 클래스 추가-->
 									<div class="form-cont">
-										[D] 231208_수정 :  placeholder 제거-->
+										<!--[D] 231208_수정 :  placeholder 제거-->
 										<input type="file" id="file">
 										<span class="form-filename null">선택된 파일 없음</span>
 									</div>
@@ -57,6 +57,11 @@
 								<div class="form-cont">
 									<input type="text" class="inp-box wide titleArchive" placeholder="제목을 입력해 주세요." value="">
 								</div>
+								<!--[D] 231220_수정 :  alert 메세지 추가 -->
+								<div class="help-wrap">
+									<p class="err-txt">제목을 입력해 주세요.</p>
+								</div>
+								<!--//[D] 231220_수정 :  alert 메세지 추가 -->
 							</div>
 							<div class="form-item">
 								<span class="form-label">내용</span>
@@ -72,10 +77,12 @@
 								<li>위 사항에 해당하는 자막 파일을 등록한 경우, 모든 책임은 자막 등록자에게 있으며 본인의 사전 동의 없이 삭제될 수 있습니다.</li>
 							</ul>
 							<div class="form-cont">
+								<!-- [D] 231222 span감싸기 -->
 								<label for="chk-agree" class="inp-chk">
-									<input type="checkbox" name="checkbox" id="chk-agree"><strong>자막 등록 유의사항</strong>에
-									동의합니다. (필수)
+									<input type="checkbox" name="checkbox" id="chk-agree"><span><strong>자막 등록 유의사항</strong>에
+									동의합니다. (필수)</span>
 								</label>
+								<!-- //[D] 231222 span감싸기 -->
 							</div>
 						</div>
 					</div>
