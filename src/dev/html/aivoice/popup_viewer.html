@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html lang="ko" class="dimmed">
+<html lang="ko">
 	<include src="../include/head.html" title="popups : business" menucss="/dev/ui/css/business.css"></include>
 <body class="pop-sample">
 	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
 	<!-- //헤더 -->
 
-	<!-- 컨텐츠 -->
-	<!-- popAiVoice1 : [case] 이미 AI 보이스를 구매하셨습니다. -->
-	<include src="popup_ai_voice_1.html"></include>
-
-	<!-- popAiVoice2 : [case2] 곰믹스 맥스가 없으시군요! -->
-	<include src="popup_ai_voice_2.html"></include>
-
-	<!-- popAiVoice3: [case3] 곰믹스 맥스 만료일 안내 -->
-	<include src="popup_ai_voice_3.html"></include>
-	<!-- //컨텐츠 -->
+	<main id="container" class="cp_guide_only" style="min-height:700px;">
+		<div class="cp_guide_inner" style="padding-top:50px;">
+			<button type="button" class="btn-sm btn-default" data-role="open__popup_ai_voice_1">AI 보이스를 구매 했을 때</button>
+			<button type="button" class="btn-sm btn-default" data-role="open__popup_ai_voice_2">곰믹스 맥스가 없을 때</button>
+			<button type="button" class="btn-sm btn-default" data-role="open__popup_ai_voice_3">곰믹스 맥스 만료일 안내</button>
+			<button type="button" class="btn-sm btn-default" data-role="open__popup_ai_voice_4">Comming Soon</button>
+		</div>
+	</main>
 
 	<!-- 퀵 메뉴 -->
 	<include src="../include/quick_menu.html"></include>
 	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
 
 </body>
 </html>

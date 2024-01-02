@@ -141,6 +141,28 @@
 		remove,
 		btn-play,
 		btn-pause,
+		video-play,
+		video-pause,
+		video-prev,
+		video-next,
+		video-clip,
+		video-forward,
+		video-mute,
+		video-rewind,
+		video-select,
+		video-stop,
+		video-unmute,
+		video-full-exit-screen,
+		video-full-screen,
+		video-play-fill,
+		video-pause-fill,
+		video-forward-fill,
+		video-prev-fill,
+		video-next-fill,
+		video-mute-fill,
+		video-unmute-fill,
+		video-full-exit-fill,
+		video-full-screen-fill,
 		sns-youtube,
 		sns-facebook,
 		sns-instagram,
@@ -149,6 +171,8 @@
 		sns-twitter-x,
 		sns-kakao,
 		sns-naver-blog,
+		star,
+		star-fill,
 	);
 	
 	@each $iconName in $iconNames {
@@ -160,6 +184,64 @@
 			background-size: contain;
 			background-image: icon($iconName);
 		}
+
+		.cp-guide-grey-#{$iconName} {
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			background: no-repeat center;
+			background-size: contain;
+			background-image: icon($iconName, 'dadada');
+		}
+	}
+
+	.cp-guide-color-star-fill {
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		background: no-repeat center;
+		background-size: contain;
+		background-image: icon(star-fill, '5772e8');
+	}
+	.cp-guide-color-check-circle {
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		background: no-repeat center;
+		background-size: contain;
+		background-image: icon(check-circle, '69b703');
+	}
+
+
+	.cp_guide_code {
+		display: block;
+		height: 30px;
+		border-radius: 3px;
+		background-color: #dedede;
+		line-height: 30px;
+		box-sizing: border-box;
+		padding: 0 12px;
+		max-width: 1104px;
+		margin: 0 auto 20px;
+	}
+	.guide_icons {
+		display: grid;
+		grid-template-columns: repeat(5, minmax(100px, 1fr));
+		max-width: 1104px;
+		margin: 0 auto 40px;
+		gap: 8px 20px;
+		li {
+			padding-left: 36px;
+			width: auto;
+			background-position: left center;
+		}
+	}
+	.guide_icons_col {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 40px;
+		max-width: 1104px;
+		margin: 0 auto 40px;
 	}
 }
 /* 반응형 */

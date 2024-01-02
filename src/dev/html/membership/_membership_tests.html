@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="멤버쉽" menucss="/dev/ui/css/membership.css"></include>
+<body class="membership">
+	<!-- [D] 231220_수정 : 상단띠배너 추가 -->
+	<div id="top-banner-wrap">
+		<aside class="top-banner only-pc">
+			<div class="tb-inner">
+				<span class="tb-txt">모든 제품을 커피 한 잔 값으로! 영상 프로그램 역사상 최저가 1,900원</span>
+				<a href="#" class="btn-sm btn-ghost-w">보러가기</a>
+				<button type="button" class="btn-tb-close">Close</button>
+			</div>
+		</aside>
+		<aside class="top-banner only-mo">
+			<div class="tb-inner">
+				<a href="#" target="_blank" title="새 창으로 자세히 보기" class="tb-txt">모든 제품을 커피 한 잔 값으로!</a>
+				<!-- [D] 231227 지라 GLABNW-306_모바일 닫기 버튼 추가 -->
+				<button type="button" class="btn-tb-close">Close</button>
+			</div>
+		</aside>
+	</div>
+	<!-- // [D] 231220_수정 : 상단띠배너 추가 -->
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container">
+		<div id="contents-head" class="contents-head head-visual">
+			<!-- 231220_수정 : 내용 및 태그 수정 -->
+			<div class="head-tit-wrap">
+				<h1 class="logo">
+					<img src="/dev/ui/images/component/logo_title_gomeasypass_w.svg" alt="곰이지패스" class="only-pc">
+					<img src="/dev/ui/images/component/logo_title_gomeasypass.svg" alt="곰이지패스" class="only-mo">
+				</h1>
+				<p class="title">It’s enough!</p>
+				<p class="intro">1,900원에 편집부터 녹화, 재생<br>그리고 교육까지 곰이지패스로 손쉽게!</p>			
+				<div class="btn_set">
+					<a href="#" class="btn-lg btn-gradient">지금 시작하기!</a>
+					<!-- <a href="#" class="btn-lg btn-default-w">이미 곰이지패스 회원이시네요!<br>이번 달 혜택을 만나보세요</a> -->
+				</div>
+			</div>
+			<div class="head-visual-wrap">
+				<!-- 231227_수정: 영상, 포스터 이미지 업데이트 -->
+				<video poster="/dev/ui/images/membership/membership_visual_poster.png" playsinline loop muted>
+					<source src="/dev/ui/images/membership/membership_visual_video.mp4" type="video/mp4">
+				</video>
+				<!-- //231227_수정: 영상, 포스터 이미지 업데이트 -->
+			</div>
+			<!-- // 231220_수정 : 내용 및 태그 수정 -->
+		</div>
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel wide membership-benefit">
+					<div class="benefit-wrap">
+						<div class="animate-item animate-item-01" data-animation="slideup">
+							<img src="/dev/ui/images/membership/animate_item_01.png" alt="">
+						</div>
+						<div class="animate-item animate-item-02 delay-5" data-animation="slideup">
+							<img src="/dev/ui/images/membership/animate_item_02.png" alt="">
+						</div>
+						<div class="inner w1280">
+							<!-- 231220_수정 : data- 수정, class 수정 -->
+							<div class="cmn-content-head">
+								<h2 data-animation="slideup">영상 편집의 더 나은 선택,<br>더 나은 혜택</h2>
+								<p class="exp" data-txt-animation="slideup">한 눈에 보는 곰이지패스 혜택​<br>매달 추가되는 신규 혜택 놓치지 마세요.</p>
+							</div>
+							<!-- // 231220_수정 : data- 수정, class 수정-->
+							<div class="benefit-item-wrap">
+								<dl class="benefit-item">
+									<dt>
+										<span class="num"><img src="/dev/ui/images/membership/benefit_num_01.svg" alt="01"></span>
+										<span class="img"><img src="/dev/ui/images/membership/membership_benefit_01.png" alt=""></span> <!-- 231227_수정 : 이미지 업데이트 -->
+										모든 제품을<br>커피 한 잔 값으로!
+									</dt>
+									<dd>
+										<p>
+											15만원 상당의 모든 유료 상품들을<br class="only-pc">
+											월 1,900원으로 누릴 수 있습니다.<br>
+											모든 프로그램 및 곰랩에서 제공하는 혜택을​<br class="only-pc">
+											커피 한 잔 가격으로 누리세요!
+										</p>
+									</dd>
+								</dl>
+								<dl class="benefit-item">
+									<dt>
+										<span class="num"><img src="/dev/ui/images/membership/benefit_num_02.svg" alt="02"></span>
+										<span class="img"><img src="/dev/ui/images/membership/membership_benefit_02.png" alt=""></span> <!-- 231227_수정 : 이미지 업데이트 -->
+										곰랩 주력 제품은 물론<br>전용 제품까지
+									</dt>
+									<dd>
+										<p>
+											영상 편집 곰믹스 2024, 화면 녹화 곰캠 2024, 영상 재생 곰플레이어+2024뿐만 아니라 곰 이지패스 회원에게만 전용 제품을 제공해 드려요.
+										</p>
+										<p class="only-pc">
+											신규 출시한 음성 녹음 곰보이스 2024, 녹음 편집기 곰사운드 컷 2024 까지 모두 한 번에 만나보세요.
+										</p>
+									</dd>
+								</dl>
+								<dl class="benefit-item">
+									<dt>
+										<span class="num"><img src="/dev/ui/images/membership/benefit_num_03.svg" alt="03"></span>
+										<span class="img"><img src="/dev/ui/images/membership/membership_benefit_03.png" alt=""></span> <!-- 231227_수정 : 이미지 업데이트 -->
+										신규 소프트웨어도<br>추가 요금 없이​
+									</dt>
+									<dd>
+										<p>
+											곰랩에서 출시할 신규 프로그램들도 곰이지패스<br>
+											회원에게는​ 추가 요금 없이 무료!<br class="only-pc">
+											매 시점마다 추가되는 신규 제품들을 제일 먼저<br class="only-pc">
+											만나보세요.
+										</p>
+									</dd>
+								</dl>
+								<dl class="benefit-item">
+									<dt>
+										<span class="num"><img src="/dev/ui/images/membership/benefit_num_04.svg" alt="04"></span>
+										<span class="img"><img src="/dev/ui/images/membership/membership_benefit_04.png" alt=""></span> <!-- 231227_수정 : 이미지 업데이트 -->
+										10일간 묻지도<br>따지지도 않고 취소 가능​
+									</dt>
+									<dd>
+										<p>
+											신규 유료 서비스에 대한 고민이 있으신가요?<br>
+											10일간 곰이지패스를 마음껏 체험해 보세요.<br>
+											10일 안에 언제든 취소하실 수 있습니다.
+										</p>
+									</dd>
+								</dl>
+								<dl class="benefit-item">
+									<dt>
+										<span class="num"><img src="/dev/ui/images/membership/benefit_num_05.svg" alt="05"></span>
+										<span class="img"><img src="/dev/ui/images/membership/membership_benefit_05.png" alt=""></span> <!-- 231227_수정 : 이미지 업데이트 -->
+										평생 무제한<br>업그레이드​
+									</dt>
+									<dd>
+										<p>
+											곰이지패스의 모든 제품에 대한 무료 업데이트를 지원합니다. 제품 버전업도 곰패스 회원에게는 추가 비용 없이 제공됩니다.
+										</p>
+									</dd>
+								</dl>
+								<dl class="benefit-item">
+									<dt>
+										<span class="num"><img src="/dev/ui/images/membership/benefit_num_06.svg" alt="06"></span>
+										<span class="img"><img src="/dev/ui/images/membership/membership_benefit_06.png" alt=""></span> <!-- 231227_수정 : 이미지 업데이트 -->
+										곰이지패스 회원 전용<br>강의 서비스 제공​
+									</dt>
+									<dd>
+										<p>
+											곰이지패스를 어떻게 활용할지 고민이신가요?<br>​곰이지패스 회원들을 위한 무료 강의를 통해<br class="only-mo">제품을​ 100% 활용해 보세요.
+										</p>
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel wide membership-ticket">
+					<div class="animate-item animate-item-03 delay-2" data-animation="slideup">
+						<img src="/dev/ui/images/membership/animate_item_03.png" alt="">
+					</div>
+					<div class="inner">
+						<div class="cmn-content-head">
+							<div class="easy-txt" data-animation="slideup">Easy Creativity to Everyone</div>
+							<h2 class="membership-title delay-1" data-animation="slideup">
+								편집부터 녹화, 재생까지<br class="only-mo">통합 구독 서비스! <span>영상 프로그램 역사상 최저가 1,900원</span>
+							</h2>
+						</div>
+						<div class="gom-card-box-defalut">
+							<!-- 231220_수정 : easypass 클래스 삭제 -->
+							<div class="gom-package-item card-box-md delay-1" data-animation="slideup">
+								<div class="gom-package-swiper-container">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"> 
+											<img src="/dev/ui/images/membership/membership_plan.png" alt=""> <!-- 231227_수정 : 이미지 업데이트 -->
+										</div>
+									</div>
+									<div class="swiper-button-prev gom-prev"></div>
+									<div class="swiper-button-next gom-next"></div>
+								</div>
+								<div class="gom-package-bnr">
+									모든 제품을 커피 한 잔 값으로!
+								</div>
+								<form action="" class="form-wrap">
+									<div class="gom-package-info">
+										<div class="pagkage-top">
+											<!-- [D] 231222_수정 : 로고 수정-->
+											<p class="title-logo"><img src="/dev/ui/images/component/logo_title_gomeasypass.svg" alt="곰이지패스"></p>
+											<!-- //[D] 231222_수정 : 로고 수정-->
+										</div>
+										<div class="pagkage-mid">
+											<dl class="price">
+												<dt>매월 정기 구독 결제</dt>
+												<dd><strong>1,900원</strong></dd>
+											</dl>
+											<button type="submit" class="btn-lg btn-ghost btn-purchase">구독하기</button>
+										</div>
+										<div class="pagkage-bottom acco-wrap" data-accordion="container">
+											<div class="acco-content pagkage-more-info" data-accordion="panel">
+												<p>15만원 상당의 모든 유료 상품들을 월 1,900원으로 누릴 수 있습니다.<br>​모든 프로그램 및 곰랩에서 제공하는 혜택을<br>커피 한잔 가격으로 누리세요!</p>
+											</div>
+											<div class="acco-content pagkage-more-info" data-accordion="panel">
+												<ul class="bl-check-list">
+													<li>매월 정기 구독 결제​</li>
+													<li>모든 곰랩 유료 제품 사용 가능​</li>
+													<li>곰패스 전용 제품 사용 가능</li>
+													<li>마이너 업데이트 지원</li>
+													<li>버전업 시, 신규 기능 사용 가능</li>
+													<li>이용기간 내 업데이트 강의 수강 가능</li>
+												</ul>
+											</div>
+											<a href="#" class="acco-head" data-accordion="tab">
+												상세보기
+											</a>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="gom-package-item card-box-md delay-2" data-animation="slideup">
+								<div class="swiper-container gom-swiper-container gom-package-swiper-container">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<img src="/dev/ui/images/membership/membership_plan_all.png" alt=""> <!-- 231227_수정 : 이미지 업데이트 -->
+										</div>
+									</div>
+									<div class="swiper-button-prev gom-prev"></div>
+									<div class="swiper-button-next gom-next"></div>
+								</div>
+								<!-- 231220_수정 : 내용 수정 -->
+								<form action="" class="form-wrap">
+									<div class="gom-package-info">
+										<div class="pagkage-top">
+											<p class="title"><span class="logo"><img src="/dev/ui/images/layout/icon_pd_all.png" alt="전제품"></span>전 제품 영구 이용권 구매 시​</p>
+										</div>
+										<div class="pagkage-mid">
+											<dl class="price">
+												<dt>영구 이용권</dt>
+												<dd><strong>150,000원</strong></dd>
+											</dl>
+											<button type="submit" class="btn-lg btn-ghost btn-purchase">구매하기</button>
+										</div>
+										<div class="pagkage-bottom acco-wrap" data-accordion="container">
+											<div class="acco-content pagkage-more-info" data-accordion="panel">
+												<ul class="bl-check-list">
+													<li>매년 정기 구독 결제​</li>
+													<li>마이너 업데이트 지원</li>
+													<li>버전업 시, 신규 기능 사용 불가 (현재 버전으로만 영구 사용)</li>
+												</ul>
+											</div>
+											<a href="#" class="acco-head" data-accordion="tab">
+												상세보기
+											</a>
+										</div>
+									</div>
+								</form>
+								<!-- //231220_수정 : 내용 수정 -->
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel wide">
+					<!-- 231220_수정 : 내용 및 클래스 수정 -->
+					<div class="inner membership-news-wrap">
+						<div class="membership-news">
+							<h2>편집, 녹화, 재생을 한번에!<br>​곰이지패스 런칭 EVENT!</h2>
+							<p class="exp">노트북, 모니터, 네이버페이,<br class="only-mo"> 100만원 상금까지<br class="only-pc"> ​총 3천만원 상당의<br class="only-mo"> 혜택을 받아가세요!</p>
+							<div class="btn-wrap">
+								<a href="#" class="btn-lg btn-default">보러 가기</a>
+							</div>
+						</div>
+					</div>
+					<!-- // 231220_수정 : 내용 및 클래스 수정 -->
+				</div>
+
+				<div class="panel only-pc">
+					<div class="inner">
+						<div class="cmn-content-head">
+							<h2>제품 다운로드</h2>
+						</div>
+						<ul class="download-list">
+							<li>
+								<span><img src="/dev/ui/images/layout/icon_pd_gommix2024.png" alt="곰믹스2024"></span>
+								<p>곰믹스 2024</p>
+								<a href="#" class="btn-md btn-ghost">Windows 다운로드</a>
+							</li>
+							<li>
+								<span><img src="/dev/ui/images/layout/icon_pd_gomcam2024.png" alt="곰캠 2024"></span>
+								<p>곰캠 2024</p>
+								<a href="#" class="btn-md btn-ghost">Windows 다운로드</a>
+							</li>
+							<li>
+								<span><img src="/dev/ui/images/layout/icon_pd_gomplayer_plus2024.png" alt="곰플레이어+ 2024"></span>
+								<p>곰플레이어+ 2024</p>
+								<a href="#" class="btn-md btn-ghost">Windows 다운로드</a>
+							</li>
+							<li>
+								<span><img src="/dev/ui/images/layout/icon_pd_gomvoice2024.png" alt="곰보이스 2024"></span>
+								<p>곰보이스 2024</p>
+								<a href="#" class="btn-md btn-ghost">Windows 다운로드</a>
+							</li>
+							<li>
+								<span><img src="/dev/ui/images/layout/icon_pd_gomsoundcut2024.png" alt="곰사운드컷 2024"></span>
+								<p>곰사운드컷 2024</p>
+								<a href="#" class="btn-md btn-ghost">Windows 다운로드</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="panel">
+					<div class="inner">
+						<div class="cmn-content-head">
+							<h2>자주 묻는 질문</h2>
+							<a href="#" class="more-view">더보기</a>
+						</div>
+						<ul class="borad-ask doard-acco-list" data-accordion="container">
+							<li>
+								<a href="#" class="acco-head" data-accordion='tab'>
+									<span class="list-title">[기업·교육·공공] 기존 담당자/이메일 주소를 변경할 수 있나요?</span>
+								</a>
+								<div class="acco-content" data-accordion='panel'>
+									안녕하세요, GOM Support Team입니다.<br>
+									네이버페이 측의 시스템 점검으로 인하여 네이버페이 서비스 이용이 불가합니다.<br>
+									<br>
+									일정 : 2023년 7월 8일(토) 02:00 ~ 06:00 <br>
+									영향 : 네이버페이 결제 전체 서비스 중단 <br>
+									*서비스 재개는 시스템 점검 상황에 따라 변경될 수 있습니다. <br>
+									<br>
+									점검 기간 중 신용카드, 카카오페이, 휴대폰결제, 가상계좌 결제는 이용이 가능합니다. <br>
+									감사합니다.
+								</div>
+							</li>
+							<li>
+								<a href="#" class="acco-head" data-accordion='tab'>
+									<span class="list-title">SmartScreen에 연결할 수 없다는 창이 나타나요. 어떻게 해야 하나요?</span>
+								</a>
+								<div class="acco-content" data-accordion='panel'>
+									안녕하세요, GOM Support Team입니다.<br>
+									네이버페이 측의 시스템 점검으로 인하여 네이버페이 서비스 이용이 불가합니다.<br>
+									<br>
+									일정 : 2023년 7월 8일(토) 02:00 ~ 06:00 <br>
+									영향 : 네이버페이 결제 전체 서비스 중단 <br>
+									*서비스 재개는 시스템 점검 상황에 따라 변경될 수 있습니다. <br>
+									<br>
+									점검 기간 중 신용카드, 카카오페이, 휴대폰결제, 가상계좌 결제는 이용이 가능합니다. <br>
+									감사합니다.
+								</div>
+							</li>
+							<li>
+								<a href="#" class="acco-head" data-accordion='tab'>
+									<span class="list-title">정품 키 등록 시 '비정상적인 접근' '인터넷이 연결되어 있지 않습니다' 메시지가 나타나요.</span>
+								</a>
+								<div class="acco-content" data-accordion='panel'>
+									안녕하세요, GOM Support Team입니다.<br>
+									네이버페이 측의 시스템 점검으로 인하여 네이버페이 서비스 이용이 불가합니다.<br>
+									<br>
+									일정 : 2023년 7월 8일(토) 02:00 ~ 06:00 <br>
+									영향 : 네이버페이 결제 전체 서비스 중단 <br>
+									*서비스 재개는 시스템 점검 상황에 따라 변경될 수 있습니다. <br>
+									<br>
+									점검 기간 중 신용카드, 카카오페이, 휴대폰결제, 가상계좌 결제는 이용이 가능합니다. <br>
+									감사합니다.
+								</div>
+							</li>
+							<li>
+								<a href="#" class="acco-head" data-accordion='tab'>
+									<span class="list-title">내 PC 운영체제가 32bit인지 64bit인지 확인하고 싶어요.</span>
+								</a>
+								<div class="acco-content" data-accordion='panel'>
+									안녕하세요, GOM Support Team입니다.<br>
+									네이버페이 측의 시스템 점검으로 인하여 네이버페이 서비스 이용이 불가합니다.<br>
+									<br>
+									일정 : 2023년 7월 8일(토) 02:00 ~ 06:00 <br>
+									영향 : 네이버페이 결제 전체 서비스 중단 <br>
+									*서비스 재개는 시스템 점검 상황에 따라 변경될 수 있습니다. <br>
+									<br>
+									점검 기간 중 신용카드, 카카오페이, 휴대폰결제, 가상계좌 결제는 이용이 가능합니다. <br>
+									감사합니다.
+								</div>
+							</li>
+							<li>
+								<a href="#" class="acco-head" data-accordion='tab'>
+									<span class="list-title">쿠폰 등록은 어떻게 하나요?</span>
+								</a>
+								<div class="acco-content" data-accordion='panel'>
+									안녕하세요, GOM Support Team입니다.<br>
+									네이버페이 측의 시스템 점검으로 인하여 네이버페이 서비스 이용이 불가합니다.<br>
+									<br>
+									일정 : 2023년 7월 8일(토) 02:00 ~ 06:00 <br>
+									영향 : 네이버페이 결제 전체 서비스 중단 <br>
+									*서비스 재개는 시스템 점검 상황에 따라 변경될 수 있습니다. <br>
+									<br>
+									점검 기간 중 신용카드, 카카오페이, 휴대폰결제, 가상계좌 결제는 이용이 가능합니다. <br>
+									감사합니다.
+								</div>
+							</li>
+						</ul>
+						
+						<div class="cmn-content-head">
+							<h2>업데이트 내역</h2>
+						</div>
+						<ul class="borad-ask">
+							<li><a href="#!"><span class="list-label">[곰플레이어+ 2024] 정기 업데이트 V0.0.1 업데이트 안내</span></a></li>
+							<li><a href="#!"><span class="list-label">[곰플레이어+ 2024] 정기 업데이트 V0.0.1 업데이트 안내</span></a></li>
+							<li><a href="#!"><span class="list-label">[곰플레이어+ 2024] 정기 업데이트 V0.0.1 업데이트 안내</span></a></li>
+							<li><a href="#!"><span class="list-label">[곰플레이어+ 2024] 정기 업데이트 V0.0.1 업데이트 안내</span></a></li>
+							<li><a href="#!"><span class="list-label">[곰플레이어+ 2024] 정기 업데이트 V0.0.1 업데이트 안내</span></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="panel w1280">
+					<!-- 231220_수정 : 태그 수정 -->
+					<div class="inner w1280 gom-use-guide-inner-wrap">
+						<div class="gom-use-guide-wrap">
+							<div>
+								<h2 class="gom-title">사용 가이드</h2>
+								<p>제품 사용에 대한 상세한 안내가 필요하다면<br> 사용 가이드를 참고하세요.</p>
+								<p>*비즈니스용, 개인용 사용가이드 내용 동일합니다.</p>
+							</div>
+							<div class="gom-use-guide-img">
+								<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gommix2024.png" alt="곰믹스 2024"></a>
+								<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gomcam2024.png" alt="곰캠 2024"></a>
+								<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gomplayer_plus2024.png" alt="곰플레이어+ 2024"></a>
+								<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gomvoice2024.png" alt="곰보이스 2024"></a>
+								<a href="/dev/html/customer/product_guide_detail.html"><img src="/dev/ui/images/layout/icon_pd_gomsoundcut2024.png" alt="곰사운드컷 2024"></a>
+							</div>
+						</div>
+					</div>
+					<!-- // 231220_수정 : 태그 수정 -->
+				</div>
+
+				<div class="panel">
+					<div class="inner">
+						<dl class="membership-notice">
+							<dt>곰이지패스 유의사항</dt>
+							<dd>
+								<ul class="dot-list">
+									<li>​곰이지패스는 결제 완료 후 즉시 전 제품 및 서비스를 이용할 수 있습니다.</li>
+									<li>곰이지패스는 이용권 결제 후 10일간 결제 취소가 가능하며, 10일이내 취소는 계정당 1회만 가능합니다. </li>
+									<li>곰이지패스에 제공되는 제품 및 서비스는 정기적 또는 비정기적으로 업데이트 및 변경되고, 일부 서비스의 경우 회사의 정책에 따라​ 별도의 고지 없이 서비스의 제공이 중단되거나 제한될 수 있습니다.</li>
+									<li>곰이지패스는 곰랩 유료서비스 이용약관에 따라 정해진 정기결제일에 정기결제가 발생합니다.</li>
+									<li>​미성년자가 법정대리인의 동의 없이 상품을 구독한 경우 본인 또는 법정대리인이 이를 취소할 수 있습니다.</li>
+									<li>​곰이지패스의 청약철회 및 해지, 환불 관련 사항은 곰랩의 이용약관과 유료서비스 이용약관 등 관계 법령의 기준에 따르며, 피해보상 및 불만처리 등 필요한 사항은 고객센터로 문의주시기 바랍니다.</li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- 231220_수정 : 파트너스 영역 삭제 -->
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script src="/dev/ui/js/libs/swiper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+	<script>
+		//231220_수정 : 비디오 이벤트 스크립트 삭제 및 텍스트 모션 추가
+		//card motion
+		function cardEvent () {
+			const header = document.getElementById('header-wrap')
+			const benefitWrap = document.querySelector('.membership-benefit')
+			const fixedWrap = document.querySelector('.benefit-wrap')
+			const cards = document.querySelectorAll('.benefit-item')
+			const cardWrap = document.querySelector('.benefit-item-wrap')
+			let secPoint = 100 / cards.length
+			let lastIdx = ''
+
+			function setClass(percent) {
+				let indexNumber = (percent / secPoint).toFixed(0)
+
+				let classNameToRemove = Array.from(cardWrap.classList).find(className => className.includes('card-'))
+				if (lastIdx != indexNumber) {
+					if (classNameToRemove) {
+						cardWrap.classList.remove(classNameToRemove)
+					}
+					cardWrap.classList.add(`card-${indexNumber}-active`)
+				}
+
+			}
+			
+			ScrollTrigger.create({
+				trigger: fixedWrap,
+				start: `top ${header.getBoundingClientRect().height}`,
+				end: `${benefitWrap.getBoundingClientRect().height} bottom`,
+				pin: true,
+				markers: true,
+				scrub: 0.2,
+				onUpdate: (self) => {
+					let progress = Math.floor(self.progress * 100)
+					setClass(progress)
+				}
+			});
+
+
+		}
+
+		window.addEventListener('load', () => {
+			setTimeout(() => {
+				window.scrollTo(0, 0);
+				cardEvent()
+			}, 1);
+		})
+	</script>
+	<!-- //각 화면 별 단독 js 영역 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

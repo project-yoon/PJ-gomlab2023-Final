@@ -31,6 +31,40 @@
 			display: flex;
 		}
 	}
+	.head-visual {
+		background: no-repeat center;
+		background-size: cover;
+		&.visual-gommememaker {
+			background-image: url(#{$img-url}/gom-product/gmeme/gommememaker_visual.png);
+			h1, h2 {
+				color: $color-white;
+			}
+		}
+		&.visual-gomplayer {
+			background-image: url(#{$img-url}/gom-product/gplayer/gomplayer_visual.png);
+			h1, h2 {
+				color: $color-white;
+			}
+		}
+		&.visual-gomaudio {
+			background-image: url(#{$img-url}/gom-product/gaudio/gomaudio_visual.png);
+			h1, h2 {
+				color: $color-white;
+			}
+		}
+		&.visual-gomvoice {
+			background-image: url(#{$img-url}/gom-product/gvo2024/gomvoiceM_visual.png);
+			h1, h2 {
+				color: $color-white;
+			}
+		}
+		&.visual-gommixM {
+			background-image: url(#{$img-url}/gom-product/gmxm/gommixM_visual.png);
+			h1, h2 {
+				color: $color-white;
+			}
+		}
+	}
 	.lnb-wrap {
 		.lnb-inner {
 			.logo {
@@ -302,9 +336,11 @@
 		}
 		.area-download {
 			[class^=btn] {
-				padding: 0 31px;
+				padding: 0 20px;
 			}
 			img {
+				width: 80px;
+				height: 80px;
 				display: block;
 				margin: 0 auto 24px;
 			}
@@ -438,7 +474,9 @@
 		text-align: center;
 		.meme-info-img {
 			img {
-				border-radius: 10px;
+				display: inline-block;
+				vertical-align: top;
+				width: 347px;
 			}
 		}
 		.meme-info {
@@ -545,6 +583,23 @@
 			.btn-lg {
 				padding: 0 40px;
 				@include txt(14);
+			}
+		}
+		.head-visual {
+			&.visual-gommememaker {
+				background-image: url(#{$img-url}/gom-product/gmeme/gommememaker_visual.png);
+				background-position-x: 65%;
+			}
+			&.visual-gomplayer {
+				background-image: url(#{$img-url}/gom-product/gplayer/gomplayer_visual_mo.png);
+			}
+			&.visual-gomaudio {
+				background-image: url(#{$img-url}/gom-product/gaudio/gomaudio_visual.png);
+				background-position-x: 61%;
+			}
+			&.visual-gomvoice {
+				background-image: url(#{$img-url}/gom-product/gvo2024/gomvoiceM_visual.png);
+				background-position-x: 65%;
 			}
 		}
 		.board-common {
@@ -730,6 +785,17 @@
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+}
+html:lang(ja) {
+	.goms {
+		.gom-product--download {
+			.area-download {
+				[class^=btn] {
+					padding:0 15px;
 				}
 			}
 		}

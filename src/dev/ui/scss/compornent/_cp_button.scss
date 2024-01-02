@@ -197,20 +197,20 @@ input[type=text] {
 }
 .btn-modify-icon{
 	@extend .btn-icon-base;
-	background-image: icon(post-write);
-} 
+	background-image: icon(post-write, '484848');
+}
 .btn-delete-icon {
 	@extend .btn-icon-base;
-	background-image: icon(delete);
-} 
+	background-image: icon(delete, '484848');
+}
 .btn-search-icon{
 	@extend .btn-icon-base;
 	background-image: icon(search);
-} 
+}
 .btn-reset-icon {
 	@extend .btn-icon-base;
 	background-image: icon(reset);
-} 
+}
 /* item-util (추가, 삭제 버튼) */
 .btn-item-util {
 	width: 30px;
@@ -258,6 +258,13 @@ input[type=text] {
 .swiper-button-next, .swiper-button-prev {
 	z-index: 4;
 }
+// 텍스트 링크 버튼
+.btn {
+	&.txt-link {
+		text-decoration:underline;
+		cursor:pointer;
+	}
+}
 @include mobile {
 	.btn-arrow-wrap {
 		margin-top: 32px;
@@ -278,9 +285,9 @@ input[type=text] {
 	.btn-search-icon{
 		@include txt(14);
 		text-indent: unset;
-	} 
+	}
 	.btn-reset-icon {
 		@include txt(14);
 		text-indent: unset;
-	} 
+	}
 }

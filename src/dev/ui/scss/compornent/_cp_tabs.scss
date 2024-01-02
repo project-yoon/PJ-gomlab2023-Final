@@ -133,7 +133,7 @@
 				background-color: $color-gray-11;
 				@include posLeft;
 			}
-		}	
+		}
 	}
 }
 /*tab content*/
@@ -479,7 +479,17 @@
 			background: $color-gray-21;
 			border-radius: 4px;
 			@include txt(16);
-			overflow-x: auto;
+			/* 곰랩 대응 */
+			// overflow-x: auto;
+			table {
+				width:auto !important;
+			}
+			th,
+			td {
+				padding:10px !important;
+				white-space:normal !important;
+			}
+			/* //곰랩 대응 */
 		}
 	}
 }

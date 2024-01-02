@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="곰이지패스 1월 이벤트 페이지" menucss="/dev/ui/css/event.css"></include>
+<body class="event-detail">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<!-- 이벤트 상세 -->
+	<style>
+		.event-detail #container .contents-head {background:#fff;}
+		.easy-pass-event .event-info {padding-bottom:120px;}
+		.event-detail #container .panel > .inner {padding-right:24px; padding-left:24px;}
+		.easy-pass-event .event-info .btn-wrap {margin-top:40px;flex-wrap:inherit;gap:12px 20px;}
+		.easy-pass-event .event-info .btn-wrap .btn {width:50%;max-width:442px;padding:26px 10px 26px 10px;border-radius:60px;background:#002eff;box-sizing:border-box;color:#fff;font-size:26px;font-weight:700;line-height:29px;text-align:center;}
+		.easy-pass-event .event-info .btn-wrap .btn-purple {background:#9a00ff;}
+		.easy-pass-event .event-info .btn-wrap .btn-green {background:#00b932;}
+		.easy-pass-event .event-info .btn-wrap .btn-cyan {background:#00b1ab;}
+		.easy-pass-event .event-info .btn-wrap .btn-pink {background:#f2029e;}
+		.easy-pass-event .event-info .btn-wrap .btn-blue {background:#0066e8;}
+		.easy-pass-event .event-info .event-notice-txt {margin-top:20px;font-size:20px;font-weight:500;line-height:29px;text-align:center;}
+		.easy-pass-event .event-info01 {padding:100px 0;}
+		.easy-pass-event .event-info02 {background:#ede9ff;}
+		.easy-pass-event .event-info02 .btn-wrap {margin-top:9px;}
+		.easy-pass-event .event-info02 .btn-wrap .btn-blue {background:#002eff}
+		.easy-pass-event .event-info03 {background:#e8f9ea;}
+		.easy-pass-event .event-info03 .btn-wrap {margin-top:9px;}
+		.easy-pass-event .event-info04 {background:#f9e8f3;}
+		.easy-pass-event .event-info05 {background:#e3f0ff;}
+		.easy-pass-event .notice-area .next-event-info {padding-top:50px;}
+		.easy-pass-event .notice-area .next-event-info .event-info {display:flex;padding:17px 70px;border-radius:10px;align-items:center;justify-content:space-between;}
+		.easy-pass-event .notice-area .next-event-info .event-info .flag {display:inline-flex;height:100%;margin-right:20px;padding:6px 6px 5px 6px;border-radius:4px;background:#FFFFFF;color:#7c33f8;font-size:10px;line-height:11px;font-weight:700;text-align:center;flex-shrink:0;}
+		.easy-pass-event .notice-area .next-event-info .event-info p {display:flex;width:100%;justify-content:space-between;align-items:center;font-size:24px;line-height:27px;}
+		.easy-pass-event .notice-area .next-event-info .event-info .date {font-weight:700;}
+		.easy-pass-event .notice-area .next-event-info .event-info + .event-info {margin-top:10px;}
+		@media (max-width: 1279px) {
+			.easy-pass-event .event-info .btn-wrap {padding:0 10%;}
+			.easy-pass-event .event-info .btn-wrap .btn {padding:16px 10px 16px 10px;border-radius:60px;font-size:20px;font-weight:700;line-height:23px;text-align:center;}
+		}
+
+		@media (max-width: 767px) {
+			/* .event-detail #container .contents-head {height:300px;} */
+			.easy-pass-event .event-info {padding:50px 0 60px;}
+			.easy-pass-event .event-info .btn-wrap {margin-top:24px; flex-direction:column;}
+			.easy-pass-event .event-info .btn-wrap .btn {width:100%;max-width:none;padding:10px;font-size:14px;line-height:16px;}
+			.easy-pass-event .event-info02 {padding-top:0;}
+			.easy-pass-event .event-info .event-notice-txt {margin-top:24px;font-size:13px;line-height:19px;}
+			.easy-pass-event .notice-area .next-event-info {padding-top:35px;}
+			.easy-pass-event .notice-area .next-event-info .event-info {display:block;padding:15px 24px;border-radius:4px;}
+			.easy-pass-event .notice-area .next-event-info .event-info .flag {margin-right:0;}
+			.easy-pass-event .notice-area .next-event-info .event-info p {display:block;width:100%;margin-top:6px;font-size:13px;line-height:19px;}
+		}
+	</style>
+	<main id="container" class="easy-pass-event">
+		<div id="contents-head" class="contents-head head-visual">
+			<div class="head-visual-wrap">
+				<video playsinline loop muted>
+					<source src="/dev/ui/images/event/240102-easypass/top-visual-video-white.mp4" type="video/mp4">
+				</video>
+			</div>
+		</div>
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel event-info event-info01">
+					<div class="inner">
+						<picture>
+							<source media="(max-width: 767px)" srcset="/dev/ui/images/event/240102-easypass/img-easypass-event-kr01_mo.png" alt="">
+							<img src="/dev/ui/images/event/240102-easypass/img-easypass-event-kr01.png" alt="">
+						</picture>
+						<div class="sr-only">
+							<h1>2024 GOM Easy Pass 웰커밍 이벤트​</h1>
+							<p>유료 제품 통합 서비스 곰이지패스 런칭 기념​구독자 대상 3천만원 상당의 상금을 챙겨가세요!</p>
+							<p>이벤트 기간 : 2024. 1. 2 ~ 1. 31, 당첨자 발표 : 2024. 2. 14</p>
+							<dl>
+								<dt>Event 1 전원</dt>
+								<dd>이벤트 기간 내 곰이지패스 구독하신 모든 분, 네이버페이 2천원 쿠폰</dd>
+							</dl>
+							<dl>
+								<dt>Event 2 200명</dt>
+								<dd>SNS 리뷰 이벤트 참여하신 분, 곰랩 특별 제작 굿즈 + 네이버페이 5천원 쿠폰</dd>
+							</dl>
+							<dl>
+								<dt>Event 3 19팀</dt>
+								<dd>영상 공모전 참여하신 분, 베이직스 노트북 + 베이직스 모니터 + 베이직스 무선 이어폰 + 총 상금 300만원</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel event-info event-info02">
+					<div class="inner">
+						<picture>
+							<source media="(max-width: 767px)" srcset="/dev/ui/images/event/240102-easypass/img-easypass-event-kr02_mo.png" alt="">
+							<img src="/dev/ui/images/event/240102-easypass/img-easypass-event-kr02.png" alt="">
+						</picture>
+						<div class="sr-only">
+							<h2>Event 1 곰이지패스 구독자 전원에게 2천원 네이버페이 쿠폰 제공!</h2>
+							<h3>What is GOM Easy Pass?</h3>
+							<p>편집, 녹화, 재생까지 한번에 신규 통합 서비스 월 1,900원 신규 제품도 추가요금 없이 평생 무제한 업그레이드!</p>
+							<p>
+								<del>150,000원 상당</del>
+								1,900원 VAT 포함
+							</p>
+							<dl>
+								<dt>MISSON</dt>
+								<dd>곰이지패스 구독하기</dd>
+								<dt>경품</dt>
+								<dd>네이버페이 2천원 쿠폰</dd>
+								<dt>당첨 인원</dt>
+								<dd>곰이지패스 구독자 전원</dd>
+							</dl>
+						</div>
+						<div class="btn-wrap">
+							<a href="https://www.gomlab.com/gom-easy-pass/" target="_blank" class="btn btn-blue">런칭 특가로 지금 구매하기</a>
+							<a href="https://forms.gle/QjoWE5JmjRHe94TE8" target="_blank" class="btn btn-purple">응모하기</a>
+						</div>
+						<p class="event-notice-txt">※ 곰이지패스를 구독하시고 응모를 하셔야 당첨이 됩니다.</p>
+					</div>
+				</div>
+
+				<div class="panel event-info event-info03">
+					<div class="inner">
+						<picture>
+							<source media="(max-width: 767px)" srcset="/dev/ui/images/event/240102-easypass/img-easypass-event-kr03_mo.png" alt="">
+							<img src="/dev/ui/images/event/240102-easypass/img-easypass-event-kr03.png" alt="">
+						</picture>
+						<div class="sr-only">
+							<h2>Event 2 리뷰만 달면 네이버페이 5천원 및 곰 특별 제작 굿즈 제공!</h2>
+							<dl>
+								<dt>MISSON</dt>
+								<dd>곰랩 SNS 채널 팔로우 및 SNS 홍보 피드에 댓글 달기</dd>
+							</dl>
+							<p>본인 피드에 공유하면 당첨 확률 UP!!</p>
+							<p>공유 시 필수 해시태그 : #곰믹스 #곰이지패스 #영상편집 #영상편집프로그램</p>
+
+							<dl>
+								<dt>경품</dt>
+								<dd>네이버 페이 5천원 쿠폰, 곰랩 특별 제작 굿즈</dd>
+								<dt>당첨 인원</dt>
+								<dd>200명</dd>
+							</dl>
+						</div>
+
+						<div class="btn-wrap">
+							<a href="https://www.instagram.com/p/C1WYu3upFRf" target="_blank" class="btn btn-green">인스타그램 댓글 달기</a>
+							<a href="https://youtu.be/OrY0jZBZ8cw" target="_blank" class="btn btn-cyan">유튜브 댓글 달기</a>
+						</div>
+						<p class="event-notice-txt">※ 리뷰 댓글을 다시고 응모를 하셔야 당첨이 됩니다.</p>
+					</div>
+				</div>
+
+				<div class="panel event-info event-info04">
+					<div class="inner">
+						<picture>
+							<source media="(max-width: 767px)" srcset="/dev/ui/images/event/240102-easypass/img-easypass-event-kr04_mo.png" alt="">
+							<img src="/dev/ui/images/event/240102-easypass/img-easypass-event-kr04.png" alt="">
+						</picture>
+						<div class="sr-only">
+							<h2>Event 3 공모전 곰이지패스를 여러분이 홍보해주세요!</h2>
+							<h3>곰이지패스 영상 공모전 Easy Creativity for Everyone</h3>
+							<dl>
+								<dt>참여 대상</dt>
+								<dd>곰이지패스 구독자 누구나 참여 가능 (개인 또는 팀)</dd>
+								<dt>영상 주제</dt>
+								<dd>슬로건 ‘Easy Creativity for Everyone’ 에 맞는 곰이지패스를 홍보 영상 제작</dd>
+								<dt>영상 조건</dt>
+								<dd>
+									<ul>
+										<li>1) 곰이지 패스 제품들을 사용한 영상</li>
+										<li>2) 60초 이내의 영상 (숏폼 & 세로형 & 가로형 영상 모두 가능)</li>
+									</ul>
+								</dd>
+								<dt>참여 방법</dt>
+								<dd>
+									<ul>
+										<li>1) 제작한 영상을 본인 SNS 채널에 업로드 후 응모 (업로드 채널 : 유튜브 가로형, 숏츠, 릴스, 틱톡)</li>
+										<li>2) 필수 해시태그 포함 : #곰이지패스 #곰믹스 #영상편집 #영상편집프로그램 #공모전</li>
+									</ul>
+								</dd>
+								<dt>시상 내역</dt>
+								<dd>
+									<table>
+										<caption>시상 내역</caption>
+										<colgroup>
+											<col>
+											<col>
+											<col>
+											<col>
+											<col>
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">수상</th>
+												<th scope="col">대상 1팀</th>
+												<th scope="col">최우수상 3팀</th>
+												<th scope="col">우수상 5팀</th>
+												<th scope="col">장려상 10팀</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th scope="row">노트북(베이직스 노트북)</th>
+												<td>2대</td>
+												<td>1대</td>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+											</tr>
+											<tr>
+												<th scope="row">모니터(베이직스 모니터)</th>
+												<td>2대</td>
+												<td>1대</td>
+												<td>1대</td>
+												<td>&nbsp;</td>
+											</tr>
+											<tr>
+												<th scope="row">무선 이어폰(베이직스 무선 이어폰)</th>
+												<td>2대</td>
+												<td>1대</td>
+												<td>1대</td>
+												<td>1대</td>
+											</tr>
+											<tr>
+												<th scope="row">상금(총 상금 300만원)</th>
+												<td>100만원</td>
+												<td>50만원</td>
+												<td>10만원</td>
+												<td>&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+								</dd>
+							</dl>
+						</div>
+
+						<div class="btn-wrap">
+							<a href="https://forms.gle/zNEWZB7NsFPNx7rm7" target="_blank" class="btn btn-pink">공모전 응모하기</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel event-info event-info05">
+					<div class="inner">
+						<picture>
+							<source media="(max-width: 767px)" srcset="/dev/ui/images/event/240102-easypass/img-easypass-event-kr05_mo.png" alt="">
+							<img src="/dev/ui/images/event/240102-easypass/img-easypass-event-kr05.png" alt="">
+						</picture>
+						<div class="sr-only">
+							<h2>Bonus 베이직스 콜라보 곰랩 회원 단독 할인!</h2>
+							<p>베이직북14 Pro 좋은 건 같이 해야죠.(윈도우11 + 마우스 + 필름포함)</p>
+							<p>곰랩 회원 단독 할인 50만원대!</p>
+						</div>
+
+						<div class="btn-wrap">
+							<a href="https://basic-s.com/product/detail.html?product_no=465&utm_source=gom&utm_medium=event&utm_campaign=conversionconversion&utm_term=gom&utm_content=event_banner" target="_blank" class="btn btn-blue">더 알아보기</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel notice-area">
+					<div class="inner">
+						<div class="next-event-info">
+							<aside class="event-info" style="background:#7c33f8;">
+								<span class="flag">COMING SOON</span>
+								<p>
+									2차 이벤트
+									<span class="date">2024년 2월 1일 ~ 2월 29일</span>
+								</p>
+							</aside>
+
+							<aside class="event-info" style="background:#00b981;">
+								<span class="flag" style="color:#00b981;">COMING SOON</span>
+								<p>
+									3차 이벤트
+									<span class="date">2024년 3월 1일 ~ 3월 31일</span>
+								</p>
+							</aside>
+						</div>
+						<dl class="notice">
+							<dt>유의사항 꼭! 확인해주세요.</dt>
+							<dd>
+								<ul class="bullet_list dash">
+									<li>이벤트 종료 후에 <a href="https://www.gomlab.com/notice/" target="_blank">공지사항</a>을 통해 당첨자 안내해 드리며, 경품 당첨자는 2월 14일 이후 개별 연락 드립니다.</li>
+									<li>곰이지패스는 개인 회원만 구매 가능합니다. (기업.교육.공공용 버전 준비 중)</li>
+									<li>각 이벤트에 대해 중복 참여 가능합니다.</li>
+									<li>이벤트 경품 발송은 당첨자분들께 추후 안내해 드립니다.</li>
+									<li>이벤트 경품 발송 후 고객 부주의로 인한 정보 오기입 또는 휴대폰번호/주소 변경으로 인한 재발송은 불가능합니다.</li>
+									<li>이벤트 당첨 시 기재하신 개인정보는 경품 발송 시 활용 되며, 해당 정보 기재 시 이벤트 참여 및 경품 발송을 위한 개인정보 수집/활용 및 위탁에 동의한 것으로 간주합니다.</li>
+									<li>이벤트 경품 품절 시 유사한 금액의 경품으로 변동될 수 있습니다.</li>
+									<li>이벤트 경품 발송을 위해 수집된 개인정보는 경품 발송 후 90일 후 자동 파기됩니다.</li>
+									<li>이벤트 진행, 일정, 경품, 경품 발송 일자 등 이벤트 내용은 회사 사정에 의해 사전고지 없이 변경될 수 있습니다.</li>
+									<li>상금에 따른 제세공과금은 수상자 본인이 부담하며, 세금 공제 후 지급됩니다.</li>
+									<li>타 공모전 및 수상작, 타인의 저작물 도용 시 심사 제외 및 시상 내역(시상금 포함)은 환수됩니다.</li>
+									<li>공모전 응모작에 사용되는 자료와 관련하여 저작권, 초상권 등의 문제 발생시 모든 책임은 응모자에 있습니다.</li>
+									<li>공모전 수상작품은 곰앤컴퍼니 홍보 콘텐츠로 2차 활용, 편집될 수 있습니다.</li>
+									<li>이벤트 진행 및 제품 관련 문의는 <a href="https://www.gomlab.com/support/" target="_blank">GOMLab 고객센터</a>를 이용해 주세요.</li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<!-- //이벤트 상세 -->
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

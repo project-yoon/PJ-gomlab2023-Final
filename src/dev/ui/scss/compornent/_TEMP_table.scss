@@ -112,6 +112,14 @@
 	@include txt(16);
 	border-top: 1px solid $color-gray-20;
 	border-bottom: 1px solid $color-gray-11;
+	table{
+		width: auto !important;
+		th,
+		td{
+			padding: 10px !important;
+			white-space: normal !important;
+		}
+	}
 }
 .det-move {
 	margin-top: 24px;

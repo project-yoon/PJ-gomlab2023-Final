@@ -6,11 +6,26 @@
     /*레이아웃*/
     .contents-head {
         &.main-head {
+            position: relative;
             height: 680px;
-            background-color: #991FE841;//임시컬러
-
+            //background-color: #991FE841;//임시컬러
+            background: url(#{$img-url}/main/main_head_visual01.png) center no-repeat;
+            // background-size: cover;
+            &::before {
+                content: '';
+                position: absolute;
+                //z-index: 1;
+                bottom: -240px;
+                left: 50%;
+                width: 2045px;
+                height: 2045px;
+                background: url(#{$img-url}/main/main_bg_graiant_circle.png) center no-repeat;
+                background-size: cover;
+                filter: blur(50px);
+            }
             .head-tit-wrap {
                 position: relative;
+                max-width: 1280px;
                 height: 100%;
                 display: flex;
                 align-items: center
@@ -19,6 +34,42 @@
                 @include txt(40);
                 color: $color-blue-9;
                 margin: 0;
+            }
+            .main-video-wrap {
+                position: absolute;
+                z-index: 1;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                height: 47.64vh;
+                max-height: 455px;
+                padding: 20px;
+                background-color: __to_opacity($color-white,'64');
+                box-shadow: 0px 30px 40px #5772E866;
+                border: 2px solid __to_opacity($color-white,'DD');;
+                border-radius: 20px;
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                box-sizing: border-box;
+                video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    box-shadow: inset 0px 4px 10px #13131333;
+                    border-radius: 10px;
+                }
+            }
+            .animate-item {
+                position: absolute;
+                &.animate-item-1 {
+                    top: -205px;
+                    right: -80px;
+                }
+                &.animate-item-2 {
+                    bottom: -490px;
+                    left: 320px;
+                    transform: translateX(-100%);
+                }
             }
         }
     }
@@ -127,16 +178,49 @@
             flex-wrap: wrap;
         }
         .swiper-util {
-            @include posCenter;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            box-sizing: border-box;
-            background-color: red($color: #000000);
+            .swiper-prev {
+                @include posLeft($left: 50%);
+                margin-left: -720px;
+                background: icon(prev, ffffff) no-repeat center/contain;
+            }
+            .swiper-next {
+                @include posRight($right: 50%);
+                margin-right: -720px;
+                background: icon(next, ffffff) no-repeat center/contain;
+            }
         }
         .pagination-bullet {
             position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
             bottom: 48px;
+            z-index: 1;
+            width: 100%;
+            max-width: 1232px;
+            padding: 0 24px;
+        }
+        .main-slide-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            img {
+                @include image-fit($fit: cover);
+            }
+        }
+        &.text-slide {
+            .main-slide-bg {
+                &.blue {
+                    background: #2A2683;
+                }
+                &.dark {
+                    background: #000102;
+                }
+                img {
+                    max-width: 1920px;
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
         }
     }
     /*크리에이티브 서비스*/
@@ -424,7 +508,7 @@
             width: 80px;
             height: 16px;
             margin: 10px auto 16px;
-            background: icon(star-fill, DADADA) repeat-x;
+            background: icon(star-fill, 'DADADA') repeat-x;
             background-size: auto 16px;
             .rating {
                 display: block;
@@ -445,13 +529,33 @@
             // height: unset;
             @include txt(16);
         }
-        .logo {
-            width: 100px;
-            height: 40px;
-            margin: 24px auto 0;
-            border-radius: 10px;
-            background: #000;
-        }
+		.logo {
+			display:flex;
+			margin: 24px auto 0;
+			align-items:center;
+			justify-content:center;
+			span {
+				position:relative;
+				color:$color-gray-06;
+				@include txt(14);
+				+ span {
+					margin-left:12px;
+					padding-left:12px;
+					color:$color-gray-04;
+					font-weight:700;
+					&::before {
+						content:'';
+						position:absolute;
+						top:50%;
+						left:0;
+						width:1px;
+						height:12px;
+						background:$color-gray-06;
+						transform:translateY(-50%);
+					}
+				}
+			}
+		}
     }
 }
 
@@ -461,6 +565,17 @@
         .contents-head {
             &.main-head {
                 height: 433px;
+                padding-bottom: 110px;
+                background-image: url(#{$img-url}/main/main_head_visual_mo.png);
+                background-size:cover;
+                &::before {
+                    bottom: -133px;
+                    left: unset;
+                    right: 0;
+                    transform: translateX(50%);
+                    width: 640px;
+                    height: 640px;
+                }
                 .head-tit-wrap {
                     display: block;
                 }
@@ -468,8 +583,36 @@
                     position: unset;
                     transform: unset;
                     text-align: center;
-                    padding-top: 64px;
+                    padding-top: 66px;
                     @include txt(20);
+                }
+                .main-video-wrap {
+                    top: 140px;
+                    right: unset;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: unset;
+                    max-height: unset;
+                    padding: 10px;
+                    border-width: 1px;
+                    border-radius: 10px;
+                    video {
+                        border-radius: 4px;
+                    }
+                }
+                .animate-item {
+                    position: absolute;
+                    &.animate-item-1 {
+                        top: -10px;
+                        right: -52px;
+                        width: 38.68vh;
+                    }
+                    &.animate-item-2 {
+                        width: 31.63vh;
+                        bottom: -29px;
+                        left: 90px;
+                        transform: translateX(-100%);
+                    }
                 }
             }
         }
@@ -507,7 +650,10 @@
         }
         /*곰 이지패스 슬라이드*/
         .main-easy-pass {
-            height: 600px;
+            height: auto;
+            .main-slide-bg {
+                position: static;
+            }
             .cont-txt {
                 padding-top: 45px;
                 text-align: center;
@@ -526,8 +672,46 @@
             }
             .pagination-bullet {
                 bottom: 32px;
-                left: 50%;
-                transform: translateX(-50%);
+                width: unset;
+                padding: 0;
+            }
+            .swiper-util {
+                .swiper-prev {
+                    left: 24px;
+                    margin-left: 0;
+                }
+                .swiper-next {
+                    right: 24px;
+                    margin-right: 0;
+                }
+            }
+            &.text-slide {
+                height: 700px;
+                ul {
+                    li {
+                        .inner {
+                            width: 100%;
+                            position: absolute;
+                            top: 0;
+                        }
+                    }
+                }
+                .main-slide-bg  {
+                    position: static;
+                    &.blue {
+                        img {
+                            object-position: bottom;
+                        }
+                    }
+                    &.dark {
+                        img {
+                            object-position: center;
+                        }
+                    }
+                }
+                .easy-pass-logo {
+                    margin-bottom: 24px;
+                }
             }
         }
         /*크리에이티브 서비스*/
@@ -673,12 +857,55 @@
                 padding: 0 72px 40px;
                 margin: 0 -24px;
             }
+			.icon-box {
+				width: 40px;
+				height: 40px;
+				margin-bottom:16px;
+			}
+			.review-tit {
+				@include txt(16);
+			}
+			.review-detail {
+				margin-top: 12px;
+				@include txt(12);
+			}
+			.logo {
+				margin-top:16px;
+				span {
+					@include txt(12);
+					+ span {
+						&::before {
+							top:0;
+							transform:translateY(0);
+						}
+					}
+				}
+			}
         }
     }
 }
 
 @include mobile {
     .main {
+        /*레이아웃*/
+        .contents-head {
+            &.main-head {
+                height: auto;
+                .main-video-wrap {
+                    position: static;
+                    transform: unset;
+                    max-width: 83vw;
+                    height: 27.43vh;
+                    margin: 20px auto 0;
+                }
+            }
+        }
+        /*곰 이지패스 슬라이드*/
+        .main-easy-pass {
+            &.text-slide {
+                height: auto;
+            }
+        }
         /*곰랩 채널*/
         .main-gomlab-channel {
             .gomlab-channel-cont {
@@ -712,6 +939,36 @@
                 margin-top: 12px;
                 @include txt(12);
             }
-        } 
+        }
     }
+}
+
+//언어분기
+html:lang(en),
+html:lang(ja) {
+	.main {
+		.main-gomlab-channel {
+			.gomlab-channel-cont {
+				grid-template-columns: 50% 1fr
+			}
+		}
+	}
+	@include tablet {
+		.main {
+			.main-gomlab-channel {
+				.gomlab-channel-cont {
+					grid-template-columns:repeat(1, 1fr);
+				}
+			}
+		}
+	}
+}
+html:lang(ja) {
+	.main {
+		.gom-product-review {
+			.review-detail {
+				word-break:normal;
+			}
+		}
+	}
 }

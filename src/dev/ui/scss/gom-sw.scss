@@ -13,7 +13,30 @@
 			height:580px;
 		}
 		.head-visual-wrap {
+			picture {
+				position:relative;
+				display:block;
+				width:100%;
+				height:100%;
+				&::after {
+					content:'';
+					position:absolute;
+					top:0;
+					left:0;
+					width:100%;
+					height:100%;
+					background:rgba(0, 0, 0, 0.6);
+				}
+			}
+			img {
+				position:relative;
+				display:block;
+				width:100%;
+				height:100%;
+				object-fit:cover;
+			}
 			&::after {
+				display:none;
 				content:'';
 				position:absolute;
 				top:0;
@@ -516,6 +539,9 @@
 						&.news-thumbnail {
 							aspect-ratio:initial;
 						}
+						img {
+							border-radius: 10px;
+						}
 					}
 				}
 				.swiper-slide {
@@ -825,6 +851,15 @@
 
 	//곰믹스 2024
 	&.gmx2024 {
+		.contents-head {
+			.head-visual-wrap {
+				picture {
+					&::after {
+						display:none;
+					}
+				}
+			}
+		}
 		#container {
 			//세일즈 포인트
 			.selling-point {
@@ -878,6 +913,15 @@
 
 	//곰캠 2024
 	&.gcm2024 {
+		.contents-head {
+			.head-visual-wrap {
+				picture {
+					&::after {
+						display:none;
+					}
+				}
+			}
+		}
 		#container {
 			//세일즈 포인트
 			.selling-point {
@@ -931,6 +975,18 @@
 
 	//곰플레이어+ 2024
 	&.gpp2024 {
+		.contents-head {
+			.head-tit-wrap h2 {
+				text-shadow:0px 0px 20px rgba(0, 0, 0, 0.5);
+			}
+			.head-visual-wrap {
+				picture {
+					&::after {
+						display:none;
+					}
+				}
+			}
+		}
 		#container {
 			//세일즈 포인트
 			.selling-point {

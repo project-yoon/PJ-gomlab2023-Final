@@ -449,3 +449,37 @@
 		.voice-experience.slick-initialized .voice-item, .voice-experience.slick-initialized .voice-item + .voice-item { margin:0 8px; }
 	}
 }
+
+html:lang(ko) {
+	.ai-voice {
+		.ai-voice-promo {
+			.ai-voice-content-3 {
+				height:903px;
+			}
+		}
+	}
+	@include tablet {
+		.ai-voice {
+			.ai-voice-promo {
+				.ai-voice-content-3 {
+					height:auto;
+					.btn-pay {
+						top:38%;
+					}
+				}
+			}
+		}
+	}
+	@include mobile {
+		.ai-voice {
+			.ai-voice-promo {
+				.ai-voice-content-3 {
+					height:auto;
+					.btn-pay {
+						top:46%;
+					}
+				}
+			}
+		}
+	}
+}

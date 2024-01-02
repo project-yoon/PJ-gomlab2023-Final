@@ -23,7 +23,7 @@ const sumPrevSiblings = function (element) {
         sum += prev.offsetWidth
         const style = window.getComputedStyle(prev)
         sum += parseInt(style.marginLeft, 10) + parseInt(style.marginRight, 10)
-        
+
         prev = prev.previousElementSibling
     }
     return sum
@@ -34,7 +34,7 @@ function centerScrollAmount(element) {
     const parentWrap = element.parentElement
     let parentViewWidthHalf = parentWrap.getBoundingClientRect().width / 2
 	let parentScrollWidth = parentWrap.scrollWidth
-	
+
     let elementWidth = element.offsetWidth
     let elementMargins = parseInt(window.getComputedStyle(element).marginLeft, 10) + parseInt(window.getComputedStyle(element).marginRight, 10)
     let scrollValue = sumPrevSiblings(element) + (elementWidth + elementMargins) / 2
@@ -64,7 +64,7 @@ function setScrollLeft(el, smooth = 'auto') {
 const throttle = (func, limit) => {
 	let lastFunc
 	let lastRan
-	
+
 	return function() {
 		const context = this
 		const args = arguments
@@ -87,7 +87,7 @@ const isMobile = () => { return window.innerWidth <= 768 }
 function useMobileFixMenu(elFix) {
 	if ($(elFix).length == 0) return
 	let container = $('#container')
-	
+
 	function setSnbFix() {
 		if (isMobile()) {
 			$(container).css('margin-top', '85px')
@@ -102,17 +102,28 @@ function useMobileFixMenu(elFix) {
 	setSnbFix()
 }
 
+//browser vh resize
+function resizeViewHeight() {
+	let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`)
+	document.documentElement.style.setProperty('--vh-full-size', `${window.innerHeight}px`)
+
+	window.addEventListener('resize', () => {
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`)
+		document.documentElement.style.setProperty('--vh-full-size', `${window.innerHeight}px`)
+	})
+}
+
 //Header Scroll Fixed
 function initHeaderFixed() {
 	let headerWrap = $('#header-wrap')
 	let isActived
-	let headerOffsetTop
+	let headerOffsetTop = $(headerWrap).offset().top
 	let isFixed
 
-	function setValue() {
-		headerOffsetTop = $(headerWrap).offset().top
-		isActived = headerOffsetTop <= $(window).scrollTop()
-	}
+	if ($(headerWrap).length == 0) return
+
 	function setHeaderPosition() {
 		if (isFixed !== isActived) {
 			if (isActived) {
@@ -123,7 +134,8 @@ function initHeaderFixed() {
 			isFixed = isActived
 		}
 	}
-	$(window).on('load resize orientationchange', function () {
+	$(window).on('resize orientationchange', function () {
+		headerOffsetTop = $(headerWrap).offset().top
 		setHeaderPosition()
 	});
 
@@ -131,8 +143,6 @@ function initHeaderFixed() {
 		isActived = headerOffsetTop <= $(window).scrollTop()
 		setHeaderPosition()
 	});
-
-	setValue()
 }
 
 //GNB G Navi
@@ -145,22 +155,30 @@ function initGnbGnavi() {
 	let deps2Navi = gnItem.find('>.deps2');
 	let d2nList = deps2Navi.find('>ul');
 	let moGnbOpenIs = false;
-	let deviceWidth;
 	let isMobile
-	
+
 	function setValue() {
 		isMobile = window.innerWidth <= 1279 ? 'mo' : 'pc'
+	}
+
+	const deps2Open = (el) => {
+		gnItem.find('>a').removeClass('on');
+		deps2Navi.removeAttr('style');
+		$(el).addClass('on');
+		$(el).next('.deps2').show();
 	}
 
 	$(window).on('load resize orientationchange', function () {
 		setValue()
 		if ($(window).width() > 1279 && isMobile != 'mo') {
+
 			moGnbOpenIs = false;
 			btnGnb.removeClass('close').addClass('open');
 			gnb.removeAttr('style');
 			$('body').removeAttr('style')
+
 		} else if (isMobile && deviceMode != 'pc') {
-			// $(gnb).removeAttr('style')
+			$(deps2Navi).removeAttr('style')
 		}
 	});
 
@@ -168,18 +186,15 @@ function initGnbGnavi() {
 	gnItem.find('>a').on({
 		mouseenter: function () {
 			if (isMobile == 'pc') {
-				if ($(this).hasClass('on') == false && $(this).parent().find('.deps2').length > 0) {
-					gnItem.find('>a').removeClass('on');
-					deps2Navi.removeAttr('style');
+				let isOpen = $(this).hasClass('on')
+				let hasSubMenu = $(this).parent().find('.deps2').length > 0
 
-					$(this).addClass('on');
-					$(this).next('.deps2').show();
+				if (!isOpen && hasSubMenu) {
+					deps2Open(this)
 				}
-
-				if ($(this).hasClass('on') == false && !$(this).parent().find('.deps2').length > 0) {
+				if (!isOpen && !hasSubMenu) {
 					$('.deps2').hide();
 				}
-
 				return false;
 			}
 		},
@@ -188,6 +203,25 @@ function initGnbGnavi() {
 				$(this).removeClass('on');
 			}
 		},
+		click: function (e) {
+			if (isMobile == 'pc') {
+				let isOpen = $(this).hasClass('on')
+				let hasSubMenu = $(this).parent().find('.deps2').length > 0
+
+				if (hasSubMenu) {
+					e.preventDefault()
+
+					if (!isOpen) {
+						deps2Open(this)
+					} else {
+						$(this).removeClass('on');
+						$('.deps2').hide();
+					}
+				}
+
+				pcSubNavOpen(this, true)
+			}
+		}
 	});
 	gnItem
 		.find('>a')
@@ -205,12 +239,12 @@ function initGnbGnavi() {
 		e.stopPropagation();
 	});
 
-	$('html,body').on('click', function () {
-		if (isMobile == 'pc') {
-			gnItem.find('>a').removeClass('on');
-			deps2Navi.removeAttr('style');
-		}
-	});
+	// $('html,body').on('click', function () {
+	// 	if (isMobile == 'pc') {
+	// 		gnItem.find('>a').removeClass('on');
+	// 		deps2Navi.removeAttr('style');
+	// 	}
+	// });
 
 	$(window).on('scroll', function () {
 		if (isMobile == 'pc') {
@@ -292,7 +326,7 @@ function initFixElements() {
 		let triggerPoint = getHeight(wrap) + getHeight(header)
 		let setcorrection = isLnbUsed
 		let endPosition = triggerPoint - (getHeight(quickMenu) + quickMargin + setcorrection)
-		let bottomValue = isLnbUsed + quickMargin 
+		let bottomValue = isLnbUsed + quickMargin
 
 		return {endPosition, triggerPoint, bottomValue }
 	}
@@ -303,14 +337,11 @@ function initFixElements() {
 		let winViewBottom = winY + window.innerHeight
 		let isActived = false
 		let endPosition = value.endPosition
-		let bottomValue = value.bottomValue
+		let bottomValue = value.bottomValue || 0
 
-		if (winViewBottom >= value.triggerPoint) {
-			isActived = true
-		} else {
-			isActived = false
-		}
-		return { isActived, endPosition, bottomValue}
+		winViewBottom >= value.triggerPoint ? isActived = true : isActived = false
+
+		return { winY, isActived, endPosition, bottomValue}
 	}
 
 	function setElementPosition(element, value) {
@@ -332,17 +363,17 @@ function initFixElements() {
 
 	function setMenu(menuType, menuElement, isResizeEvent = false) {
 		if (!menuElement) { return }
-		
+
 		let value = setValue(menuType === 'quickMenu' ? quickValue() : lnbValue())
+
 		let lastState = menuType === 'quickMenu' ? quickLastState : lnbLastState
-		
+
 		if (isResizeEvent || lastState !== value.isActived) {
 			setElementPosition(menuElement, value)
-	
+
 			if (menuType === 'quickMenu') {
 				quickLastState = value.isActived
 			} else if (menuType === 'lnb') {
-				contentFooter && value.isActived ? menuElement.classList.add('hidden') : menuElement.classList.remove('hidden')
 				lnbLastState = value.isActived
 			}
 		}
@@ -353,35 +384,22 @@ function initFixElements() {
 		setMenu('lnb', lnb)
 	})
 
-	window.addEventListener('resize', () => {
-		setMenu('quickMenu', quickMenu, true)
-		setMenu('lnb', lnb, true)
-	})
-
 	setMenu('quickMenu', quickMenu)
 	setMenu('lnb', lnb)
 
-}
-function setPosition(element, value) {
-	if (element == false) return
 
-	const elementIs = element.classList.contains('lnb-wrap')
-	const topValue = elementIs ? value.setLnbTop : value.setQuickTop;
-	const bottomValue = !elementIs ? value.setQuickBottom : 0
-
-	const styles = {
-		position: 'absolute',
-		bottom: 'unset',
-		top: `${topValue}px`
-	};
-	
-	if (value.isActived) {
-		Object.assign(element.style, styles);
-	} else {
-		element.setAttribute('style', '')
-		element.style.bottom = `${bottomValue}px`
+	// ResizeObserver 콜백 함수
+	function onContainerResize() {
+		setMenu('quickMenu', quickMenu, true)
+		setMenu('lnb', lnb, true)
 	}
+
+	// ResizeObserver 설정
+	const resizeObserver = new ResizeObserver(onContainerResize);
+	resizeObserver.observe(wrap);
+
 }
+
 
 //data-menu 이벤트 정의
 function dataMenuEvent() {
@@ -391,16 +409,16 @@ function dataMenuEvent() {
 		const menuUl = menu.querySelector('ul') || menu
 		const links = menu.querySelectorAll('a')
 		let activeLink = menu.querySelector('a.active')
-	
+
 		const btns = $(menu).find('button:not(.snb-fake-label)')
 		const activeBtn = $(menu).find('button.active')
-	
+
 		const breakPoint = 768
 		let winWidth = window.innerWidth
 		let winHeight = window.innerHeight
 		let isMobile = breakPoint >= winWidth
 		let lastState = false
-		
+
 		if (menu.dataset.menu === 'scroll') { //1. data-menu="scroll"
 			let menuScrollWidth = menuUl.scrollWidth
 			if (menuScrollWidth > winWidth) {
@@ -411,7 +429,7 @@ function dataMenuEvent() {
 					setScrollLeft(activeLink.parentElement)
 				}
 			})
-	
+
 			links.forEach(link => {
 				link.addEventListener('click', () => {
 					activeLink = link
@@ -429,13 +447,13 @@ function dataMenuEvent() {
 			let fakeLabel = $(menu).find('.snb-fake-label')
 			let deps2 = $(activeBtn).next('.snb-menu-2deps')
 			let mobileSubmenu = $(menu).find('.snb-menu')
-	
+
 			$(deps2).slideDown(0)
-	
+
 			//클릭 이벤트
 			$(btns).on('click', function (e) {
 				deps2 = $(e.target).next('.snb-menu-2deps')
-	
+
 				if ($(e.target).hasClass('active')) {
 					$(e.target).removeClass('active')
 					$(deps2).slideUp(200)
@@ -447,7 +465,7 @@ function dataMenuEvent() {
 			$(links).on('click', function (e) {
 				$(links).removeClass('active')
 				$(e.target).addClass('active')
-	
+
 			})
 			$(fakeLabel).on('click', function (e) {
 				if ($(fakeLabel).hasClass('active')) {
@@ -458,7 +476,7 @@ function dataMenuEvent() {
 					$(mobileSubmenu).slideDown(200)
 				}
 			})
-	
+
 			function setDeviceStyle(isMo) {
 				if (!isMo) {
 					$(mobileSubmenu).attr('style', '')
@@ -466,12 +484,12 @@ function dataMenuEvent() {
 					$(mobileSubmenu).css('max-height', `${winHeight * 0.3}px`)
 				}
 			}
-	
+
 			//리사이즈 이벤트
 			$(window).on('resize', function () {
 				winWidth = window.innerWidth
 				isMobile = breakPoint >= winWidth
-	
+
 				if (isMobile !== lastState) {
 					setDeviceStyle(isMobile)
 					lastState = isMobile
@@ -487,10 +505,26 @@ function dataMenuEvent() {
 function initrllLst(listTag,listIdx) {
 	var hgtlst = 0;
 	var boxlst = $(listTag).find("ul");
+	var boxli = $(boxlst).find('li')
 	var isAnimated = true
 	var rollTime = 1200
 	var delayTime = 800
 
+	function handleVisibilityChange() {
+        if (document.hidden) {
+            isAnimated = false // 탭이 비활성화되면 애니메이션 중지
+        } else {
+            isAnimated = true // 탭이 활성화되면 애니메이션 재개
+        }
+	}
+
+	//view 화면 세팅
+	hgtlst = $(listTag).find("li").outerHeight();
+	$(listTag).css("height", hgtlst * listIdx);
+
+	if (boxli.length === 1) { return }
+
+	//func: rolling event animate
 	function rollingList() {
 		boxlst.animate({ "top": - hgtlst }, rollTime, function () {
 			boxlst.append($(listTag).find("li").first().clone());
@@ -498,7 +532,8 @@ function initrllLst(listTag,listIdx) {
 			$(listTag).find("li").first().remove();
 		});
 	}
-	
+
+	//func: mouse enter, leave event check
 	function checkAnimationStatus() {
 		rollingList()
 		var intervalId = setInterval(function () {
@@ -508,33 +543,29 @@ function initrllLst(listTag,listIdx) {
 		}, rollTime + delayTime)
 		return intervalId
 	}
-	
+
 	$(listTag).on('mouseenter', function() {isAnimated = false})
 	$(listTag).on('mouseleave', function() {isAnimated = true})
-	
-	
-	hgtlst = $(listTag).find("li").outerHeight();
-	$(listTag).css("height", hgtlst * listIdx);
 
 	var rollingIntervalId = checkAnimationStatus()
 }
 
 //Footer Language
-function initLanguageList() {
-	var langWrap = $('.f-language');
-	var langButton = $(langWrap).find('.btn-menu');
-	var langList = $(langWrap).find('.menu');
+// function initLanguageList() {
+// 	var langWrap = $('.f-language');
+// 	var langButton = $(langWrap).find('.btn-menu');
+// 	var langList = $(langWrap).find('.menu');
 
-	$(langButton).on('click', function () {
-		if (!$(langWrap).hasClass('active')) {
-			$(langWrap).addClass('active');
-			$(langList).slideDown(300);
-		} else {
-			$(langWrap).removeClass('active');
-			$(langList).slideUp(300);
-		}
-	});
-}
+// 	$(langButton).on('click', function () {
+// 		if (!$(langWrap).hasClass('active')) {
+// 			$(langWrap).addClass('active');
+// 			$(langList).slideDown(300);
+// 		} else {
+// 			$(langWrap).removeClass('active');
+// 			$(langList).slideUp(300);
+// 		}
+// 	});
+// }
 
 // scroll animation util
 function increase(counter, duration) {
@@ -545,7 +576,7 @@ function increase(counter, duration) {
 		const increment = target / duration
 		if(c < target) {
 			counter.innerText = `${Math.ceil(c + increment)}`
-			setTimeout(updateCounter, 1) 
+			setTimeout(updateCounter, 1)
 		}
 	}
 	updateCounter()
@@ -567,7 +598,7 @@ function increaseAnimation(increaseEl) {
 			const transitionDuration = parseFloat(style.transitionDuration) || 0
 
 			totalDelay = (transitionDelay + transitionDuration) * 1000 + delayCorrection
-			
+
 		} else {
 			totalDelay = 0
 		}
@@ -593,11 +624,11 @@ function scrollTriggerAnimation() {
 		winY = window.scrollY
 		winStart = winStartPoint(winY)
 
-		if (!isEnd) {	
+		if (!isEnd) {
 			scrollAniEls.forEach(ani => {
 				const rect = ani.getBoundingClientRect()
 				let targetTop = winY + rect.top
-	
+
 				if (winStart > targetTop && winY < targetTop) {
 					if (!ani.classList.contains('active')) {
 						ani.classList.add('active')
@@ -616,39 +647,38 @@ function scrollTriggerAnimation() {
 }
 
 function marquee() {
-	const bannerEl = document.querySelector('.marquee-banner')
-	if (!bannerEl) return
+    const bannerEl = document.querySelector('.marquee-banner');
+    if (!bannerEl) return;
 
-	const list = bannerEl.querySelector('.partners-list')
-	const targets = list.querySelectorAll('.marquee-part')
+    const list = bannerEl.querySelector('.partners-list');
+    const targets = list.querySelectorAll('.marquee-part');
 
-	function animateTarget(target) {
-		let distance = 100
-		let currentX = 0
-		function animate() {
-			if (currentX > -distance) {
-				currentX -= 1 * 0.02 //속도 조절 (숫자 작을수록 느려지게 됩니다)
-				target.style.transform = `translateX(${currentX}%)`
-				requestAnimationFrame(animate)
-			} else {
-				target.style.transform = 'translateX(0%)'
-				currentX = 0
-				requestAnimationFrame(animate)
-			}
-		}
-		animate()
-	}
-	
-	targets.forEach(target => {
-		animateTarget(target)
-	})
+    function animateTarget(target) {
+        let distance = 100;
+        let currentX = 0;
+
+        const interval = setInterval(() => {
+            if (currentX > -distance) {
+                currentX -= 1 * 0.02; // 프레임 조절
+                target.style.transform = `translateX(${currentX}%)`;
+            } else {
+                target.style.transform = 'translateX(0%)';
+                currentX = 0;
+            }
+        }, 20); // 20ms 간격으로 애니메이션 실행
+    }
+
+    targets.forEach(target => {
+        animateTarget(target);
+    });
 }
 
 $(document).ready(function () {
 	initGnbGnavi(); //GNB G-Navi
 	initQuickMenu() //Quick Menu event
 	initrllLst($(".f-notice"),1);
-	initLanguageList();
+	// initLanguageList();
+	resizeViewHeight()  //css: vh 설정
 });
 
 

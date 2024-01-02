@@ -99,7 +99,7 @@
 						width: 100%;
 						padding: 24px 0 0;
 						background-color: $color-white;
-						border-bottom: 1px solid $color-white;
+						border-top: 1px solid $color-gray-20;
 						> ul {
 							display: grid;
 							grid-template-columns: repeat(3, 270px);
@@ -323,7 +323,7 @@
 			overflow-x: hidden;
 			overflow-y: scroll;
 			width: 100%;
-			height: calc(100vh - 48px);
+			height: calc(var(--vh-full-size, 100vh) - 48px);
 			padding: 76px 24px 80px;
 			border-top: 1px solid $color-gray-20;
 			box-sizing: border-box;
@@ -435,14 +435,14 @@
 						&.login {
 							order: unset;
 							a {
-								background-image: icon(login);
+								background-image: icon(login, '484848');
 								height: 24px;
 							}
 						}
 						&.mypage {
 							order: unset;
 							a {
-								background-image: icon(profile);
+								background-image: icon(profile, '484848');
 							}
 							&::after {
 								display: none;
@@ -452,7 +452,7 @@
 							order: unset;
 							a {
 								color: $color-gray-04;
-								background-image: icon(logout);
+								background-image: icon(logout, '828282');
 							}
 							&::after {
 								content: '';
@@ -494,6 +494,16 @@
 					padding: 0 24px;
 					@include txt(12);
 				}
+			}
+		}
+	}
+}
+//언어분기
+html:lang(ja) {
+	#header {
+		nav.gnb-wrap {
+			> ul.g-navi {
+				gap:0 25px;
 			}
 		}
 	}

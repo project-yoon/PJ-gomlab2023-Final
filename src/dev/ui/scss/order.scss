@@ -106,8 +106,20 @@
 					padding-left: 464px;
 				}
 			}
+			&.user-info {
+				margin-top: 80px;
+				.use-label {
+					.btn-wrap {
+						margin-top:24px;
+						justify-content:flex-start;
+					}
+				}
+				& + .payment-complete {
+					margin-top:40px;
+				}
+			}
 			&.payment-complete {
-				margin-top: 100px;
+				margin-top: 80px;
 			}
 		}
 	}
@@ -151,7 +163,7 @@
 							position: relative;
 							padding-left: 12px;
 							margin-left: 10px;
-							
+
 							&::before {
 								content: '';
 								width: 1px;
@@ -177,7 +189,7 @@
 						border-radius: 10px;
 						box-sizing: border-box;
 						padding: 20px;
-						
+
 						p {
 							@include txt(14);
 							text-align: left;
@@ -283,6 +295,15 @@
 				}
 			}
 		}
+		.form-cont {
+			&.select-pay { //해외 결재용 셀렉트 박스
+				display: inline-block;
+				vertical-align: baseline;
+				.form-drop-box {
+					width: 140px;
+				}
+			}
+		}
 		.dot-list {
 			display: block;
 			margin: 10px 0 24px 0;
@@ -328,8 +349,8 @@
 			text-align: center;
 			.img-wrap {
 				display: block;
-				width: 80px;
-				height: 80px;
+				width: 120px;
+				height: 120px;
 				margin: 0 auto;
 				img {
 					@include image-fit;
@@ -401,6 +422,10 @@
 		}
 	}
 }
+/* paypal 팝업 */
+.paypal-notice {
+	text-align: left;
+}
 
 /* 반응형 */
 @include desktop {
@@ -422,6 +447,16 @@
 					float: unset;
 					& + .inner {
 						padding-left: 24px;
+					}
+				}
+				&.user-info {
+					.use-label {
+						.btn-wrap {
+							margin-top:16px;
+						}
+					}
+					& + .payment-complete {
+						margin-top:18px;
 					}
 				}
 			}

@@ -14,11 +14,20 @@
 		popup.js 호출
 		button 태그에 속성 추가 data-role="open__호출할파일명"
 		button 클릭 시 만들자하는파일명.html 파일 호출하여 내용 안에 마크업
-		예 : /dev/html/business/popup_bnss_1.html 호출 시에 data-role="data-role="open__/dev/html/business/popup_bnss_1"
+		예 : /dev/html/business/popup_bnss_1.html 호출 시에 data-role="open__/dev/html/business/popup_bnss_1"
+		닫기 버튼이 없을 경우 닫기가 필요한 영역에 data-close="closeLayer"를 적용합니다.
 		-->
 
 			<!-- 데스크탑 -->
 			<h1 class="cp_g">Pop-up</h1>
+
+			<!-- 확인 후 삭제 요망 -->
+			<div style="padding-top: 50px; text-align: center;">
+				<button type="button" data-role="open__layer_test" class="btn-lg btn-default">PC 팝업 호출 예시</button>
+			</div>
+			<div style="padding-top: 50px; text-align: center;">
+				<button type="button" data-role="open__layer_test02" class="btn-lg btn-default" data-close-layer="false">PC 팝업 none click 호출 예시</button>
+			</div>
 
 			<h2 class="cp_g">(1) PC</h2>
 
@@ -146,11 +155,6 @@
 				</ul>
 			</div>
 			<!-- // 모바일 -->
-
-			<!-- 확인 후 삭제 요망 -->
-			<div style="padding-top: 50px; text-align: center;">
-				<button type="button" data-role="open__layer_test" class="btn-lg btn-default">PC 팝업 호출 예시</button>
-			</div>
 
 		</div>
 	</main>

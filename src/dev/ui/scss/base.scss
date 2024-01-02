@@ -1,4 +1,10 @@
 @charset "utf-8";
+
+:root {
+	--vh: 1vh;
+	--vh-full-size: 100vh;
+}
+
 /* 사이트 전체 공통 */
 @import "./utilities/variables";
 @import "./utilities/mixins";

@@ -30,26 +30,31 @@ function openPopup(el) {
 
 	el.addEventListener('click', e => {
 		e.preventDefault();
+
+		let buttonDim =  e.currentTarget.dataset.closeLayer === 'false'
+
 		fetch(_targetName).then(res => {
 			if (!res.ok){
 				throw new Error;
 			}
 			return res.text()
 		}).then(res => {
-			makeLayer(res);
+			makeLayer(res, buttonDim);
 		}).catch(err => {
 			console.log(err);
 		})
 	});
 
 	// 레이어 만들기
-	const makeLayer = (res) => {
+	const makeLayer = (res, isDimClosed) => {
 		document.querySelector('.layer-dimmed') && document.querySelector('.layer-dimmed').remove();
 
 		const _layer = document.createElement('div');
 
 		_layer.className = 'layer-dimmed';
 		_layer.innerHTML = res;
+		isDimClosed ? _layer.setAttribute('data-close-layer', 'false') : ''
+		
 		$('body').append(_layer);
 		setTimeout(() => {
 			const _dim = _layer.querySelector('[data-dim]') && _layer.querySelector('[data-dim]').dataset.dim;
@@ -72,6 +77,7 @@ function openPopup(el) {
 
 		// 딤 클릭 레이어 닫기
 		_layer.addEventListener('click', (e) => {
+			if (_layer.dataset.closeLayer == 'false') { return }
 			if (_layer.querySelector('.pop-float-layer.type-close') || e.target.nodeName === 'INPUT' || e.target.nodeName === 'BUTTON' || e.target.nodeName === 'A') {
 				return;
 			}

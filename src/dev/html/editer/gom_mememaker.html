@@ -9,12 +9,12 @@
 <!-- 컨텐츠 -->
 <main id="container">
 
-	<div id="contents-head" class="contents-head head-visual">
+	<div id="contents-head" class="contents-head head-visual visual-gommememaker"> <!--[D] 231227_수정 : visual 클래스 추가-->
 		<!-- 231129_수정_01 : head-visual-wrap 추가 -->
 		<div class="head-visual-wrap">
-			<video poster="/dev/ui/images/banner/test_visual_poster.png" playsinline loop muted>
+			<!-- <video poster="/dev/ui/images/banner/test_visual_poster.png" playsinline loop muted>
 				<source src="/dev/ui/images/banner/test_visual.mp4" type="video/mp4">
-			</video>
+			</video> -->
 		</div>
 		<!-- // 231129_수정_01 -->
 		<div class="head-tit-wrap">
@@ -24,7 +24,7 @@
 			</h1>
 			<h2>트렌드를 놓칠 수 없는 당신이라면,<br>무료로 밈(Meme) 만들기 서비스</h2>
 			<div class="btn_set">
-				<a href="https://www.gomlab.com/gommememaker-meme-generator/editor/" target="_blank" class="btn-lg btn-ghost">시작하기</a>
+				<a href="https://www.gomlab.com/gommememaker-meme-generator/editor/" target="_blank" class="btn-lg btn-ghost-w">시작하기</a> <!-- 231227_수정: btn-ghost-w 로 변경-->
 			</div>
 		</div>
 	</div>
@@ -47,7 +47,16 @@
 
 			<div class="panel">
 				<div class="inner">
-					<aside class="ad_banner03 only-pc"></aside>
+					<!-- [D] 231229 GLABNW-326 반영 -->
+					<aside class="ad_banner03 only-pc">
+						<!-- [D] 국문 -->
+						<img src="/dev/ui/images/banner/sub_banner_kr.png" alt="">
+						<!-- [D] 영문 -->
+						<!-- <img src="/dev/ui/images/banner/sub_banner_en.png" alt=""> -->
+						<!-- [D] 일문 -->
+						<!-- <img src="/dev/ui/images/banner/sub_banner_jp.png" alt=""> -->
+					</aside>
+					<!-- //[D] 231229 GLABNW-326 반영 -->
 				</div>
 			</div>
 
@@ -55,59 +64,100 @@
 				<div class="inner">
 					<div class="gom-content-inner-wrap first">
 						<h2 class="gom-title">곰밈메이커의 주요 기능을 소개합니다.</h2>
+						<!-- 231227_수정 : 이미지 추가 -->
 						<div class="gom-content-inner box-col-3">
 							<div class="col-box">
-								<img src="http://placehold.it/350x200" alt="썸네일2:1예시">
+								<img src="/dev/ui/images/gom-product/gmeme/gommememaker_feature_01.png" alt="">
 								<p>다운로드 없이 바로 제작 가능</p>
 								<p>별도의 설치 없이 온라인 서비스로 간단하게 화제의 밈 만들기 가능! PC 브라우저에서 바로 사용할 수 있는 곰밈메이커를 활용한다면 더 빠르고 간단하게 나만의 맞춤 밈이 완성됩니다.</p>
 							</div>
 							<div class="col-box">
-								<img src="http://placehold.it/350x200" alt="썸네일2:1예시">
+								<img src="/dev/ui/images/gom-product/gmeme/gommememaker_feature_02.png" alt="">
 								<p>간단한 조작 방법</p>
 								<p>드래그 앤 드롭으로 밈을 만들 때 필요한 소스들을 쉽게 업로드! 간단한 조작 방법 덕분에 밈 만들기가 처음인 초보자라도 단 몇 분만에 특별한 밈을 만들 수 있습니다.</p>
 							</div>
 							<div class="col-box">
-								<img src="http://placehold.it/350x200" alt="썸네일2:1예시">
+								<img src="/dev/ui/images/gom-product/gmeme/gommememaker_feature_03.png" alt="">
 								<p>다양한 편집 기능</p>
 								<p>필터, 텍스트 및 스티커 삽입 등 다양한 효과를 추가하면 남들과 다른 트렌디하고 차별화된 밈을 만들 수 있습니다. 구간 편집, 배속 설정 등의 편집 기능으로 더 세밀한 밈 제작이 가능해집니다.</p>
+							</div>
+						</div>
+						<!-- //231227_수정 : 이미지 추가 -->
+					</div>
+				</div>
+			</div>
+
+			<!-- 231229_수정 : 제품 소식 영역 추가 -->
+			<div class="panel sw-news">
+				<div class="inner">
+					<div class="gom-content-inner-wrap">
+						<h2 class="gom-title">제품 소식</h2>
+						<div class="gom-content-inner gom-product-news-inner cols-2"> <!-- 소식이 3개일 때 cols-3, 2개일 때 cols-2 클래스 추가 -->
+							<div class="swiper-container gom-swiper-container product-news-swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="#!">
+											<div class="gom-thumbnail news-thumbnail">
+												<img src="/dev/ui/images/gom-product/gom_news_01.png" alt="">
+												<!-- <img src="/dev/ui/en/images/gom-product/gom_news_en_01.png" alt=""> --> <!-- 영문일 때 이미지 -->
+												<!-- <img src="/dev/ui/jp/images/gom-product/gom_news_jp_01.png" alt=""> --> <!-- 일문일 때 이미지 -->
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#!">
+											<div class="gom-thumbnail news-thumbnail">
+												<img src="/dev/ui/images/gom-product/gom_news_02.png" alt="">
+												<!-- <img src="/dev/ui/en/images/gom-product/gom_news_en_02.png" alt=""> --> <!-- 영문일 때 이미지 -->
+												<!-- <img src="/dev/ui/jp/images/gom-product/gom_news_jp_02.png" alt=""> --> <!-- 일문일 때 이미지 -->
+											</div>
+										</a>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<!-- //231229_수정 : 제품 소식 영역 추가 -->
 
 			<div class="panel">
 				<div class="inner">
 					<div class="gom-content-inner-wrap">
 						<h2 class="gom-title">짤(Meme)이란?</h2>
+						<!-- 231227_수정 : 이미지 추가, 줄바꿈 수정 -->
 						<div class="gom-content-inner meme-info-wrap">
 							<div class="meme-info-img">
-								<img src="http://placehold.it/342x218" alt="썸네일2:1예시">
+								<img src="/dev/ui/images/gom-product/gmeme/gommememaker_feature_04.png" alt="">
+								<img src="/dev/ui/images/gom-product/gmeme/gommememaker_feature_05.png" alt="">
 							</div>
-							<p class="meme-info">국내에서는 '짤', '움짤'이란 명칭으로 널리 쓰이고 해외에서는 'Meme(밈)'으로 사용되는 단어로, 주로 온라인상의 사진, 그림, 영상 등에 재미난 문구를 넣어 재편집하여 만들어진 사진이나 GIF, 동영상을 말합니다. 곰밈메이커로 이미지짤, 움직이는 동영상움짤을 쉽고 재미있게 만들 수 있습니다.</p>
+							<p class="meme-info">국내에서는 '짤', '움짤'이란 명칭으로 널리 쓰이고 해외에서는 'Meme(밈)'으로 사용되는 단어로,<br>주로 온라인상의 사진, 그림, 영상 등에 재미난 문구를 넣어 재편집하여 만들어진 사진이나 GIF, 동영상을 말합니다.<br>곰밈메이커로 이미지짤, 움직이는 동영상움짤을 쉽고 재미있게 만들 수 있습니다.</p>
 						</div>
+						<!-- //231227_수정 : 이미지 추가, 줄바꿈 수정 -->
 						<div class="gom-content-inner gom-step-wrap">
 							<h2 class="gom-title">지금 바로 곰밈메이커에서<br>재미있는 짤을 만들어보세요!</h2>
+							<!-- 231227_수정 : 이미지 추가 -->
 							<div class="gom-step">
 								<div class="gom-step-box">
 									<p>STEP 1</p>
-									<img src="http://placehold.it/116x116" alt="썸네일1:1예시">
+									<img src="/dev/ui/images/gom-product/gmeme/icon_gommememaker_01.png" alt="">
 									<p>편집하고 싶은 쉬운 파일 업로드</p>
 									<p>이미지, GIF, 동영상 파일을 업로드하거나<br>파일의 URL주소를 입력하세요.</p>
 								</div>
 								<div class="gom-step-box">
 									<p>STEP 2</p>
-									<img src="http://placehold.it/116x116" alt="썸네일1:1예시">
+									<img src="/dev/ui/images/gom-product/gmeme/icon_gommememaker_02.png" alt="">
 									<p>원하는 효과를 활용하여 편집</p>
 									<p>텍스트를 추가하고 원하는 대로<br>밝기나 필터효과를 적용해보세요.</p>
 								</div>
 								<div class="gom-step-box">
 									<p>STEP 3</p>
-									<img src="http://placehold.it/116x116" alt="썸네일1:1예시">
+									<img src="/dev/ui/images/gom-product/gmeme/icon_gommememaker_03.png" alt="">
 									<p>트렌디한 짤 완성</p>
 									<p>짤이 완성되면 다운로드 받으세요!</p>
 								</div>
 							</div>
+							<!-- //231227_수정 : 이미지 추가 -->
 						</div>
 					</div>
 				</div>

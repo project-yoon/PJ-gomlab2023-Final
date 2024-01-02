@@ -6,7 +6,7 @@
 .business {
 	.head-visual {
 		&.visual-business {
-			background: no-repeat center url(#{$img-url}/business/head-visual-business-pc.png);
+			background: no-repeat center url(#{$img-url}/business/head_visual_business_pc.png);
 			background-size: cover;
 			.logo strong,
 			h1,
@@ -46,6 +46,18 @@
 	}
 	.gom-card-box-defalut {
 		padding: 181px 0 120px;
+		.gom-package-info {
+			.pagkage-top {
+				.title {
+					display: flex;
+					min-height: 48px;
+					align-items: center;
+					.logo {
+						flex: 0 0 48px
+					}
+				}	
+			}
+		}
 		.pagkage-more-info {
 			p {
 				min-height: 74px;
@@ -171,7 +183,7 @@
 	.business {
 		.head-visual {
 			&.visual-business {
-				background-image: url(#{$img-url}/business/head-visual-business-mo.png);
+				background-image: url(#{$img-url}/business/head_visual_business_mo.png);
 				// height: 106vw; /*모바일 배경이미지 비율처리할 것인지 확인 필요*/
 			}
 		}
@@ -239,6 +251,16 @@
 		}
 		.gom-card-box-defalut {
 			padding: 64px 0;
+			.gom-package-info {
+				.pagkage-top {
+					.title {
+						min-height: 40px;
+						.logo {
+							flex: 0 0 40px
+						}
+					}	
+				}
+			}
 		}
 		//견적 요청서
 		.estimate-request {

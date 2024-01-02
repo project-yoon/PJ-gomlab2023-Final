@@ -3,20 +3,64 @@
 	<include src="../include/head.html" title="곰랩 메인" menucss="/dev/ui/css/main.css"></include>
 <body class="main">
 	<!-- [D] 231220_수정 : 상단띠배너 추가 -->
+	<!-- 231227_수정_01 -->
+	<!-- 231228_수정_01_문구수정 -->
+	<!-- 국문 -->
 	<div id="top-banner-wrap">
 		<aside class="top-banner only-pc">
 			<div class="tb-inner">
-				<span class="tb-txt">모든 제품을 커피 한 잔 값으로! 영상 프로그램 역사상 최저가 1,900원</span>
-				<a href="#" class="btn-sm btn-ghost-w">보러가기</a>
+				<span class="tb-txt">편집, 녹화, 재생 멤버십 런칭 기념 3천만원 상금 혜택!</span>
+				<a href="#" class="btn-sm btn-ghost-w">이벤트 참여하기</a>>
 				<button type="button" class="btn-tb-close">Close</button>
 			</div>
 		</aside>
 		<aside class="top-banner only-mo">
 			<div class="tb-inner">
-				<a href="#" target="_blank" title="새 창으로 자세히 보기" class="tb-txt">모든 제품을 커피 한 잔 값으로!</a>
+				<a href="#" target="_blank" title="새 창으로 자세히 보기" class="tb-txt">편집, 녹화, 재생 멤버십 런칭 기념 3천만원 상금 혜택!</a>
+				<!-- [D] 231227 지라 GLABNW-306_모바일 닫기 버튼 추가 -->
+				<button type="button" class="btn-tb-close">Close</button>
 			</div>
 		</aside>
 	</div>
+	<!-- //국문 -->
+
+	<!-- 영문 -->
+	<!-- <div id="top-banner-wrap">
+		<aside class="top-banner only-pc">
+			<div class="tb-inner">
+				<span class="tb-txt">New Membership Service Open Prize Worth $30K!</span>
+				<a href="#" class="btn-sm btn-ghost-w">Participate</a>
+				<button type="button" class="btn-tb-close">Close</button>
+			</div>
+		</aside>
+		<aside class="top-banner only-mo">
+			<div class="tb-inner">
+				<a href="#" target="_blank" title="새 창으로 자세히 보기" class="tb-txt">New Membership Service Open Prize Worth $30K!</a>
+				<button type="button" class="btn-tb-close">Close</button>
+			</div>
+		</aside>
+	</div> -->
+	<!-- //영문 -->
+	<!-- 일문 -->
+	<!-- <div id="top-banner-wrap">
+		<aside class="top-banner only-pc">
+			<div class="tb-inner">
+				<span class="tb-txt">編集、録画、再生を一気に！30万円分の賞金特典！</span>
+				<a href="#" class="btn-sm btn-ghost-w">イベント参加する</a>
+				<button type="button" class="btn-tb-close">Close</button>
+			</div>
+		</aside>
+		<aside class="top-banner only-mo">
+			<div class="tb-inner">
+				<a href="#" target="_blank" title="새 창으로 자세히 보기" class="tb-txt">編集、録画、再生を一気に！30万円分の賞金特典！</a>
+				<button type="button" class="btn-tb-close">Close</button>
+			</div>
+		</aside>
+	</div> -->
+	<!-- //일문 -->
+	<!-- 231227_수정_01 -->
+	<!-- 231228_수정_01_문구수정 -->
+
 	<!-- // [D] 231220_수정 : 상단띠배너 추가 -->
 
 	<!-- 헤더 -->
@@ -25,11 +69,20 @@
 
 	<!-- 컨텐츠 -->
 	<main id="container">
+		<!-- 231227_수정 : 영상 영역 및 애니메이션 요소 추가 -->
 		<div id="contents-head" class="contents-head main-head">
+			<div class="animate-item animate-item-1" data-animation="slideup"><img src="/dev/ui/images/main/main_bg_figure_01.png" alt=""></div>
+			<div class="animate-item animate-item-2 delay-1" data-animation="slideup"><img src="/dev/ui/images/main/main_bg_figure_02.png" alt=""></div>
 			<div class="head-tit-wrap">
 				<h1 data-animation="slideup">영상의 모든 순간에,<br>첫 멤버십 곰 이지패스</h1>
+				<div class="main-video-wrap">
+					<video poster="/dev/ui/images/main/main_intro_poster.png" playsinline loop muted autoplay>
+						<source src="/dev/ui/images/main/main_intro_video.mp4" type="video/mp4">
+					</video>
+				</div>
 			</div>
 		</div>
+		<!-- 231227_수정 : 영상 영역 및 애니메이션 요소 추가 -->
 		<!-- [D] 231220_수정 : lnb 기능제거 주석처리 -->
 		<!-- <nav id="lnb" class="lnb-wrap">
 			<div class="lnb-inner">
@@ -44,87 +97,63 @@
 		<!-- // [D] 231220_수정 : lnb 기능제거 주석처리 -->
 		<div id="contents" class="contents-body">
 			<section class="panel-wrap">
-				<div class="main-easy-pass">
+				<!-- S: 231229_수정 - ORG060-361 대응 -->
+				<div class="main-easy-pass text-slide">
 					<ul class="swiper-wrapper">
-						<li class="swiper-slide" style="background-image: url(/dev/ui/images/main/tmp_easy-pass-bg.png);">
-							<div class="inner">
-								<div class="cont-txt">
-									<span class="easy-pass-logo"><img src="/dev/ui/images/component/logo_title_gomeasypass_w.svg" alt="곰이지패스"></span>
-									<h2 class="main-cont-tit">영상 편집의 더 나은 선택,<br>더 나은 혜택</h2>
-									<p class="main-cont-exp">한 눈에 보이는 곰이지패스 혜택<br>매달 추가되는 신규 혜택 놓치지마세요.</p>
+						<!--231227_수정 image 영역 및 링크 이동 case 추가-->
+						<!--[D] case: 아이콘 없는 전체 링크이동-->
+						<li class="swiper-slide">
+							<a href="#">
+								<!-- [D] 231229 GLABNW-324 반영 -->
+								<picture class="main-slide-bg blue">
+									<source media="(min-width: 1025px)" srcset="/dev/ui/images/main/main_easy_pass_pc_231229.png">
+									<source media="(max-width: 1024px)" srcset="/dev/ui/images/main/main_easy_pass_mo_231229.png">
+									<img src="/dev/ui/images/main/main_easy_pass_pc_231229.png" alt="">
+								</picture>
+								<!-- //[D] 231229 GLABNW-324 반영 -->
+								<div class="inner">
+									<div class="cont-txt">
+										<span class="easy-pass-logo"><img src="/dev/ui/images/component/logo_title_gomeasypass_w.svg" alt="곰이지패스"></span>
+										<h2 class="main-cont-tit">편집, 녹화, 재생까지 한번에<br>신규 통합 서비스 출시!</h2>
+										<p class="main-cont-exp">곰이지패스로 월 1,900원에 사용 가능합니다.</p>
+									</div>
 								</div>
-								<div class="icon-boxs">
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gommix2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomcam2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomplayer_plus2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomvoice2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomsoundcut2024.png" alt=""></span>
-								</div>
-							</div>
+							</a>
 						</li>
-						<li class="swiper-slide" style="background-image: url(/dev/ui/images/main/tmp_easy-pass-bg.png);">
-							<div class="inner">
-								<div class="cont-txt">
-									<span class="easy-pass-logo"><img src="/dev/ui/images/component/logo_title_gomeasypass_w.svg" alt="곰이지패스"></span>
-									<h2 class="main-cont-tit">영상 편집의 더 나은 선택,<br>더 나은 혜택</h2>
-									<p class="main-cont-exp">한 눈에 보이는 곰이지패스 혜택<br>매달 추가되는 신규 혜택 놓치지마세요.</p>
+						<!--[D] case: 아이콘 없는 전체 링크이동-->
+						<li class="swiper-slide">
+							<a href="#">
+								<!-- [D] 231229 GLABNW-324 반영 -->
+								<!-- 국문 -->
+								<picture class="main-slide-bg dark">
+									<source media="(min-width: 1025px)" srcset="/dev/ui/images/main/main_easy_pass_pc_02_kr_231229.png">
+									<source media="(max-width: 1024px)" srcset="/dev/ui/images/main/main_easy_pass_mo_02_kr_231229.png">
+									<img src="/dev/ui/images/main/main_easy_pass_pc_02_kr.png" alt="">
+								</picture>
+								<!-- //국문 -->
+								<!-- 영문 -->
+								<!-- <picture class="main-slide-bg dark">
+									<source media="(min-width: 1025px)" srcset="/dev/ui/images/main/main_easy_pass_pc_02_en_231229.png">
+									<source media="(max-width: 1024px)" srcset="/dev/ui/images/main/main_easy_pass_mo_02_en_231229.png">
+									<img src="/dev/ui/images/main/main_easy_pass_pc_02_en.png" alt="">
+								</picture> -->
+								<!-- //영문 -->
+								<!-- 일문 -->
+								<!-- <picture class="main-slide-bg dark">
+									<source media="(min-width: 1025px)" srcset="/dev/ui/images/main/main_easy_pass_pc_02_jp_231229.png">
+									<source media="(max-width: 1024px)" srcset="/dev/ui/images/main/main_easy_pass_mo_02_jp_231229.png">
+									<img src="/dev/ui/images/main/main_easy_pass_pc_02_jp.png" alt="">
+								</picture> -->
+								<!-- //일문 -->
+								<!-- //[D] 231229 GLABNW-324 반영 -->
+								<div class="inner">
+									<div class="cont-txt">
+										<span class="easy-pass-logo"><img src="/dev/ui/images/component/logo_title_gomeasypass_w.svg" alt="곰이지패스"></span>
+										<h2 class="main-cont-tit">편집, 녹화, 재생을 한번에!<br>곰이지패스 런칭 이벤트</h2>
+										<p class="main-cont-exp">노트북, 모니터, 네이버페이, 100만원 상금까지<br>총 3천만원 상당의 혜택을 받아가세요!</p>
+									</div>
 								</div>
-								<div class="icon-boxs">
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gommix2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomcam2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomplayer_plus2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomvoice2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomsoundcut2024.png" alt=""></span>
-								</div>
-							</div>
-						</li>
-						<li class="swiper-slide" style="background-image: url(/dev/ui/images/main/tmp_easy-pass-bg.png);">
-							<div class="inner">
-								<div class="cont-txt">
-									<span class="easy-pass-logo"><img src="/dev/ui/images/component/logo_title_gomeasypass_w.svg" alt="곰이지패스"></span>
-									<h2 class="main-cont-tit">영상 편집의 더 나은 선택,<br>더 나은 혜택</h2>
-									<p class="main-cont-exp">한 눈에 보이는 곰이지패스 혜택<br>매달 추가되는 신규 혜택 놓치지마세요.</p>
-								</div>
-								<div class="icon-boxs">
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gommix2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomcam2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomplayer_plus2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomvoice2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomsoundcut2024.png" alt=""></span>
-								</div>
-							</div>
-						</li>
-						<li class="swiper-slide" style="background-image: url(/dev/ui/images/main/tmp_easy-pass-bg.png);">
-							<div class="inner">
-								<div class="cont-txt">
-									<span class="easy-pass-logo"><img src="/dev/ui/images/component/logo_title_gomeasypass_w.svg" alt="곰이지패스"></span>
-									<h2 class="main-cont-tit">영상 편집의 더 나은 선택,<br>더 나은 혜택</h2>
-									<p class="main-cont-exp">한 눈에 보이는 곰이지패스 혜택<br>매달 추가되는 신규 혜택 놓치지마세요.</p>
-								</div>
-								<div class="icon-boxs">
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gommix2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomcam2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomplayer_plus2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomvoice2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomsoundcut2024.png" alt=""></span>
-								</div>
-							</div>
-						</li>
-						<li class="swiper-slide" style="background-image: url(/dev/ui/images/main/tmp_easy-pass-bg.png);">
-							<div class="inner">
-								<div class="cont-txt">
-									<span class="easy-pass-logo"><img src="/dev/ui/images/component/logo_title_gomeasypass_w.svg" alt="곰이지패스"></span>
-									<h2 class="main-cont-tit">영상 편집의 더 나은 선택,<br>더 나은 혜택</h2>
-									<p class="main-cont-exp">한 눈에 보이는 곰이지패스 혜택<br>매달 추가되는 신규 혜택 놓치지마세요.</p>
-								</div>
-								<div class="icon-boxs">
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gommix2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomcam2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomplayer_plus2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomvoice2024.png" alt=""></span>
-									<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomsoundcut2024.png" alt=""></span>
-								</div>
-							</div>
+							</a>
 						</li>
 					</ul>
 					<div class="swiper-util inner">
@@ -133,6 +162,7 @@
 						<button class="swiper-arrow swiper-next" type="button">next</button>
 					</div>
 				</div>
+				<!-- E: 231229_수정 - ORG060-361 대응 -->
 				<div class="inner">
 					<div class="creative-service">
 						<div class="txt-wrap">
@@ -162,7 +192,7 @@
 							<p class="cnt-exp delay-1" data-animation="slideup">새로워진 곰믹스 2024, 곰캠 2024,<br class="only-mo"> 곰플레이어+ 2024 <br class="only-pc">머릿속 상상을 실현해보세요.</p>
 						</div>
 						<div class="side-visual-card delay-2" data-animation="slideup">
-							<span class="img-wrap"><img src="/dev/ui/images/layout/pay_product_intro3.png" alt=""></span>
+							<span class="img-wrap"><img src="/dev/ui/images/main/img_membership_plan.png" alt=""></span>
 							<p class="tit">편집부터 녹화, 재생까지<br> 통합 구독 서비스</p>
 							<span class="sub">사진, 영상 편집, 녹화 등 머릿속 상상을<br class="only-mo"> 실현하는 데<br class="only-pc"> 필요한 것을 활용해 보세요.</span>
 							<a class="btn-lg btn-gradient" href="#">곰 이지패스 보러 가기</a>
@@ -207,7 +237,7 @@
 							</li>
 						</ul>
 						<div class="side-visual-card delay-1" data-animation="slideup">
-							<span class="img-wrap"><img src="/dev/ui/images/main/tmp_img_business_pack.png" alt=""></span>
+							<span class="img-wrap"><img src="/dev/ui/images/main/img_business_plan.png" alt=""></span>
 							<p class="tit">업무로 콘텐츠를 제작하는<br> 모든 사용자를 위한 비즈니스 팩</p>
 							<span class="sub">자유롭게 창의력을 발휘하고, 문서 작업의<br class="only-mo"> 생산성을 높이고, 디지털 비즈니스 역량을<br class="only-mo"> 강화할 수 있습니다.</span>
 							<a class="btn-lg btn-default" href="#">비즈니스 팩 보러가기</a>
@@ -280,108 +310,110 @@
 						<div class="main-review-wrap">
 							<div class="main-review-swiper">
 								<ul class="swiper-wrapper">
-									<!-- [D] 제품 아이콘 + 리뷰 제목 및 내용 + 로고 -->
 									<li class="swiper-slide">
-										<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gommix2024.png" alt=""></span>
-										<p class="review-tit">“탑10 편집 프로그램 선정​​“</p>
+										<!-- 231228_수정_01 : GLABNW-388 대응 -->
+										<span class="icon-box"><img src="/dev/ui/images/common/sw-logos/icon_b2c_gommix2024.svg" alt=""></span>
+										<!-- //231228_수정_01 : GLABNW-388 대응 -->
+										<p class="review-tit">"탑10 편집 프로그램 선정"</p>
 										<div class="review-detail">
-											<p>
-												“어떠한 편집기 보다 가벼워 편집할 때 
-												성능 문제로 스트레스를 받을 필요가 없습니다. 
-												또한 사용자 친화적인 인터페이스로 
-												위치 변경까지 가능해 매우 편리합니다.
-												어떠한 편집기 보다 가벼워 편집할 때 
-												성능 문제로 스트레스를 받을 필요가 없습니다. 
-												또한 사용자 친화적인 인터페이스로 
-												위치 변경까지 가능해 매우 편리합니다.”​
-											</p>
+											<p>“어떠한 편집기 보다 가벼워 편집할 때 성능 문제로 스트레스를 받을 필요가 없습니다. 또한 사용자 친화적인 인터페이스로 위치 변경까지 가능해 매우 편리합니다.”</p>
 										</div>
-										<div class="logo"> <!-- [D] 231220_수정 : 로고추가 -->
-											<img src="" alt="">
+										<!-- 231228_수정_01 : GLABNW-388 대응 -->
+										<div class="logo">
+											<span class="site-type">테크 사이트</span>
+											<span class="site-name">Softonic</span>
 										</div>
+										<!-- //231228_수정_01 : GLABNW-388 대응 -->
 									</li>
-									<!-- [D] 231220 : 제품 아이콘 + 리뷰 내용 + 로고 -->
 									<li class="swiper-slide">
-										<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomcam2024.png" alt=""></span>
+										<!-- 231228_수정_01 : GLABNW-388 대응 -->
+										<span class="icon-box"><img src="/dev/ui/images/common/sw-logos/icon_b2c_gomcam2024.svg" alt=""></span>
+										<!-- //231228_수정_01 : GLABNW-388 대응 -->
 										<div class="review-detail">
-											<p>
-												“곰캠 프로그램 하나로 녹화, 웹캠 등 정말 
-												다양한 기능을 지원하네요! 기능이 많은데도
-												인터페이스도 깔끔하고 사용하기 편합니다.
-												GIF 애니메이션도 편하게 만들 수 있어요!”​​
-											</p>
+											<p>"곰캠 프로그램 하나로 녹화, 웹캠 등 정말 다양한 기능을 지원하네요! 기능이 많은데도 인터페이스도 깔끔하고 사용하기 편합니다. GIF 애니메이션도 편하게 만들 수 있어요!”</p>
 										</div>
-										<div class="logo"> <!-- [D] 231220_수정 : 로고추가 -->
-											<img src="" alt="">
+										<!-- 231228_수정_01 : GLABNW-388 대응 -->
+										<div class="logo">
+											<span class="site-type">테크 사이트</span>
+											<span class="site-name">쿨엔조이</span>
 										</div>
+										<!-- //231228_수정_01 : GLABNW-388 대응 -->
 									</li>
-									<!-- [D] 231220 : 제품 아이콘 + 별점 + 리뷰 내용 + 로고 -->
 									<li class="swiper-slide">
-										<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomplayer_plus2024.png" alt=""></span>
+										<!-- 231228_수정_01 : GLABNW-388 대응 -->
+										<span class="icon-box"><img src="/dev/ui/images/common/sw-logos/icon_b2c_gomplayerplus2024.svg" alt=""></span>
+										<!-- //231228_수정_01 : GLABNW-388 대응 -->
 										<p class="reviewer-name">Verified Reviewer</p>
-										<div class="star-rating"><span class="rating" style="width: 80%;"></span></div><!-- [D] 231220_수정 : 스타일 추가 -->
+										<div class="star-rating"><span class="rating" style="width: 80%;"></span></div>
+										<p class="review-tit">"인코딩 없이도 재생 가능"</p>
 										<div class="review-detail">
-											“모든 영상이 재생 가능합니다! 
-											AVI, FLV, MP3, MP4, .H264와 같은 
-											거의 모든 종류의 미디어를 재생하도록 
-											설계된 오픈 소스 미디어 플레이어입니다.”​​
+											<p>“모든 영상이 재생 가능합니다! AVI, FLV, MP3, MP4, H264와 같은 거의 모든 종류의 미디어를 재생하도록 설계된 오픈 소스 미디어 플레이어입니다.”</p>
 										</div>
-										<div class="logo"> <!-- [D] 231220_수정 : 로고추가 -->
-											<img src="" alt="">
+										<!-- 231228_수정_01 : GLABNW-388 대응 -->
+										<div class="logo">
+											<span class="site-type">리뷰 사이트</span>
+											<span class="site-name">Capterra</span>
 										</div>
+										<!-- //231228_수정_01 : GLABNW-388 대응 -->
 									</li>
 									<li class="swiper-slide">
-										<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gommix2024.png" alt=""></span>
+										<!-- 231228_수정_01 : GLABNW-388 대응 -->
+										<span class="icon-box"><img src="/dev/ui/images/common/sw-logos/icon_b2c_gommix2024.svg" alt=""></span>
+										<!-- //231228_수정_01 : GLABNW-388 대응 -->
 										<p class="reviewer-name">Verified Reviewer</p>
-										<div class="star-rating"><span class="rating" style="width: 20%;"></span></div> <!-- [D] 231220_수정 : 스타일 추가 -->
-										<p class="review-tit">“탑10 편집 프로그램 선정​​“</p>
+										<div class="star-rating"><span class="rating" style="width: 80%;"></span></div>
+										<p class="review-tit">리뷰4 카피</p>
 										<div class="review-detail">
-											<p>
-												“어떠한 편집기 보다 가벼워 편집할 때 
-												성능 문제로 스트레스를 받을 필요가 없습니다. 
-												또한 사용자 친화적인 인터페이스로 
-												위치 변경까지 가능해 매우 편리합니다.
-												어떠한 편집기 보다 가벼워 편집할 때 
-												성능 문제로 스트레스를 받을 필요가 없습니다. 
-												또한 사용자 친화적인 인터페이스로 
-												위치 변경까지 가능해 매우 편리합니다.”​
-											</p>
+											<p>“모든 사람들에게 매우 유용한 놀라운 동영상 편집 프로그램입니다. 다른 비디오 편집 도구에 비해 가격도 좋고 사용하기 편리하며 사용자 친화적이어서 많은 기능들을 보유하고 있습니다.”</p>
 										</div>
-										<div class="logo"> <!-- [D] 231220_수정 : 로고추가 -->
-											<img src="" alt="">
+										<!-- 231228_수정_01 : GLABNW-388 대응 -->
+										<div class="logo">
+											<span class="site-type">리뷰 사이트</span>
+											<span class="site-name">Trustpilot</span>
 										</div>
+										<!-- //231228_수정_01 : GLABNW-388 대응 -->
 									</li>
 									<li class="swiper-slide">
-										<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomcam2024.png" alt=""></span>
-										<p class="reviewer-name">Verified Reviewer</p>
-										<div class="star-rating"><span class="rating" style="width: 100%;"></span></div> <!-- [D] 231220_수정 : 스타일 추가 -->
-										<p class="review-tit">“곰캠 하나로 해결”</p>
+										<!-- 231228_수정_01 : GLABNW-388 대응 -->
+										<span class="icon-box"><img src="/dev/ui/images/common/sw-logos/icon_b2c_gomcam2024.svg" alt=""></span>
+										<!-- //231228_수정_01 : GLABNW-388 대응 -->
 										<div class="review-detail">
-											<p>
-												“곰캠 프로그램 하나로 녹화, 웹캠 등 정말 
-												다양한 기능을 지원하네요! 기능이 많은데도
-												인터페이스도 깔끔하고 사용하기 편합니다.
-												GIF 애니메이션도 편하게 만들 수 있어요!”​​
-											</p>
+											<p>“화면 녹화 프로그램을 간편하고 빠르게 사용해 보고 싶다면 곰캠 권해드려요. 실제 편집자가 써봤으니 말 다 한 거 아닌가요? 찐으로 좋았던 프로그램!”</p>
 										</div>
-										<div class="logo"> <!-- [D] 231220_수정 : 로고추가 -->
-											<img src="" alt="">
+										<!-- 231228_수정_01 : GLABNW-388 대응 -->
+										<div class="logo">
+											<span class="site-type">블로거</span>
+											<span class="site-name">네이버 블로그</span>
 										</div>
+										<!-- //231228_수정_01 : GLABNW-388 대응 -->
 									</li>
 									<li class="swiper-slide">
-										<span class="icon-box"><img src="/dev/ui/images/layout/icon_pd_gomplayer_plus2024.png" alt=""></span>
-										<p class="reviewer-name">Verified Reviewer</p>
-										<div class="star-rating"><span class="rating" style="width: 80%;"></span></div> <!-- [D] 231220_수정 : 스타일 추가 -->
-										<p class="review-tit">“인코딩 없이도 재생 가능”</p>
+										<!-- 231228_수정_01 : GLABNW-388 대응 -->
+										<span class="icon-box"><img src="/dev/ui/images/common/sw-logos/icon_b2c_gomplayerplus2024.svg" alt=""></span>
+										<!-- //231228_수정_01 : GLABNW-388 대응 -->
 										<div class="review-detail">
-											“모든 영상이 재생 가능합니다! 
-											AVI, FLV, MP3, MP4, .H264와 같은 
-											거의 모든 종류의 미디어를 재생하도록 
-											설계된 오픈 소스 미디어 플레이어입니다.”​​
+											<p>“곰플레이어의 가장 돋보이는 장점은 VR 기술입니다. 360도 동영상을 재생할 수 있으며 화살표 키를 사용하여 제어할 수 있는 후면, 전면, 오른쪽, 왼쪽으로 미리 보기를 지원합니다"</p>
 										</div>
-										<div class="logo"> <!-- [D] 231220_수정 : 로고추가 -->
-											<img src="" alt="">
+										<!-- 231228_수정_01 : GLABNW-388 대응 -->
+										<div class="logo">
+											<span class="site-type">테크 사이트</span>
+											<span class="site-name">Softonic</span>
 										</div>
+										<!-- //231228_수정_01 : GLABNW-388 대응 -->
+									</li>
+									<li class="swiper-slide">
+										<!-- 231228_수정_01 : GLABNW-388 대응 -->
+										<span class="icon-box"><img src="/dev/ui/images/common/sw-logos/icon_b2c_gommix2024.svg" alt=""></span>
+										<!-- //231228_수정_01 : GLABNW-388 대응 -->
+										<div class="review-detail">
+											<p>“어떠한 편집기 보다 가벼워 편집할 때 성능 문제로 스트레스를 받을 필요가 없습니다. 또한 사용자 친화적인 인터페이스로 위치 변경까지 가능해 매우 편리합니다.”</p>
+										</div>
+										<!-- 231228_수정_01 : GLABNW-388 대응 -->
+										<div class="logo">
+											<span class="site-type">테크 사이트</span>
+											<span class="site-name">쿨엔조이</span>
+										</div>
+										<!-- //231228_수정_01 : GLABNW-388 대응 -->
 									</li>
 								</ul>
 							</div>
@@ -403,12 +435,18 @@
 					<span><img src="/dev/ui/images/banner/partners_logo_avast.png" alt=""></span>
 					<span><img src="/dev/ui/images/banner/partners_logo_gmo.png" alt=""></span>
 					<span><img src="/dev/ui/images/banner/partners_logo_kait.png" alt=""></span>
-					<span><img src="" alt="이미지 업데이트 예정"></span>
+					<!-- 231229_수정_01 -->
+					<span><img src="/dev/ui/images/banner/partners_logo_krmedia.png" alt=""></span>
+					<!-- //231229_수정_01 -->
 					<span><img src="/dev/ui/images/banner/partners_logo_softpedia.png" alt=""></span>
 					<span><img src="/dev/ui/images/banner/partners_logo_tamindir.png" alt=""></span>
-					<span><img src="" alt="이미지 업데이트 예정"></span>
+					<!-- 231229_수정_01 -->
+					<span><img src="/dev/ui/images/banner/partners_logo_software_informer.png" alt=""></span>
+					<!-- //231229_수정_01 -->
 					<span><img src="/dev/ui/images/banner/partners_logo_filehorse.png" alt=""></span>
-					<span><img src="" alt="이미지 업데이트 예정"></span>
+					<!-- 231229_수정_01 -->
+					<span><img src="/dev/ui/images/banner/partners_logo_download.png" alt=""></span>
+					<!-- //231229_수정_01 -->
 					<span><img src="/dev/ui/images/banner/partners_logo_windows_forest.png" alt=""></span>
 					<span><img src="/dev/ui/images/banner/partners_logo_softonic.png" alt=""></span>
 					<span><img src="/dev/ui/images/banner/partners_logo_vector.png" alt=""></span>
@@ -424,12 +462,18 @@
 					<span><img src="/dev/ui/images/banner/partners_logo_avast.png" alt=""></span>
 					<span><img src="/dev/ui/images/banner/partners_logo_gmo.png" alt=""></span>
 					<span><img src="/dev/ui/images/banner/partners_logo_kait.png" alt=""></span>
-					<span><img src="" alt="이미지 업데이트 예정"></span>
+					<!-- 231229_수정_01 -->
+					<span><img src="/dev/ui/images/banner/partners_logo_krmedia.png" alt=""></span>
+					<!-- //231229_수정_01 -->
 					<span><img src="/dev/ui/images/banner/partners_logo_softpedia.png" alt=""></span>
 					<span><img src="/dev/ui/images/banner/partners_logo_tamindir.png" alt=""></span>
-					<span><img src="" alt="이미지 업데이트 예정"></span>
+					<!-- 231229_수정_01 -->
+					<span><img src="/dev/ui/images/banner/partners_logo_software_informer.png" alt=""></span>
+					<!-- //231229_수정_01 -->
 					<span><img src="/dev/ui/images/banner/partners_logo_filehorse.png" alt=""></span>
-					<span><img src="" alt="이미지 업데이트 예정"></span>
+					<!-- 231229_수정_01 -->
+					<span><img src="/dev/ui/images/banner/partners_logo_download.png" alt=""></span>
+					<!-- //231229_수정_01 -->
 					<span><img src="/dev/ui/images/banner/partners_logo_windows_forest.png" alt=""></span>
 					<span><img src="/dev/ui/images/banner/partners_logo_softonic.png" alt=""></span>
 					<span><img src="/dev/ui/images/banner/partners_logo_vector.png" alt=""></span>
@@ -456,21 +500,23 @@
 			},
 			pagination: {
 				el: ".main-easy-pass .pagination-bullet",
-				type : 'bullets'
-			}
+				type : 'bullets',
+				clickable: true // [D] 231229 GLABNW-357 반영
+			},
 		})
 		const gomReviewSlider = new Swiper('.main-review-swiper', {
 			slidesPerView: 3,
 			spaceBetween: 32,
 			centerSlide: true,
-			loop: true, // [D] 231220_수정 : loop 추가 
+			loop: true, // [D] 231220_수정 : loop 추가
 			navigation: {
 				prevEl: ".main-review-wrap .swiper-prev",
 				nextEl: ".main-review-wrap .swiper-next"
 			},
 			pagination: {
 				el: ".main-review-wrap .pagination-bullet",
-				type : 'bullets'
+				type : 'bullets',
+				clickable: true, // [D] 231229 GLABNW-363 반영
 			},
 			breakpoints: {
 				1279: {

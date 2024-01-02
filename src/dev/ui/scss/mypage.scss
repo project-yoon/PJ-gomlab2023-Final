@@ -76,7 +76,6 @@
 		.command-cont {
 			width: 100%;
 			height: 320px;
-			background: #00FF2233;
 		}
 		.my-group {
 			display: flex;
@@ -92,8 +91,11 @@
 			}
 		}
 		.subscribe-list {
-			li {
+			.subscribe-item {
 				width: 80px;
+				.num {
+					right: 0px;
+				}
 			}
 			.empty {
 				width: unset;
@@ -135,20 +137,20 @@
 	.my-license {
 		padding-bottom: 24px;
 		border-bottom: 1px solid $color-gray-11;
-		.tit {
-			margin-bottom: 34px;
-			padding-bottom: 16px;
-			font-weight: 700;
-			@include txt(16);
-			border-bottom: 2px solid $color-black-1;
-		}
+		// .tit {
+		// 	margin-bottom: 24px;
+		// 	padding-bottom: 16px;
+		// 	font-weight: 700;
+		// 	@include txt(16);
+		// 	border-bottom: 2px solid $color-black-1;
+		// }
 		.subscribe-list {
 			display: flex;
 			justify-content: flex-start;
 			gap: 8px;
 			flex-wrap: wrap;
-			&:has(.empty) {
-				display: block;
+			.empty {
+				width: 100%;
 			}
 		}
 		.empty {
@@ -157,6 +159,7 @@
 			@include txt(14);
 		}
 		.subscribe-item {
+			padding-top: 10px;
 			position: relative;
 			width: 100px;
 			a {
@@ -171,7 +174,7 @@
 			.num {
 				position: absolute;
 				right: 8px;
-				top: -10px;
+				top: 0px;
 				display: inline-block;
 				min-width: 20px;
 				height: 20px;
@@ -335,6 +338,9 @@
 	.mypage-detail{	//마이페이지 > 상세 내역
 		.command-cont {
 			margin-top: 64px;
+			a {
+				display: block;
+			}
 		}
 		.dot-list {
 			margin-top: 24px;
@@ -360,11 +366,6 @@
 				font-weight: 700;
 			}
 		}
-		.form-col:has(input:disabled) {
-			width: 327px;
-			align-items: center;
-			justify-content: space-between;
-		}
 	}
 	.sub-check {
 		font-size: 0;
@@ -379,10 +380,11 @@
 		display: flex;
 		justify-content: space-between;
 		margin-top: 24px;
-		&:not(:has(.btn-withdrawal)){
-			justify-content: flex-end;
+		[class^=btn-]{
+			margin-left: auto;
 		}
 		.btn-withdrawal {
+			margin-left: unset;
 			order: -1;
 		}
 	}
@@ -416,6 +418,13 @@
 		.board-common {
 			.btn-wrap {
 				@include posRight($top: 24px, $right: 0, $posY: 0%); 
+			}
+		}
+		.check-list {
+			.stauts-wrap {
+				span {
+					font-weight: 700;
+				}
 			}
 		}
 	}
@@ -514,9 +523,10 @@
 			}
 		}
 		.acco-head {
-			padding: 24px 0;
+			padding: 0;
 		}
 		.list-info {
+			padding: 24px 0;
 			flex: 1;
 			&::before {
 				content: "";
@@ -574,16 +584,6 @@
 					}
 				}
 			}
-			li {
-				&:not(:has(.acco-head)) {
-					padding: 24px 0;
-					.list-info {
-						&::before {
-							display: none;
-						}
-					}
-				}
-			}
 		}
 	}
 	.pay-summary-wrap {
@@ -616,19 +616,14 @@
 				font-weight: 700;
 			}
 		}
-		&:has(.pay-total) {
-			border: 0 none;
-		}
 	}
 	.check-list {
 		.form-item {
 			margin-bottom: 10px;
 		}
 		.stauts-wrap {
-			&:has(strong) {
-				span {
-					font-weight: 400;
-				}
+			span {
+				font-weight: 400;
 			}
 		}
 	}
@@ -696,14 +691,19 @@
 			@include txt(14);
 		}
 		.benefits-wrap {
-			height: 233px;
-			background-color: #CCFFD2;
-			&:has(button) {
-				position: relative;
-				padding-bottom: 86px;
+			position: relative;
+			border-radius: 10px;
+			overflow: hidden;
+			// background-color: #CCFFD2;
+			a {
+				display: block;
 			}
-			button {
-				@include posBottom($bottom: 40px, $left: 50%, $posX: -50%)
+			.benefits-banner-bg {
+				width: 100%;
+				height: 100%;
+				img {
+					@include image-fit;
+				}
 			}
 		}
 	}
@@ -894,9 +894,6 @@
 					margin-bottom: 12px;
 				}
 			}
-			.form-col:has(input[type=text]:disabled) {
-				max-width: none;
-			}
 		}
 		.mypage-account-util {
 			display: block;
@@ -953,6 +950,7 @@
 		.doard-acco-list { //결제 내역, 내문의내역 사용
 			padding: 0;
 			.list-info {
+				padding: 24px 0;
 				&::before {
 					content: "";
 					@include posRight($top: 24px);
@@ -961,15 +959,7 @@
 					background-image: url(#{$img-url}/layout/icon_down_md.svg);
 				}
 			}
-			&.payment-list {
-				.acco-head {
-					padding: 24px 0;
-				}
-			}
 			&.inquiry-list {
-				.acco-head {
-					padding: 26px 0 24px;
-				}
 				.acco-content {
 					margin: 0 0 12px 0;
 				}
@@ -999,15 +989,11 @@
 				}
 			}
 			.benefits-wrap {
-				height: 120px;
-				background-color: #CCFFD2;
-				&:has(button) {
-					position: relative;
-					padding-bottom: 65px;
-				}
-				button {
-					@include posBottom($bottom: 24px, $left: 50%, $posX: -50%);
-					width: max-content;
+				height: auto;
+				border-radius: 4px;
+				// background-color: #CCFFD2;
+				.benefits-banner-bg {
+					position: static;
 				}
 			}
 		}

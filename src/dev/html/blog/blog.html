@@ -194,8 +194,16 @@
 							<div class="tab-content" id="vdoModify">
 								<div class="form-item blog-form-item">
 									<div class="form-cont">
+										<!-- 
 										<select class="btn-drop-line">
 											<option value="item1" selected>최신순</option>
+											<option value="item2">유튜버를 위한 영상편집</option>
+											<option value="item3">영상편집 관련 TIP</option>
+											<option value="item4">초보자를 위한 영상편집</option>
+										</select>
+										-->
+										<select class="btn-drop-line" id="test">
+											<option value="item1" selected>최신1순</option>
 											<option value="item2">유튜버를 위한 영상편집</option>
 											<option value="item3">영상편집 관련 TIP</option>
 											<option value="item4">초보자를 위한 영상편집</option>
@@ -1047,6 +1055,12 @@
 	<!-- 각 화면 별 단독 js 영역 -->
 	<script>
 
+	</script>
+	<script>
+		$('#test').on('change', function() {
+			var valueCall = $(this).val(); // [D] 231226 : 선택 된 값을 받아와야 합니다
+			console.log('선택 된 옵션 : ', valueCall);
+		});
 	</script>
 	<!-- //각 화면 별 단독 js 영역 -->
 

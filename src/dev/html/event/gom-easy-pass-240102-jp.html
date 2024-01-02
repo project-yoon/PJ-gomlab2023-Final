@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<include src="../include/head.html" title="곰이지패스 1월 이벤트 페이지" menucss="/dev/ui/css/event.css"></include>
+<body class="event-detail">
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<!-- 이벤트 상세 -->
+	<style>
+		.event-detail #container .contents-head {background:#fff;}
+		.easy-pass-event .event-info {padding-bottom:120px;}
+		.event-detail #container .panel > .inner {padding-right:24px; padding-left:24px;}
+		.easy-pass-event .event-info .btn-wrap {margin-top:40px;flex-wrap:inherit;gap:12px 20px;}
+		.easy-pass-event .event-info .btn-wrap .btn {width:50%;max-width:442px;padding:26px 10px 26px 10px;border-radius:60px;background:#002eff;box-sizing:border-box;color:#fff;font-size:26px;font-weight:700;line-height:29px;text-align:center;}
+		.easy-pass-event .event-info .btn-wrap .btn-purple {background:#9a00ff;}
+		.easy-pass-event .event-info .btn-wrap .btn-green {background:#00b932;}
+		.easy-pass-event .event-info .btn-wrap .btn-cyan {background:#00b1ab;}
+		.easy-pass-event .event-info .btn-wrap .btn-pink {background:#f2029e;}
+		.easy-pass-event .event-info .event-notice-txt {margin-top:20px;font-size:20px;font-weight:500;line-height:29px;text-align:center;}
+		.easy-pass-event .event-info01 {padding:100px 0;}
+		.easy-pass-event .event-info02 {background:#ede9ff;}
+		.easy-pass-event .event-info02 .btn-wrap {margin-top:9px;}
+		.easy-pass-event .event-info02 .btn-wrap .btn-blue {background:#002eff}
+		.easy-pass-event .event-info03 {background:#e8f9ea;}
+		.easy-pass-event .event-info03 .btn-wrap {margin-top:9px;}
+		.easy-pass-event .event-info04 {background:#f9e8f3;}
+		.easy-pass-event .notice-area .next-event-info {padding-top:50px;}
+		.easy-pass-event .notice-area .next-event-info .event-info {display:flex;padding:17px 70px;border-radius:10px;align-items:center;justify-content:space-between;}
+		.easy-pass-event .notice-area .next-event-info .event-info .flag {display:inline-flex;height:100%;margin-right:20px;padding:6px 6px 5px 6px;border-radius:4px;background:#FFFFFF;color:#7c33f8;font-size:10px;line-height:11px;font-weight:700;text-align:center;flex-shrink:0;}
+		.easy-pass-event .notice-area .next-event-info .event-info p {display:flex;width:100%;justify-content:space-between;align-items:center;font-size:24px;line-height:27px;}
+		.easy-pass-event .notice-area .next-event-info .event-info .date {font-weight:700;}
+		.easy-pass-event .notice-area .next-event-info .event-info + .event-info {margin-top:10px;}
+		@media (max-width: 1279px) {
+			.easy-pass-event .event-info .btn-wrap {padding:0 10%;}
+			.easy-pass-event .event-info .btn-wrap .btn {padding:16px 10px 16px 10px;border-radius:60px;font-size:20px;font-weight:700;line-height:23px;text-align:center;}
+		}
+
+		@media (max-width: 767px) {
+			/* .event-detail #container .contents-head {height:300px;} */
+			.easy-pass-event .event-info {padding:50px 0 60px;}
+			.easy-pass-event .event-info .btn-wrap {margin-top:24px; flex-direction:column;}
+			.easy-pass-event .event-info .btn-wrap .btn {width:100%;max-width:none;padding:10px;font-size:14px;line-height:16px;}
+			.easy-pass-event .event-info02 {padding-top:0;}
+			.easy-pass-event .event-info .event-notice-txt {margin-top:24px;font-size:13px;line-height:19px;}
+			.easy-pass-event .notice-area .next-event-info {padding-top:35px;}
+			.easy-pass-event .notice-area .next-event-info .event-info {display:block;padding:15px 24px;border-radius:4px;}
+			.easy-pass-event .notice-area .next-event-info .event-info .flag {margin-right:0;}
+			.easy-pass-event .notice-area .next-event-info .event-info p {display:block;width:100%;margin-top:6px;font-size:13px;line-height:19px;}
+		}
+	</style>
+	<main id="container" class="easy-pass-event">
+		<div id="contents-head" class="contents-head head-visual">
+			<div class="head-visual-wrap">
+				<video playsinline loop muted>
+					<source src="/dev/ui/images/event/240102-easypass/top-visual-video-white.mp4" type="video/mp4">
+				</video>
+			</div>
+		</div>
+		<div id="contents" class="contents-body">
+			<section class="panel-wrap">
+				<div class="panel event-info event-info01">
+					<div class="inner">
+						<picture>
+							<source media="(max-width: 767px)" srcset="/dev/ui/images/event/240102-easypass/img-easypass-event-jp01_mo.png" alt="">
+							<img src="/dev/ui/images/event/240102-easypass/img-easypass-event-jp01.png" alt="">
+						</picture>
+						<div class="sr-only">
+							<h1>2024 GOM Easy Pass ウェルカム １回目イベント</h1>
+							<p>全ての有料製品のサブスクリプションサービス「GOM Easy Pass」リリース記念 有料メンバーシップ対象、総賞金30万円のプレゼント！</p>
+							<p>イベント期間 : 2024年 1月 2日 ~ 1月 31日, 当選者発表 : 2024年 2月 14日</p>
+							<dl>
+								<dt>Event 1 全員</dt>
+								<dd>イベント期間GOM Easy Passに登録する全員</dd>
+							</dl>
+							<dl>
+								<dt>Event 2 100名</dt>
+								<dd>SNSレビューイベント参加者</dd>
+							</dl>
+							<dl>
+								<dt>Event 3 20組</dt>
+								<dd>公募展参加者</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel event-info event-info02">
+					<div class="inner">
+						<picture>
+							<source media="(max-width: 767px)" srcset="/dev/ui/images/event/240102-easypass/img-easypass-event-jp02_mo.png" alt="">
+							<img src="/dev/ui/images/event/240102-easypass/img-easypass-event-jp02.png" alt="">
+						</picture>
+						<div class="sr-only">
+							<h2>Event 1 「GOM Easy Pass」有料メンバーシップ 全員200円分Amazonギフト券プレゼント！</h2>
+							<h3>What is GOM Easy Pass?</h3>
+							<p>全有料ソフトのメンバーシップ サブスクサービスが月190円！ 新規製品も追加料金なしで一生無制限アップグレード！</p>
+							<p>
+								<del>￥15,000</del>
+								￥190 税込
+							</p>
+							<p>ミッション : GOM Easy Passサブスク登録</p>
+							<p>景品 : Amazonギフト券200円分</p>
+							<p>当選対象 : GOM Easy Pass有料メンバーシップ全員</p>
+						</div>
+						<div class="btn-wrap">
+							<a href="https://www.gomlab.com/jp/gom-easy-pass/" target="_blank" class="btn btn-blue">リリース記念価格で今購入する</a>
+							<a href="https://docs.google.com/forms/d/1jH31zlf5y6cYTp9Kn-wodLfT1h28k693znpGaiBXROc/" target="_blank" class="btn btn-purple">応募する</a>
+						</div>
+						<p class="event-notice-txt">※ GOM Easy Passの有料メンバーシップに登録した後応募しないと、プレゼントをもらえません。</p>
+					</div>
+				</div>
+
+				<div class="panel event-info event-info03">
+					<div class="inner">
+						<picture>
+							<source media="(max-width: 767px)" srcset="/dev/ui/images/event/240102-easypass/img-easypass-event-jp03_mo.png" alt="">
+							<img src="/dev/ui/images/event/240102-easypass/img-easypass-event-jp03.png" alt="">
+						</picture>
+						<div class="sr-only">
+							<h2>Event 2 レビュー作成したら Amazonギフト券500円分プレゼント！</h2>
+							<dl>
+								<dt>ミッション</dt>
+								<dd>公式SNSチャンネルフォロー 及びGOM Easy Pass広報フィードに GOM Easy Passについての コメント作成</dd>
+							</dl>
+							<p>自分の個人フィードに共有したら当選確率アップ!!</p>
+							<p>共有する時必須ハッシュタグ : #gommix #gomeasypass #動画編集 #動画編集ソフト</p>
+
+							<dl>
+								<dt>景品</dt>
+								<dd>Amazonギフト券500円分</dd>
+								<dt>当選人数</dt>
+								<dd>100名</dd>
+							</dl>
+						</div>
+
+						<div class="btn-wrap">
+							<a href="https://youtu.be/HwINp2wqLaw" target="_blank" class="btn btn-green">Youtube コメント作成</a>
+							<a href="https://twitter.com/GOMandCompany/status/1740612440541556765" target="_blank" class="btn btn-cyan">Twitter コメント作成</a>
+						</div>
+						<p class="event-notice-txt">※ コメント作成の後応募しなければ当選されません。</p>
+					</div>
+				</div>
+
+				<div class="panel event-info event-info04">
+					<div class="inner">
+						<picture>
+							<source media="(max-width: 767px)" srcset="/dev/ui/images/event/240102-easypass/img-easypass-event-jp04_mo.png" alt="">
+							<img src="/dev/ui/images/event/240102-easypass/img-easypass-event-jp04.png" alt="">
+						</picture>
+						<div class="sr-only">
+							<h2>Event 3 公募展 GOM Easy Passを宣伝してください！</h2>
+							<h3>GOM EASY PASS動画公募展 Easy Creativity for Everyone</h3>
+							<dl>
+								<dt>参加対象</dt>
+								<dd>GOM Easy Pass 有料メンバーシップに登録頂いた方ならだれでも参加可能 (個人又はチーム) </dd>
+								<dt>テーマ</dt>
+								<dd>‘Easy Creativity for Everyone’ に合うGOM Easy Passの宣伝動画制作</dd>
+								<dt>制作条件/dt>
+								<dd>
+									<ul>
+										<li>1) GOM Easy Passの製品を使った動画</li>
+										<li>2) 60秒以内の動画 (ショートムービー & 縦型 & 横型の動画両方可能)</li>
+									</ul>
+								</dd>
+								<dt>参加方法</dt>
+								<dd>
+									<ul>
+										<li>1) 制作した動画を自分個人SNSチャンネルにアップロードした後応募 (アップロードチャンネル ：Youtube横型、ショート、Instagramリール、TikTok)</li>
+										<li>2) 必須ハッシュタグを必ず入れる : #gommix #gomeasypass #動画編集 #動画編集ソフト</li>
+									</ul>
+								</dd>
+								<dt>受賞景品</dt>
+								<dd>
+									<p>大賞 1組, ノートパソコン 1台</p>
+									<p>最優秀賞 1組, モニター 1台</p>
+									<p>優勝賞 3組, ポータブルSSD</p>
+									<p>奨励賞 15組, Amazonギフト券5,000円分</p>
+								</dd>
+							</dl>
+						</div>
+
+						<div class="btn-wrap">
+							<a href="https://docs.google.com/forms/d/1LADm4dtnY-BBo53AAd3MNFWS68eo1XaY6jwX6eU_X0w/" target="_blank" class="btn btn-pink">公募展応募する</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel notice-area">
+					<div class="inner">
+						<div class="next-event-info">
+							<aside class="event-info" style="background:#7c33f8;">
+								<span class="flag">COMING SOON</span>
+								<p>
+									2回目イベント
+									<span class="date">2024年 2月 1日 ~ 2月 29日</span>
+								</p>
+							</aside>
+
+							<aside class="event-info" style="background:#00b981;">
+								<span class="flag" style="color:#00b981;">COMING SOON</span>
+								<p>
+									3回目イベント
+									<span class="date">2024年 3月 1日 ~ 3月 31日</span>
+								</p>
+							</aside>
+						</div>
+						<dl class="notice">
+							<dt>NOTICE</dt>
+							<dd>
+								<ul class="bullet_list dash">
+									<li>イベント正解は終了後<a href="https://www.gomlab.com/jp/notice/" target="_blank">お知らせ</a>を通して案内し、景品 当選者は2月14日以降個別連絡します。</li>
+									<li>GOM Easy Passは個人会員のみ購入できます。(企業・ 教育・公共機関専用は準備中)</li>
+									<li>各イベントについての重複参加できます。</li>
+									<li>イベント景品発送は当選者に後日連絡します。</li>
+									<li>イベント発送後お客様の不注意による情報誤記入また はメールアドレス/電話番号/住所変更による再発送は できません。</li>
+									<li>イベント応募受付の時、記載したメールアドレスは今 回のイベントだけ活用され、該当情報記載の時プロ モーション参加及び景品発送のための個人情報収集・ 活用及び委託に同意したものとみなします。​</li>
+									<li>イベント景品が品切れになると、同じ金額の景品に変 動することがあります。</li>
+									<li>イベント景品発送のため収集された個人情報は景品発 送後90日後自動破棄されます。</li>
+									<li>イベント日程、景品内訳、景品発送日及びイベント内 容は弊社の事情により事前告知なく変更する可能性が あります。</li>
+									<li>賞金による諸税公課金は受賞者本人が負担し、税額控 除後に支給されます。</li>
+									<li>他の公募展及び受賞作、他人の著作物盗用時の審査除 外及び授賞内訳(授賞金含め)は還収されます。</li>
+									<li>公募展の応募作に使用される資料に関して著作権、肖 像権などの問題が発生した場合、全ての責任は応募者 にあります。</li>
+									<li>公募展の受賞作品は、GOM & Companyの広報コンテ ンツとして2次活用、編集することができます。</li>
+									<li>イベント進行及び製品に関するお問い合わせは <a href="https://www.gomlab.com/jp/support/" target="_blank">GOM Lab1:1お問い合わせ</a>ご利用ください。</li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<!-- //이벤트 상세 -->
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

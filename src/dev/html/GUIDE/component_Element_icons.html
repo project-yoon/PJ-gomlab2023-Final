@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="GUIDE : Elements" menucss="/dev/ui/css/guide-only.css"></include>
+<body>
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container" class="cp_guide_only">
+		<div class="cp_guide_inner">
+
+			<h1 class="cp_g">GUIDE Element</h1>
+			<h2 class="cp_g">(1) Icons</h2>
+
+			<!--icon name list-->
+			<script>
+				const nomalIcons = [
+					"profile",
+					"login",
+					"logout",
+					"search",
+					"list",
+					"link",
+					"project-place",
+					"image",
+					"global",
+					"reset",
+					"post-write",
+					"delete",
+					"download",
+					"guide",
+					"close-lg",
+					"close",
+					"check-lg",
+					"check",
+					"check-circle",
+					"add",
+					"remove",
+					"star",
+					"star-fill",
+				]
+
+				const arrowIcons = [
+					"up-lg",
+					"up",
+					"down-lg",
+					"down",
+					"prev-lg",
+					"prev",
+					"prev-end-lg",
+					"prev-end",
+					"next-lg",
+					"next",
+					"next-end-lg",
+					"next-end",
+				]
+
+				const videoIcons = [
+					"btn-play",
+					"btn-pause",
+					"video-play",
+					"video-pause",
+					"video-prev",
+					"video-next",
+					"video-clip",
+					"video-forward",
+					"video-mute",
+					"video-rewind",
+					"video-select",
+					"video-stop",
+					"video-unmute",
+					"video-full-exit-screen",
+					"video-full-screen",
+					"video-play-fill",
+					"video-pause-fill",
+					"video-forward-fill",
+					"video-prev-fill",
+					"video-next-fill",
+					"video-mute-fill",
+					"video-unmute-fill",
+					"video-full-exit-fill",
+					"video-full-screen-fill"
+				] 
+
+				const snsIcons = [
+					"sns-youtube",
+					"sns-facebook",
+					"sns-instagram",
+					"sns-google",
+					"sns-twitter",
+					"sns-twitter-x",
+					"sns-kakao",
+					"sns-naver-blog",
+				]
+
+				const formIcons = [
+					"checkbox-off",
+					"checkbox-on",
+					"radio-off",
+					"radio-on",
+					"info",
+				]
+
+				const createIcons = (el, icons, className = 'cp-guide-') => {
+					const iconNomal = document.querySelector(el)
+					const listNomal = icons.map(iconName => `<li class="${className + iconName}">${iconName}</li>`).join('');
+					iconNomal.innerHTML = listNomal;
+				}
+			</script>
+
+			<h2 class="cp_g">common - default</h2>
+			<span class="cp_guide_code">background-image: icon(icon-name);</span>
+			<ul id="guide_nomal" class="guide_icons"></ul>
+			<script>
+				createIcons('#guide_nomal', nomalIcons)
+			</script>
+			<h3 class="cp_g">common - arrow</h3>
+			<ul id="guide_arrow" class="guide_icons"></ul>
+			<script>
+				createIcons('#guide_arrow', arrowIcons)
+			</script>
+			<h3 class="cp_g">common - form</h3>
+			<ul id="guide_forms" class="guide_icons"></ul>
+			<script>
+				createIcons('#guide_forms', formIcons)
+			</script>
+			<h3 class="cp_g">common - sns</h3>
+			<ul id="guide_sns" class="guide_icons"></ul>
+			<script>
+				createIcons('#guide_sns', snsIcons)
+			</script>
+			<h3 class="cp_g">common - video</h3>
+			<ul id="guide_video" class="guide_icons"></ul>
+			<script>
+				createIcons('#guide_video', videoIcons)
+			</script>
+
+			<h2 class="cp_g">common - grey</h2>
+			<span class="cp_guide_code">background-image: icon(icon-name, 'dadada');</span>
+			<ul id="grey_nomal" class="guide_icons"></ul>
+			<script>
+				createIcons('#grey_nomal', nomalIcons, 'cp-guide-grey-')
+			</script>
+			<h3 class="cp_g">grey - arrow</h3>
+			<ul id="grey_arrow" class="guide_icons"></ul>
+			<script>
+				createIcons('#grey_arrow', arrowIcons, 'cp-guide-grey-')
+			</script>
+			<h3 class="cp_g">grey - form</h3>
+			<ul id="grey_forms" class="guide_icons"></ul>
+			<script>
+				createIcons('#grey_forms', formIcons, 'cp-guide-grey-')
+			</script>
+			<h3 class="cp_g">grey - sns</h3>
+			<ul id="grey_sns" class="guide_icons"></ul>
+			<script>
+				createIcons('#grey_sns', snsIcons, 'cp-guide-grey-')
+			</script>
+
+			<h3 class="cp_g">common - video</h3>
+			<ul id="grey_video" class="guide_icons"></ul>
+			<script>
+				createIcons('#grey_video', videoIcons, 'cp-guide-grey-')
+			</script>
+
+			<h2 class="cp_g">common - colors</h2>
+			<ul id="color_icons" class="guide_icons">
+				<li class="cp-guide-color-star-fill">star-fill</li>
+				<li class="cp-guide-color-check-circle">check-circle</li>
+			</ul>
+
+
+			<h2 class="cp_g">(2) Logo</h2>
+			<div class="guide_icons_col">
+				<img src="/dev/ui/images/layout/logo_h.svg" alt="">
+				<img src="/dev/ui/images/layout/logo_gom_n_company.svg" alt="">
+				<img src="/dev/ui/images/layout/gom_ci.svg" alt="">
+			</div>
+
+			<h3 class="cp_g">Usage</h3>
+			<div class="guide_icons">
+				<img src="/dev/ui/images/component/logo_lnb_gombusiness.svg" alt="">
+				<img src="/dev/ui/images/component/logo_lnb_gommixmobile.svg" alt="">
+				<img src="/dev/ui/images/component/logo_lnb_gommix2024.svg" alt="">
+				<img src="/dev/ui/images/component/logo_lnb_gomencoder.svg" alt="">
+				<img src="/dev/ui/images/component/logo_lnb_gommembership.svg" alt="">
+				<img src="/dev/ui/images/component/logo_lnb_gom_mememaker.svg" alt="">
+				<img src="/dev/ui/images/component/logo_lnb_gomcam2024.svg" alt="">
+				<img src="/dev/ui/images/component/logo_lnb_gompixy.svg" alt="">
+				<img src="/dev/ui/images/component/logo_lnb_gomrecoder.svg" alt="">
+				<img src="/dev/ui/images/component/logo_lnb_gomplayer.svg" alt="">
+				<img src="/dev/ui/images/component/logo_lnb_gomplayer_plus.svg" alt="">
+				<img src="/dev/ui/images/component/logo_lnb_gomaudio.svg" alt="">
+			</div>
+
+			<h2 class="cp_g">(3) Icons - Gom Service</h2>
+
+
+			<h2 class="cp_g">Icons - old version</h2>
+			<h3 class="cp_g">type - nomal</h3>
+			<div class="cp_g-ele-grid">
+				<img src="/dev/ui/images/layout/ico_gn_gomaudio.svg" alt="">
+				<img src="/dev/ui/images/layout/ico_gn_gomcam.svg" alt="">
+				<img src="/dev/ui/images/layout/ico_gn_gomencoder.svg" alt="">
+				<img src="/dev/ui/images/layout/ico_gn_gommememaker.svg" alt="">
+				<img src="/dev/ui/images/layout/ico_gn_gommix_m.svg" alt="">
+				<img src="/dev/ui/images/layout/ico_gn_gommix.svg" alt="">
+				<img src="/dev/ui/images/layout/ico_gn_gomplayer_plus.svg" alt="">
+				<img src="/dev/ui/images/layout/ico_gn_gomplayer.svg" alt="">
+				<img src="/dev/ui/images/layout/ico_gn_gomrecoder.svg" alt="">
+			</div>
+
+			<h3 class="cp_g">type - bg</h3>
+			<div class="cp_g-ele-grid">
+				<img src="/dev/ui/images/layout/ico_gn_gomaudio_bg.svg" alt="">
+				<img src="/dev/ui/images/layout/ico_gn_gomcam_bg.svg" alt="">
+				<img src="/dev/ui/images/layout/ico_gn_gomencoder_bg.svg" alt="">
+				<img src="/dev/ui/images/layout/ico_gn_gommix_bg.svg" alt="">
+				<img src="/dev/ui/images/layout/ico_gn_gomplayer_plus_bg.svg" alt="">
+				<img src="/dev/ui/images/layout/ico_gn_gomplayer_bg.svg" alt="">
+			</div>
+
+			<h3 class="cp_g">Indicator</h3>
+			<div class="cp_g-indicator">
+				<span class="active"></span>
+				<span></span>
+				<span></span>
+			</div>
+
+			<h3 class="cp_g">Tags</h3>
+			<div class="badge-wrap">
+				<div class="badge-r-black">Tag1</div>
+				<div class="badge-r-white">Tag2</div>
+			</div>
+			<div class="badge-wrap">
+				<div class="badge-v-secondary">튜토리얼</div>
+				<div class="badge-v-primary">라이브</div>
+				<div class="badge-v-tertiary">무료</div>
+				<div class="badge-v-nomal">종료</div>
+			</div>
+			<div class="badge-wrap">
+				<div class="badge-l-secondary">녹화본</div>
+				<div class="badge-l-primary">수강가능</div>
+				<div class="badge-l-primary">03월 10일 20시 오픈</div>
+				<div class="badge-chapter" style="position: unset;">총 10강</div>
+			</div>
+			<div class="badge-wrap">
+				<div class="badge-b-nomal">사용가능</div>
+				<div class="badge-b-primary">자격증</div>
+				<div class="badge-b-secondary">알림</div>
+				<div class="badge-b-nomal disabled">기간만료</div>
+				<div class="badge-b-tertiary">접수중</div>
+				<div class="badge-b-membership">멤버십 ONLY</div>
+			</div>
+		</div>
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

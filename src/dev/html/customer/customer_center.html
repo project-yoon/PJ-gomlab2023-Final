@@ -8,7 +8,7 @@
 
 	<!-- 컨텐츠 -->
 	<main id="container">
-		<div id="contents-head" class="contents-head">
+		<div id="contents-head" class="contents-head visual_customer_faq"> <!-- 231229_수정: visual 클래스 추가 -->
 			<div class="head-tit-wrap">
 				<h1>자주하는 질문</h1>
 			</div>
@@ -19,10 +19,12 @@
 				<div class="panel">
 					<div class="inner">
 						<div class="searh-form-wrap">
-							<div class="form-cont">
+							<!-- [D] 231227 지라 GLABNW-323_form태그 적용 -->
+							<form action="" class="form-cont">
 								<input type="text" class="inp-search" placeholder="필요한 자막을 검색해 보세요.">
 								<button type="button" class="btn-search"></button>
-							</div>
+							</form>
+							<!-- //[D] 231227 지라 GLABNW-323_form태그 적용 -->
 						</div>
 						<!--[D] 231208_수정_01: tab처리-->
 						<ul class="tab-button" data-tab-index="qna">

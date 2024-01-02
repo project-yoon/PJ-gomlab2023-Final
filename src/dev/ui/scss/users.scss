@@ -13,6 +13,9 @@
 				.user-content-detail {
 					width: 665px;
 				}
+				.user-banner-wrap {
+					width: 1104px;
+				}
 			}
 		}
 	}
@@ -171,6 +174,18 @@
 			border-top: 1px solid $color-gray-20;
 		}
 	}
+	/* 회원가입 완료 */
+	.user-banner-wrap {
+		text-align: center;
+		.user-banner-bg {
+			display: inline-block;
+			overflow: hidden;
+			border-radius: 10px;
+		}
+		& + .panel-bottom {
+			text-align: center;
+		}
+	}
 	
 	/*title*/
 	h1 {
@@ -281,10 +296,10 @@
 		}
 	}
 	.login-complete-coupon {
-		width: 327px;
+		width: 1104px;
 		margin: 40px auto 0;
 		background-color: rgba(0, 255, 34, 0.341);
-		height: 240px;
+		height: 400px;
 	}
 }
 

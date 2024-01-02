@@ -19,14 +19,23 @@ function makeList({ options, required, btnStyle, event }) {
 	let optionTexts = []
 	let selectedOptionText = ''
 	let isHiddenSelected = false
-	
+
+	let optionsArray = Array.from(options)
+	let selectedOptionIndex = optionsArray.findIndex(option => option.selected)
+	const documentLang = document.documentElement.lang
+
 	//리스트 컨텐츠 생성
 	for (let option of options) {
 		if (option.selected) {
 			selectedOptionText = option.innerText
 			if (option.hidden) {
 				isHiddenSelected = true
+				selectedOptionIndex = -1
 			}
+		}
+		// 'language' 이벤트의 경우, HTML의 lang 속성과 일치하는 옵션 찾기
+		if (event === 'language' && option.value === documentLang) {
+			selectedOptionIndex = optionsArray.indexOf(option);
 		}
 
 		if (option.hidden) {
@@ -35,14 +44,14 @@ function makeList({ options, required, btnStyle, event }) {
 
 		optionTexts.push({ text: option.innerText, value: option.value })
 	}
-	const listItems = optionTexts.map(({ text, value }) => {
-		const isSelected = text === selectedOptionText ? "active" : ""
+	const listItems = optionTexts.map(({ text, value }, index) => {
+		const isSelected = index === selectedOptionIndex ? "active" : "";
 		return `<li><a href="#" data-value="${value}" class="${isSelected}">${text}</a></li>`
 	}).join('')
 
 	//버튼 컨텐츠 생성
 	const buttonContent = isHiddenSelected ? `<span ${`class="${required}"`}>${selectedOptionText}</span>` : selectedOptionText
-	
+
 	const createDropdown = `
 		<div class="form-drop-box">
 			<button type="button" class="${btnStyle}" data-event="${event}">
@@ -77,24 +86,37 @@ function dropdownList() {
 		openEvent(firstButton, false)
 
 		/*eventValue 별 이벤트 정의*/
+		//--커스텀 이벤트가 필요할 경우 해당 영역에 case 추가
+		//1. changedText(텍스트 변경이 필요한 element, 값) - 값에 맞는 텍스트(value) 변경
+		//2. selectSet(부모, 값) - <select></select> 값의 변경
+		//3. changeLanguage(value) - footer 의 언어 설정 변경
+
 		switch (eventValue) {
 			case 'dropdown':
 				changedText(firstButton, target)
 				break;
-			
+
 			case 'select':
 				selectSet(parentElement, value)
 				changedText(firstButton, target)
 				break;
-			
+
 			case 'quantity':
 				selectSet(parentElement, value)
 				changedText(quantityInput, target)
 				break;
-			
+
+			case 'language': {
+				selectSet(parentElement, value)
+				changedText(firstButton, target)
+				// changeLanguage(value)
+				break;
+			}
+
 			default:
 				break;
 		}
+		//--//커스텀 이벤트가 필요할 경우 해당 영역에 case 추가
 	}
 
 	//list - open / close & class set
@@ -129,7 +151,7 @@ function dropdownList() {
 			targetSelect.value = ''  // select 요소의 값 초기화
 		} else {
 			const changeOption = targetSelect.querySelector(`option[value="${value}"]`)
-	
+
 			if (changeOption) {
 				Array.from(targetSelect.options).forEach(option => {
 					option.removeAttribute('selected')
@@ -139,19 +161,22 @@ function dropdownList() {
 				changeOption.selected = true
 			}
 		}
-		languageChange(value);
+
+		// change 이벤트 발생
+		const event = new Event('change')
+		targetSelect.dispatchEvent(event)
 	}
 	//select 태그 업데이트 시, list update
 	function reverseSelect() {
 		const selects = document.querySelectorAll('.form-cont select')
-		
+
 		selects.forEach(select => {
 			const parent = select.closest('.form-cont')
 
 			//text value 변경요소
 			const inputElement = parent.querySelector('.inp-dropbox') || parent.querySelector('.inp-line')
 			const dropBtn = parent.querySelector('button[data-event]')
-			
+
 			select.addEventListener('change', e => {
 				//list active
 				const dropListElement = parent.querySelector(`.drop-list [data-value="${select.value}"]`)
@@ -229,69 +254,12 @@ function dropdownList() {
 	init()
 }
 
-const domHTML = document.querySelectorAll('html');
-
 /* 다국어 변경 시 */
-function languageChange(value) {
-	domHTML.forEach((el) => {
-		localStorage.setItem('lang', value);
-		el.setAttribute('lang', localStorage.getItem('lang'));
+function langInit() {
+	const domHTML = document.querySelector('html')
+	let lang = domHTML.getAttribute('lang')
 
-		languageInit();
-	});
-
-	document.querySelectorAll('.f-language .drop-list li a').forEach((el) => {
-		if (el.classList.contains('active')) {
-			localStorage.setItem('languageClass', 'active');
-		}
-	});
-}
-
-/* 다국어 lang 초기값 저장 */
-function languageInit() {
-	domHTML.forEach((htmlEle) => {
-		htmlEle.setAttribute('lang', localStorage.getItem('lang'));
-
-		let langData = htmlEle.getAttribute('lang');
-
-		document.querySelectorAll('.f-language .drop-list li a').forEach((fnbDropListEle) => {
-			let languageClassName = localStorage.getItem('languageClass');
-
-			document.querySelectorAll('.f-language .btn-drop-box').forEach((fnbBtnDropBoxEle) => {
-				if (langData === 'ko') {
-					htmlEle.className = 'fam-ko';
-					if (fnbDropListEle.classList.contains('active')) {
-						fnbDropListEle.classList.add(languageClassName);
-						fnbBtnDropBoxEle.textContent = '한국어';
-					}
-					if (fnbDropListEle.getAttribute('data-value') === 'ko') {
-						fnbDropListEle.classList.add(languageClassName);
-					}
-				} else if (langData === 'en') {
-					htmlEle.className = 'fam-en';
-					if (fnbDropListEle.classList.contains('active')) {
-						fnbDropListEle.classList.add(languageClassName);
-						fnbBtnDropBoxEle.textContent = 'English';
-					}
-					if (fnbDropListEle.getAttribute('data-value') === 'en') {
-						fnbDropListEle.classList.add(languageClassName);
-					}
-				} else if (langData === 'ja') {
-					htmlEle.className = 'fam-ja';
-					if (fnbDropListEle.classList.contains('active')) {
-						fnbDropListEle.classList.add(languageClassName);
-						fnbBtnDropBoxEle.textContent = '日本語';
-					}
-					if (fnbDropListEle.getAttribute('data-value') === 'ja') {
-						fnbDropListEle.classList.add(languageClassName);
-					}
-				} else {
-					htmlEle.setAttribute('lang', 'ko');
-					htmlEle.className = 'fam-ko';
-				}
-			});
-		});
-	});
+	lang !== null ? domHTML.classList.add(`lang-${lang}`) : ''
 }
 
 /*tab*/
@@ -300,7 +268,7 @@ function setTabs() {
 	const indexWraps = document.querySelectorAll('[data-tab-index]')
 	const selectEl = document.querySelectorAll(stringSelectors)
 	const tabRounds = document.querySelectorAll('.tab-round')
-	
+
 	//.tab-round
 	tabRounds.forEach(tab => {
 		let tabRoundResize = false
@@ -341,7 +309,7 @@ function setTabs() {
 
 	function childReset(els) {
 		if (els == null) return
-		
+
 		let el = els.querySelector('li')
 		let sibs = siblings(el)
 		el.querySelector('a').classList.add('active')
@@ -360,12 +328,12 @@ function setTabs() {
 
 			if (tabBtn.tagName === 'A') {
 				currentTabName !== 'null' ? e.preventDefault() : ''
-				
+
 				tabStringId = tabBtn.getAttribute('href')
-				
+
 				let parent = tabBtn.parentElement
 				let parentSibs = siblings(parent)
-	
+
 				parentSibs.forEach(sib => {
 					const btnA = sib.querySelector('a') || null
 					if (btnA == null) return
@@ -389,7 +357,7 @@ function setTabs() {
 
 			if (currentTabName !== 'null') {
 				let currentTabId = tabStringId.charAt(0) !== '#' ? '#' + tabStringId : tabStringId
-				
+
 				const currentTabContent = document.querySelector(`[data-tab-content="${currentTabName}"]`)
 				const currentTabTarget = currentTabContent.querySelector(`${currentTabId}`)
 				if (currentTabContent ==null) return
@@ -425,15 +393,15 @@ function setAccodion() {
 			//아코디언 클릭 시, 버튼이 현재 화면의 30% 기준 높이로 이동
 		})
 	})
-	
+
 	function accodionOpen(isOpen, target) {
-		
+
 		var parent = $(target).parent()
 		var truePanel = $(parent).find(`[data-accordion='panel']`)
-		if ($(target).closest('.gom-card-box-defalut').length !== 0) {
-			var newScroll = $(target).closest('.gom-package-item').offset().top
-			$(window).scrollTop(newScroll - ($(window).innerHeight() * 0.2))
-		}
+		// if ($(target).closest('.gom-card-box-defalut').length !== 0) {
+		// 	var newScroll = $(target).closest('.gom-package-item').offset().top
+		// 	$(window).scrollTop(newScroll - ($(window).innerHeight() * 0.2))
+		// }
 
 		if (isOpen) {
 			$(target).addClass('active')
@@ -455,7 +423,7 @@ function setAccodion() {
 
 		function updateScrollOnElementOpen(prevChild, target) {
 			if ($(prevChild).length == 0 || null) return
-			
+
 			var prevEl = $(prevChild).parent()
 			var prevContHeight = $(prevEl).find(`[data-accordion='panel']`).height()
 
@@ -479,8 +447,8 @@ function setChkboxAll() {
 	const agreeWrap = document.querySelectorAll('[data-agree="agree-group"]')
 
 	agreeWrap.forEach(wrap => {
-		const agreeAllCheckbox = wrap.querySelector('[data-agree="agree-all"] input')
-		const checkboxes = wrap.querySelectorAll('[data-agree="agree-group"] [type="checkbox"]:not(#agree-all)')
+		const agreeAllCheckbox = wrap.querySelector('[data-agree="agree-all"] [type="checkbox"]')
+		const checkboxes = wrap.querySelectorAll('[data-agree="agree-group"] [type="checkbox"]:not([data-agree="agree-all"] [type="checkbox"])')
 		const subChecks = wrap.querySelectorAll('.sub-check [type="checkbox"]')
 
 		agreeAllCheckbox.addEventListener('change', function() {
@@ -493,10 +461,10 @@ function setChkboxAll() {
 			checkbox.addEventListener('change', function () {
 				const subChecksEl = checkbox.parentElement.parentElement.querySelector('.sub-check')
 				const hasSubcheck = subChecksEl == null ? false : true
-				
+
 				if (hasSubcheck) {
-					setChecked(subChecksEl.querySelectorAll('[type="checkbox"]'), checkbox.checked) 
-				} 
+					setChecked(subChecksEl.querySelectorAll('[type="checkbox"]'), checkbox.checked)
+				}
 
 				const isAllchecked = otherCheckedAll(checkboxes)
 				isAllchecked ? agreeAllCheckbox.checked = true : agreeAllCheckbox.checked = false
@@ -569,7 +537,7 @@ function setInput() {
 					fileLabel.innerText = fileDefaultText
 				}
 			})
-			
+
 		})
 	}
 	//라이선스 키 등록 폼
@@ -600,7 +568,7 @@ function setInput() {
 
 				const isMaxLength = maxLenght == childLenght + 1
 
-				if (target) {					
+				if (target) {
 					if (target.classList.contains('btn-add')) {
 						if (maxLenght > childLenght) {
 							form.appendChild(createInput(firstNode))
@@ -655,7 +623,7 @@ function tooltip() {
 
 	$(window).on('load resize', function () {
 		let win = $(window).width();
-		
+
 		if (win <= 768) {
 			resetTooltip()
 			//mobile
@@ -671,7 +639,7 @@ function tooltip() {
 				var container = tooltipWrap;
 				if (!container.is(e.target) && container.has(e.target).length === 0){
 					TooltipHide ();
-				}	
+				}
 			});
 		} else {
 			resetTooltip()
@@ -709,7 +677,7 @@ function productRemove() {
 }
 
 //visual video load check
-function videoSet() {	
+function videoSet() {
 	const visualHead = document.querySelector('.head-visual-wrap')
 	if (!visualHead) return
 	const visualVod = visualHead.querySelector('video')
@@ -767,5 +735,6 @@ $(document).ready(function () {
 	tooltip()
 	productRemove()
 	videoSet()
-	languageInit()
+	// languageInit()
+	langInit()
 })

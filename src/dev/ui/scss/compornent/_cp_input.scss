@@ -57,7 +57,7 @@
 		width: 24px;
 		height: 24px;
 		background: no-repeat center;
-		background-image: icon(check-circle, 69b703);
+		background-image: icon(check-circle, '69b703');
 	}
 	.inp-box + .fake-label {
 		@include posLeft($top: 9px, $left: 12px, $posY: unset);
@@ -169,6 +169,9 @@
 			width: 44px;
 		}
 	}
+	&.wide {
+		max-width: $input-col;
+	}
 }
 .form-col {
 	display: flex;
@@ -203,6 +206,9 @@
 		select {
 			display: none;
 		}
+		form {
+			width: 100%;
+		}
 		.form-drop-box {
 			padding: 0;
 			width: unset;
@@ -220,6 +226,7 @@
 		}
 		.inp-search {
 			box-sizing: border-box;
+			width: 100%;
 			height: auto;
 			padding: 17px 56px 17px 16px;
 			@include txt(14);
@@ -295,7 +302,7 @@ textarea {
 input[type=checkbox]{
 	width: 24px;
 	height: 24px;
-	background: no-repeat center icon(checkbox-off);
+	background: no-repeat center icon(checkbox-off, '828282');
 	background-size: contain auto;
 	&:checked {
 		background-image: icon(checkbox-on);
@@ -318,10 +325,10 @@ input[type=checkbox]{
 input[type=radio] {
 	width: 24px;
 	height: 24px;
-	background: no-repeat center icon(radio-off);
+	background: no-repeat center icon(radio-off, '828282');
 	background-size: contain;
 	&:checked {
-		background-image: icon(radio-on);
+		background-image: icon(radio-on, '828282');
 		&:disabled {
 			background-image: icon(radio-on, '828282');
 		}
@@ -368,10 +375,12 @@ input[type=radio] {
 
 .chk-notice {
 	@extend .inp-chk;
+	margin-top: 24px;
+	text-align: center;
 	input[type=checkbox] {
-		background-image: icon(checkbox-off, F10001);
+		// background-image: icon(checkbox-off, F10001);
 		&:checked {
-			background-image: icon(checkbox-on, F10001);
+			// background-image: icon(checkbox-on, F10001);
 		}
 	}
 }
@@ -494,6 +503,8 @@ input[type=radio] {
 		background-color: $color-white;
 		display: none;
 		// overflow: auto;
+		overflow: auto;
+		max-height: 30vh;
 		li {
 			a {
 				display: flex;
@@ -657,6 +668,9 @@ input[type=radio] {
 		}
 		.form-drop-box {
 			width: 100%;
+		}
+		&.wide {
+			max-width: unset;
 		}
 	}
 	.form-item {

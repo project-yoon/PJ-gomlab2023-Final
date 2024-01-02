@@ -3,6 +3,28 @@
 @import "./utilities/mixins";
 
 .download {
+	.head-visual {
+		background: no-repeat center;
+		background-size: cover;
+		&.visual-down-prev {
+			background-image: url(#{$img-url}/download/head_visual_download_oldversion_title_pc.png);
+			.logo strong, h1, p.intro {
+				color: $color-white;
+			}
+		}
+		&.visual-down-b2b {
+			background-image: url(#{$img-url}/download/head_visual_download_b2b_title_pc.png);
+			.logo strong, h1, p.intro {
+				color: $color-white;
+			}
+		}
+		&.visual-down-b2c {
+			background-image: url(#{$img-url}/download/head_visual_download_b2c_title_pc.png);
+			.logo strong, h1, p.intro {
+				color: $color-white;
+			}
+		}
+	}
 	#container {
 		.panel {
 			position: relative;
@@ -167,6 +189,17 @@
 }
 @include mobile {
 	.download {
+		.head-visual {
+			&.visual-down-prev {
+				background-image: url(#{$img-url}/download/head_visual_download_oldversion_title_mo.png);
+			}
+			&.visual-down-b2b {
+				background-image: url(#{$img-url}/download/head_visual_download_b2b_title_mo.png);
+			}
+			&.visual-down-b2c {
+				background-image: url(#{$img-url}/download/head_visual_download_b2c_title_mo.png);
+			}
+		}
 		#container {
 			.panel {
 				padding-top: 24px;

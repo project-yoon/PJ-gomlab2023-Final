@@ -118,6 +118,9 @@
 				}
 			}
 			& > img {
+				width: 120px;
+				height: 120px;
+				object-fit: cover;
 				margin: 20px 0 32px 0;
 			}
 		}
@@ -223,6 +226,14 @@
 						@include image-fit;
 						border-radius: 10px;
 					}
+				}
+			}
+			.title-logo {
+				height: 48px;
+				img {
+					display: block;
+					height: 100%;
+					object-fit: contain;
 				}
 			}
 		}
@@ -438,6 +449,9 @@
 						margin-right: 10px;
 					}
 				}
+				.title-logo {
+					height: 40px;
+				}
 			}
 			.pagkage-mid {
 				margin-top: 16px;
@@ -500,7 +514,10 @@
 					}
 				}
 				.acco-content {
-					margin-bottom: 16px;
+					margin-bottom: 24px;
+					&:last-of-type {
+						margin-bottom: 16px;
+					}
 				}
 				.pagkage-more-info {
 					p {
