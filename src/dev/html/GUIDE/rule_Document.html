@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="GUIDE : Document" menucss="/dev/ui/css/guide-only.css"></include>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/8.7/styles/obsidian.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/bash.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<body>
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container" class="cp_guide_only">
+		<div class="cp_guide_inner">
+			<h1 class="cp_g">Basic Document Rule</h1>
+			<h2 class="cp_g">기본정책</h2>
+
+			<div class="cp_guide_table basic_table table-scroll">
+				<div class="table-wrap responsive_table tbl-board-wrap">
+					<table class="main-table common-table-list buy-confirm-table">
+						<caption>환경정의</caption>
+						<colgroup>
+							<col style="width:30%">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">인코딩</th>
+								<td>UTF-8</td>
+							</tr>
+							<tr>
+								<th scope="row">마크업 종류</th>
+								<td>HTML5, CSS3, Javascript</td>
+							</tr>
+							<tr>
+								<th scope="row">웹 유형</th>
+								<td>PC Web , Mobile Web </td>
+							</tr>
+							<tr>
+								<th scope="row">PC 웹 호환성</th>
+								<td>
+									chrome (버전 91.0), Edge 버전  110.0 이상
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">Mobile 웹 호환성</th>
+								<td>
+									<div>
+										device : Android 5.0 이상, IOS 15.6 이상 <br><br>
+										browser : 사파리, 크롬
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">해상도 정책</th>
+								<td>
+									PC UI : 기준 1200px ~ 최소 1280px<br><br>
+									　- 1200px 이상일 경우, content는 Center 정렬<br><br>
+									　- 1280px 이하일 경우, 브라우저 반응형 <br><br>
+									MO UI : 720px ~ 												
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<!-- CODE EX -->
+			<div class="cp_guide_code">
+				<pre><code class="language-html">
+&lt! DOCTYPE html&gt
+&lthtml lang="ko"&gt
+	&lthead&gt
+		&ltmeta charset="UTF-8"&gt
+		&ltmeta http-equiv="X-UA-Compatible" content="IE=edge" /&gt
+		&ltmeta name="viewport" content="width=device-width, initial-scale=1.0" /&gt
+		&lttitle&gtpage title | Gomlab &lt/title&gt
+	&lt/head&gt
+	&ltbody class="PAGEKEYCLASS"&gt &lt!-- main, information, column 와 같은 페이지 키클래스 지정 --&gt
+		&ltnav id="skip_navi"&gt
+			&lta href="#container"&gt본문 바로가기&lt/a&gt
+		&lt/nav&gt
+
+		&ltdiv id="header_wrap" class="PAGEKEYCLASS"&gt
+			&ltdiv class="utill"&gt&lt/div&gt
+			&ltheader class="header on"&gt&lt/header&gt
+			&ltaside id="sitemap" tabindex="0"&gt&lt/aside&gt
+		&lt/div&gt
+
+		&lt!--  container --&gt
+		&ltdiv id="container"&gt
+			&ltdiv class="wrap"&gt
+
+				&lt!-- Start Of Contents --&gt
+				&ltsection class="content"&gt
+					&ltdiv class="content_inner"&gt&lt/div&gt
+				&lt/section&gt
+				&lt!-- End Of Contents --&gt
+
+			&lt/div&gt
+		&lt/div&gt
+		&lt!-- // container --&gt
+
+		&lt!-- 팝업 시작 --&gt
+		&ltdiv id="bg_modal"&gt&lt/div&gt
+		&lt!-- // 팝업 종료  --&gt
+
+		&ltdiv id="btn_top_move"&gt
+			&ltbutton type="button"&gt&ltimg src="../../assets/images/layout/btn_top.png" alt="Top Move" /&gt&lt/button&gt
+		&lt/div&gt
+
+		&ltdiv id="footer_wrap"&gt&lt/div&gt
+	&lt/body&gt
+&lt/html&gt
+
+				</code></pre>
+			</div>
+			<!-- // CODE EX -->
+		</div>
+
+
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>
