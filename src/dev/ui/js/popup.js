@@ -1,4 +1,13 @@
 window.addEventListener('load', () => {
+	let urlPageName = window.location.pathname.split('/').pop().split('.')[0];
+
+	/* 팝업 버튼 클릭이 없을경우 */
+	if (urlPageName === 'main') { // 메인페이지
+		let loadBtn = `<button type="button" data-role="open__layer_notice" className="sr-only"></button>`
+
+		document.body.insertAdjacentHTML('beforeend', loadBtn);
+	}
+
 	document.querySelector('[data-role*="open__"]') && Array.prototype.forEach.call(document.querySelectorAll('[data-role*="open__"]'), el => {
 		openPopup(el);
 	});
@@ -25,13 +34,12 @@ function openPopup(el) {
 	}
 
 	const _dataSet = el.dataset.role.replace('open__', '');
-	// const _targetName = `../layer/${_dataSet}.html`;
 	const _targetName = `${_dataSet}.html`;
 
 	el.addEventListener('click', e => {
 		e.preventDefault();
 
-		let buttonDim =  e.currentTarget.dataset.closeLayer === 'false'
+		let buttonDim = e.currentTarget.dataset.closeLayer === 'false'
 
 		fetch(_targetName).then(res => {
 			if (!res.ok){
@@ -44,6 +52,20 @@ function openPopup(el) {
 			console.log(err);
 		})
 	});
+
+	/* 특정 페이지 & 버튼 클릭 안하고 로드 시 바로 띄우고 싶을때 */
+	if (_targetName.split('.')[0] === 'layer_notice') {
+		fetch(_targetName).then(res => {
+			if (!res.ok){
+				throw new Error;
+			}
+			return res.text()
+		}).then(res => {
+			makeLayer(res);
+		}).catch(err => {
+			console.log(err);
+		})
+	}
 
 	// 레이어 만들기
 	const makeLayer = (res, isDimClosed) => {
