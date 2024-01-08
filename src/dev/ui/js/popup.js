@@ -5,7 +5,7 @@ let urlPageName = window.location.pathname.split('/').pop().split('.')[0];
 window.addEventListener('load', () => {
 	/* 240108_수정 D: 팝업 버튼 클릭이 없을경우 추가 */
 	if (urlPageName === 'main') { // 메인페이지
-		let loadPopBtn = `<button type="button" data-role="open__layer_notice" class="sr-only"></button>`
+		let loadPopBtn = `<button type="button" data-role="open__layer_notice" data-close-layer="false" class="sr-only"></button>`
 
 		document.body.insertAdjacentHTML('beforeend', loadPopBtn);
 	}
@@ -52,6 +52,8 @@ function openPopup(el) {
 	el.addEventListener('click', e => {
 		e.preventDefault();
 
+		console.log(e.target)
+
 		let buttonDim = e.currentTarget.dataset.closeLayer === 'false'
 
 		fetch(_targetName).then(res => {
@@ -66,7 +68,10 @@ function openPopup(el) {
 		})
 	});
 
+
 	/* 240108_수정 D: 특정 페이지 & 버튼 클릭 안하고 로드 시 바로 띄우고 싶을때 추가 */
+	let buttonLoadDim = el.dataset.closeLayer === 'false'
+
 	if (_targetName.split('.')[0] === 'layer_notice') {
 		fetch(_targetName).then(res => {
 			if (!res.ok){
@@ -74,7 +79,7 @@ function openPopup(el) {
 			}
 			return res.text()
 		}).then(res => {
-			makeLayer(res);
+			makeLayer(res, buttonLoadDim);
 		}).catch(err => {
 			console.log(err);
 		})
