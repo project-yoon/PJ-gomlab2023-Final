@@ -1,18 +1,25 @@
+/* 240108_수정 D: URL 주소 추출 변수 추가 */
+let urlPageName = window.location.pathname.split('/').pop().split('.')[0];
+/* // 240108_수정 D: URL 주소 추출 변수 추가 */
+
 window.addEventListener('load', () => {
-	let urlPageName = window.location.pathname.split('/').pop().split('.')[0];
-
-	/* 팝업 버튼 클릭이 없을경우 */
+	/* 240108_수정 D: 팝업 버튼 클릭이 없을경우 추가 */
 	if (urlPageName === 'main') { // 메인페이지
-		let loadBtn = `<button type="button" data-role="open__layer_notice" className="sr-only"></button>`
+		let loadPopBtn = `<button type="button" data-role="open__layer_notice" class="sr-only"></button>`
 
-		document.body.insertAdjacentHTML('beforeend', loadBtn);
+		document.body.insertAdjacentHTML('beforeend', loadPopBtn);
 	}
+	/* // 240108_수정 D: 팝업 버튼 클릭이 없을경우 추가 */
 
 	document.querySelector('[data-role*="open__"]') && Array.prototype.forEach.call(document.querySelectorAll('[data-role*="open__"]'), el => {
 		openPopup(el);
 	});
 
-	popupTodayClose();
+	/* 240108_수정 D: 딜레이 추가 */
+	setTimeout(() => {
+		popupTodayClose();
+	}, 100);
+	/* // 240108_수정 D: 딜레이 추가 */
 });
 
 function bodyFreeze(freeze) {
@@ -25,6 +32,12 @@ function bodyFreeze(freeze) {
 		document.querySelector('html').style.height = '100%';
 		document.querySelector('html').style.overflow = 'hidden';
 		document.body.classList.add('dimmed');
+		/* 240108_수정 D: 오늘 그만보기 팝업일 경우 스타일 추가 */
+		if (urlPageName === 'main' && handleCookie.getCookie('today') === 'y') {
+			document.querySelector('html').style.height = 'unset';
+			document.querySelector('html').style.overflow = 'unset';
+		}
+		/* // 240108_수정 D: 오늘 그만보기 팝업일 경우 스타일 추가 */
 	}
 }
 
@@ -53,7 +66,7 @@ function openPopup(el) {
 		})
 	});
 
-	/* 특정 페이지 & 버튼 클릭 안하고 로드 시 바로 띄우고 싶을때 */
+	/* 240108_수정 D: 특정 페이지 & 버튼 클릭 안하고 로드 시 바로 띄우고 싶을때 추가 */
 	if (_targetName.split('.')[0] === 'layer_notice') {
 		fetch(_targetName).then(res => {
 			if (!res.ok){
@@ -66,6 +79,7 @@ function openPopup(el) {
 			console.log(err);
 		})
 	}
+	/* // 240108_수정 D: 특정 페이지 & 버튼 클릭 안하고 로드 시 바로 띄우고 싶을때 추가 */
 
 	// 레이어 만들기
 	const makeLayer = (res, isDimClosed) => {
@@ -107,35 +121,34 @@ function openPopup(el) {
 			const _cls = _layer.firstElementChild.getAttribute('class').replace('active', '').trim().split(' ').join('.');
 			const _target = e.target.closest(`.${_cls}`);
 
-			if (!e.target.classList.contains('type-del') && document.body.classList.contains('dimmed') && !_target) {
-			// if (!e.target.classList.contains('type-del') && document.body.classList.contains('layer-dimmed') && !_target) {
+			if (!e.target.classList.contains('type-del') && document.body.classList.contains('layer-dimmed') && !_target || !e.target.classList.contains('type-del') && document.body.classList.contains('dimmed') && !_target) {
 				closeLayer();
 			}
 		})
 	}
 }
 
-// 오늘은 그만 보기
+/* 240108_수정 D: 오늘은 그만 보기 */
+let handleCookie = {
+	setCookie: function (name, val, exp) {
+		const date = new Date();
+
+		date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
+		document.cookie = name + "=" + val + ";expires=" + date.toUTCString() + ";";
+	},
+	getCookie: function (name) {
+		const valueData = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+
+		return valueData ? valueData[2] : null;
+	},
+};
 function popupTodayClose() {
-	const handleCookie = {
-		setCookie: function (name, val, exp) {
-			const date = new Date();
-
-			date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
-			document.cookie = name + "=" + val + ";expires=" + date.toUTCString() + ";";
-		},
-		getCookie: function (name) {
-			const valueData = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
-
-			return valueData ? valueData[2] : null;
-		},
-	};
-
 	if (handleCookie.getCookie('today') === 'y') {
 		$('#popToday').hide();
 		$('#popToday').css({
 			'display': 'none',
 		});
+		$('.layer-dimmed').remove();
 	} else {
 		$('#popToday').show();
 	}
@@ -144,9 +157,13 @@ function popupTodayClose() {
 		if ($('input[name=todayClose]').is(':checked')) {
 			handleCookie.setCookie('today', 'y', 1);
 			$('#popToday').hide();
+			$('.layer-dimmed').remove();
+			document.querySelector('html').style.height = 'unset';
+			document.querySelector('html').style.overflow = 'unset';
 		}
 	});
 }
+/* // 240108_수정 D: 오늘은 그만 보기 */
 
 // 윈도우 팝업창
 function openWindowPop(url, target) {
