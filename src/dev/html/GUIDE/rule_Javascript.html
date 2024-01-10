@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<include src="../include/head.html" title="GUIDE : Document" menucss="/dev/ui/css/guide-only.css"></include>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/8.7/styles/obsidian.min.css">
+<body>
+	<!-- 헤더 -->
+	<include src="../include/header.html"></include>
+	<!-- //헤더 -->
+
+	<!-- 컨텐츠 -->
+	<main id="container" class="cp_guide_only">
+		<div class="cp_guide_inner">
+			<h1 class="cp_g">Basic Javascript Rule</h1>
+			<div class="cp_document_inner">
+				<h2>Javascript 작성 규칙</h2>
+				<div class="cp_guide_dsc">
+					<ul>
+						<li>클래스명은 스네이크 표기법(snake_case) 또는, 카멜 표기법(camelCase)을 따른다.</li>
+						<li><strong>예약어</strong>또는, <strong>위치와 기능</strong>의 클래스명은 <u>스네이크 표기법</u>(snake_case)으로 작성한다. </li>
+						<li>이외, 위치 지정 없이 <strong>한 단어 이상의 띄어쓰기</strong>를 구분할 때, <u>카멜 표기법</u>(camelCase)으로 작성한다. </li>
+					</ul>
+				</div>
+			</div>
+
+			<hr class="gd-line">
+
+			<div class="cp_document_inner">
+			<h2>Javascript 파일 역할</h2>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>Javascript 파일 역할</caption>
+							<colgroup>
+								<col style="width:20%">
+								<col style="width:20%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>파일명</th>
+									<th>역할</th>
+									<th>항목</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">compornent</th>
+									<td>사이트 공통 선언<br>사용할 서체 지정 및 문서 초기화</td>
+									<td>· PC/MW : https://code.jquery.com/jquery-1.11.3.min.js</td>
+								</tr>
+								<tr>
+									<th scope="row">layout</th>
+									<td>사이트 공통 선언</td>
+									<td>· PC/MW : https://code.jquery.com/jquery-1.11.3.min.js
+										<br>
+										<code>(Main page ONLY)</code>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">utilities</th>
+									<td>_mixins, _variables</td>
+									<td>· PC/MW : https://code.jquery.com/jquery-1.11.3.min.js</td>
+								</tr>
+								<tr>
+									<th scope="row">guide-only.scss</th>
+									<td>가이드 전용 스타일</td>
+									<td>· PC/MW : https://code.jquery.com/jquery-1.11.3.min.js</td>
+								</tr>
+	
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<hr class="gd-line">
+
+			<div class="cp_document_inner">
+				<!-- CODE EX -->
+				<div class="cp_guide_dc_code">
+				<pre><code class="language-js">
+	function openPopup(el) {
+		if (!el.dataset) {
+			return;
+		}
+	
+		const _dataSet = el.dataset.role.replace('open__', '');
+		const _targetName = `${_dataSet}.html`;
+	
+		el.addEventListener('click', e => {
+			e.preventDefault();
+	
+			console.log(e.target)
+	
+			let buttonDim = e.currentTarget.dataset.closeLayer === 'false'
+	
+			fetch(_targetName).then(res => {
+				if (!res.ok){
+					throw new Error;
+				}
+				return res.text()
+			}).then(res => {
+				makeLayer(res, buttonDim);
+			}).catch(err => {
+				console.log(err);
+			})
+		});
+	};
+
+	// 윈도우 팝업창
+	function openWindowPop(url, target) {
+		let options = 'top=0, left=0, width='+screen.width+', height='+screen.height+', fullscreen=yes, status=no, menubar=no, toolbar=no, resizable=no';
+	
+		window.open(url, target, options);
+	}
+					</code></pre>
+				</div>
+				<!-- // CODE EX -->
+			</div>
+
+	</main>
+	<!-- //컨텐츠 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/bash.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- 각 화면 별 단독 js 영역 -->
+
+	<!-- 퀵 메뉴 -->
+	<include src="../include/quick_menu.html"></include>
+	<!-- //퀵 메뉴 -->
+
+	<!-- 푸터 -->
+	<include src="../include/footer.html"></include>
+	<!-- //푸터 -->
+</body>
+</html>

@@ -2,9 +2,6 @@
 <html lang="ko">
 <include src="../include/head.html" title="GUIDE : Document" menucss="/dev/ui/css/guide-only.css"></include>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/8.7/styles/obsidian.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/bash.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 <body>
 	<!-- 헤더 -->
 	<include src="../include/header.html"></include>
@@ -14,62 +11,145 @@
 	<main id="container" class="cp_guide_only">
 		<div class="cp_guide_inner">
 			<h1 class="cp_g">Basic Document Rule</h1>
-			<h2 class="cp_g">기본정책</h2>
-
-			<div class="cp_guide_table basic_table table-scroll">
-				<div class="table-wrap responsive_table tbl-board-wrap">
-					<table class="main-table common-table-list buy-confirm-table">
-						<caption>환경정의</caption>
-						<colgroup>
-							<col style="width:30%">
-							<col>
-						</colgroup>
-						<tbody>
-							<tr>
-								<th scope="row">인코딩</th>
-								<td>UTF-8</td>
-							</tr>
-							<tr>
-								<th scope="row">마크업 종류</th>
-								<td>HTML5, CSS3, Javascript</td>
-							</tr>
-							<tr>
-								<th scope="row">웹 유형</th>
-								<td>PC Web , Mobile Web </td>
-							</tr>
-							<tr>
-								<th scope="row">PC 웹 호환성</th>
-								<td>
-									chrome (버전 91.0), Edge 버전  110.0 이상
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">Mobile 웹 호환성</th>
-								<td>
-									<div>
-										device : Android 5.0 이상, IOS 15.6 이상 <br><br>
-										browser : 사파리, 크롬
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">해상도 정책</th>
-								<td>
-									PC UI : 기준 1200px ~ 최소 1280px<br><br>
-									　- 1200px 이상일 경우, content는 Center 정렬<br><br>
-									　- 1280px 이하일 경우, 브라우저 반응형 <br><br>
-									MO UI : 720px ~ 												
-								</td>
-							</tr>
-
-						</tbody>
-					</table>
+			<div class="cp_document_inner">
+				<h2>기본정책</h2>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>기본정책</caption>
+							<colgroup>
+								<col style="width:30%">
+								<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">인코딩</th>
+									<td>UTF-8</td>
+								</tr>
+								<tr>
+									<th scope="row">마크업 종류</th>
+									<td>HTML5, CSS3, Javascript</td>
+								</tr>
+								<tr>
+									<th scope="row">웹 유형</th>
+									<td>PC Web , Mobile Web </td>
+								</tr>
+								<tr>
+									<th scope="row">PC 웹 호환성</th>
+									<td>
+										chrome (버전 91.0), Edge 버전  110.0 이상
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">Mobile 웹 호환성</th>
+									<td>
+										<div>
+											device : Android 5.0 이상, IOS 15.6 이상 <br><br>
+											browser : 사파리, 크롬
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">해상도 정책</th>
+									<td>
+										PC UI : 기준 1200px ~ 최소 1280px<br><br>
+										　- 1200px 이상일 경우, content는 Center 정렬<br><br>
+										　- 1280px 이하일 경우, 브라우저 반응형 <br><br>
+										MO UI : 720px ~ 												
+									</td>
+								</tr>
+	
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
-			
-			<!-- CODE EX -->
-			<div class="cp_guide_code">
-				<pre><code class="language-html">
+
+			<hr class="gd-line">
+
+			<div class="cp_document_inner">
+				<h2>META</h2>
+				<h3> - DOCTYPE</h3>
+				<div class="cp_guide_dc_code">
+					<pre><code class="language-html">
+	&lt!DOCTYPE html&gt
+	&lthtml lang="ko"&gt
+					</code></pre>
+				</div>
+
+				<h3> - Encoding</h3>
+				<div class="cp_guide_dc_code">
+					<pre><code class="language-html">
+	&ltmeta charset="UTF-8"&gt
+					</code></pre>
+				</div>
+				
+				<h3> - 브라우저 호환성 설정</h3>
+				<div class="cp_guide_dc_code">
+					<pre><code class="language-html">
+	&ltmeta http-equiv="X-UA-Compatible" content="IE=Edge"&gt
+					</code></pre>
+				</div>
+
+				<h3> - 모바일 설정</h3>
+				<div class="cp_guide_dc_code">
+					<pre><code class="language-html">
+	&ltmeta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"&gt
+					</code></pre>
+				</div>
+			</div>
+
+			<hr class="gd-line">
+
+			<div class="cp_document_inner">
+				<h2>Library & Plugin</h2>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>Library & Plugin</caption>
+							<colgroup>
+								<col style="width:20%">
+								<col style="width:20%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>명칭</th>
+									<th>파일명</th>
+									<th>url</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">제이쿼리</th>
+									<td>jquery</td>
+									<td>· PC/MW : https://code.jquery.com/jquery-1.11.3.min.js</td>
+								</tr>
+								<tr>
+									<th scope="row">제이쿼리</th>
+									<td>jquery</td>
+									<td>· PC/MW : https://code.jquery.com/jquery-1.11.3.min.js
+										<br>
+										<code>(Main page ONLY)</code>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">제이쿼리</th>
+									<td>jquery</td>
+									<td>· PC/MW : https://code.jquery.com/jquery-1.11.3.min.js</td>
+								</tr>
+	
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<div class="cp_document_inner">
+
+				<!-- CODE EX -->
+				<div class="cp_guide_dc_code">
+					<pre><code class="language-html">
 &lt! DOCTYPE html&gt
 &lthtml lang="ko"&gt
 	&lthead&gt
@@ -115,14 +195,19 @@
 	&lt/body&gt
 &lt/html&gt
 
-				</code></pre>
+					</code></pre>
+				</div>
+				<!-- // CODE EX -->
 			</div>
-			<!-- // CODE EX -->
 		</div>
-
-
 	</main>
 	<!-- //컨텐츠 -->
+
+	<!-- 각 화면 별 단독 js 영역 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/bash.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- 각 화면 별 단독 js 영역 -->
 
 	<!-- 퀵 메뉴 -->
 	<include src="../include/quick_menu.html"></include>
