@@ -47,24 +47,46 @@
 }
 
 /* 일문 */
+// 240110 일문 폰트 경량화
 @font-face {
 	font-family: 'Noto Sans JP';
 	font-style: normal;
 	font-weight: 400;
-	src: url(../fonts/jp/NotoSansJP-Regular.otf) format('opentype'),
-		url(../fonts/jp/NotoSansJP-Regular.otf) format('opentype');
+	src: url(../fonts/jp/NotoSansJP-Regular.woff2) format('woff2'),
+		url(../fonts/jp/NotoSansJP-Regular.woff) format('woff');
 }
 @font-face {
 	font-family: 'Noto Sans JP';
 	font-style: normal;
 	font-weight: 500;
-	src: url(../fonts/jp/NotoSansJP-Medium.otf) format('opentype'),
-		url(../fonts/jp/NotoSansJP-Medium.otf) format('opentype');	
+	src: url(../fonts/jp/NotoSansJP-Medium.woff2) format('woff2'),
+		url(../fonts/jp/NotoSansJP-Medium.woff) format('woff');	
 }
 @font-face {
 	font-family: 'Noto Sans JP';
 	font-style: normal;
 	font-weight: 700;
-	src: url(../fonts/jp/NotoSansJP-Bold.otf) format('opentype'),
-		url(../fonts/jp/NotoSansJP-Bold.otf) format('opentype');
+	src: url(../fonts/jp/NotoSansJP-Bold.woff2) format('woff2'),
+		url(../fonts/jp/NotoSansJP-Bold.woff) format('woff');
 }
+// @font-face {
+// 	font-family: 'Noto Sans JP';
+// 	font-style: normal;
+// 	font-weight: 400;
+// 	src: url(../fonts/jp/NotoSansJP-Regular.otf) format('opentype'),
+// 		url(../fonts/jp/NotoSansJP-Regular.otf) format('opentype');
+// }
+// @font-face {
+// 	font-family: 'Noto Sans JP';
+// 	font-style: normal;
+// 	font-weight: 500;
+// 	src: url(../fonts/jp/NotoSansJP-Medium.otf) format('opentype'),
+// 		url(../fonts/jp/NotoSansJP-Medium.otf) format('opentype');	
+// }
+// @font-face {
+// 	font-family: 'Noto Sans JP';
+// 	font-style: normal;
+// 	font-weight: 700;
+// 	src: url(../fonts/jp/NotoSansJP-Bold.otf) format('opentype'),
+// 		url(../fonts/jp/NotoSansJP-Bold.otf) format('opentype');
+// }
