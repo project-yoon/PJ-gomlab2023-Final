@@ -570,20 +570,34 @@ function initrllLst(listTag,listIdx) {
 // 	});
 // }
 
+/* [D] 240111_수정 정규식 "." 치환 함수 추가 */
+function numSubstitution(x) {
+	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+/* // [D] 240111_수정 정규식 "." 치환 함수 추가 */
+
 // scroll animation util
+/* [D] 240111_수정 */
 function increase(counter, duration) {
-	const  updateCounter = () => {
+	const updateCounter = () => {
 		const target = +Number(counter.dataset.counter)
 		const c = +counter.innerText
 
-		const increment = target / duration
-		if(c < target) {
-			counter.innerText = `${Math.ceil(c + increment)}`
-			setTimeout(updateCounter, 1)
+		if (c < target) {
+			$({val: c}).animate({val: target}, {
+				duration: 1000,
+				step: function () {
+					let numResult = numSubstitution(this.val.toFixed(1));
+
+					counter.innerText = numResult;
+				},
+				// complete: function () {}
+			});
 		}
 	}
 	updateCounter()
 }
+/* // [D] 240111_수정 */
 function increaseAnimation(increaseEl) {
 	const counters = increaseEl.querySelectorAll('[data-counter]')
 

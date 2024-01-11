@@ -241,7 +241,7 @@
             flex: 1;
             li {
                 padding-top: 180px;
-                width: 180px;
+				width: 190px; // [D] 240111_수정 width값 180px -> 190px 변경
                 text-align: center;
                 background: no-repeat top center;
                 background-size: 100% auto;
