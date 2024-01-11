@@ -5,28 +5,6 @@
 		top: 61px;
 		&.fixed {
 			top: 0px;
-			& + #container {
-				.snb-wrap {
-					&.snb-fix {
-						.snb-inner {
-							.snb-menu {
-								top: 48px;
-							}
-						}
-					}
-				}
-			}
-		}
-		& + #container {
-			.snb-wrap {
-				&.snb-fix {
-					.snb-inner {
-						.snb-menu {
-							top: 85px;
-						}
-					}
-				}
-			}
 		}
 	}
 }
@@ -197,6 +175,35 @@ aside#bottom-banner {
 	}
 }
 @include mobile {
+	//240111_수정
+	#top-banner-wrap {
+		& + #header-wrap {
+			&.fixed {
+				& + #container {
+					.snb-wrap {
+						&.snb-fix {
+							.snb-inner {
+								.snb-menu {
+									top: 48px;
+								}
+							}
+						}
+					}
+				}
+			}
+			& + #container {
+				.snb-wrap {
+					&.snb-fix {
+						.snb-inner {
+							.snb-menu {
+								top: 85px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	/* google 광고 배너 */
 	.ad_banner {
 		width: 100%;

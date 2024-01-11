@@ -116,13 +116,15 @@ function resizeViewHeight() {
 }
 
 //Header Scroll Fixed
+//240111_수정 
 function initHeaderFixed() {
 	let headerWrap = $('#header-wrap')
 	let isActived
 	let headerOffsetTop = $(headerWrap).offset().top
 	let isFixed
+	let topBnr = $('#top-banner-wrap')
 	let checkPoint
-	let checkPointValue = $('#top-banner-wrap').height()
+	let checkPointValue = topBnr.height()
 	
 	if ($(headerWrap).length == 0) return
 	
@@ -138,6 +140,16 @@ function initHeaderFixed() {
 			isFixed = isActived
 		}
 	}
+
+	//배너 닫혔을 때 조건 업데이트
+	let topBnrClose = topBnr.find(".btn-tb-close") 
+	topBnrClose.on('click', function() {
+		topBnr.remove()
+		$('#top-banner-wrap').length == 0 ? checkPoint = 0 : checkPoint = checkPointValue
+		isActived = $(window).scrollTop() >= checkPoint
+		setHeaderPosition()
+	});
+
 	$(window).on('resize orientationchange', function () {
 		headerOffsetTop = $(headerWrap).offset().top
 		checkPointValue = $('#top-banner-wrap').height()
@@ -145,7 +157,6 @@ function initHeaderFixed() {
 	});
 
 	$(window).on('scroll load', function () {
-		checkPointValue = $('#top-banner-wrap').height()
 		isActived = $(window).scrollTop() >= checkPoint
 		setHeaderPosition()
 	});
