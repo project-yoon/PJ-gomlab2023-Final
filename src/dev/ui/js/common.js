@@ -121,9 +121,12 @@ function initHeaderFixed() {
 	let isActived
 	let headerOffsetTop = $(headerWrap).offset().top
 	let isFixed
-	let checkPoint = $('#top-banner-wrap').height()
-
+	let checkPoint
+	let checkPointValue = $('#top-banner-wrap').height()
+	
 	if ($(headerWrap).length == 0) return
+	
+	$('#top-banner-wrap').length == 0 ? checkPoint = 0 : checkPoint = checkPointValue
 
 	function setHeaderPosition() {
 		if (isFixed !== isActived) {
@@ -137,13 +140,13 @@ function initHeaderFixed() {
 	}
 	$(window).on('resize orientationchange', function () {
 		headerOffsetTop = $(headerWrap).offset().top
-		checkPoint = $('#top-banner-wrap').height()
+		checkPointValue = $('#top-banner-wrap').height()
 		setHeaderPosition()
 	});
 
 	$(window).on('scroll load', function () {
-		checkPoint = $('#top-banner-wrap').height()
-		$('#top-banner-wrap').length == 0 ? isActived = headerOffsetTop <= $(window).scrollTop() : isActived = $(window).scrollTop() >= checkPoint
+		checkPointValue = $('#top-banner-wrap').height()
+		isActived = $(window).scrollTop() >= checkPoint
 		setHeaderPosition()
 	});
 }

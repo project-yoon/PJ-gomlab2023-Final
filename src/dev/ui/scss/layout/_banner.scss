@@ -5,6 +5,28 @@
 		top: 61px;
 		&.fixed {
 			top: 0px;
+			& + #container {
+				.snb-wrap {
+					&.snb-fix {
+						.snb-inner {
+							.snb-menu {
+								top: 48px;
+							}
+						}
+					}
+				}
+			}
+		}
+		& + #container {
+			.snb-wrap {
+				&.snb-fix {
+					.snb-inner {
+						.snb-menu {
+							top: 85px;
+						}
+					}
+				}
+			}
 		}
 	}
 }
