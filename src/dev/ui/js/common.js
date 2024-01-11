@@ -121,6 +121,7 @@ function initHeaderFixed() {
 	let isActived
 	let headerOffsetTop = $(headerWrap).offset().top
 	let isFixed
+	let checkPoint = $('#top-banner-wrap').height()
 
 	if ($(headerWrap).length == 0) return
 
@@ -136,11 +137,13 @@ function initHeaderFixed() {
 	}
 	$(window).on('resize orientationchange', function () {
 		headerOffsetTop = $(headerWrap).offset().top
+		checkPoint = $('#top-banner-wrap').height()
 		setHeaderPosition()
 	});
 
-	$(window).on('scroll', function () {
-		isActived = headerOffsetTop <= $(window).scrollTop()
+	$(window).on('scroll load', function () {
+		checkPoint = $('#top-banner-wrap').height()
+		$('#top-banner-wrap').length == 0 ? isActived = headerOffsetTop <= $(window).scrollTop() : isActived = $(window).scrollTop() >= checkPoint
 		setHeaderPosition()
 	});
 }
