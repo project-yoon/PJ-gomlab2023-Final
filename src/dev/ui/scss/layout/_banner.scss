@@ -189,6 +189,9 @@ aside#bottom-banner {
 							}
 						}
 					}
+					.tab-underline {
+						top: 48px;
+					}
 				}
 			}
 			& + #container {
@@ -200,6 +203,9 @@ aside#bottom-banner {
 							}
 						}
 					}
+				}
+				.tab-underline {
+					top: 85px;
 				}
 			}
 		}
