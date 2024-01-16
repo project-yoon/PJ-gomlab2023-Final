@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
-<include src="../include/head.html" title="GUIDE : Document" menucss="/dev/ui/css/guide-only.css"></include>
+<include src="../include/head.html" title="GUIDE : Javascript" menucss="/dev/ui/css/guide-only.css"></include>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/8.7/styles/obsidian.min.css">
 <body>
 	<!-- 헤더 -->
@@ -15,11 +15,33 @@
 				<h2>Javascript 작성 규칙</h2>
 				<div class="cp_guide_dsc">
 					<ul>
-						<li>클래스명은 스네이크 표기법(snake_case) 또는, 카멜 표기법(camelCase)을 따른다.</li>
-						<li><strong>예약어</strong>또는, <strong>위치와 기능</strong>의 클래스명은 <u>스네이크 표기법</u>(snake_case)으로 작성한다. </li>
-						<li>이외, 위치 지정 없이 <strong>한 단어 이상의 띄어쓰기</strong>를 구분할 때, <u>카멜 표기법</u>(camelCase)으로 작성한다. </li>
+						<li>도큐먼트 공통과 컴포넌트에 대한 공통을 분리</li>
+						<li>카테고리 전용 또는 <strong>페이지 한정의 고유 스크립트</strong>는
+							<u>해당 페이지 안에 삽입</u></li>
 					</ul>
 				</div>
+				<h4>(참고) &lt선언 위치&gt </h4>
+					<!-- CODE EX -->
+					<div class="cp_guide_dc_code">
+						<pre><code class="language-html">
+
+	&lt!— 퀵 메뉴 --&gt
+		&ltinclude&gt src="./include/quick_menu.html"&gt&lt/include&gt
+	&lt!— //퀵 메뉴 --&gt
+
+	&lt!— ★ 각 화면 별 단독 js 영역 --&gt
+	&ltscript&gt
+		console.log('여기는 화면 전용 js구현영역 입니다.')
+	&lt/script&gt
+	&lt!— //각 화면 별 단독 js 영역 --&gt
+	
+	&lt!— 푸터 --&gt
+		&ltinclude&gt src="./include/footer.html"&gt&lt/include&gt
+	&lt!— //푸터 --&gt
+
+</code></pre>
+					</div>
+					<!-- // CODE EX -->
 			</div>
 
 			<hr class="gd-line">
@@ -32,41 +54,320 @@
 							<caption>Javascript 파일 역할</caption>
 							<colgroup>
 								<col style="width:20%">
-								<col style="width:20%">
 								<col>
 							</colgroup>
 							<thead>
 								<tr>
 									<th>파일명</th>
 									<th>역할</th>
-									<th>항목</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<th scope="row">compornent</th>
-									<td>사이트 공통 선언<br>사용할 서체 지정 및 문서 초기화</td>
-									<td>· PC/MW : https://code.jquery.com/jquery-1.11.3.min.js</td>
-								</tr>
-								<tr>
-									<th scope="row">layout</th>
-									<td>사이트 공통 선언</td>
-									<td>· PC/MW : https://code.jquery.com/jquery-1.11.3.min.js
-										<br>
-										<code>(Main page ONLY)</code>
+									<th scope="row">common.js</th>
+									<td>
+										도큐먼트 공통 선언
 									</td>
 								</tr>
 								<tr>
-									<th scope="row">utilities</th>
-									<td>_mixins, _variables</td>
-									<td>· PC/MW : https://code.jquery.com/jquery-1.11.3.min.js</td>
+									<th scope="row">ui-component.js</th>
+									<td>
+										컴포넌트 전용
+									</td>
 								</tr>
 								<tr>
-									<th scope="row">guide-only.scss</th>
-									<td>가이드 전용 스타일</td>
-									<td>· PC/MW : https://code.jquery.com/jquery-1.11.3.min.js</td>
+									<th scope="row">popup.js</th>
+									<td>
+										팝업 전용
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">/libs/</th>
+									<td>
+										<p>플레이어 관련</p>
+										<p>video.js , videojs.hotkeys.js , videojs-playlist.js</p>
+										<br>
+										<p>슬라이드 관련</p>
+										<p>slick.min.js , swiper.min.js</p>
+										<br>
+										<p>기타</p>
+										<p>jquery-3.6.0.min.js , siriwave.umd.min.js</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="cp_document_inner">
+				<h2>common.js 함수 가이드</h2>
+
+				<div class="cp_guide_dsc">
+					<ul>
+						<li>라운드 탭 메뉴</li>
+						<li>사이트 공통 제어</li>
+						<li>scrollTriggerAnimation</li>
+						<li>marquee</li>
+					</ul>
+				</div>
+
+				<h3>1. 라운드 탭 메뉴</h3>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>라운드 탭 메뉴 설명</caption>
+							<colgroup>
+								<col style="width:4%">
+								<col style="width:25%">
+								<col style="width:20%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>순서</th>
+									<th>역할</th>
+									<th>코드</th>
+									<th>예시</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<th scope="row">이전 형제 요소들의 너비와 마진을 합산</th>
+									<td>sumPrevSiblings()</td>
+									<td>
+										<!-- CODE EX -->
+										<div class="cp_guide_dc_code">
+											<pre><code class="language-js">
+	// 이전 형제 요소들의 너비와 마진을 합산하는 함수
+	const sumPrevSiblings = function (element) {  
+		~
+	}
+											</code></pre>
+										</div>
+										<!-- // CODE EX -->
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<th scope="row">요소를 중앙에 배치하기 위한 <br>스크롤 길이 계산</th>
+									<td>centerScrollAmount()</td>
+									<td>
+										<!-- CODE EX -->
+										<div class="cp_guide_dc_code">
+											<pre><code class="language-js">
+	// 요소를 중앙에 배치하기 위한 스크롤 양을 계산하는 함수
+	function centerScrollAmount(element) {  
+		~
+	}
+											</code></pre>
+										</div>
+										<!-- // CODE EX -->
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<th scope="row">스크롤 값을 설정</th>
+									<td>setScrollLeft()</td>
+									<td>
+										<!-- CODE EX -->
+										<div class="cp_guide_dc_code">
+											<pre><code class="language-js">
+	// 스크롤 값을 설정하는 함수
+	function setScrollLeft(el, smooth = 'auto') {
+		~
+	}
+											</code></pre>
+										</div>
+										<!-- // CODE EX -->
+									</td>
 								</tr>
 	
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<h3>2. 사이트 공통 제어</h3>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>공통사항 제어 설명</caption>
+							<colgroup>
+								<col style="width:4%">
+								<col style="width:35%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>순서</th>
+									<th>함수</th>
+									<th>역할</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<th scope="row">isMobile()</th>
+									<td>모바일(768px) 체크</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<th scope="row">useMobileFixMenu()</th>
+									<td>모바일 헤더 메뉴 제어</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<th scope="row">initHeaderFixed()</th>
+									<td>스크롤 헤더 fixed, 배너 예외 처리</td>
+								</tr>
+								<tr>
+									<th scope="row">4</th>
+									<th scope="row">initGnbGnavi()</th>
+									<td>헤더 GNB 제어</td>
+								</tr>
+								<tr>
+									<th scope="row">5</th>
+									<th scope="row">initQuickMenu()</th>
+									<td>퀵 메뉴중 버튼 탑 기능</td>
+								</tr>
+								<tr>
+									<th scope="row">6</th>
+									<th scope="row">initFixElements()</th>
+									<td>퀵 메뉴 & 콘텐츠 LNB 위치 값 계산</td>
+								</tr>
+								<tr>
+									<th scope="row">7</th>
+									<th scope="row">dataMenuEvent()</th>
+									<td>SNB메뉴 관련 data-menu 속성 이벤트 정의 (scroll, dropdown)</td>
+								</tr>
+								<tr>
+									<th scope="row">8</th>
+									<th scope="row">initrllLst()</th>
+									<td>footer 공지사항 콘텐츠 롤링 리스트 이벤트</td>
+								</tr>
+						</table>
+					</div>
+				</div>
+
+				<h3>3. scrollTriggerAnimation</h3>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>scrollTriggerAnimation 설명</caption>
+							<colgroup>
+								<col style="width:4%">
+								<col style="width:25%">
+								<col style="width:20%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>순서</th>
+									<th>역할</th>
+									<th>코드</th>
+									<th>예시</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<th scope="row">콘텐츠 내용들 아래에서 위로 올라오는 애니메이션 & 메인 페이지에 숫자 카운트</th>
+									<td>scrollTriggerAnimation()</td>
+									<td>
+										<!-- CODE EX -->
+										<div class="cp_guide_dc_code">
+											<pre><code class="language-js">
+	// scroll animation setting
+	function scrollTriggerAnimation() {
+		const scrollAniEls = document.querySelectorAll('[data-animation]')
+		if (scrollAniEls.length == 0) return
+
+		let winY = window.scrollY
+		let winStartPoint = (winY) => winY + (window.innerHeight * 0.7)
+		let isEnd = false
+
+		function init() {
+			winY = window.scrollY
+			winStart = winStartPoint(winY)
+
+			~~~
+
+		}
+
+	window.addEventListener('scroll', throttle(init, 150))
+	init()
+	}
+											</code></pre>
+										</div>
+										<!-- // CODE EX -->
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<th scope="row">숫자 카운트 애니메이션 계산</th>
+									<td>centerScrollAmount()</td>
+									<td>
+										<!-- CODE EX -->
+										<div class="cp_guide_dc_code">
+											<pre><code class="language-js">
+	// 요소를 중앙에 배치하기 위한 스크롤 양을 계산하는 함수
+	function increaseAnimation {  
+		~
+	}
+											</code></pre>
+										</div>
+										<!-- // CODE EX -->
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<th scope="row">숫자 카운트 increaseAnimation()함수에서 계산한 값을 최종 소수점까지 표시하여 출력 </th>
+									<td>Increase()</td>
+									<td>
+										<!-- CODE EX -->
+										<div class="cp_guide_dc_code">
+											<pre><code class="language-js">
+	// 스크롤 값을 설정하는 함수
+	function Increase {
+		~
+	}
+											</code></pre>
+										</div>
+										<!-- // CODE EX -->
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<h3>4. marquee 제어</h3>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>marquee 설명</caption>
+							<colgroup>
+								<col style="width:4%">
+								<col style="width:35%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>순서</th>
+									<th>함수</th>
+									<th>역할</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<th scope="row">marquee()</th>
+									<td>메인 페이지 맨 하단 content footer 영역에 자동으로 계산하여 가로로 슬라이드 반복</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -76,47 +377,406 @@
 			<hr class="gd-line">
 
 			<div class="cp_document_inner">
-				<!-- CODE EX -->
-				<div class="cp_guide_dc_code">
-				<pre><code class="language-js">
-	function openPopup(el) {
-		if (!el.dataset) {
-			return;
-		}
-	
-		const _dataSet = el.dataset.role.replace('open__', '');
-		const _targetName = `${_dataSet}.html`;
-	
-		el.addEventListener('click', e => {
-			e.preventDefault();
-	
-			console.log(e.target)
-	
-			let buttonDim = e.currentTarget.dataset.closeLayer === 'false'
-	
-			fetch(_targetName).then(res => {
-				if (!res.ok){
-					throw new Error;
-				}
-				return res.text()
-			}).then(res => {
-				makeLayer(res, buttonDim);
-			}).catch(err => {
-				console.log(err);
-			})
-		});
-	};
+				<h2>ui-component.js 함수 가이드</h2>
 
-	// 윈도우 팝업창
-	function openWindowPop(url, target) {
-		let options = 'top=0, left=0, width='+screen.width+', height='+screen.height+', fullscreen=yes, status=no, menubar=no, toolbar=no, resizable=no';
-	
-		window.open(url, target, options);
-	}
-					</code></pre>
+				<div class="cp_guide_dsc">
+					<ul>
+						<li>셀렉트박스 커스텀(Dropdown)</li>
+						<li>langInit()</li>
+						<li>setTabs()</li>
+						<li>setAccodion()</li>
+						<li>setChkboxAll()</li>
+						<li>setInput()</li>
+						<li>tooltip()</li>
+						<li>productRemove()</li>
+						<li>videoSet()</li>
+					</ul>
 				</div>
-				<!-- // CODE EX -->
+
+
+
+				<h3>1. 셀렉트박스 커스텀(Dropdown)</h3>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>셀렉트박스 커스텀 설명</caption>
+							<colgroup>
+								<col style="width:4%">
+								<col style="width:35%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>순서</th>
+									<th>함수</th>
+									<th>역할</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<th scope="row">createDropdown(), makeList(), dropdownList()</th>
+									<td>셀렉트 옵션 리스트 동적 생성<br>
+										data-event 속성 타입에 따른 분기<br>
+										/GUIDE/component_Forms.html 가이드 파일 참고</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<h4>✅ HTML에서 사용 예시</h4>
+					<!-- CODE EX -->
+					<div class="cp_guide_dc_code">
+						<pre><code class="language-html">
+
+	&ltdiv class="form-item"&gt
+		&ltdiv class="form-cont"&gt
+			&ltselect class="btn-drop-box" required&gt
+				&ltoption value="" hidden selected&gt선택&lt/option&gt
+				&ltoption value="item1"&gtitem1&lt/option&gt
+				&ltoption value="item2"&gtitem2&lt/option&gt			
+			&lt/select&gt
+		&lt/div&gt
+	&lt/div&gt
+
+						</code></pre>
+					</div>
+					<!-- // CODE EX -->
+				</div>
+
+
+
+				<h3>2. langInit()</h3>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>langInit 설명</caption>
+							<colgroup>
+								<col style="width:4%">
+								<col style="width:35%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>순서</th>
+									<th>함수</th>
+									<th>역할</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<th scope="row">langInit()</th>
+									<td>다국어 html 태그에 lang=ko ,ja, en에따른 변경</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+
+				<h3>3. setTabs</h3>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>setTabs 설명</caption>
+							<colgroup>
+								<col style="width:4%">
+								<col style="width:35%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>순서</th>
+									<th>함수</th>
+									<th>역할</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<th scope="row">setTabs()</th>
+									<td>탭 메뉴 기능 common.js 함수 참고</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<h4>✅ HTML에서 사용 예시</h4>
+					<!-- CODE EX -->
+					<div class="cp_guide_dc_code">
+						<pre><code class="language-html">
+
+	&ltul class="tab-button" data-tab-index="tab-codec"&gt
+		&ltli&gt&lta href="#all" class="active"&gt내용&lt/a&gt&lt/li&gt
+		&ltli&gt&lta href="#codec64bit"&gt내용&lt/a&gt&lt/li&gt
+	&lt/ul&gt
+
+						</code></pre>
+					</div>
+					<!-- // CODE EX -->
+				</div>
+
+				<h3>4. setAccodion</h3>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>setAccodion 설명</caption>
+							<colgroup>
+								<col style="width:4%">
+								<col style="width:35%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>순서</th>
+									<th>함수</th>
+									<th>역할</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<th scope="row">setAccodion()</th>
+									<td>아코디언 메뉴 기능</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<h4>✅ HTML에서 사용 예시</h4>
+					<!-- CODE EX -->
+					<div class="cp_guide_dc_code">
+						<pre><code class="language-html">
+
+	&ltul class="doard-acco-list borad-ask" data-accordion="container"&gt
+		&ltli&gt
+			&lta href="#" class="acco-head" data-accordion="tab"&gt
+				&ltspan class="list-title"&gt제목&lt/span&gt
+			&lt/a&gt
+			&ltdiv class="acco-content" data-accordion="panel"&gt내용&lt/div&gt
+		&lt/li&gt
+	&lt/ul&gt
+
+						</code></pre>
+					</div>
+					<!-- // CODE EX -->
+				</div>
+
+
+				<h3>5. setChkboxAll</h3>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>setChkboxAll 설명</caption>
+							<colgroup>
+								<col style="width:4%">
+								<col style="width:35%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>순서</th>
+									<th>함수</th>
+									<th>역할</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<th scope="row">setChkboxAll()</th>
+									<td>체크박스 기능</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<h4>✅ HTML에서 사용 예시</h4>
+					<!-- CODE EX -->
+					<div class="cp_guide_dc_code">
+						<pre><code class="language-html">
+
+	&ltform action="" name="" id="" class="form-wrap agree-form" data-agree="agree-group"&gt
+		&ltdiv class="cmn-content-util"&gt
+			&ltdiv class="form-cont"&gt
+				&ltlabel for="agree-all" data-agree="agree-all" class="inp-chk"&gt
+					&ltinput type="checkbox" id="agree-all"&gt
+					&ltspan&gt&ltstrong&gt전체선택&lt/strong&gt&lt/span&gt
+				&lt/label&gt
+			&lt/div&gt
+		&lt/div&gt
+		&ltul class="board-common check-list"&gt
+			&ltli&gt
+				&ltdiv class="form-item"&gt
+					&ltdiv class="form-cont"&gt
+						&ltlabel for="agree1" class="inp-chk"&gt
+							&ltinput type="checkbox" id="agree1"&gt
+							&ltspan&gt&ltstrong&gt내용&lt/strong&gt&lt/span&gt
+						&lt/label&gt
+					&lt/div&gt
+				&lt/div&gt
+			&lt/li&gt
+		&lt/ul&gt
+	&lt/form&gt
+
+
+						</code></pre>
+					</div>
+					<!-- // CODE EX -->
+				</div>
+
+
+				<h3>6. setInput</h3>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>setInput 설명</caption>
+							<colgroup>
+								<col style="width:4%">
+								<col style="width:35%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>순서</th>
+									<th>함수</th>
+									<th>역할</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<th scope="row">setInput()</th>
+									<td>인풋 입력 기능</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+
+
+				<h3>7. tooltip</h3>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>tooltip 설명</caption>
+							<colgroup>
+								<col style="width:4%">
+								<col style="width:35%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>순서</th>
+									<th>함수</th>
+									<th>역할</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<th scope="row">tooltip()</th>
+									<td>툴팁 생성 기능</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<h4>✅ HTML에서 사용 예시</h4>
+					<!-- CODE EX -->
+					<div class="cp_guide_dc_code">
+						<pre><code class="language-html">
+
+	&ltdiv class="tooltip-wrap"&gt
+		&lta href="#" class="tooltip-button"&gt툴팁 보기&lt/a&gt
+		&ltdiv class="tooltip-cont"&gt
+			&ltp class="tooltip-title"&gt제목&lt/p&gt
+			&ltul class="dot-list"&gt
+				&ltli&gt내용&lt/li&gt
+			&lt/ul&gt
+		&lt/div&gt
+	&lt/div&gt
+
+						</code></pre>
+					</div>
+					<!-- // CODE EX -->
+				</div>
+
+
+
+				<h3>8. productRemove</h3>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>productRemove 설명</caption>
+							<colgroup>
+								<col style="width:4%">
+								<col style="width:35%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>순서</th>
+									<th>함수</th>
+									<th>역할</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<th scope="row">productRemove()</th>
+									<td>제품 리스트 동적 삭제 기능<br>
+										예) 견적 요청서 페이지
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+
+				<h3>9. videoSet</h3>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>videoSet 설명</caption>
+							<colgroup>
+								<col style="width:4%">
+								<col style="width:35%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>순서</th>
+									<th>함수</th>
+									<th>역할</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<th scope="row">videoSet()</th>
+									<td>상단 비주얼 영상 제어 기능<br>
+										예) 제품 유/무료 페이지</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<h4>✅ HTML에서 사용 예시</h4>
+					<!-- CODE EX -->
+					<div class="cp_guide_dc_code">
+						<pre><code class="language-html">
+
+	&ltdiv class="head-visual-wrap"&gt
+		&ltvideo video playsinline loop muted&gt
+			&ltsource src="test.mp4" type="video/mp4"&gt
+		&lt/video&gt
+	&lt/div&gt
+
+
+						</code></pre>
+					</div>
+					<!-- // CODE EX -->
+				</div>
+
 			</div>
+
 
 	</main>
 	<!-- //컨텐츠 -->

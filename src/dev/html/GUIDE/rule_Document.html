@@ -28,7 +28,7 @@
 								</tr>
 								<tr>
 									<th scope="row">마크업 종류</th>
-									<td>HTML5, CSS3, Javascript</td>
+									<td>HTML5, gulp-sass, Javascript</td>
 								</tr>
 								<tr>
 									<th scope="row">웹 유형</th>
@@ -37,7 +37,7 @@
 								<tr>
 									<th scope="row">PC 웹 호환성</th>
 									<td>
-										chrome (버전 91.0), Edge 버전  110.0 이상
+										chrome (버전 120.0), Edge 버전  120.0 이상
 									</td>
 								</tr>
 								<tr>
@@ -52,13 +52,61 @@
 								<tr>
 									<th scope="row">해상도 정책</th>
 									<td>
-										PC UI : 기준 1200px ~ 최소 1280px<br><br>
-										　- 1200px 이상일 경우, content는 Center 정렬<br><br>
-										　- 1280px 이하일 경우, 브라우저 반응형 <br><br>
-										MO UI : 720px ~ 												
+										　- PC UI : 최대 1920px<br><br>
+										　- MO UI : 375px ~ (as-is:320)<br><br>
+										　- tab : 767px ~ 1279px, (asis기준) 
 									</td>
 								</tr>
 	
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<hr class="gd-line">
+
+			<div class="cp_document_inner">
+				<h2>Gulp plugin list</h2>
+				<div class="cp_guide_dsc">
+					<ul>
+						<li>gulp-html-tag-include</li>
+						<li>browser-sync</li>
+						<li>gulp-sourcemaps</li>
+						<li>gulp-sass</li>
+						<li>node-sass(gulp-sass버전이4.x.x대라서 사용)</li>
+					</ul>
+					<p class="fs-13">※ 해당 리스트는 제작 초기 세팅이며, 제작 완료 또는 운영중에 변경이 가능한 부분이기에 필수 요건에 해당하지 않습니다.</p>
+				</div>
+			</div>
+
+			<hr class="gd-line">
+
+			<div class="cp_document_inner">
+				<h2>Gulp & Setting</h2>
+				<div class="cp_guide_dc_table">
+					<div class="table-wrap responsive_table">
+						<table class="">
+							<caption>Gulp & Setting</caption>
+							<colgroup>
+								<col style="width:20%">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th>명칭</th>
+									<th>세팅 버전</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">Node.js</th>
+									<td>14.17.1</td>
+								</tr>
+								<tr>
+									<th scope="row">Gulp</th>
+									<td>4.0.2</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -102,98 +150,47 @@
 			<hr class="gd-line">
 
 			<div class="cp_document_inner">
-				<h2>Library & Plugin</h2>
-				<div class="cp_guide_dc_table">
-					<div class="table-wrap responsive_table">
-						<table class="">
-							<caption>Library & Plugin</caption>
-							<colgroup>
-								<col style="width:20%">
-								<col style="width:20%">
-								<col>
-							</colgroup>
-							<thead>
-								<tr>
-									<th>명칭</th>
-									<th>파일명</th>
-									<th>url</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">제이쿼리</th>
-									<td>jquery</td>
-									<td>· PC/MW : https://code.jquery.com/jquery-1.11.3.min.js</td>
-								</tr>
-								<tr>
-									<th scope="row">제이쿼리</th>
-									<td>jquery</td>
-									<td>· PC/MW : https://code.jquery.com/jquery-1.11.3.min.js
-										<br>
-										<code>(Main page ONLY)</code>
-									</td>
-								</tr>
-								<tr>
-									<th scope="row">제이쿼리</th>
-									<td>jquery</td>
-									<td>· PC/MW : https://code.jquery.com/jquery-1.11.3.min.js</td>
-								</tr>
-	
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-
-			<div class="cp_document_inner">
+				<h2>Document full format.</h2>
+				<h4>(참고) &ltTEMP_BASIC_PAGE.html&gt</h4>
 
 				<!-- CODE EX -->
 				<div class="cp_guide_dc_code">
 					<pre><code class="language-html">
-&lt! DOCTYPE html&gt
-&lthtml lang="ko"&gt
-	&lthead&gt
-		&ltmeta charset="UTF-8"&gt
-		&ltmeta http-equiv="X-UA-Compatible" content="IE=edge" /&gt
-		&ltmeta name="viewport" content="width=device-width, initial-scale=1.0" /&gt
-		&lttitle&gtpage title | Gomlab &lt/title&gt
-	&lt/head&gt
-	&ltbody class="PAGEKEYCLASS"&gt &lt!-- main, information, column 와 같은 페이지 키클래스 지정 --&gt
-		&ltnav id="skip_navi"&gt
-			&lta href="#container"&gt본문 바로가기&lt/a&gt
-		&lt/nav&gt
+	&lt!DOCTYPE html&gt
+	&lthtml lang="ko"&gt
+		&ltinclude src="../include/head.html" title="페이지 타이틀"&gt&lt/include&gt
+		&ltbody&gt ← ★ 페이지 키클래스
+			&lt!-- 헤더 --&gt
+			&ltinclude src="../include/header.html"&gt&lt/include&gt
+			&lt!-- //헤더 --&gt
+		
+			&lt!-- 컨텐츠 --&gt
+			&ltmain id="container"&gt
+				&ltdiv id="contents" class="contents-body"&gt
+					&ltsection class="panel-wrap"&gt
+						&ltdiv class="panel"&gt
+							내용입력 : panel-wrap
+						&lt/div&gt
+					&lt/section&gt
+				&lt/div&gt
+			&lt/main&gt
+			&lt!-- //컨텐츠 --&gt
+		
+			&lt!-- 퀵 메뉴 --&gt
+			&ltinclude src="../include/quick_menu.html"&gt&lt/include&gt
+			&lt!-- //퀵 메뉴 --&gt
 
-		&ltdiv id="header_wrap" class="PAGEKEYCLASS"&gt
-			&ltdiv class="utill"&gt&lt/div&gt
-			&ltheader class="header on"&gt&lt/header&gt
-			&ltaside id="sitemap" tabindex="0"&gt&lt/aside&gt
-		&lt/div&gt
+			&lt!— ★ 각 화면 별 단독 js 영역 --&gt
+			&ltscript&gt
+				console.log('여기는 화면 전용 js구현영역 입니다.')
+			&lt/script&gt
+			&lt!— //각 화면 별 단독 js 영역 --&gt
 
-		&lt!--  container --&gt
-		&ltdiv id="container"&gt
-			&ltdiv class="wrap"&gt
-
-				&lt!-- Start Of Contents --&gt
-				&ltsection class="content"&gt
-					&ltdiv class="content_inner"&gt&lt/div&gt
-				&lt/section&gt
-				&lt!-- End Of Contents --&gt
-
-			&lt/div&gt
-		&lt/div&gt
-		&lt!-- // container --&gt
-
-		&lt!-- 팝업 시작 --&gt
-		&ltdiv id="bg_modal"&gt&lt/div&gt
-		&lt!-- // 팝업 종료  --&gt
-
-		&ltdiv id="btn_top_move"&gt
-			&ltbutton type="button"&gt&ltimg src="../../assets/images/layout/btn_top.png" alt="Top Move" /&gt&lt/button&gt
-		&lt/div&gt
-
-		&ltdiv id="footer_wrap"&gt&lt/div&gt
-	&lt/body&gt
-&lt/html&gt
+			&lt!-- 푸터 --&gt
+			&ltinclude src="../include/footer.html"&gt&lt/include&gt
+			&lt!-- //푸터 --&gt
+		&lt/body&gt
+	&lt/html&gt
 
 					</code></pre>
 				</div>
