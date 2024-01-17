@@ -15,6 +15,12 @@
 		gap: 12px 23px;
 		padding: 30px;
 	}
+	.tl{
+		text-align: left !important;
+	}
+	.fs-13{
+		font-size: 13px !important;
+	}
 
 	.cp_g{
 		text-align: center;
@@ -267,9 +273,26 @@
 		text-align: left;
 		h3{
 			text-indent: 28px;
+			margin-top: 80px;
+			margin-bottom: 25px;
+			&+.cp_guide_dc_table{
+				padding-left: 50px;
+			}
 		}
 		h4{
 			text-indent: 45px;
+			margin-top: 50px;
+			margin-bottom: 25px;
+		}
+		h2{
+			&+h3{
+				margin-top: 5px;
+			}
+		}
+		h3{
+			&+h4{
+				margin-top: 5px;
+			}
 		}
 		.cp_guide_dc_table {
 			overflow: hidden;
@@ -286,6 +309,12 @@
 					}				
 					th, td {
 					border-left: 1px solid #DDDDDD;
+					}
+					td{
+						.cp_guide_dc_code{
+							padding: 0 !important;
+							margin: 0 !important;
+						}
 					}
 				}
 				thead{
@@ -317,12 +346,15 @@
 			border-radius: 3px;
 			box-sizing: border-box;
 			margin: 0 auto 80px;
+			text-align: left !important;
 			pre{
 				padding: 0;margin: 0;
+				text-align: left !important;
 			}
 			code{
 				font-family: initial;
 				font-size: 14px;
+				text-align: left !important;
 				&.language-css,
 				&.language-js{
 					color: #e0e2e4;
