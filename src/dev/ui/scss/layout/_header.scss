@@ -1,15 +1,12 @@
 /* Header */
 #header-wrap {
-	position: absolute;
+	position: fixed;
 	z-index: 10;
 	top: 0px;
 	left: 0px;
 	width: 100%;
 	border-bottom: 1px solid $color-gray-20;
 	background-color: $color-white;
-	&.fixed {
-		position: fixed;
-	}
 }
 #header {
 	display: flex;

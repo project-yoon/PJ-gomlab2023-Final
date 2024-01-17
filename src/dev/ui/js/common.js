@@ -142,7 +142,7 @@ function initHeaderFixed() {
 	}
 
 	//배너 닫혔을 때 조건 업데이트
-	let topBnrClose = topBnr.find(".btn-tb-close") 
+	const topBnrClose = topBnr.find(".btn-tb-close") 
 	topBnrClose.on('click', function() {
 		topBnr.remove()
 		$('#top-banner-wrap').length == 0 ? checkPoint = 0 : checkPoint = checkPointValue
